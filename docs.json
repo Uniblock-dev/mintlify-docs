@@ -53,14 +53,20 @@
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
               "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook",
-              {
-                "group": "Ethereum endpoints",
-                "pages": [
-                  "api-reference/endpoint/ethereum/eth_blockNumber",
-                  "api-reference/endpoint/ethereum/eth_getBlockByNumber"
-                ]
-              }
+              "api-reference/endpoint/webhook"
+            ]
+          },
+          {
+            "group": "Unified APIs",
+            "openapi": {
+              "source": "api-reference/api-json.json"
+            }
+          },
+          {
+            "group": "Ethereum endpoints",
+            "pages": [
+              "api-reference/endpoint/ethereum/eth_blockNumber",
+              "api-reference/endpoint/ethereum/eth_getBlockByNumber"
             ]
           }
         ]
