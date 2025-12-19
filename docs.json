@@ -41,6 +41,23 @@
         ]
       },
       {
+        "tab": "JSON-RPC",
+        "menu": [
+          {
+            "item": "Ethereum",
+            "openapi": {
+              "source": "api-reference/api-json/jsonrpc-api-json/1-json-rpc-api-json.json"
+            }
+          },
+          {
+            "item": "Optimism",
+            "openapi": {
+              "source": "api-reference/api-json/jsonrpc-api-json/10-json-rpc-api-json.json"
+            }
+          }
+        ]
+      },
+      {
         "tab": "API reference",
         "groups": [
           {
