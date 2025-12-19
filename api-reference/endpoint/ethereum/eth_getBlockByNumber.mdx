@@ -1,6 +1,7 @@
 ---
 title: 'eth_getBlockByNumber'
 openapi: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'interactive'
 ---
 
 <ParamField path='chainId' type='string' default='1' required>
@@ -43,3 +44,11 @@ openapi: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
     </ParamField>
   </Expandable>
 </ParamField>
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the newly created user
+</ResponseField>
+
+<ResponseField name="email" type="string" required>
+  User's email address
+</ResponseField>
