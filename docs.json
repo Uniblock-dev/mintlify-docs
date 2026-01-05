@@ -4241,6 +4241,7 @@
             "groups": [
               {
                 "group": "Debug",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/debug/debug-account-range",
                   "api-reference/jsonrpc-docs/1/debug/debug-chaindb-compact",
@@ -4274,6 +4275,7 @@
               },
               {
                 "group": "Erigon",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/erigon/erigon-block-number",
                   "api-reference/jsonrpc-docs/1/erigon/erigon-forks",
@@ -4287,6 +4289,7 @@
               },
               {
                 "group": "ETH rpc",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/eth-rpc/eth-accounts",
                   "api-reference/jsonrpc-docs/1/eth-rpc/eth-base-fee",
@@ -4357,6 +4360,7 @@
               },
               {
                 "group": "Kaia",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/kaia/kaia-block-number",
                   "api-reference/jsonrpc-docs/1/kaia/kaia-unsubscribe"
@@ -4364,6 +4368,7 @@
               },
               {
                 "group": "Klay",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/klay/klay-block-number",
                   "api-reference/jsonrpc-docs/1/klay/klay-unsubscribe"
@@ -4371,6 +4376,7 @@
               },
               {
                 "group": "Otterscan",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/otterscan/ots-get-api-level",
                   "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-details",
@@ -4387,6 +4393,7 @@
               },
               {
                 "group": "Parity",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/parity/parity-enode",
                   "api-reference/jsonrpc-docs/1/parity/parity-get-block-receipts",
@@ -4396,10 +4403,12 @@
               },
               {
                 "group": "Pathfinder",
+                "expanded": false,
                 "pages": ["api-reference/jsonrpc-docs/1/pathfinder/pathfinder-unsubscribe"]
               },
               {
                 "group": "Trace",
+                "expanded": false,
                 "pages": [
                   "api-reference/jsonrpc-docs/1/trace/trace-block",
                   "api-reference/jsonrpc-docs/1/trace/trace-call",
