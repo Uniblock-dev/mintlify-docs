@@ -1,7 +1,7 @@
 ---
 title: 'eth_getBalance'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
 ### Parameters
 
@@ -45,12 +45,11 @@ curl --request POST \
 
 </RequestExample>
 <ResponseExample>
-
-```json Success
+```json Success (truncated)
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x0234c8a3397aab58"
+  "result": { "number": "0x1b4", "hash": "0x…", "transactions": ["0x…"] }
 }
 ```
 
