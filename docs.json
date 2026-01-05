@@ -4302,6 +4302,10 @@
             "item": "Ethereum",
             "groups": [
               {
+                "group": "Getting started",
+                "pages": ["api-reference/jsonrpc-docs/1/ethereum-overview"]
+              },
+              {
                 "group": "API Reference",
                 "expanded": false,
                 "pages": [
