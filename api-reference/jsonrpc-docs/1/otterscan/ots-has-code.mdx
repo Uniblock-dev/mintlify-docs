@@ -1,8 +1,9 @@
 ---
 title: 'ots_hasCode'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 The parameters for the method ots_hasCode: [address, defaultBlock].
@@ -38,10 +39,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "ots_hasCode",
-  "params": [
-    "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
-    "latest"
-  ]
+  "params": ["0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95", "latest"]
 }
 ```
 

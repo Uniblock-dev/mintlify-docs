@@ -1,8 +1,9 @@
 ---
 title: 'eth_submitWork'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters for eth_submitWork: [nonce, powHash, mixHash].
@@ -14,7 +15,8 @@ Parameters for eth_submitWork: [nonce, powHash, mixHash].
 ### Returns
 
 <ResponseField body='result' type='boolean'>
-  Boolean - returns true if the provided solution is valid, otherwise false. Example: <code>true</code>.
+  Boolean - returns true if the provided solution is valid, otherwise false.
+  Example: <code>true</code>.
 </ResponseField>
 
 <RequestExample>

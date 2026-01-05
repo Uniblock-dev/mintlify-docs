@@ -1,8 +1,9 @@
 ---
 title: 'debug_printBlock'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [blockIdentifier].
@@ -12,7 +13,8 @@ Parameters: [blockIdentifier].
 ### Returns
 
 <ResponseField body='result' type='boolean'>
-  True if the block information was written to the log output. Example: <code>true</code>.
+  True if the block information was written to the log output. Example:{' '}
+  <code>true</code>.
 </ResponseField>
 
 <RequestExample>
@@ -36,9 +38,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_printBlock",
-  "params": [
-    ""
-  ]
+  "params": [""]
 }
 ```
 

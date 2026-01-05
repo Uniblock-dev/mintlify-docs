@@ -1,8 +1,9 @@
 ---
 title: 'eth_getFilterChanges'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters for eth_getFilterChanges: [filterId].
@@ -12,7 +13,8 @@ Parameters for eth_getFilterChanges: [filterId].
 ### Returns
 
 <ResponseField body='result' type='array'>
-  Array of log objects, or an empty array if nothing has changed since last poll.
+  Array of log objects, or an empty array if nothing has changed since last
+  poll.
 </ResponseField>
 
 <RequestExample>
@@ -36,9 +38,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getFilterChanges",
-  "params": [
-    "0x16"
-  ]
+  "params": ["0x16"]
 }
 ```
 

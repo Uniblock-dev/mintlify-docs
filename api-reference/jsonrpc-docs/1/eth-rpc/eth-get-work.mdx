@@ -1,8 +1,9 @@
 ---
 title: 'eth_getWork'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 This method does not require any parameters.
@@ -10,7 +11,8 @@ This method does not require any parameters.
 ### Returns
 
 <ResponseField body='result' type='array'>
-  Array returned by eth_getWork. Contains [powHash, seedHash, boundary, blockNumber].
+  Array returned by eth_getWork. Contains [powHash, seedHash, boundary,
+  blockNumber].
 </ResponseField>
 
 <RequestExample>

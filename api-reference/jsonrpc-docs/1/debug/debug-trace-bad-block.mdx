@@ -1,8 +1,9 @@
 ---
 title: 'debug_traceBadBlock'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [blockHash, options?].
@@ -38,10 +39,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_traceBadBlock",
-  "params": [
-    "",
-    {}
-  ]
+  "params": ["", {}]
 }
 ```
 

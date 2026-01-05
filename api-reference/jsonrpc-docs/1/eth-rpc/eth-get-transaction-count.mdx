@@ -1,8 +1,9 @@
 ---
 title: 'eth_getTransactionCount'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters for eth_getTransactionCount: [address, defaultBlock].
@@ -13,7 +14,8 @@ Parameters for eth_getTransactionCount: [address, defaultBlock].
 ### Returns
 
 <ResponseField body='result' type='string'>
-  The number of transactions sent from this address. Example: <code>"0x1b"</code>.
+  The number of transactions sent from this address. Example:{' '}
+  <code>"0x1b"</code>.
 </ResponseField>
 
 <RequestExample>
@@ -37,9 +39,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getTransactionCount",
-  "params": [
-    "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
-  ]
+  "params": ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]
 }
 ```
 

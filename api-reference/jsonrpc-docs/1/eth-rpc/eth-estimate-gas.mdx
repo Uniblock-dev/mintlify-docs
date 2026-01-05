@@ -1,8 +1,9 @@
 ---
 title: 'eth_estimateGas'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Two-element array: [modified transaction object, default block]. The transaction omits "nonce" and allows optional "from".
@@ -38,10 +39,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_estimateGas",
-  "params": [
-    {},
-    0
-  ]
+  "params": [{}, 0]
 }
 ```
 
