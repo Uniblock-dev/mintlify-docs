@@ -1,8 +1,9 @@
 ---
 title: 'eth_getRawTransactionByBlockNumberAndIndex'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [blockNumber, transactionIndex]
@@ -13,7 +14,12 @@ Parameters: [blockNumber, transactionIndex]
 ### Returns
 
 <ResponseField body='result' type='string'>
-  Raw transaction data as a hexadecimal string, including the full signed transaction. Example: <code>"0xf86c018504a817c8008252089471c7656ed63d30e271b7db6f5cb94d10d5c2b7b3880de0b6b3a76400008025a0ba4681b..."</code>.
+  Raw transaction data as a hexadecimal string, including the full signed
+  transaction. Example:{' '}
+  <code>
+    "0xf86c018504a817c8008252089471c7656ed63d30e271b7db6f5cb94d10d5c2b7b3880de0b6b3a76400008025a0ba4681b..."
+  </code>
+  .
 </ResponseField>
 
 <RequestExample>
@@ -38,10 +44,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getRawTransactionByBlockNumberAndIndex",
-  "params": [
-    "0x10fb78",
-    "0x1"
-  ]
+  "params": ["0x10fb78", "0x1"]
 }
 ```
 

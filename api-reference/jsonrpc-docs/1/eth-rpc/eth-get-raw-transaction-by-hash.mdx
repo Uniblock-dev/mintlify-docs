@@ -1,8 +1,9 @@
 ---
 title: 'eth_getRawTransactionByHash'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [transactionHash]
@@ -12,7 +13,12 @@ Parameters: [transactionHash]
 ### Returns
 
 <ResponseField body='result' type='string'>
-  Raw transaction data in hexadecimal format, including sender, recipient, gas, data, and signature. Example: <code>"0xf86c018504a817c8008252089471c7656ed63d30e271b7db6f5cb94d10d5c2b7b3880de0b6b3a76400008025a0ba4681b..."</code>.
+  Raw transaction data in hexadecimal format, including sender, recipient, gas,
+  data, and signature. Example:{' '}
+  <code>
+    "0xf86c018504a817c8008252089471c7656ed63d30e271b7db6f5cb94d10d5c2b7b3880de0b6b3a76400008025a0ba4681b..."
+  </code>
+  .
 </ResponseField>
 
 <RequestExample>

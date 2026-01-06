@@ -1,8 +1,9 @@
 ---
 title: 'eth_maxPriorityFeePerGas'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 This method does not accept any parameters.
@@ -10,7 +11,8 @@ This method does not accept any parameters.
 ### Returns
 
 <ResponseField body='result' type='string'>
-  The current priority fee (tip) in wei, represented as a hexadecimal string. Example: <code>"0x59682f00"</code>.
+  The current priority fee (tip) in wei, represented as a hexadecimal string.
+  Example: <code>"0x59682f00"</code>.
 </ResponseField>
 
 <RequestExample>
@@ -34,9 +36,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_maxPriorityFeePerGas",
-  "params": [
-    null
-  ]
+  "params": [null]
 }
 ```
 

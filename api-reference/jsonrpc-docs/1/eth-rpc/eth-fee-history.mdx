@@ -1,8 +1,9 @@
 ---
 title: 'eth_feeHistory'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [blockCount, newestBlock, rewardPercentiles]
@@ -43,14 +44,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_feeHistory",
-  "params": [
-    "0x5",
-    "latest",
-    [
-      20,
-      30
-    ]
-  ]
+  "params": ["0x5", "latest", [20, 30]]
 }
 ```
 
@@ -80,40 +74,16 @@ curl --request POST \
       "0xed15d41e"
     ],
     "gasUsedRatio": [
-      0.7806543666666667,
-      0.46377263333333335,
-      0.46358696666666666,
-      0.503863,
+      0.7806543666666667, 0.46377263333333335, 0.46358696666666666, 0.503863,
       0.40701746666666666
     ],
-    "blobGasUsedRatio": [
-      0.8333333333333334,
-      0,
-      0,
-      1,
-      0.8333333333333334
-    ],
+    "blobGasUsedRatio": [0.8333333333333334, 0, 0, 1, 0.8333333333333334],
     "reward": [
-      [
-        "0x5f5e100",
-        "0x34142698"
-      ],
-      [
-        "0x5f5e100",
-        "0x1f619e76"
-      ],
-      [
-        "0x5f5e100",
-        "0x39d10680"
-      ],
-      [
-        "0x6824280",
-        "0x214c9a15"
-      ],
-      [
-        "0x4b571c0",
-        "0x1ac123d6"
-      ]
+      ["0x5f5e100", "0x34142698"],
+      ["0x5f5e100", "0x1f619e76"],
+      ["0x5f5e100", "0x39d10680"],
+      ["0x6824280", "0x214c9a15"],
+      ["0x4b571c0", "0x1ac123d6"]
     ]
   }
 }

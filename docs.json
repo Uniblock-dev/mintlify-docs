@@ -763,11 +763,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/42170/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42170/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/42170/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42170/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -1130,7 +1134,9 @@
               },
               {
                 "group": "Tendermint",
-                "pages": ["api-reference/jsonrpc-docs/43114/tendermint/health-health"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/43114/tendermint/health-health"
+                ]
               }
             ]
           },
@@ -1257,11 +1263,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/43113/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/43113/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/43113/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/43113/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -1384,15 +1394,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/223/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/223/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/223/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/223/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/223/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/223/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -1489,15 +1505,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/5165/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5165/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/5165/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5165/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/5165/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5165/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -1647,7 +1669,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/8453/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/8453/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -1771,11 +1795,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/84532/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/84532/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/84532/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/84532/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Optimism",
@@ -1897,11 +1925,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/80094/kaia/kaia-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/80094/kaia/kaia-block-number"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/80094/klay/klay-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/80094/klay/klay-block-number"
+                ]
               },
               {
                 "group": "Trace",
@@ -2151,7 +2183,9 @@
               },
               {
                 "group": "ETH rpc",
-                "pages": ["api-reference/jsonrpc-docs/bitcoin-testnet4/eth-rpc/eth-accounts"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/bitcoin-testnet4/eth-rpc/eth-accounts"
+                ]
               }
             ]
           },
@@ -2240,11 +2274,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/200901/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/200901/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/200901/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/200901/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -2536,11 +2574,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/23888/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/23888/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/23888/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/23888/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -2690,7 +2732,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/56/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/56/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -2819,7 +2863,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/97/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/97/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -3421,11 +3467,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/42220/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42220/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/42220/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42220/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -3600,11 +3650,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/11142220/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11142220/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/11142220/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11142220/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -3853,11 +3907,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/21000000/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/21000000/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/21000000/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/21000000/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -4222,11 +4280,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/52014/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/52014/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/52014/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/52014/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -4240,176 +4302,197 @@
             "item": "Ethereum",
             "groups": [
               {
-                "group": "Debug",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/debug/debug-account-range",
-                  "api-reference/jsonrpc-docs/1/debug/debug-chaindb-compact",
-                  "api-reference/jsonrpc-docs/1/debug/debug-chaindb-property",
-                  "api-reference/jsonrpc-docs/1/debug/debug-db-ancient",
-                  "api-reference/jsonrpc-docs/1/debug/debug-db-ancients",
-                  "api-reference/jsonrpc-docs/1/debug/debug-gc-stats",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-accessible-state",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-bad-blocks",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-modified-accounts-by-hash",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-modified-accounts-by-number",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-raw-block",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-raw-header",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-raw-receipts",
-                  "api-reference/jsonrpc-docs/1/debug/debug-get-raw-transaction",
-                  "api-reference/jsonrpc-docs/1/debug/debug-go-trace",
-                  "api-reference/jsonrpc-docs/1/debug/debug-intermediate-roots",
-                  "api-reference/jsonrpc-docs/1/debug/debug-mem-stats",
-                  "api-reference/jsonrpc-docs/1/debug/debug-mutex-profile",
-                  "api-reference/jsonrpc-docs/1/debug/debug-print-block",
-                  "api-reference/jsonrpc-docs/1/debug/debug-stacks",
-                  "api-reference/jsonrpc-docs/1/debug/debug-storage-range-at",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-bad-block",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-block",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-block-by-hash",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-block-by-number",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-call",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-call-many",
-                  "api-reference/jsonrpc-docs/1/debug/debug-trace-transaction"
-                ]
+                "group": "Getting started",
+                "pages": ["api-reference/jsonrpc-docs/1/ethereum-overview"]
               },
               {
-                "group": "Erigon",
+                "group": "API Reference",
+                "expanded": false,
                 "pages": [
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-block-number",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-forks",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-block-by-timestamp",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-block-receipts-by-block-hash",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-header-by-hash",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-header-by-number",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-latest-logs",
-                  "api-reference/jsonrpc-docs/1/erigon/erigon-get-logs-by-hash"
-                ]
-              },
-              {
-                "group": "ETH rpc",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-accounts",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-base-fee",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-blob-base-fee",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-block-number",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-call",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-call-many",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-chain-id",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-coinbase",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-create-access-list",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-estimate-gas",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-fee-history",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-gas-price",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-account",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-balance",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-by-hash",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-by-number",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-receipts",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-transaction-count-by-hash",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-transaction-count-by-number",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-code",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-filter-changes",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-filter-logs",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-logs",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-proof",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-block-hash-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-block-number-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-hash",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-storage-at",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-block-hash-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-block-number-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-hash",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-count",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-receipt",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-by-block-hash-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-by-block-number-and-index",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-count-by-block-hash",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-count-by-block-number",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-work",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-hashrate",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-max-priority-fee-per-gas",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-block-filter",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-filter",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-pending-transaction-filter",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-protocol-version",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-private-transaction",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-raw-transaction",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-transaction",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-sign",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-sign-transaction",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-simulate-v1",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-submit-hashrate",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-submit-work",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-subscribe",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-syncing",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-uninstall-filter",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/eth-unsubscribe",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/net-listening",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/net-peer-count",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/net-version",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/txpool-content",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/txpool-content-from",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/txpool-inspect",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/txpool-status",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/web3-client-version",
-                  "api-reference/jsonrpc-docs/1/eth-rpc/web3-sha3"
-                ]
-              },
-              {
-                "group": "Kaia",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/kaia/kaia-block-number",
-                  "api-reference/jsonrpc-docs/1/kaia/kaia-unsubscribe"
-                ]
-              },
-              {
-                "group": "Klay",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/klay/klay-block-number",
-                  "api-reference/jsonrpc-docs/1/klay/klay-unsubscribe"
-                ]
-              },
-              {
-                "group": "Otterscan",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-api-level",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-details",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-details-by-hash",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-transactions",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-contract-creator",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-internal-operations",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-get-transaction-error",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-has-code",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-search-transactions-after",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-search-transactions-before",
-                  "api-reference/jsonrpc-docs/1/otterscan/ots-trace-transaction"
-                ]
-              },
-              {
-                "group": "Parity",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/parity/parity-enode",
-                  "api-reference/jsonrpc-docs/1/parity/parity-get-block-receipts",
-                  "api-reference/jsonrpc-docs/1/parity/parity-net-peers",
-                  "api-reference/jsonrpc-docs/1/parity/parity-pending-transactions"
-                ]
-              },
-              {
-                "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1/pathfinder/pathfinder-unsubscribe"]
-              },
-              {
-                "group": "Trace",
-                "pages": [
-                  "api-reference/jsonrpc-docs/1/trace/trace-block",
-                  "api-reference/jsonrpc-docs/1/trace/trace-call",
-                  "api-reference/jsonrpc-docs/1/trace/trace-call-many",
-                  "api-reference/jsonrpc-docs/1/trace/trace-filter",
-                  "api-reference/jsonrpc-docs/1/trace/trace-get",
-                  "api-reference/jsonrpc-docs/1/trace/trace-raw-transaction",
-                  "api-reference/jsonrpc-docs/1/trace/trace-replay-block-transactions",
-                  "api-reference/jsonrpc-docs/1/trace/trace-replay-transaction",
-                  "api-reference/jsonrpc-docs/1/trace/trace-transaction"
+                  {
+                    "group": "Debug",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/debug/debug-account-range",
+                      "api-reference/jsonrpc-docs/1/debug/debug-chaindb-compact",
+                      "api-reference/jsonrpc-docs/1/debug/debug-chaindb-property",
+                      "api-reference/jsonrpc-docs/1/debug/debug-db-ancient",
+                      "api-reference/jsonrpc-docs/1/debug/debug-db-ancients",
+                      "api-reference/jsonrpc-docs/1/debug/debug-gc-stats",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-accessible-state",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-bad-blocks",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-modified-accounts-by-hash",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-modified-accounts-by-number",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-raw-block",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-raw-header",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-raw-receipts",
+                      "api-reference/jsonrpc-docs/1/debug/debug-get-raw-transaction",
+                      "api-reference/jsonrpc-docs/1/debug/debug-go-trace",
+                      "api-reference/jsonrpc-docs/1/debug/debug-intermediate-roots",
+                      "api-reference/jsonrpc-docs/1/debug/debug-mem-stats",
+                      "api-reference/jsonrpc-docs/1/debug/debug-mutex-profile",
+                      "api-reference/jsonrpc-docs/1/debug/debug-print-block",
+                      "api-reference/jsonrpc-docs/1/debug/debug-stacks",
+                      "api-reference/jsonrpc-docs/1/debug/debug-storage-range-at",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-bad-block",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-block",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-block-by-hash",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-block-by-number",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-call",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-call-many",
+                      "api-reference/jsonrpc-docs/1/debug/debug-trace-transaction"
+                    ]
+                  },
+                  {
+                    "group": "Erigon",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-block-number",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-forks",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-block-by-timestamp",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-block-receipts-by-block-hash",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-header-by-hash",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-header-by-number",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-latest-logs",
+                      "api-reference/jsonrpc-docs/1/erigon/erigon-get-logs-by-hash"
+                    ]
+                  },
+                  {
+                    "group": "ETH rpc",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-accounts",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-base-fee",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-blob-base-fee",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-block-number",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-call",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-call-many",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-chain-id",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-coinbase",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-create-access-list",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-estimate-gas",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-fee-history",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-gas-price",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-account",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-balance",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-by-hash",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-by-number",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-receipts",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-transaction-count-by-hash",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-block-transaction-count-by-number",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-code",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-filter-changes",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-filter-logs",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-logs",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-proof",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-block-hash-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-block-number-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-raw-transaction-by-hash",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-storage-at",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-block-hash-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-block-number-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-by-hash",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-count",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-transaction-receipt",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-by-block-hash-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-by-block-number-and-index",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-count-by-block-hash",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-uncle-count-by-block-number",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-get-work",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-hashrate",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-max-priority-fee-per-gas",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-block-filter",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-filter",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-new-pending-transaction-filter",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-protocol-version",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-private-transaction",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-raw-transaction",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-send-transaction",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-sign",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-sign-transaction",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-simulate-v1",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-submit-hashrate",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-submit-work",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-subscribe",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-syncing",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-uninstall-filter",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/eth-unsubscribe",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/net-listening",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/net-peer-count",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/net-version",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/txpool-content",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/txpool-content-from",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/txpool-inspect",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/txpool-status",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/web3-client-version",
+                      "api-reference/jsonrpc-docs/1/eth-rpc/web3-sha3"
+                    ]
+                  },
+                  {
+                    "group": "Kaia",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/kaia/kaia-block-number",
+                      "api-reference/jsonrpc-docs/1/kaia/kaia-unsubscribe"
+                    ]
+                  },
+                  {
+                    "group": "Klay",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/klay/klay-block-number",
+                      "api-reference/jsonrpc-docs/1/klay/klay-unsubscribe"
+                    ]
+                  },
+                  {
+                    "group": "Otterscan",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-api-level",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-details",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-details-by-hash",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-block-transactions",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-contract-creator",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-internal-operations",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-get-transaction-error",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-has-code",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-search-transactions-after",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-search-transactions-before",
+                      "api-reference/jsonrpc-docs/1/otterscan/ots-trace-transaction"
+                    ]
+                  },
+                  {
+                    "group": "Parity",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/parity/parity-enode",
+                      "api-reference/jsonrpc-docs/1/parity/parity-get-block-receipts",
+                      "api-reference/jsonrpc-docs/1/parity/parity-net-peers",
+                      "api-reference/jsonrpc-docs/1/parity/parity-pending-transactions"
+                    ]
+                  },
+                  {
+                    "group": "Pathfinder",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/pathfinder/pathfinder-unsubscribe"
+                    ]
+                  },
+                  {
+                    "group": "Trace",
+                    "expanded": false,
+                    "pages": [
+                      "api-reference/jsonrpc-docs/1/trace/trace-block",
+                      "api-reference/jsonrpc-docs/1/trace/trace-call",
+                      "api-reference/jsonrpc-docs/1/trace/trace-call-many",
+                      "api-reference/jsonrpc-docs/1/trace/trace-filter",
+                      "api-reference/jsonrpc-docs/1/trace/trace-get",
+                      "api-reference/jsonrpc-docs/1/trace/trace-raw-transaction",
+                      "api-reference/jsonrpc-docs/1/trace/trace-replay-block-transactions",
+                      "api-reference/jsonrpc-docs/1/trace/trace-replay-transaction",
+                      "api-reference/jsonrpc-docs/1/trace/trace-transaction"
+                    ]
+                  }
                 ]
               }
             ]
@@ -4696,11 +4779,15 @@
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/11155111/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11155111/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Otterscan",
-                "pages": ["api-reference/jsonrpc-docs/11155111/otterscan/ots-get-api-level"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11155111/otterscan/ots-get-api-level"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -4855,7 +4942,9 @@
               },
               {
                 "group": "FTM",
-                "pages": ["api-reference/jsonrpc-docs/250/ftm/ftm-current-epoch"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/250/ftm/ftm-current-epoch"
+                ]
               },
               {
                 "group": "Kaia",
@@ -4873,7 +4962,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/250/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/250/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -5000,7 +5091,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/14/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/14/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -5444,15 +5537,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/100/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/100/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/100/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/100/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/100/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/100/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -5569,11 +5668,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/10200/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/10200/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/10200/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/10200/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -5684,15 +5787,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/2345/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2345/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/2345/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2345/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/2345/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2345/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -5782,15 +5891,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1625/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1625/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1625/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1625/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1625/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1625/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -5934,11 +6049,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1666600000/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1666600000/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1666600000/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1666600000/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -6118,11 +6237,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/999/kaia/kaia-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/999/kaia/kaia-block-number"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/999/klay/klay-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/999/klay/klay-block-number"
+                ]
               }
             ]
           },
@@ -6361,15 +6484,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/8822/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/8822/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/8822/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/8822/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/8822/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/8822/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -6382,7 +6511,9 @@
             "groups": [
               {
                 "group": "Debug",
-                "pages": ["api-reference/jsonrpc-docs/4689/debug/debug-trace-block-by-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/4689/debug/debug-trace-block-by-number"
+                ]
               },
               {
                 "group": "ETH rpc",
@@ -6628,7 +6759,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1001/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1001/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -6702,19 +6835,27 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/2222/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2222/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/2222/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2222/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Near",
-                "pages": ["api-reference/jsonrpc-docs/2222/near/broadcast-tx-commit"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2222/near/broadcast-tx-commit"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/2222/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2222/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Tendermint",
@@ -6970,7 +7111,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/8217/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/8217/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -7327,11 +7470,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/59144/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/59144/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/59144/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/59144/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -7827,15 +7974,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/5000/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5000/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/5000/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5000/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/5000/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5000/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -7934,15 +8087,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/5003/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5003/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/5003/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5003/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/5003/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/5003/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -7990,15 +8149,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/698/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/698/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/698/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/698/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/698/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/698/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -8088,15 +8253,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1088/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1088/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1088/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1088/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1088/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1088/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -8349,11 +8520,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/10143/kaia/kaia-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/10143/kaia/kaia-block-number"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/10143/klay/klay-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/10143/klay/klay-block-number"
+                ]
               }
             ]
           },
@@ -8556,7 +8731,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/2818/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2818/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -8651,7 +8828,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/2810/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/2810/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -8786,11 +8965,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/42262/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42262/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/42262/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42262/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -8858,11 +9041,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/42261/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42261/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/42261/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/42261/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -9018,7 +9205,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/10/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/10/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -9285,11 +9474,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/11155420/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11155420/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/11155420/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/11155420/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -9471,15 +9664,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/7070/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/7070/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/7070/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/7070/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/7070/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/7070/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -9708,11 +9907,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/98866/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/98866/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/98866/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/98866/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -9727,7 +9930,9 @@
             "groups": [
               {
                 "group": "ETH rpc",
-                "pages": ["api-reference/jsonrpc-docs/polkadot/eth-rpc/eth-accounts"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/polkadot/eth-rpc/eth-accounts"
+                ]
               },
               {
                 "group": "Polkadot",
@@ -9937,7 +10142,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/137/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/137/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Tendermint",
@@ -10094,11 +10301,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/80002/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/80002/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/80002/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/80002/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -10219,15 +10430,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1101/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1101/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1101/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1101/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1101/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1101/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -10437,15 +10654,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/151/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/151/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/151/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/151/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/151/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/151/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -10622,15 +10845,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/570/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/570/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/570/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/570/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/570/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/570/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -11005,11 +11234,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/534352/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/534352/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/534352/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/534352/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -11093,11 +11326,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/534351/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/534351/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/534351/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/534351/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -11164,7 +11401,9 @@
               },
               {
                 "group": "Near",
-                "pages": ["api-reference/jsonrpc-docs/1329/near/broadcast-tx-commit"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1329/near/broadcast-tx-commit"
+                ]
               },
               {
                 "group": "Tendermint",
@@ -12035,15 +12274,21 @@
               },
               {
                 "group": "FTM",
-                "pages": ["api-reference/jsonrpc-docs/57054/ftm/ftm-current-epoch"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/57054/ftm/ftm-current-epoch"
+                ]
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/57054/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/57054/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/57054/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/57054/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -12153,19 +12398,27 @@
               },
               {
                 "group": "FTM",
-                "pages": ["api-reference/jsonrpc-docs/146/ftm/ftm-current-epoch"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/146/ftm/ftm-current-epoch"
+                ]
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/146/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/146/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/146/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/146/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/146/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/146/pathfinder/pathfinder-unsubscribe"
+                ]
               },
               {
                 "group": "Trace",
@@ -12256,15 +12509,21 @@
               },
               {
                 "group": "FTM",
-                "pages": ["api-reference/jsonrpc-docs/14601/ftm/ftm-current-epoch"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/14601/ftm/ftm-current-epoch"
+                ]
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/14601/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/14601/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/14601/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/14601/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -12366,7 +12625,9 @@
             "groups": [
               {
                 "group": "ETH rpc",
-                "pages": ["api-reference/jsonrpc-docs/stellar-soroban/eth-rpc/eth-accounts"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/stellar-soroban/eth-rpc/eth-accounts"
+                ]
               },
               {
                 "group": "Solana",
@@ -12521,15 +12782,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1514/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1514/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1514/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1514/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1514/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1514/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -12628,15 +12895,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1315/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1315/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1315/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1315/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1315/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1315/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -12944,15 +13217,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1923/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1923/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1923/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1923/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1923/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1923/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -13043,15 +13322,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1924/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1924/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1924/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1924/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1924/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1924/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -13221,7 +13506,9 @@
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/57/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/57/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -13230,7 +13517,9 @@
             "groups": [
               {
                 "group": "Debug",
-                "pages": ["api-reference/jsonrpc-docs/239/debug/debug-mem-stats"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/239/debug/debug-mem-stats"
+                ]
               },
               {
                 "group": "ETH rpc",
@@ -13276,15 +13565,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/239/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/239/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/239/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/239/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/239/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/239/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -13375,11 +13670,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/167000/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/167000/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/167000/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/167000/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -13498,7 +13797,9 @@
               },
               {
                 "group": "Erigon",
-                "pages": ["api-reference/jsonrpc-docs/40/erigon/erigon-get-header-by-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/40/erigon/erigon-get-header-by-number"
+                ]
               },
               {
                 "group": "ETH rpc",
@@ -13641,15 +13942,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/1559/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1559/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/1559/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1559/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/1559/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/1559/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -13709,11 +14016,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/tron/kaia/kaia-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/tron/kaia/kaia-block-number"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/tron/klay/klay-block-number"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/tron/klay/klay-block-number"
+                ]
               }
             ]
           },
@@ -14167,15 +14478,21 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/196/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/196/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/196/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/196/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
-                "pages": ["api-reference/jsonrpc-docs/196/pathfinder/pathfinder-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/196/pathfinder/pathfinder-unsubscribe"
+                ]
               }
             ]
           },
@@ -14265,11 +14582,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/660279/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/660279/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/660279/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/660279/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",
@@ -14522,11 +14843,15 @@
               },
               {
                 "group": "Kaia",
-                "pages": ["api-reference/jsonrpc-docs/16661/kaia/kaia-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/16661/kaia/kaia-unsubscribe"
+                ]
               },
               {
                 "group": "Klay",
-                "pages": ["api-reference/jsonrpc-docs/16661/klay/klay-unsubscribe"]
+                "pages": [
+                  "api-reference/jsonrpc-docs/16661/klay/klay-unsubscribe"
+                ]
               },
               {
                 "group": "Pathfinder",

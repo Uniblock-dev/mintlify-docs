@@ -1,8 +1,9 @@
 ---
 title: 'ots_getContractCreator'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 The parameters for ots_getContractCreator: [address].
@@ -12,7 +13,13 @@ The parameters for ots_getContractCreator: [address].
 ### Returns
 
 <ResponseField body='result' type='object'>
-  object containing the following attributes, or null if the address does not contain a contract. hash - The tx hash of the transaction who created the contract. creator - The address which created the contract. Note that for simple transactions that directly deploy a contract this corresponds to the EOA in the from field of the transaction. For deployer contracts, i.e., the contract is created as a result of a method call, this corresponds to the address of the contract which created it.
+  object containing the following attributes, or null if the address does not
+  contain a contract. hash - The tx hash of the transaction who created the
+  contract. creator - The address which created the contract. Note that for
+  simple transactions that directly deploy a contract this corresponds to the
+  EOA in the from field of the transaction. For deployer contracts, i.e., the
+  contract is created as a result of a method call, this corresponds to the
+  address of the contract which created it.
 </ResponseField>
 
 <RequestExample>
@@ -36,9 +43,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "ots_getContractCreator",
-  "params": [
-    "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"
-  ]
+  "params": ["0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"]
 }
 ```
 

@@ -1,8 +1,9 @@
 ---
 title: 'eth_getAccount'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [address, blockReference]
@@ -38,10 +39,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getAccount",
-  "params": [
-    "0x8D97689C9818892B700e27F316cc3E41e17fBeb9",
-    "latest"
-  ]
+  "params": ["0x8D97689C9818892B700e27F316cc3E41e17fBeb9", "latest"]
 }
 ```
 

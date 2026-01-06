@@ -1,8 +1,9 @@
 ---
 title: 'web3_sha3'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters for method web3_sha3: [data].
@@ -12,7 +13,11 @@ Parameters for method web3_sha3: [data].
 ### Returns
 
 <ResponseField body='result' type='string'>
-  Data - The Keccak-256 hash of the given string. Example: <code>"0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"</code>.
+  Data - The Keccak-256 hash of the given string. Example:{' '}
+  <code>
+    "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad"
+  </code>
+  .
 </ResponseField>
 
 <RequestExample>
@@ -36,9 +41,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "web3_sha3",
-  "params": [
-    "0x68656c6c6f20776f726c64"
-  ]
+  "params": ["0x68656c6c6f20776f726c64"]
 }
 ```
 

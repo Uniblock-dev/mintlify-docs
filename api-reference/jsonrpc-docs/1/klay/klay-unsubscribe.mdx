@@ -1,8 +1,9 @@
 ---
 title: 'klay_unsubscribe'
 openapi: 'POST /json-rpc'
-playground: 'interactive'
+playground: 'none'
 ---
+
 ### Parameters
 
 Parameters: [subscriptionId].
@@ -12,7 +13,8 @@ Parameters: [subscriptionId].
 ### Returns
 
 <ResponseField body='result' type='boolean'>
-  True if the subscription was successfully cancelled. Example: <code>true</code>.
+  True if the subscription was successfully cancelled. Example:{' '}
+  <code>true</code>.
 </ResponseField>
 
 <RequestExample>
@@ -36,9 +38,7 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "klay_unsubscribe",
-  "params": [
-    ""
-  ]
+  "params": [""]
 }
 ```
 
