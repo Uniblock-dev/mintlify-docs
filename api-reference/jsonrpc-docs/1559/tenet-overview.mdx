@@ -1,0 +1,29 @@
+---
+title: 'Tenet Overview'
+---
+
+Tenet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Tenet with low-latency routing and a single API surface across providers.
+
+## What is Tenet?
+Tenet is an EVM-compatible mainnet.
+
+## What is the Tenet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=1559`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Tenet | Mainnet | `1559` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/1559/debug/debug-gc-stats)
+- [ETH rpc](jsonrpc-docs/1559/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/1559/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/1559/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/1559/pathfinder/pathfinder-unsubscribe)

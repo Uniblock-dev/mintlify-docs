@@ -1,9 +1,8 @@
 ---
 title: 'eth_baseFee'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 This method does not accept any parameters.
@@ -11,8 +10,7 @@ This method does not accept any parameters.
 ### Returns
 
 <ResponseField body='result' type='string'>
-  Hex-encoded base fee for the next block (in wei). Example:{' '}
-  <code>"0x2e90edd000"</code>.
+  Hex-encoded base fee for the next block (in wei). Example: <code>"0x2e90edd000"</code>.
 </ResponseField>
 
 <RequestExample>
@@ -36,7 +34,9 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_baseFee",
-  "params": [null]
+  "params": [
+    null
+  ]
 }
 ```
 

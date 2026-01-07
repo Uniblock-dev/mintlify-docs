@@ -1,0 +1,26 @@
+---
+title: 'Fraxtal Overview'
+---
+
+Fraxtal RPC
+
+Use Uniblock's JSON-RPC endpoint to access Fraxtal with low-latency routing and a single API surface across providers.
+
+## What is Fraxtal?
+Fraxtal is an EVM-compatible mainnet.
+
+## What is the Fraxtal JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=252`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Fraxtal | Mainnet | `252` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/252/debug/debug-db-ancient)
+- [ETH rpc](jsonrpc-docs/252/eth-rpc/eth-block-number)

@@ -1,0 +1,30 @@
+---
+title: 'Lumia Overview'
+---
+
+Lumia RPC
+
+Use Uniblock's JSON-RPC endpoint to access Lumia with low-latency routing and a single API surface across providers.
+
+## What is Lumia?
+Lumia is an EVM-compatible mainnet.
+
+## What is the Lumia JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=994873017`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Lumia | Mainnet | `994873017` |
+| Lumia Testnet | Testnet | `2030232745` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/994873017/debug/debug-get-raw-block)
+- [Erigon](jsonrpc-docs/994873017/erigon/erigon-forks)
+- [ETH rpc](jsonrpc-docs/994873017/eth-rpc/eth-accounts)
+- [Trace](jsonrpc-docs/994873017/trace/trace-block)
+- [ZKEVM](jsonrpc-docs/994873017/zkevm/zkevm-batch-number)

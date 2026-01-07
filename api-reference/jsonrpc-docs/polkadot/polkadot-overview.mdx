@@ -1,0 +1,26 @@
+---
+title: 'Polkadot Overview'
+---
+
+Polkadot RPC
+
+Use Uniblock's JSON-RPC endpoint to access Polkadot with low-latency routing and a single API surface across providers.
+
+## What is Polkadot?
+Polkadot is a non-EVM mainnet.
+
+## What is the Polkadot JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=polkadot`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Polkadot | Mainnet | `polkadot` |
+
+## API reference
+Browse the available method groups for this chain:
+- [ETH rpc](jsonrpc-docs/polkadot/eth-rpc/eth-accounts)
+- [Polkadot](jsonrpc-docs/polkadot/polkadot/author-pending-extrinsics)

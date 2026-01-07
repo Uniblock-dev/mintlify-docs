@@ -1,0 +1,27 @@
+---
+title: 'Boba Network Overview'
+---
+
+Boba Network RPC
+
+Use Uniblock's JSON-RPC endpoint to access Boba Network with low-latency routing and a single API surface across providers.
+
+## What is Boba Network?
+Boba Network is an EVM-compatible mainnet.
+
+## What is the Boba Network JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=288`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Boba Network | Mainnet | `288` |
+| Boba Sepolia | Testnet | `28882` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/288/debug/debug-get-bad-blocks)
+- [ETH rpc](jsonrpc-docs/288/eth-rpc/eth-accounts)

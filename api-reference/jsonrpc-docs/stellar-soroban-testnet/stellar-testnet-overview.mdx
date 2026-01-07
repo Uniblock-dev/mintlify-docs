@@ -1,0 +1,28 @@
+---
+title: 'Stellar Testnet Overview'
+---
+
+Stellar Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Stellar Testnet with low-latency routing and a single API surface across providers.
+
+## What is Stellar Testnet?
+Stellar Testnet is a non-EVM testnet. It is a testnet for Stellar.
+
+## What is the Stellar Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=stellar-soroban-testnet`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Stellar | Mainnet | `stellar-soroban` |
+| Stellar Testnet | Testnet | `stellar-soroban-testnet` |
+
+## API reference
+Browse the available method groups for this chain:
+- [ETH rpc](jsonrpc-docs/stellar-soroban-testnet/eth-rpc/eth-accounts)
+- [Solana](jsonrpc-docs/stellar-soroban-testnet/solana/get-health)
+- [Stellar](jsonrpc-docs/stellar-soroban-testnet/stellar/get-events)

@@ -1,0 +1,34 @@
+---
+title: 'Sonic Mainnet Overview'
+---
+
+Sonic Mainnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Sonic Mainnet with low-latency routing and a single API surface across providers.
+
+## What is Sonic Mainnet?
+Sonic Mainnet is an EVM-compatible mainnet.
+
+## What is the Sonic Mainnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=146`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Sonic Mainnet | Mainnet | `146` |
+| Sonic Blaze Testnet | Testnet | `57054` |
+| Sonic Testnet | Testnet | `14601` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Dag](jsonrpc-docs/146/dag/dag-get-event)
+- [Debug](jsonrpc-docs/146/debug/debug-chaindb-compact)
+- [ETH rpc](jsonrpc-docs/146/eth-rpc/eth-accounts)
+- [FTM](jsonrpc-docs/146/ftm/ftm-current-epoch)
+- [Kaia](jsonrpc-docs/146/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/146/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/146/pathfinder/pathfinder-unsubscribe)
+- [Trace](jsonrpc-docs/146/trace/trace-block)

@@ -1,0 +1,28 @@
+---
+title: 'Sui Overview'
+---
+
+Sui RPC
+
+Use Uniblock's JSON-RPC endpoint to access Sui with low-latency routing and a single API surface across providers.
+
+## What is Sui?
+Sui is a non-EVM mainnet.
+
+## What is the Sui JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Sui | Mainnet | `sui` |
+
+## API reference
+Browse the available method groups for this chain:
+- [ETH rpc](jsonrpc-docs/sui/eth-rpc/eth-syncing)
+- [Sui](jsonrpc-docs/sui/sui/sui-dev-inspect-transaction-block)
+- [Suix](jsonrpc-docs/sui/suix/suix-get-all-balances)
+- [Unsafe](jsonrpc-docs/sui/unsafe/unsafe-batch-transaction)

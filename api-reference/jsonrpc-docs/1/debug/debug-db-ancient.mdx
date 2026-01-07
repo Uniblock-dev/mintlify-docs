@@ -1,9 +1,8 @@
 ---
 title: 'debug_dbAncient'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters: [table, index].
@@ -39,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_dbAncient",
-  "params": ["", 0]
+  "params": [
+    "",
+    0
+  ]
 }
 ```
 

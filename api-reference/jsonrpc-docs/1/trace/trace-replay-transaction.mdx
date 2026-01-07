@@ -1,9 +1,8 @@
 ---
 title: 'trace_replayTransaction'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for method trace_replayTransaction: [hash, traceTypes].
@@ -43,7 +42,9 @@ curl --request POST \
   "method": "trace_replayTransaction",
   "params": [
     "0x02d4a872e096445e80d05276ee756cefef7f3b376bcec14246469c0cd97dad8f",
-    ["trace"]
+    [
+      "trace"
+    ]
   ]
 }
 ```

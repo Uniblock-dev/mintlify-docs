@@ -1,0 +1,27 @@
+---
+title: 'Zilliqa Overview'
+---
+
+Zilliqa RPC
+
+Use Uniblock's JSON-RPC endpoint to access Zilliqa with low-latency routing and a single API surface across providers.
+
+## What is Zilliqa?
+Zilliqa is an EVM-compatible mainnet.
+
+## What is the Zilliqa JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=32769`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Zilliqa | Mainnet | `32769` |
+| Zilliqa Testnet | Testnet | `33101` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/32769/debug/debug-get-bad-blocks)
+- [ETH rpc](jsonrpc-docs/32769/eth-rpc/eth-block-number)

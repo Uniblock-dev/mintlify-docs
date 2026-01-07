@@ -1,0 +1,26 @@
+---
+title: 'StarkNet Overview'
+---
+
+StarkNet RPC
+
+Use Uniblock's JSON-RPC endpoint to access StarkNet with low-latency routing and a single API surface across providers.
+
+## What is StarkNet?
+StarkNet is a non-EVM mainnet.
+
+## What is the StarkNet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| StarkNet | Mainnet | `starknet` |
+| StarkNet Sepolia | Testnet | `starknet-sepolia` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Starknet](jsonrpc-docs/starknet/starknet/starknet-add-declare-transaction)

@@ -1,0 +1,36 @@
+---
+title: 'Avalanche C-Chain Overview'
+---
+
+Avalanche C-Chain RPC
+
+Use Uniblock's JSON-RPC endpoint to access Avalanche C-Chain with low-latency routing and a single API surface across providers.
+
+## What is Avalanche C-Chain?
+Avalanche C-Chain is an EVM-compatible mainnet.
+
+## What is the Avalanche C-Chain JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=43114`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Avalanche C-Chain | Mainnet | `43114` |
+| Avalanche Fuji Testnet | Testnet | `43113` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Avax](jsonrpc-docs/43114/avax/avax-get-atomic-tx)
+- [Avm](jsonrpc-docs/43114/avm/avm-build-genesis)
+- [Debug](jsonrpc-docs/43114/debug/debug-account-range)
+- [ETH rpc](jsonrpc-docs/43114/eth-rpc/eth-accounts)
+- [Index](jsonrpc-docs/43114/index/index-get-container-by-id)
+- [Info](jsonrpc-docs/43114/info/info-get-blockchain-id)
+- [Kaia](jsonrpc-docs/43114/kaia/kaia-block-number)
+- [Klay](jsonrpc-docs/43114/klay/klay-block-number)
+- [Pathfinder](jsonrpc-docs/43114/pathfinder/pathfinder-unsubscribe)
+- [Platform](jsonrpc-docs/43114/platform/platform-get-balance)
+- [Tendermint](jsonrpc-docs/43114/tendermint/health-health)

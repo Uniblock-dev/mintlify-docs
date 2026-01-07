@@ -1,0 +1,27 @@
+---
+title: 'Sei Testnet Overview'
+---
+
+Sei Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Sei Testnet with low-latency routing and a single API surface across providers.
+
+## What is Sei Testnet?
+Sei Testnet is an EVM-compatible testnet. It is a testnet for Sei Network Mainnet.
+
+## What is the Sei Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=1328`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Sei Network Mainnet | Mainnet | `1329` |
+| Sei Testnet | Testnet | `1328` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/1328/debug/debug-trace-block-by-hash)
+- [ETH rpc](jsonrpc-docs/1328/eth-rpc/eth-accounts)

@@ -1,0 +1,29 @@
+---
+title: 'Xai Overview'
+---
+
+Xai RPC
+
+Use Uniblock's JSON-RPC endpoint to access Xai with low-latency routing and a single API surface across providers.
+
+## What is Xai?
+Xai is an EVM-compatible mainnet.
+
+## What is the Xai JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=660279`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Xai | Mainnet | `660279` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/660279/debug/debug-account-range)
+- [ETH rpc](jsonrpc-docs/660279/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/660279/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/660279/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/660279/pathfinder/pathfinder-unsubscribe)

@@ -1,9 +1,8 @@
 ---
 title: 'debug_getModifiedAccountsByNumber'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters: [blockNumber].
@@ -39,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_getModifiedAccountsByNumber",
-  "params": [0, ""]
+  "params": [
+    0,
+    ""
+  ]
 }
 ```
 

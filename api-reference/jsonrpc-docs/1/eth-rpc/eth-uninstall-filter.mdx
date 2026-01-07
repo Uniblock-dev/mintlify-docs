@@ -1,9 +1,8 @@
 ---
 title: 'eth_uninstallFilter'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_uninstallFilter: [filterID].
@@ -13,8 +12,7 @@ Parameters for eth_uninstallFilter: [filterID].
 ### Returns
 
 <ResponseField body='result' type='boolean'>
-  Boolean - true if the filter was successfully uninstalled, otherwise false.
-  Example: <code>true</code>.
+  Boolean - true if the filter was successfully uninstalled, otherwise false. Example: <code>true</code>.
 </ResponseField>
 
 <RequestExample>
@@ -38,7 +36,9 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_uninstallFilter",
-  "params": ["0x1"]
+  "params": [
+    "0x1"
+  ]
 }
 ```
 

@@ -1,9 +1,8 @@
 ---
 title: 'eth_getTransactionByBlockNumberAndIndex'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_getTransactionByBlockNumberAndIndex: [blockNumber, index].
@@ -39,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getTransactionByBlockNumberAndIndex",
-  "params": ["0x29c", "0x0"]
+  "params": [
+    "0x29c",
+    "0x0"
+  ]
 }
 ```
 
@@ -72,7 +74,10 @@ curl --request POST \
     "gasUsed": "0x9f759",
     "timestamp": "0x54e34e8e",
     "transactions": [],
-    "uncles": ["0x1606e5...", "0xd5145a9..."]
+    "uncles": [
+      "0x1606e5...",
+      "0xd5145a9..."
+    ]
   }
 }
 ```

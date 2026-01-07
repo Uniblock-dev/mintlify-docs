@@ -1,0 +1,30 @@
+---
+title: 'Solana Overview'
+---
+
+Solana RPC
+
+Use Uniblock's JSON-RPC endpoint to access Solana with low-latency routing and a single API surface across providers.
+
+## What is Solana?
+Solana is a non-EVM mainnet.
+
+## What is the Solana JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Solana | Mainnet | `solana` |
+| Solana Devnet | Testnet | `solana-devnet` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Bitcoin](jsonrpc-docs/solana/bitcoin/ping)
+- [Dags](jsonrpc-docs/solana/dags/get-asset)
+- [Debug](jsonrpc-docs/solana/debug/debug-get-bad-blocks)
+- [ETH rpc](jsonrpc-docs/solana/eth-rpc/eth-accounts)
+- [Solana](jsonrpc-docs/solana/solana/get-account-info)

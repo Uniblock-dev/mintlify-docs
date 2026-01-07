@@ -1,0 +1,28 @@
+---
+title: 'Harmony Overview'
+---
+
+Harmony RPC
+
+Use Uniblock's JSON-RPC endpoint to access Harmony with low-latency routing and a single API surface across providers.
+
+## What is Harmony?
+Harmony is an EVM-compatible mainnet.
+
+## What is the Harmony JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=1666600000`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Harmony | Mainnet | `1666600000` |
+
+## API reference
+Browse the available method groups for this chain:
+- [ETH rpc](jsonrpc-docs/1666600000/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/1666600000/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/1666600000/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/1666600000/pathfinder/pathfinder-unsubscribe)

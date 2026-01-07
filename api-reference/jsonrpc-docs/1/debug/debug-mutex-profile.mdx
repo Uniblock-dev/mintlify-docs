@@ -1,9 +1,8 @@
 ---
 title: 'debug_mutexProfile'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters: [filePath, seconds].
@@ -14,8 +13,7 @@ Parameters: [filePath, seconds].
 ### Returns
 
 <ResponseField body='result' type='boolean'>
-  True if the mutex profile was written successfully. Example: <code>true</code>
-  .
+  True if the mutex profile was written successfully. Example: <code>true</code>.
 </ResponseField>
 
 <RequestExample>
@@ -40,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_mutexProfile",
-  "params": ["", 0]
+  "params": [
+    "",
+    0
+  ]
 }
 ```
 

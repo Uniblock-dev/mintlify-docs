@@ -1,9 +1,8 @@
 ---
 title: 'trace_callMany'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for the trace call method: [traceCalls, block identifier]. The first element is an array of trace calls; the second is an optional block identifier.
@@ -39,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "trace_callMany",
-  "params": [[], 0]
+  "params": [
+    [],
+    0
+  ]
 }
 ```
 

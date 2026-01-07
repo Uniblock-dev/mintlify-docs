@@ -1,9 +1,8 @@
 ---
 title: 'eth_getTransactionByBlockHashAndIndex'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_getTransactionByBlockHashAndIndex: [blockHash, index].
@@ -14,8 +13,7 @@ Parameters for eth_getTransactionByBlockHashAndIndex: [blockHash, index].
 ### Returns
 
 <ResponseField body='result' type='oneOf'>
-  Transaction response object. Can be a legacy transaction (pre-EIP-2718) or an
-  AccessList transaction (EIP-2930).
+  Transaction response object. Can be a legacy transaction (pre-EIP-2718) or an AccessList transaction (EIP-2930).
 </ResponseField>
 
 <RequestExample>

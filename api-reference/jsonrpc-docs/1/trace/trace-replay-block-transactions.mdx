@@ -1,9 +1,8 @@
 ---
 title: 'trace_replayBlockTransactions'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for the trace_replayBlockTransactions method: [defaultBlock, traceTypes].
@@ -41,7 +40,12 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "trace_replayBlockTransactions",
-  "params": ["0x2ed119", ["trace"]]
+  "params": [
+    "0x2ed119",
+    [
+      "trace"
+    ]
+  ]
 }
 ```
 

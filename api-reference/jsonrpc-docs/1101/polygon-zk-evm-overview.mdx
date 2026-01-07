@@ -1,0 +1,33 @@
+---
+title: 'Polygon zkEVM Overview'
+---
+
+Polygon zkEVM RPC
+
+Use Uniblock's JSON-RPC endpoint to access Polygon zkEVM with low-latency routing and a single API surface across providers.
+
+## What is Polygon zkEVM?
+Polygon zkEVM is an EVM-compatible mainnet.
+
+## What is the Polygon zkEVM JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=1101`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Polygon zkEVM | Mainnet | `1101` |
+| Polygon zkEVM Cardona Testnet | Testnet | `2442` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/1101/debug/debug-get-bad-blocks)
+- [Erigon](jsonrpc-docs/1101/erigon/erigon-block-number)
+- [ETH rpc](jsonrpc-docs/1101/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/1101/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/1101/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/1101/pathfinder/pathfinder-unsubscribe)
+- [Trace](jsonrpc-docs/1101/trace/trace-block)
+- [ZKEVM](jsonrpc-docs/1101/zkevm/zkevm-batch-number)

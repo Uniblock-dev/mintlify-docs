@@ -1,0 +1,29 @@
+---
+title: 'Plume Overview'
+---
+
+Plume RPC
+
+Use Uniblock's JSON-RPC endpoint to access Plume with low-latency routing and a single API surface across providers.
+
+## What is Plume?
+Plume is an EVM-compatible mainnet.
+
+## What is the Plume JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=98866`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Plume | Mainnet | `98866` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/98866/debug/debug-gc-stats)
+- [ETH rpc](jsonrpc-docs/98866/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/98866/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/98866/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/98866/pathfinder/pathfinder-unsubscribe)

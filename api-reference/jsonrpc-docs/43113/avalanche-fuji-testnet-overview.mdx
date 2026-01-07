@@ -1,0 +1,34 @@
+---
+title: 'Avalanche Fuji Testnet Overview'
+---
+
+Avalanche Fuji Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Avalanche Fuji Testnet with low-latency routing and a single API surface across providers.
+
+## What is Avalanche Fuji Testnet?
+Avalanche Fuji Testnet is an EVM-compatible testnet. It is a testnet for Avalanche C-Chain.
+
+## What is the Avalanche Fuji Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=43113`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Avalanche C-Chain | Mainnet | `43114` |
+| Avalanche Fuji Testnet | Testnet | `43113` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Avax](jsonrpc-docs/43113/avax/avax-get-atomic-tx)
+- [Avm](jsonrpc-docs/43113/avm/avm-build-genesis)
+- [Debug](jsonrpc-docs/43113/debug/debug-account-range)
+- [ETH rpc](jsonrpc-docs/43113/eth-rpc/eth-accounts)
+- [Index](jsonrpc-docs/43113/index/index-get-container-by-id)
+- [Kaia](jsonrpc-docs/43113/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/43113/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/43113/pathfinder/pathfinder-unsubscribe)
+- [Platform](jsonrpc-docs/43113/platform/platform-get-balance)

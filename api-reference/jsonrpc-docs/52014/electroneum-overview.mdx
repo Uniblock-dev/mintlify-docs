@@ -1,0 +1,29 @@
+---
+title: 'Electroneum Overview'
+---
+
+Electroneum RPC
+
+Use Uniblock's JSON-RPC endpoint to access Electroneum with low-latency routing and a single API surface across providers.
+
+## What is Electroneum?
+Electroneum is an EVM-compatible mainnet.
+
+## What is the Electroneum JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=52014`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Electroneum | Mainnet | `52014` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/52014/debug/debug-account-range)
+- [ETH rpc](jsonrpc-docs/52014/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/52014/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/52014/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/52014/pathfinder/pathfinder-unsubscribe)

@@ -1,9 +1,8 @@
 ---
 title: 'trace_filter'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for method trace_filter: [filterObject]
@@ -49,7 +48,9 @@ curl --request POST \
     {
       "fromBlock": "0x2ed0c4",
       "toBlock": "0x2ed128",
-      "toAddress": ["0x8bbB73BCB5d553B5A556358d27625323Fd781D37"],
+      "toAddress": [
+        "0x8bbB73BCB5d553B5A556358d27625323Fd781D37"
+      ],
       "after": 1000,
       "count": 100
     }

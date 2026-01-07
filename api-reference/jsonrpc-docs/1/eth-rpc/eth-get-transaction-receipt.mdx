@@ -1,9 +1,8 @@
 ---
 title: 'eth_getTransactionReceipt'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_getTransactionByHash: [transactionHash].
@@ -13,8 +12,7 @@ Parameters for eth_getTransactionByHash: [transactionHash].
 ### Returns
 
 <ResponseField body='result' type='oneOf'>
-  Receipt object returned after transaction execution. Can be a legacy receipt
-  (pre-EIP-2718) or AccessList receipt (EIP-2930).
+  Receipt object returned after transaction execution. Can be a legacy receipt (pre-EIP-2718) or AccessList receipt (EIP-2930).
 </ResponseField>
 
 <RequestExample>

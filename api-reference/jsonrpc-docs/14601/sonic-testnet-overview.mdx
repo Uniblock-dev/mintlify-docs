@@ -1,0 +1,33 @@
+---
+title: 'Sonic Testnet Overview'
+---
+
+Sonic Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Sonic Testnet with low-latency routing and a single API surface across providers.
+
+## What is Sonic Testnet?
+Sonic Testnet is an EVM-compatible testnet. It is a testnet for Sonic Mainnet.
+
+## What is the Sonic Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=14601`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Sonic Mainnet | Mainnet | `146` |
+| Sonic Blaze Testnet | Testnet | `57054` |
+| Sonic Testnet | Testnet | `14601` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/14601/debug/debug-chaindb-compact)
+- [ETH rpc](jsonrpc-docs/14601/eth-rpc/eth-accounts)
+- [FTM](jsonrpc-docs/14601/ftm/ftm-current-epoch)
+- [Kaia](jsonrpc-docs/14601/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/14601/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/14601/pathfinder/pathfinder-unsubscribe)
+- [Trace](jsonrpc-docs/14601/trace/trace-block)

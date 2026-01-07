@@ -1,9 +1,8 @@
 ---
 title: 'eth_getProof'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters: [address, storageKeys, blockParameter]
@@ -45,7 +44,9 @@ curl --request POST \
   "method": "eth_getProof",
   "params": [
     "0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842",
-    ["0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"],
+    [
+      "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+    ],
     "latest"
   ]
 }
@@ -64,7 +65,10 @@ curl --request POST \
     "nonce": "0x0",
     "codeHash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
     "storageHash": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
-    "accountProof": ["0xf90211a0...", "0xf90151a0..."],
+    "accountProof": [
+      "0xf90211a0...",
+      "0xf90151a0..."
+    ],
     "storageProof": [
       {
         "key": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",

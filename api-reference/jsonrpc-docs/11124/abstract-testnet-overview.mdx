@@ -1,0 +1,28 @@
+---
+title: 'Abstract Testnet Overview'
+---
+
+Abstract Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Abstract Testnet with low-latency routing and a single API surface across providers.
+
+## What is Abstract Testnet?
+Abstract Testnet is an EVM-compatible testnet. It is a testnet for Abstract.
+
+## What is the Abstract Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=11124`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Abstract | Mainnet | `2741` |
+| Abstract Testnet | Testnet | `11124` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/11124/debug/debug-trace-block-by-hash)
+- [ETH rpc](jsonrpc-docs/11124/eth-rpc/eth-accounts)
+- [ZKS](jsonrpc-docs/11124/zks/zks-estimate-fee)

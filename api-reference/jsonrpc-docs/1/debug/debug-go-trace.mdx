@@ -1,9 +1,8 @@
 ---
 title: 'debug_goTrace'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters: [filePath, seconds].
@@ -39,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "debug_goTrace",
-  "params": ["", 0]
+  "params": [
+    "",
+    0
+  ]
 }
 ```
 

@@ -1,0 +1,28 @@
+---
+title: 'ZKSync Testnet Overview'
+---
+
+ZKSync Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access ZKSync Testnet with low-latency routing and a single API surface across providers.
+
+## What is ZKSync Testnet?
+ZKSync Testnet is an EVM-compatible testnet. It is a testnet for ZKsync.
+
+## What is the ZKSync Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=300`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| ZKsync | Mainnet | `324` |
+| ZKSync Testnet | Testnet | `300` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/300/debug/debug-get-raw-transaction)
+- [ETH rpc](jsonrpc-docs/300/eth-rpc/eth-accounts)
+- [ZKS](jsonrpc-docs/300/zks/zks-estimate-fee)

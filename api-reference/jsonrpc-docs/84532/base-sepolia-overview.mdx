@@ -1,0 +1,32 @@
+---
+title: 'Base Sepolia Overview'
+---
+
+Base Sepolia RPC
+
+Use Uniblock's JSON-RPC endpoint to access Base Sepolia with low-latency routing and a single API surface across providers.
+
+## What is Base Sepolia?
+Base Sepolia is an EVM-compatible testnet. It is a testnet for Base.
+
+## What is the Base Sepolia JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=84532`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Base | Mainnet | `8453` |
+| Base Sepolia | Testnet | `84532` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/84532/debug/debug-account-range)
+- [ETH rpc](jsonrpc-docs/84532/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/84532/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/84532/klay/klay-unsubscribe)
+- [Optimism](jsonrpc-docs/84532/optimism/optimism-output-at-block)
+- [Pathfinder](jsonrpc-docs/84532/pathfinder/pathfinder-unsubscribe)
+- [Trace](jsonrpc-docs/84532/trace/trace-block)

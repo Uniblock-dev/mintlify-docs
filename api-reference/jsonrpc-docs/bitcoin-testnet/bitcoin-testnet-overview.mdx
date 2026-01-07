@@ -1,0 +1,28 @@
+---
+title: 'Bitcoin Testnet Overview'
+---
+
+Bitcoin Testnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Bitcoin Testnet with low-latency routing and a single API surface across providers.
+
+## What is Bitcoin Testnet?
+Bitcoin Testnet is a non-EVM testnet. It is a testnet for Bitcoin.
+
+## What is the Bitcoin Testnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Bitcoin | Mainnet | `bitcoin` |
+| Bitcoin Testnet | Testnet | `bitcoin-testnet` |
+| Bitcoin Testnet 4 | Testnet | `bitcoin-testnet4` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Bitcoin](jsonrpc-docs/bitcoin-testnet/bitcoin/analyzepsbt)
+- [ETH rpc](jsonrpc-docs/bitcoin-testnet/eth-rpc/eth-accounts)

@@ -1,0 +1,27 @@
+---
+title: 'Tron Protocol Overview'
+---
+
+Tron Protocol RPC
+
+Use Uniblock's JSON-RPC endpoint to access Tron Protocol with low-latency routing and a single API surface across providers.
+
+## What is Tron Protocol?
+Tron Protocol is a non-EVM mainnet.
+
+## What is the Tron Protocol JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=tron`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Tron Protocol | Mainnet | `tron` |
+
+## API reference
+Browse the available method groups for this chain:
+- [ETH rpc](jsonrpc-docs/tron/eth-rpc/build-transaction)
+- [Kaia](jsonrpc-docs/tron/kaia/kaia-block-number)
+- [Klay](jsonrpc-docs/tron/klay/klay-block-number)

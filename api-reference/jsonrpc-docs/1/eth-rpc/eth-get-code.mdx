@@ -1,9 +1,8 @@
 ---
 title: 'eth_getCode'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_getCode: [address, defaultBlock].
@@ -14,11 +13,7 @@ Parameters for eth_getCode: [address, defaultBlock].
 ### Returns
 
 <ResponseField body='result' type='string'>
-  The code from the given address. Example:{' '}
-  <code>
-    "0x600160008035811a818181146012578301005b601b6001356025565b8060005260206000f35b600060078202905091905056"
-  </code>
-  .
+  The code from the given address. Example: <code>"0x600160008035811a818181146012578301005b601b6001356025565b8060005260206000f35b600060078202905091905056"</code>.
 </ResponseField>
 
 <RequestExample>
@@ -43,7 +38,10 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_getCode",
-  "params": ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"]
+  "params": [
+    "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
+    "0x2"
+  ]
 }
 ```
 

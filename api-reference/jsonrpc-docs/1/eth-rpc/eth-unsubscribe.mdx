@@ -1,9 +1,8 @@
 ---
 title: 'eth_unsubscribe'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_unsubscribe: [subscriptionId].
@@ -37,7 +36,9 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "eth_unsubscribe",
-  "params": ["0xb53c4832f1dca4a5"]
+  "params": [
+    "0xb53c4832f1dca4a5"
+  ]
 }
 ```
 

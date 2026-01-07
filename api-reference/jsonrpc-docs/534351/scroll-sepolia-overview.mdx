@@ -1,0 +1,30 @@
+---
+title: 'Scroll Sepolia Overview'
+---
+
+Scroll Sepolia RPC
+
+Use Uniblock's JSON-RPC endpoint to access Scroll Sepolia with low-latency routing and a single API surface across providers.
+
+## What is Scroll Sepolia?
+Scroll Sepolia is an EVM-compatible testnet. It is a testnet for Scroll.
+
+## What is the Scroll Sepolia JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=534351`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Scroll | Mainnet | `534352` |
+| Scroll Sepolia | Testnet | `534351` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/534351/debug/debug-gc-stats)
+- [ETH rpc](jsonrpc-docs/534351/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/534351/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/534351/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/534351/pathfinder/pathfinder-unsubscribe)

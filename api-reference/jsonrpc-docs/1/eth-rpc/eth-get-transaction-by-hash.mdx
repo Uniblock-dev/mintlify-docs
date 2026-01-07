@@ -1,9 +1,8 @@
 ---
 title: 'eth_getTransactionByHash'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 Parameters for eth_getTransactionByHash: [transactionHash].
@@ -13,8 +12,7 @@ Parameters for eth_getTransactionByHash: [transactionHash].
 ### Returns
 
 <ResponseField body='result' type='oneOf'>
-  Transaction response object. Can be a legacy transaction (pre-EIP-2718) or an
-  AccessList transaction (EIP-2930).
+  Transaction response object. Can be a legacy transaction (pre-EIP-2718) or an AccessList transaction (EIP-2930).
 </ResponseField>
 
 <RequestExample>

@@ -1,9 +1,8 @@
 ---
 title: 'txpool_inspect'
 openapi: 'POST /json-rpc'
-playground: 'none'
+playground: 'interactive'
 ---
-
 ### Parameters
 
 This method does not accept parameters.
@@ -11,8 +10,7 @@ This method does not accept parameters.
 ### Returns
 
 <ResponseField body='result' type='object'>
-  Textual summaries of pending and queued transactions indexed by sender and
-  nonce.
+  Textual summaries of pending and queued transactions indexed by sender and nonce.
 </ResponseField>
 
 <RequestExample>
@@ -36,7 +34,9 @@ curl --request POST \
   "id": 1,
   "jsonrpc": "2.0",
   "method": "txpool_inspect",
-  "params": [null]
+  "params": [
+    null
+  ]
 }
 ```
 

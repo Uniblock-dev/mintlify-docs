@@ -1,0 +1,33 @@
+---
+title: 'Ethereum Sepolia Overview'
+---
+
+Ethereum Sepolia RPC
+
+Use Uniblock's JSON-RPC endpoint to access Ethereum Sepolia with low-latency routing and a single API surface across providers.
+
+## What is Ethereum Sepolia?
+Ethereum Sepolia is an EVM-compatible testnet. It is a testnet for Ethereum.
+
+## What is the Ethereum Sepolia JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=11155111`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Ethereum | Mainnet | `1` |
+| Ethereum Hoodi | Testnet | `560048` |
+| Ethereum Sepolia | Testnet | `11155111` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/11155111/debug/debug-account-range)
+- [Erigon](jsonrpc-docs/11155111/erigon/erigon-get-header-by-number)
+- [ETH rpc](jsonrpc-docs/11155111/eth-rpc/eth-accounts)
+- [Klay](jsonrpc-docs/11155111/klay/klay-unsubscribe)
+- [Otterscan](jsonrpc-docs/11155111/otterscan/ots-get-api-level)
+- [Pathfinder](jsonrpc-docs/11155111/pathfinder/pathfinder-unsubscribe)
+- [Trace](jsonrpc-docs/11155111/trace/trace-block)

@@ -1,0 +1,27 @@
+---
+title: 'Solana Devnet Overview'
+---
+
+Solana Devnet RPC
+
+Use Uniblock's JSON-RPC endpoint to access Solana Devnet with low-latency routing and a single API surface across providers.
+
+## What is Solana Devnet?
+Solana Devnet is a non-EVM testnet. It is a testnet for Solana.
+
+## What is the Solana Devnet JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Solana | Mainnet | `solana` |
+| Solana Devnet | Testnet | `solana-devnet` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Dags](jsonrpc-docs/solana-devnet/dags/get-asset)
+- [Solana](jsonrpc-docs/solana-devnet/solana/get-account-info)

@@ -1,0 +1,27 @@
+---
+title: 'Unichain Overview'
+---
+
+Unichain RPC
+
+Use Uniblock's JSON-RPC endpoint to access Unichain with low-latency routing and a single API surface across providers.
+
+## What is Unichain?
+Unichain is an EVM-compatible mainnet.
+
+## What is the Unichain JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=130`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Unichain | Mainnet | `130` |
+| Unichain Sepolia | Testnet | `1301` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/130/debug/debug-gc-stats)
+- [ETH rpc](jsonrpc-docs/130/eth-rpc/eth-accounts)

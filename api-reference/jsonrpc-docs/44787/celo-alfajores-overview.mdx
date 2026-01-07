@@ -1,0 +1,28 @@
+---
+title: 'Celo Alfajores Overview'
+---
+
+Celo Alfajores RPC
+
+Use Uniblock's JSON-RPC endpoint to access Celo Alfajores with low-latency routing and a single API surface across providers.
+
+## What is Celo Alfajores?
+Celo Alfajores is an EVM-compatible testnet. It is a testnet for Celo.
+
+## What is the Celo Alfajores JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=44787`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Celo | Mainnet | `42220` |
+| Celo Alfajores | Testnet | `44787` |
+| Celo Sepolia | Testnet | `11142220` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/44787/debug/debug-get-bad-blocks)
+- [ETH rpc](jsonrpc-docs/44787/eth-rpc/eth-accounts)

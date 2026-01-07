@@ -1,0 +1,30 @@
+---
+title: 'Oasis Overview'
+---
+
+Oasis RPC
+
+Use Uniblock's JSON-RPC endpoint to access Oasis with low-latency routing and a single API surface across providers.
+
+## What is Oasis?
+Oasis is an EVM-compatible mainnet.
+
+## What is the Oasis JSON-RPC API?
+The JSON-RPC API is the standard interface for reading chain state, sending transactions, and interacting with smart contracts where supported.
+
+## Making API requests
+Send a POST request to `https://api.uniblock.dev/uni/v1/json-rpc?chainId=42262`. Include the JSON-RPC method and params in the request body.
+
+## Supported networks
+| Network | Type | Chain ID |
+| --- | --- | --- |
+| Oasis | Mainnet | `42262` |
+| Oasis Testnet | Testnet | `42261` |
+
+## API reference
+Browse the available method groups for this chain:
+- [Debug](jsonrpc-docs/42262/debug/debug-get-bad-blocks)
+- [ETH rpc](jsonrpc-docs/42262/eth-rpc/eth-accounts)
+- [Kaia](jsonrpc-docs/42262/kaia/kaia-unsubscribe)
+- [Klay](jsonrpc-docs/42262/klay/klay-unsubscribe)
+- [Pathfinder](jsonrpc-docs/42262/pathfinder/pathfinder-unsubscribe)
