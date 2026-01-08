@@ -8715,43 +8715,6 @@
         "tags": ["Scan"]
       }
     },
-    "/json-rpc": {
-      "post": {
-        "operationId": "JsonRpc",
-        "summary": "",
-        "description": "Stateless, lightweight, remote procedure call (RPC) protocol that is commonly used when interacting with chain.",
-        "parameters": [
-          {
-            "name": "chainId",
-            "required": true,
-            "in": "query",
-            "description": "Unique identifier for a blockchain network.",
-            "schema": {
-              "default": 1,
-              "example": 1,
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "description": "A single JSON-RPC request or an array of JSON-RPC requests.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JsonRpcBodyDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "tags": ["JSON-RPC"]
-      }
-    },
     "/stellar-http/*path": {
       "get": {
         "operationId": "StellarHttp",
