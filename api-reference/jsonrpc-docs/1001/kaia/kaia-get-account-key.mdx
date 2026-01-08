@@ -1,7 +1,7 @@
 ---
 title: 'kaia_getAccountKey'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,14 @@ Parameters: [address, block parameter].
 
 <ResponseField body='result' type='object'>
   Account key definition for the specified account.
+  <Expandable title='properties'>
+    <ResponseField name='keyType' type='string'>
+      Type of the account key.
+    </ResponseField>
+    <ResponseField name='key' type='object'>
+      Account key payload and parameters.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +41,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_getAccountKey",
-  "params": [
-    "",
-    0
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +49,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'ots_searchTransactionsBefore'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,86 @@ The parameters for method ots_searchTransactionsBefore: [address, defaultBlock, 
 
 <ResponseField body='result' type='object'>
   Paginated list of transactions and receipts for a given address before or after a specified block number.
+  <Expandable title='properties'>
+    <ResponseField name='txs' type='array'>
+      List of transactions (inbound, outbound, or internal) touching the target address, sorted from most recent to oldest.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='hash' type='string'>
+              Transaction hash.
+            </ResponseField>
+            <ResponseField name='from' type='string'>
+              Sender address.
+            </ResponseField>
+            <ResponseField name='to' type='string'>
+              Recipient address, or null if contract creation.
+            </ResponseField>
+            <ResponseField name='value' type='string'>
+              Amount of ETH transferred, in hexadecimal Wei.
+            </ResponseField>
+            <ResponseField name='gas' type='string'>
+            </ResponseField>
+            <ResponseField name='gasPrice' type='string'>
+            </ResponseField>
+            <ResponseField name='input' type='string'>
+              Method selector or calldata (possibly truncated).
+            </ResponseField>
+            <ResponseField name='blockHash' type='string'>
+            </ResponseField>
+            <ResponseField name='blockNumber' type='string'>
+            </ResponseField>
+            <ResponseField name='transactionIndex' type='string'>
+            </ResponseField>
+            <ResponseField name='type' type='string'>
+              Transaction type: "external", "internal", or "contract".
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='receipts' type='array'>
+      List of receipts corresponding to the returned transactions.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='transactionHash' type='string'>
+            </ResponseField>
+            <ResponseField name='transactionIndex' type='string'>
+            </ResponseField>
+            <ResponseField name='blockHash' type='string'>
+            </ResponseField>
+            <ResponseField name='blockNumber' type='string'>
+            </ResponseField>
+            <ResponseField name='from' type='string'>
+            </ResponseField>
+            <ResponseField name='to' type='string'>
+            </ResponseField>
+            <ResponseField name='cumulativeGasUsed' type='string'>
+            </ResponseField>
+            <ResponseField name='gasUsed' type='string'>
+            </ResponseField>
+            <ResponseField name='contractAddress' type='string'>
+            </ResponseField>
+            <ResponseField name='status' type='string'>
+            </ResponseField>
+            <ResponseField name='logs' type='string'>
+              Logs are omitted to reduce payload size.
+            </ResponseField>
+            <ResponseField name='logsBloom' type='string'>
+              Logs bloom is omitted to reduce payload size.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='firstPage' type='boolean'>
+      True if this page starts from the most recent block (for `Before`) or if no more results follow (for `After`).
+    </ResponseField>
+    <ResponseField name='lastPage' type='boolean'>
+      True if this page reaches the genesis block (for `After`) or no more results follow (for `Before`).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,19 +115,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ots_searchTransactionsBefore",
-  "params": [
-    "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
-    0,
-    5
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +123,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

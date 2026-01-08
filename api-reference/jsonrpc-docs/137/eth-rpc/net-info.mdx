@@ -1,6 +1,6 @@
 ---
 title: 'net_info'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,54 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Network status and peer connection information.
+  <Expandable title='properties'>
+    <ResponseField name='listening' type='boolean'>
+      Indicates whether the node is actively listening for incoming P2P connections.
+    </ResponseField>
+    <ResponseField name='listeners' type='array'>
+      List of listener socket addresses (e.g., TCP endpoints).
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='n_peers' type='integer'>
+      Total number of connected peers.
+    </ResponseField>
+    <ResponseField name='peers' type='array'>
+      List of connected peers with metadata.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='node_id' type='string'>
+              The unique identifier of the peer node.
+            </ResponseField>
+            <ResponseField name='url' type='string'>
+              The remote address or URL of the peer connection.
+            </ResponseField>
+            <ResponseField name='peer_connections' type='array'>
+              Array of connection instances with status and quality metrics.
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='node_id' type='string'>
+                      The peer node ID this connection is associated with.
+                    </ResponseField>
+                    <ResponseField name='state' type='string'>
+                      Connection state (e.g., "connected", "ready").
+                    </ResponseField>
+                    <ResponseField name='score' type='number'>
+                      Connection reliability or quality score.
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +75,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "net_info",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +83,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

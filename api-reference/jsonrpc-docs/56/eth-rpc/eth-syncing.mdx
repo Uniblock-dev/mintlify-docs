@@ -1,6 +1,6 @@
 ---
 title: 'eth_syncing'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,38 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='oneOf'>
   Returns syncing status. Either a sync status object if syncing, or `false` if not syncing.
+  <Expandable title='variants'>
+    <ResponseField name='variant1' type='object'>
+      Sync status object returned while node is syncing.
+      <Expandable title='properties'>
+        <ResponseField name='startingBlock' type='string'>
+          The block number at which syncing started (hex string quantity).
+        </ResponseField>
+        <ResponseField name='currentBlock' type='string'>
+          The current block number (hex quantity).
+        </ResponseField>
+        <ResponseField name='highestBlock' type='string'>
+          Estimated highest known block (hex quantity).
+        </ResponseField>
+        <ResponseField name='blockGap' type='array'>
+          Array representing missing block range: [first, last).
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='warpChunksAmount' type='string'>
+          Total number of snapshot chunks to be processed.
+        </ResponseField>
+        <ResponseField name='warpChunksProcessed' type='string'>
+          Total number of snapshot chunks already processed.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='variant2' type='boolean'>
+      Returned when the node is not syncing.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +59,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_syncing",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -47,17 +70,6 @@ curl --request POST \
     "startingBlock": "0x384",
     "currentBlock": "0x386",
     "highestBlock": "0x454"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

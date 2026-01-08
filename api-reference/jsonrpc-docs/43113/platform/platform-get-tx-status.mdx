@@ -1,7 +1,7 @@
 ---
 title: 'platform.getTxStatus'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,14 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='status' type='string'>
+      The current status of the transaction.
+    </ResponseField>
+    <ResponseField name='reason' type='string'>
+      Reason the transaction was dropped, only present if status is Dropped.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "platform.getTxStatus",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

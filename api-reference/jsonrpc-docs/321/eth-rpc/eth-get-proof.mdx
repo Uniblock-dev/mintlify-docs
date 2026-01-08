@@ -1,7 +1,7 @@
 ---
 title: 'eth_getProof'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,52 @@ Parameters: [address, storageKeys, blockParameter]
 
 <ResponseField body='result' type='object'>
   Account details and Merkle proofs for storage verification.
+  <Expandable title='properties'>
+    <ResponseField name='address' type='string'>
+      The address of the account.
+    </ResponseField>
+    <ResponseField name='balance' type='string'>
+      Hex-encoded balance of the account in wei.
+    </ResponseField>
+    <ResponseField name='nonce' type='string'>
+      Transaction count (nonce) of the account.
+    </ResponseField>
+    <ResponseField name='codeHash' type='string'>
+      32-byte hash of the code of the account.
+    </ResponseField>
+    <ResponseField name='storageHash' type='string'>
+      SHA3 hash of the storage root.
+    </ResponseField>
+    <ResponseField name='accountProof' type='array'>
+      Array of RLP-encoded nodes forming the Merkle proof for the account.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='storageProof' type='array'>
+      Array of storage entries with their Merkle proofs.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='key' type='string'>
+              Storage key queried.
+            </ResponseField>
+            <ResponseField name='value' type='string'>
+              Hex-encoded value stored at the key.
+            </ResponseField>
+            <ResponseField name='proof' type='array'>
+              RLP-encoded Merkle proof nodes for this storage key.
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,21 +81,6 @@ curl --request POST \
       "latest"
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getProof",
-  "params": [
-    "0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842",
-    [
-      "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
-    ],
-    "latest"
-  ]
-}
 ```
 
 </RequestExample>
@@ -73,20 +104,11 @@ curl --request POST \
       {
         "key": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
         "value": "0x0",
-        "proof": []
+        "proof": [
+          "..."
+        ]
       }
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

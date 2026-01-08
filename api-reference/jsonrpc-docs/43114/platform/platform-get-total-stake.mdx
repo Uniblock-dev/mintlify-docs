@@ -1,6 +1,6 @@
 ---
 title: 'platform.getTotalStake'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,14 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='stake' type='string'>
+      The total stake amount on the Subnet, only included for the Primary Network.
+    </ResponseField>
+    <ResponseField name='weight' type='string'>
+      The total weight used for sampling validators on the Subnet.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "platform.getTotalStake",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

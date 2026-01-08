@@ -1,6 +1,6 @@
 ---
 title: 'eth_baseFee'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -29,17 +29,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_baseFee",
-  "params": [
-    null
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +37,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x2e90edd000"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'avm.buildGenesis'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,14 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='bytes' type='string'>
+      The encoded byte representation of the genesis state.
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      The encoding format used.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,15 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "avm.buildGenesis",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

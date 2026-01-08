@@ -1,7 +1,7 @@
 ---
 title: 'check_tx'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,65 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='jsonrpc' type='string'>
+    </ResponseField>
+    <ResponseField name='id' type='integer'>
+    </ResponseField>
+    <ResponseField name='result' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='code' type='string'>
+          Status code (0 = success)
+        </ResponseField>
+        <ResponseField name='data' type='string'>
+          Arbitrary application data (base64)
+        </ResponseField>
+        <ResponseField name='log' type='string'>
+          Human-readable log message
+        </ResponseField>
+        <ResponseField name='info' type='string'>
+          Additional info from the app
+        </ResponseField>
+        <ResponseField name='gas_wanted' type='string'>
+          Requested gas units
+        </ResponseField>
+        <ResponseField name='gas_used' type='string'>
+          Gas units actually used
+        </ResponseField>
+        <ResponseField name='events' type='array'>
+          Events emitted during CheckTx
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='type' type='string'>
+                </ResponseField>
+                <ResponseField name='attributes' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='key' type='string'>
+                        </ResponseField>
+                        <ResponseField name='value' type='string'>
+                        </ResponseField>
+                        <ResponseField name='index' type='boolean'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='codespace' type='string'>
+          Application namespace for codes
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='error' type='string'>
+      Error message if the request failed
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +86,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "check_tx",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +94,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

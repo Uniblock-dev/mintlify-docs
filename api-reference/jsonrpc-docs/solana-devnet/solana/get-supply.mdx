@@ -1,7 +1,7 @@
 ---
 title: 'getSupply'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,25 @@ Parameters for method getSupply: [config].
 
 <ResponseField body='result' type='object'>
   Current supply information object.
+  <Expandable title='properties'>
+    <ResponseField name='total' type='integer'>
+      Total supply in lamports.
+    </ResponseField>
+    <ResponseField name='circulating' type='integer'>
+      Circulating supply in lamports.
+    </ResponseField>
+    <ResponseField name='nonCirculating' type='integer'>
+      Non-circulating supply in lamports.
+    </ResponseField>
+    <ResponseField name='nonCirculatingAccounts' type='array'>
+      Array of account addresses (base-58 encoded) that are non-circulating. Will be empty if excludeNonCirculatingAccountsList is true.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          Base-58 encoded account address.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +48,6 @@ curl --request POST \
       {}
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getSupply",
-  "params": [
-    {}
-  ]
-}
 ```
 
 </RequestExample>
@@ -64,17 +72,6 @@ curl --request POST \
         "BYxEJTDerkaRWBem3XgnVcdhppktBXa2HbkHPKj2Ui4Z"
       ]
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: 'broadcast_tx'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,26 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='code' type='integer'>
+      Status code returned by CheckTx (0 = success, non-zero = error)
+    </ResponseField>
+    <ResponseField name='data' type='string'>
+      Arbitrary binary data returned by the application
+    </ResponseField>
+    <ResponseField name='log' type='string'>
+      Human-readable log message, often from application layer
+    </ResponseField>
+    <ResponseField name='codespace' type='string'>
+      Namespace for the code (useful for modules returning the error)
+    </ResponseField>
+    <ResponseField name='hash' type='string'>
+      Hash of the transaction (typically in hex format)
+    </ResponseField>
+    <ResponseField name='error' type='string'>
+      Error message if any error occurred (alternative to code/log)
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +49,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "broadcast_tx",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +57,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

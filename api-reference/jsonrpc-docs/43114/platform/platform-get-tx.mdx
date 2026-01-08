@@ -1,6 +1,6 @@
 ---
 title: 'platform.getTx'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -12,6 +12,129 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='tx' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='unsignedTx' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='networkID' type='integer'>
+            </ResponseField>
+            <ResponseField name='blockchainID' type='string'>
+            </ResponseField>
+            <ResponseField name='outputs' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='inputs' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='txID' type='string'>
+                    </ResponseField>
+                    <ResponseField name='outputIndex' type='integer'>
+                    </ResponseField>
+                    <ResponseField name='assetID' type='string'>
+                    </ResponseField>
+                    <ResponseField name='fxID' type='string'>
+                    </ResponseField>
+                    <ResponseField name='input' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='amount' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='signatureIndices' type='array'>
+                          <Expandable title='items'>
+                            <ResponseField name='items[]' type='integer'>
+                            </ResponseField>
+                          </Expandable>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='memo' type='string'>
+            </ResponseField>
+            <ResponseField name='validator' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='nodeID' type='string'>
+                </ResponseField>
+                <ResponseField name='start' type='integer'>
+                </ResponseField>
+                <ResponseField name='end' type='integer'>
+                </ResponseField>
+                <ResponseField name='weight' type='integer'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='stake' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='assetID' type='string'>
+                    </ResponseField>
+                    <ResponseField name='fxID' type='string'>
+                    </ResponseField>
+                    <ResponseField name='output' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='addresses' type='array'>
+                          <Expandable title='items'>
+                            <ResponseField name='items[]' type='string'>
+                            </ResponseField>
+                          </Expandable>
+                        </ResponseField>
+                        <ResponseField name='amount' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='locktime' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='threshold' type='integer'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='rewardsOwner' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='addresses' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='locktime' type='integer'>
+                </ResponseField>
+                <ResponseField name='threshold' type='integer'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='credentials' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='signatures' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='id' type='string'>
+          The transaction ID
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -28,15 +151,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "platform.getTx",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -45,17 +159,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

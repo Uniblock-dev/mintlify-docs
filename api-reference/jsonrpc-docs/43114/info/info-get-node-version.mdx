@@ -1,6 +1,6 @@
 ---
 title: 'info.getNodeVersion'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,23 @@ This method does not take any parameters, but uses an empty object for consisten
 
 <ResponseField body='result' type='object'>
   Node versioning and build information.
+  <Expandable title='properties'>
+    <ResponseField name='version' type='string'>
+      This node’s software version.
+    </ResponseField>
+    <ResponseField name='databaseVersion' type='string'>
+      The version of the underlying database.
+    </ResponseField>
+    <ResponseField name='gitCommit' type='string'>
+      The Git commit hash used to build this node.
+    </ResponseField>
+    <ResponseField name='vmVersions' type='object'>
+      A map of VM names to their respective versions.
+    </ResponseField>
+    <ResponseField name='rpcProtocolVersion' type='string'>
+      The RPC protocol version used by the node.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +44,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "info.getNodeVersion",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +52,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

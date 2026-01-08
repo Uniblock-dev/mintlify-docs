@@ -1,6 +1,6 @@
 ---
 title: 'getTokenAccountsByOwner'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -15,6 +15,57 @@ Parameters for method getTokenAccountsByOwner: [ownerAddress, filter, config]
 
 <ResponseField body='result' type='array'>
   Array of token accounts owned by the provided address.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Token account object.
+      <Expandable title='properties'>
+        <ResponseField name='pubkey' type='string'>
+          Account Pubkey (base-58 encoded).
+        </ResponseField>
+        <ResponseField name='account' type='object'>
+          Account data object.
+          <Expandable title='properties'>
+            <ResponseField name='lamports' type='integer'>
+              Number of lamports assigned to this account.
+            </ResponseField>
+            <ResponseField name='owner' type='string'>
+              Pubkey of the Token Program this account belongs to.
+            </ResponseField>
+            <ResponseField name='data' type='oneOf'>
+              Encoded data as [data, encoding] tuple.
+              <Expandable title='variants'>
+                <ResponseField name='variant1' type='array'>
+                  Encoded data as [data, encoding] tuple.
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='oneOf'>
+                      <Expandable title='variants'>
+                        <ResponseField name='variant1' type='string'>
+                        </ResponseField>
+                        <ResponseField name='variant2' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='variant2' type='object'>
+                  Token state data if jsonParsed encoding is used.
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='executable' type='boolean'>
+              True if this account is executable (program account).
+            </ResponseField>
+            <ResponseField name='rentEpoch' type='integer'>
+              Epoch at which this account will next owe rent.
+            </ResponseField>
+            <ResponseField name='space' type='integer'>
+              Data size of the account in bytes.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -39,23 +90,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getTokenAccountsByOwner",
-  "params": [
-    "A1TMhSGzQxMr1TboBKtgixKz1sS6REASMxPo1qsyTSJd",
-    {
-      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
-    },
-    {
-      "encoding": "jsonParsed"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -72,44 +106,10 @@ curl --request POST \
       {
         "pubkey": "BGocb4GEpbTFm8UFV2VsDSaBXHELPfAXrvd4vtt8QWrA",
         "account": {
-          "data": {
-            "program": "spl-token",
-            "parsed": {
-              "info": {
-                "isNative": false,
-                "mint": "2cHr7QS3xfuSV8wdxo3ztuF4xbiarF6Nrgx3qpx3HzXR",
-                "owner": "A1TMhSGzQxMr1TboBKtgixKz1sS6REASMxPo1qsyTSJd",
-                "state": "initialized",
-                "tokenAmount": {
-                  "amount": "420000000000000",
-                  "decimals": 6,
-                  "uiAmount": 420000000,
-                  "uiAmountString": "420000000"
-                }
-              },
-              "type": "account"
-            },
-            "space": 165
-          },
-          "executable": false,
-          "lamports": 2039280,
-          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
-          "rentEpoch": "18446744073709551615",
-          "space": 165
+          "__truncated": true
         }
       }
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

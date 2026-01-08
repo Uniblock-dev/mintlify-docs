@@ -1,6 +1,6 @@
 ---
 title: 'avm.getUTXOs'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -15,6 +15,36 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='numFetched' type='string'>
+      Number of UTXOs returned in this response.
+    </ResponseField>
+    <ResponseField name='utxos' type='array'>
+      The list of UTXOs retrieved.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          A hex-encoded UTXO referencing one of the input addresses.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='endIndex' type='object'>
+      Used as startIndex for paginating the next call.
+      <Expandable title='properties'>
+        <ResponseField name='address' type='string'>
+          The last address included in the result.
+        </ResponseField>
+        <ResponseField name='utxo' type='string'>
+          The last UTXO ID included in the result.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='sourceChain' type='string'>
+      The source chain if this was an atomic UTXO query.
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      The encoding used for the returned UTXOs.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,15 +61,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "avm.getUTXOs",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +69,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

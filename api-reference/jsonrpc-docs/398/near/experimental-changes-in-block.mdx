@@ -1,7 +1,7 @@
 ---
 title: 'EXPERIMENTAL_changes_in_block'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -12,6 +12,26 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='block_hash' type='string'>
+      Hash of the block these changes are from
+    </ResponseField>
+    <ResponseField name='changes' type='array'>
+      List of state changes in this block
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='type' type='string'>
+              Type of state change (e.g. account, access_key, contract_code)
+            </ResponseField>
+            <ResponseField name='change' type='object'>
+              The actual state change object, depends on the change type
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -28,17 +48,6 @@ curl --request POST \
       "block_id": 187310138
     }
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "EXPERIMENTAL_changes_in_block",
-  "params": {
-    "block_id": 187310138
-  }
-}
 ```
 
 </RequestExample>
@@ -67,38 +76,8 @@ curl --request POST \
         "account_id": "v1.signer-dev.testnet",
         "type": "account_touched"
       },
-      {
-        "account_id": "account.rpc-examples.testnet",
-        "type": "access_key_touched"
-      },
-      {
-        "account_id": "ping-account.testnet",
-        "type": "access_key_touched"
-      },
-      {
-        "account_id": "dev2-nsp.testnet",
-        "type": "data_touched"
-      },
-      {
-        "account_id": "dev2-nsp.testnet",
-        "type": "data_touched"
-      },
-      {
-        "account_id": "v1.signer-dev.testnet",
-        "type": "data_touched"
-      }
+      "..."
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

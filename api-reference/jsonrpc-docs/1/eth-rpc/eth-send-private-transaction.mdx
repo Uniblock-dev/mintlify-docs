@@ -1,6 +1,6 @@
 ---
 title: 'eth_sendPrivateTransaction'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -37,23 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_sendPrivateTransaction",
-  "params": [
-    {
-      "tx": "0xf86c808504a817c80082520894a0df350d2637096571f7a701cb5b1660d90cecb380b844a9059cbb000000000000000000000000b60e8dd61c5d32be8058bb8eb970870f07233155",
-      "maxBlockNumber": "0x10fb80",
-      "preferences": {
-        "fast": true
-      }
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -62,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": true
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

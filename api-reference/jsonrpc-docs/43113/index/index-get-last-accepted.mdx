@@ -1,7 +1,7 @@
 ---
 title: 'index.getLastAccepted'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,23 @@ Encoding configuration for the returned data.
 
 <ResponseField body='result' type='object'>
   Details of the last accepted container on the chain.
+  <Expandable title='properties'>
+    <ResponseField name='id' type='string'>
+      The container ID of the last accepted container.
+    </ResponseField>
+    <ResponseField name='bytes' type='string'>
+      Hex-encoded byte representation of the container.
+    </ResponseField>
+    <ResponseField name='timestamp' type='string'>
+      Unix timestamp when the container was accepted.
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      Encoding format used in `bytes` (always "hex").
+    </ResponseField>
+    <ResponseField name='index' type='string'>
+      The sequential index of this container.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +48,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.getLastAccepted",
-  "params": {
-    "encoding": "hex"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +56,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

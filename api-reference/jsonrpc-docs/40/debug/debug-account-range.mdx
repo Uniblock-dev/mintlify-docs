@@ -1,7 +1,7 @@
 ---
 title: 'debug_accountRange'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -16,6 +16,13 @@ Parameters: [blockIdentifier, startKey, maxResults, context?].
 
 <ResponseField body='result' type='object'>
   Account range response including account details and continuation token.
+  <Expandable title='properties'>
+    <ResponseField name='accounts' type='object'>
+    </ResponseField>
+    <ResponseField name='nextKey' type='string'>
+      Next account key to resume iteration, or null if complete.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -37,20 +44,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "debug_accountRange",
-  "params": [
-    "",
-    "",
-    0,
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -59,17 +52,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

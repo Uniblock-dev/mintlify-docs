@@ -1,6 +1,6 @@
 ---
 title: 'ots_getInternalOperations'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,25 @@ The parameters for the method ots_getInternalOperations: [txHash].
 
 <ResponseField body='result' type='array'>
   Array of operations sorted by their occurrence inside the transaction.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Represents an individual ETH operation within a transaction.
+      <Expandable title='properties'>
+        <ResponseField name='type' type='integer'>
+          Operation type: 0 = transfer, 1 = self-destruct, 2 = create, 3 = create2.
+        </ResponseField>
+        <ResponseField name='from' type='string'>
+          Sender address: ETH sender, contract creator, or contract being self-destructed.
+        </ResponseField>
+        <ResponseField name='to' type='string'>
+          Receiver address: ETH recipient, newly created contract address, or target of a self-destruct.
+        </ResponseField>
+        <ResponseField name='value' type='string'>
+          Amount of ETH transferred, in hexadecimal Wei.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +50,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ots_getInternalOperations",
-  "params": [
-    "0x9e63085271890a141297039b3b711913699f1ee4db1acb667ad7ce304772036b"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +58,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'arbtrace_callMany'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,71 @@ An array with two elements: an array of call + traceType pairs, and a block tag 
 
 <ResponseField body='result' type='array'>
   Array of trace result objects, one per simulated transaction.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='output' type='string'>
+          Return value of the call (hex).
+        </ResponseField>
+        <ResponseField name='trace' type='array'>
+          Execution trace of the call.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='action' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='from' type='string'>
+                    </ResponseField>
+                    <ResponseField name='to' type='string'>
+                    </ResponseField>
+                    <ResponseField name='callType' type='string'>
+                    </ResponseField>
+                    <ResponseField name='gas' type='string'>
+                    </ResponseField>
+                    <ResponseField name='input' type='string'>
+                    </ResponseField>
+                    <ResponseField name='value' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='result' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='gasUsed' type='string'>
+                    </ResponseField>
+                    <ResponseField name='output' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='subtraces' type='integer'>
+                </ResponseField>
+                <ResponseField name='traceAddress' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='integer'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='type' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='vmTrace' type='object'>
+          Optional VM execution trace if requested.
+        </ResponseField>
+        <ResponseField name='stateDiff' type='object'>
+          Optional state difference if requested.
+        </ResponseField>
+        <ResponseField name='destroyedContracts' type='array'>
+          List of contracts self-destructed in the call.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -56,41 +121,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "arbtrace_callMany",
-  "params": [
-    [
-      [
-        [
-          {
-            "from": null,
-            "to": "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-            "value": "0x186a0"
-          },
-          [
-            "trace"
-          ]
-        ],
-        [
-          {
-            "from": null,
-            "to": "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-            "value": "0x186a0"
-          },
-          [
-            "trace"
-          ]
-        ]
-      ],
-      "latest"
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -99,17 +129,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

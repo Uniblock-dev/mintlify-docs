@@ -1,7 +1,7 @@
 ---
 title: 'starknet_estimateMessageFee'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,26 @@ Parameters for starknet_estimateMessageFee
 
 <ResponseField body='result' type='object'>
   Estimated fee for processing the l1_handler transaction
+  <Expandable title='properties'>
+    <ResponseField name='gas_consumed' type='string'>
+      Ethereum gas consumed by the transaction
+    </ResponseField>
+    <ResponseField name='gas_price' type='string'>
+      Gas price used in estimation (wei or fri)
+    </ResponseField>
+    <ResponseField name='data_gas_consumed' type='string'>
+      Ethereum data gas consumed by the transaction
+    </ResponseField>
+    <ResponseField name='data_gas_price' type='string'>
+      Data gas price used in estimation (wei or fri)
+    </ResponseField>
+    <ResponseField name='overall_fee' type='string'>
+      Estimated total fee = gas + data gas cost
+    </ResponseField>
+    <ResponseField name='unit' type='string'>
+      Fee units (wei or fri)
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +53,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_estimateMessageFee",
-  "params": [
-    {},
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,17 +69,6 @@ curl --request POST \
     },
     "latest"
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

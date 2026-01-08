@@ -1,6 +1,6 @@
 ---
 title: 'getHighestSnapshotSlot'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,14 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Highest snapshot slot information including full and incremental snapshot slots.
+  <Expandable title='properties'>
+    <ResponseField name='full' type='integer'>
+      Highest full snapshot slot.
+    </ResponseField>
+    <ResponseField name='incremental' type='integer'>
+      Highest incremental snapshot slot.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getHighestSnapshotSlot",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +45,6 @@ curl --request POST \
   "result": {
     "full": 100,
     "incremental": 110
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

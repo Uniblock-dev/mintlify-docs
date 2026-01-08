@@ -1,7 +1,7 @@
 ---
 title: 'getBlockProduction'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getBlockProduction",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,8 +45,7 @@ curl --request POST \
     "value": {
       "byIdentity": {
         "85iYT5RuzRTDgjyRa3cP8SYhM2j21fj7NhfJ3peu1DPr": [
-          9888,
-          9886
+          "..."
         ]
       },
       "range": {
@@ -65,17 +53,6 @@ curl --request POST \
         "lastSlot": 9887
       }
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: 'bor_getAuthor'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "bor_getAuthor",
-  "params": [
-    "0x1000"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +39,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x42eefcda06ead475cde3731b8eb138e88cd0bac3"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

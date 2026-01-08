@@ -1,7 +1,7 @@
 ---
 title: 'chunk'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,43 @@ See the request example below for JSON-RPC params.
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='author' type='string'>
+      Validator who produced the chunk
+    </ResponseField>
+    <ResponseField name='header' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='chunk_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='height_created' type='integer'>
+        </ResponseField>
+        <ResponseField name='shard_id' type='integer'>
+        </ResponseField>
+        <ResponseField name='gas_limit' type='integer'>
+        </ResponseField>
+        <ResponseField name='gas_used' type='integer'>
+        </ResponseField>
+        <ResponseField name='validator_proposals' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='transactions' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='receipts' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -28,18 +65,6 @@ curl --request POST \
       "shard_id": 0
     }
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "chunk",
-  "params": {
-    "block_id": 187310138,
-    "shard_id": 0
-  }
-}
 ```
 
 </RequestExample>
@@ -65,31 +90,13 @@ curl --request POST \
       "encoded_merkle_root": "6z9JwwtVfS5nRKcKeJxgzThRRs2wCNvbH88T3cuARe6W",
       "gas_limit": 1000000000000000,
       "gas_used": 0,
-      "height_created": 187310138,
-      "height_included": 187310138,
-      "outcome_root": "11111111111111111111111111111111",
-      "outgoing_receipts_root": "AChfy3dXeJjgD2w5zXkUTFb6w8kg3AYGnyyjsvc7hXLv",
-      "prev_block_hash": "Wj6B3RTv73EWDNbSammRDeA9315RaPyRrJYmiP4nG4X",
-      "prev_state_root": "cRMk2zd2bWC1oBfGowgMTpqW9L5SNG2FeE72yT1wpQA",
-      "rent_paid": "0",
-      "shard_id": 0,
-      "signature": "ed25519:L1iCopW8gY5rqwfuZT8Y3bHHXvuvWT87X9rwdY6LmFi8LGZdMhj2CkQCXLGrzdfYXD8B54wPTM9TqJAHcKfFDyW",
-      "tx_root": "CMwUsP8q4DTBUYxXm12jVwC8xTD8L1T1n3jdKLQVh6bm",
-      "validator_proposals": [],
-      "validator_reward": "0"
+      "__truncated": true
     },
     "receipts": [],
     "transactions": [
       {
         "actions": [
-          {
-            "FunctionCall": {
-              "args": "eyJyZWNvcmRfaWQiOjEsInJlY29yZCI6IkhlbGxvLCBOZWFyIFByb3RvY29sISJ9",
-              "deposit": "0",
-              "gas": 50000000000000,
-              "method_name": "write_record"
-            }
-          }
+          "..."
         ],
         "hash": "J3KbUXF9YPu2eGnbDCACxGvmMDZMdP7acGYhVLHGu9y2",
         "nonce": 187309654000001,
@@ -100,17 +107,6 @@ curl --request POST \
         "signer_id": "account.rpc-examples.testnet"
       }
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

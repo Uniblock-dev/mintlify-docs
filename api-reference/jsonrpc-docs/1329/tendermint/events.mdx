@@ -1,7 +1,7 @@
 ---
 title: 'events'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,25 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   Real-time event stream payloads from the Tendermint network
+  <Expandable title='properties'>
+    <ResponseField name='result' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='data' type='object'>
+          Event-specific data returned
+          <Expandable title='properties'>
+            <ResponseField name='type' type='string'>
+            </ResponseField>
+            <ResponseField name='value' type='object'>
+              Event payload (depends on event type)
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='query' type='string'>
+          The event query used for the subscription
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +48,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "events",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +56,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

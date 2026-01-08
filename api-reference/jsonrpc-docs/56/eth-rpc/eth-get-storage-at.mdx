@@ -1,6 +1,6 @@
 ---
 title: 'eth_getStorageAt'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -35,19 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getStorageAt",
-  "params": [
-    "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-    "0x0",
-    "0x2"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x0"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

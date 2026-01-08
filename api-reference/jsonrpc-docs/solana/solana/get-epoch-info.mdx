@@ -1,6 +1,6 @@
 ---
 title: 'getEpochInfo'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,26 @@ Parameters for method getEpochInfo: [config]
 
 <ResponseField body='result' type='object'>
   Information about the current slot, epoch, and transaction count.
+  <Expandable title='properties'>
+    <ResponseField name='absoluteSlot' type='integer'>
+      The current absolute slot number.
+    </ResponseField>
+    <ResponseField name='blockHeight' type='integer'>
+      The current block height.
+    </ResponseField>
+    <ResponseField name='epoch' type='integer'>
+      The current epoch number.
+    </ResponseField>
+    <ResponseField name='slotIndex' type='integer'>
+      The current slot index within the current epoch.
+    </ResponseField>
+    <ResponseField name='slotsInEpoch' type='integer'>
+      The total number of slots in the current epoch.
+    </ResponseField>
+    <ResponseField name='transactionCount' type='integer'>
+      The total number of successful transactions processed since genesis, or null if unavailable.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +51,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getEpochInfo",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +65,6 @@ curl --request POST \
     "slotIndex": 2790,
     "slotsInEpoch": 8192,
     "transactionCount": 22661093
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

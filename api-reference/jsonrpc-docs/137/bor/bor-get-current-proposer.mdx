@@ -1,6 +1,6 @@
 ---
 title: 'bor_getCurrentProposer'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -29,17 +29,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "bor_getCurrentProposer",
-  "params": [
-    null
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +37,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x88c5e96c1459d224383dcb1fe0cedd1fcee25ffb"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

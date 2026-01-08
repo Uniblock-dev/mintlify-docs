@@ -1,7 +1,7 @@
 ---
 title: 'sui_tryMultiGetPastObjects'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,57 @@ Get data for multiple past objects with optional display options.
 
 <ResponseField body='result' type='array'>
   Array of past object responses with version-specific information.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='status' type='string'>
+          Status of the lookup. e.g., "VersionFound", "VersionNotFound".
+        </ResponseField>
+        <ResponseField name='details' type='object'>
+          Detailed object data if the version was found.
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+            </ResponseField>
+            <ResponseField name='type' type='string'>
+            </ResponseField>
+            <ResponseField name='owner' type='object'>
+              Owner of the object.
+            </ResponseField>
+            <ResponseField name='previousTransaction' type='string'>
+            </ResponseField>
+            <ResponseField name='storageRebate' type='string'>
+            </ResponseField>
+            <ResponseField name='content' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='dataType' type='string'>
+                </ResponseField>
+                <ResponseField name='type' type='string'>
+                </ResponseField>
+                <ResponseField name='hasPublicTransfer' type='boolean'>
+                </ResponseField>
+                <ResponseField name='fields' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='balance' type='string'>
+                    </ResponseField>
+                    <ResponseField name='id' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='id' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -41,26 +92,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_tryMultiGetPastObjects",
-  "params": [
-    [],
-    {
-      "showType": true,
-      "showOwner": true,
-      "showPreviousTransaction": true,
-      "showDisplay": false,
-      "showContent": true,
-      "showBcs": false,
-      "showStorageRebate": true
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -69,17 +100,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

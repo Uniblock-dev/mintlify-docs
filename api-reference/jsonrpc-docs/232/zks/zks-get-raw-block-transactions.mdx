@@ -1,7 +1,7 @@
 ---
 title: 'zks_getRawBlockTransactions'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,69 @@ Block number to get raw transaction data from.
 
 <ResponseField body='result' type='array'>
   List of executed transactions in the given block.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='common_data' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='L1' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='canonicalTxHash' type='string'>
+                </ResponseField>
+                <ResponseField name='deadlineBlock' type='integer'>
+                </ResponseField>
+                <ResponseField name='ethBlock' type='integer'>
+                </ResponseField>
+                <ResponseField name='ethHash' type='string'>
+                </ResponseField>
+                <ResponseField name='fullFee' type='string'>
+                </ResponseField>
+                <ResponseField name='gasLimit' type='string'>
+                </ResponseField>
+                <ResponseField name='gasPerPubdataLimit' type='string'>
+                </ResponseField>
+                <ResponseField name='layer2TipFee' type='string'>
+                </ResponseField>
+                <ResponseField name='maxFeePerGas' type='string'>
+                </ResponseField>
+                <ResponseField name='opProcessingType' type='string'>
+                </ResponseField>
+                <ResponseField name='priorityQueueType' type='string'>
+                </ResponseField>
+                <ResponseField name='refundRecipient' type='string'>
+                </ResponseField>
+                <ResponseField name='sender' type='string'>
+                </ResponseField>
+                <ResponseField name='serialId' type='integer'>
+                </ResponseField>
+                <ResponseField name='toMint' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='execute' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='calldata' type='string'>
+            </ResponseField>
+            <ResponseField name='contractAddress' type='string'>
+            </ResponseField>
+            <ResponseField name='factoryDeps' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='value' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='received_timestamp_ms' type='integer'>
+          The timestamp in milliseconds the transaction was received.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +94,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getRawBlockTransactions",
-  "params": [
-    5817
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +102,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

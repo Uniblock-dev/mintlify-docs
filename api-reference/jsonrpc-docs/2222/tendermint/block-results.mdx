@@ -1,7 +1,7 @@
 ---
 title: 'block_results'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "block_results",
-  "params": [
-    1
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -60,16 +49,7 @@ curl --request POST \
         "gas_wanted": "100",
         "gas_used": "100",
         "events": [
-          {
-            "type": "app",
-            "attributes": [
-              {
-                "key": "YWN0aW9u",
-                "value": "c2VuZA==",
-                "index": false
-              }
-            ]
-          }
+          "..."
         ],
         "codespace": "ibc"
       }
@@ -78,11 +58,7 @@ curl --request POST \
       {
         "type": "app",
         "attributes": [
-          {
-            "key": "YWN0aW9u",
-            "value": "c2VuZA==",
-            "index": false
-          }
+          "..."
         ]
       }
     ],
@@ -90,19 +66,14 @@ curl --request POST \
       {
         "type": "app",
         "attributes": [
-          {
-            "key": "YWN0aW9u",
-            "value": "c2VuZA==",
-            "index": false
-          }
+          "..."
         ]
       }
     ],
     "validator_updates": [
       {
         "pub_key": {
-          "type": "tendermint/PubKeyEd25519",
-          "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+          "__truncated": true
         },
         "power": "300"
       }
@@ -118,21 +89,10 @@ curl --request POST \
       },
       "validator": {
         "pub_key_types": [
-          "ed25519"
+          "..."
         ]
       }
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

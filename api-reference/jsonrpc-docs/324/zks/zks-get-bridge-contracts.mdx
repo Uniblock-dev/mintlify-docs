@@ -1,7 +1,7 @@
 ---
 title: 'zks_getBridgeContracts'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,14 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Default L1 and L2 bridge contract addresses for ERC-20 tokens.
+  <Expandable title='properties'>
+    <ResponseField name='l1Erc20DefaultBridge' type='string'>
+      Address of the default bridge contract on Layer 1.
+    </ResponseField>
+    <ResponseField name='l2Erc20DefaultBridge' type='string'>
+      Address of the default bridge contract on Layer 2.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getBridgeContracts",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

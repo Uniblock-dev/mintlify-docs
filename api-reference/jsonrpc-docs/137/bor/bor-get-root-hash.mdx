@@ -1,6 +1,6 @@
 ---
 title: 'bor_getRootHash'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -33,18 +33,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "bor_getRootHash",
-  "params": [
-    1000,
-    1032
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +41,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "67518d9fc6bf9ff886ba1a4e932a0d0a8a1318b3f300518773aaf2210410cf73"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

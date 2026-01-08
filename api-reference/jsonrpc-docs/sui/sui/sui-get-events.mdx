@@ -1,7 +1,7 @@
 ---
 title: 'sui_getEvents'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,58 @@ Get all events emitted by the transaction.
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='data' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='id' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='txDigest' type='string'>
+                  Transaction digest
+                </ResponseField>
+                <ResponseField name='eventSeq' type='string'>
+                  Event sequence number
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='packageId' type='string'>
+              Package ID of the event origin
+            </ResponseField>
+            <ResponseField name='transactionModule' type='string'>
+              Move module that emitted the event
+            </ResponseField>
+            <ResponseField name='sender' type='string'>
+              Sui address of the sender
+            </ResponseField>
+            <ResponseField name='type' type='string'>
+              Move event type
+            </ResponseField>
+            <ResponseField name='parsedJson' type='object'>
+              Parsed JSON representation of the event
+            </ResponseField>
+            <ResponseField name='bcsEncoding' type='string'>
+              Encoding type (e.g., base64)
+            </ResponseField>
+            <ResponseField name='bcs' type='string'>
+              BCS serialized event data
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='nextCursor' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='txDigest' type='string'>
+        </ResponseField>
+        <ResponseField name='eventSeq' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='hasNextPage' type='boolean'>
+      True if there are more pages of events to fetch
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +83,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getEvents",
-  "params": [
-    "11a72GCQ5hGNpWGh2QhQkkusTEGS6EDqifJqxr7nSYX"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,15 +94,14 @@ curl --request POST \
     "data": [
       {
         "id": {
-          "txDigest": "11a72GCQ5hGNpWGh2QhQkkusTEGS6EDqifJqxr7nSYX",
-          "eventSeq": "0"
+          "__truncated": true
         },
         "packageId": "0xc54ab30a3d9adc07c1429c4d6bbecaf9457c9af77a91f631760853934d383634",
         "transactionModule": "test_module",
         "sender": "0xbcf7c32655009a61f1de0eae420a2e4ae1bb772ab2dd5d5a7dfa949c0ef06908",
         "type": "0x...::test::TestEvent",
         "parsedJson": {
-          "test": "example value"
+          "__truncated": true
         },
         "bcsEncoding": "base64",
         "bcs": ""
@@ -72,17 +112,6 @@ curl --request POST \
       "eventSeq": "5"
     },
     "hasNextPage": false
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

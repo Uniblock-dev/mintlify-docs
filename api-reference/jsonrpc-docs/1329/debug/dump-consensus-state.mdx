@@ -1,7 +1,7 @@
 ---
 title: 'dump_consensus_state'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,237 @@ This method does not accept any parameters.
 
 <ResponseField body='result' type='object'>
   Full consensus state information.
+  <Expandable title='properties'>
+    <ResponseField name='round_state' type='object'>
+      Details about the current round state.
+      <Expandable title='properties'>
+        <ResponseField name='height' type='string'>
+        </ResponseField>
+        <ResponseField name='round' type='integer'>
+        </ResponseField>
+        <ResponseField name='step' type='integer'>
+        </ResponseField>
+        <ResponseField name='start_time' type='string'>
+        </ResponseField>
+        <ResponseField name='commit_time' type='string'>
+        </ResponseField>
+        <ResponseField name='validators' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='validators' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='address' type='string'>
+                    </ResponseField>
+                    <ResponseField name='pub_key' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='type' type='string'>
+                        </ResponseField>
+                        <ResponseField name='value' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                    <ResponseField name='voting_power' type='string'>
+                    </ResponseField>
+                    <ResponseField name='proposer_priority' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='proposer' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='address' type='string'>
+                </ResponseField>
+                <ResponseField name='pub_key' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='type' type='string'>
+                    </ResponseField>
+                    <ResponseField name='value' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='voting_power' type='string'>
+                </ResponseField>
+                <ResponseField name='proposer_priority' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='proposal' type='string'>
+        </ResponseField>
+        <ResponseField name='proposal_block' type='string'>
+        </ResponseField>
+        <ResponseField name='proposal_block_parts' type='string'>
+        </ResponseField>
+        <ResponseField name='proposal_receive_time' type='string'>
+        </ResponseField>
+        <ResponseField name='locked_round' type='string'>
+        </ResponseField>
+        <ResponseField name='locked_block' type='string'>
+        </ResponseField>
+        <ResponseField name='locked_block_parts' type='string'>
+        </ResponseField>
+        <ResponseField name='valid_round' type='string'>
+        </ResponseField>
+        <ResponseField name='valid_block' type='string'>
+        </ResponseField>
+        <ResponseField name='valid_block_parts' type='string'>
+        </ResponseField>
+        <ResponseField name='votes' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='round' type='integer'>
+                </ResponseField>
+                <ResponseField name='prevotes' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='prevotes_bit_array' type='string'>
+                </ResponseField>
+                <ResponseField name='precommits' type='array'>
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='precommits_bit_array' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='commit_round' type='string'>
+        </ResponseField>
+        <ResponseField name='last_commit' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='votes' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='votes_bit_array' type='string'>
+            </ResponseField>
+            <ResponseField name='peer_maj_23s' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='last_validators' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='validators' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='address' type='string'>
+                    </ResponseField>
+                    <ResponseField name='pub_key' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='type' type='string'>
+                        </ResponseField>
+                        <ResponseField name='value' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                    <ResponseField name='voting_power' type='string'>
+                    </ResponseField>
+                    <ResponseField name='proposer_priority' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='proposer' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='address' type='string'>
+                </ResponseField>
+                <ResponseField name='pub_key' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='type' type='string'>
+                    </ResponseField>
+                    <ResponseField name='value' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='voting_power' type='string'>
+                </ResponseField>
+                <ResponseField name='proposer_priority' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='triggered_timeout_precommit' type='string'>
+        </ResponseField>
+        <ResponseField name='peers' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='node_address' type='string'>
+                </ResponseField>
+                <ResponseField name='peer_state' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='round_state' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='height' type='string'>
+                        </ResponseField>
+                        <ResponseField name='round' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='step' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='start_time' type='string'>
+                        </ResponseField>
+                        <ResponseField name='proposal' type='boolean'>
+                        </ResponseField>
+                        <ResponseField name='proposal_block_part_set_header' type='object'>
+                          <Expandable title='properties'>
+                            <ResponseField name='total' type='integer'>
+                            </ResponseField>
+                            <ResponseField name='hash' type='string'>
+                            </ResponseField>
+                          </Expandable>
+                        </ResponseField>
+                        <ResponseField name='proposal_block_parts' type='string'>
+                        </ResponseField>
+                        <ResponseField name='proposal_pol_round' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='proposal_pol' type='string'>
+                        </ResponseField>
+                        <ResponseField name='prevotes' type='string'>
+                        </ResponseField>
+                        <ResponseField name='precommits' type='string'>
+                        </ResponseField>
+                        <ResponseField name='last_commit_round' type='integer'>
+                        </ResponseField>
+                        <ResponseField name='last_commit' type='string'>
+                        </ResponseField>
+                        <ResponseField name='catchup_commit_round' type='string'>
+                        </ResponseField>
+                        <ResponseField name='catchup_commit' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                    <ResponseField name='stats' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='votes' type='string'>
+                        </ResponseField>
+                        <ResponseField name='block_parts' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +258,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "dump_consensus_state",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +266,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

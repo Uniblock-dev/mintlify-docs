@@ -1,7 +1,7 @@
 ---
 title: 'index.getContainerRange'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,27 @@ Parameters to specify the range of containers to fetch.
 
 <ResponseField body='result' type='array'>
   List of container objects in sequential index order.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='id' type='string'>
+          Unique ID of the container.
+        </ResponseField>
+        <ResponseField name='bytes' type='string'>
+          Hex-encoded byte representation of the container.
+        </ResponseField>
+        <ResponseField name='timestamp' type='string'>
+          Unix timestamp when the container was accepted.
+        </ResponseField>
+        <ResponseField name='encoding' type='string'>
+          Encoding of the `bytes` field (always "hex").
+        </ResponseField>
+        <ResponseField name='index' type='string'>
+          Index position of the container.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,19 +56,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.getContainerRange",
-  "params": {
-    "startIndex": 0,
-    "numToFetch": 100,
-    "encoding": "hex"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +64,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

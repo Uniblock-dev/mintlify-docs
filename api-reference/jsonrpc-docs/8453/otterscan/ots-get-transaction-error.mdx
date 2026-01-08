@@ -1,7 +1,7 @@
 ---
 title: 'ots_getTransactionError'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ots_getTransactionError",
-  "params": [
-    "0x9e63085271890a141297039b3b711913699f1ee4db1acb667ad7ce304772036b"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -49,18 +38,7 @@ curl --request POST \
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "result": "0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000135472616e73616374696f6e20746f6f206f6c6400000000000000000000000000"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
+  "result": "0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000..."
 }
 ```
 

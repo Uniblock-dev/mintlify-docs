@@ -1,7 +1,7 @@
 ---
 title: 'arbtrace_replayTransaction'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,69 @@ An array containing the transaction hash and a list of trace types to include.
 
 <ResponseField body='result' type='object'>
   Execution trace details for the replayed transaction.
+  <Expandable title='properties'>
+    <ResponseField name='output' type='string'>
+      Output returned by the contract call (hex).
+    </ResponseField>
+    <ResponseField name='trace' type='array'>
+      Call-level execution trace of the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='action' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='from' type='string'>
+                </ResponseField>
+                <ResponseField name='to' type='string'>
+                </ResponseField>
+                <ResponseField name='callType' type='string'>
+                </ResponseField>
+                <ResponseField name='gas' type='string'>
+                </ResponseField>
+                <ResponseField name='input' type='string'>
+                </ResponseField>
+                <ResponseField name='value' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='result' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='gasUsed' type='string'>
+                </ResponseField>
+                <ResponseField name='output' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='subtraces' type='integer'>
+            </ResponseField>
+            <ResponseField name='traceAddress' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='integer'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='transactionHash' type='string'>
+            </ResponseField>
+            <ResponseField name='type' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='vmTrace' type='object'>
+      Virtual machine execution trace (if requested).
+    </ResponseField>
+    <ResponseField name='stateDiff' type='object'>
+      State differences after execution (if requested).
+    </ResponseField>
+    <ResponseField name='destroyedContracts' type='array'>
+      List of contracts self-destructed during execution.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,20 +98,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "arbtrace_replayTransaction",
-  "params": [
-    "0xa3a97b9d1de234efb2ca9374c5918f9a7fc2adff4102aff686df01b6a3dc74f7",
-    [
-      "trace"
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,17 +106,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

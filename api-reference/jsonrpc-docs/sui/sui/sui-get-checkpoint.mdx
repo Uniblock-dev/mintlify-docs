@@ -1,7 +1,7 @@
 ---
 title: 'sui_getCheckpoint'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,59 @@ Parameters to fetch checkpoint data by digest or sequence number.
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='checkpointCommitments' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          Checkpoint commitment structure
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='digest' type='string'>
+      Checkpoint digest as base64 string
+    </ResponseField>
+    <ResponseField name='endOfEpochData' type='object'>
+      Optional data available on final checkpoint of an epoch
+    </ResponseField>
+    <ResponseField name='epoch' type='string'>
+      Checkpoint epoch ID
+    </ResponseField>
+    <ResponseField name='epochRollingGasCostSummary' type='object'>
+      Running total gas costs in the epoch until this checkpoint
+      <Expandable title='properties'>
+        <ResponseField name='computationCost' type='string'>
+        </ResponseField>
+        <ResponseField name='storageCost' type='string'>
+        </ResponseField>
+        <ResponseField name='storageRebate' type='string'>
+        </ResponseField>
+        <ResponseField name='nonRefundableStorageFee' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='networkTotalTransactions' type='string'>
+      Total number of transactions committed since genesis
+    </ResponseField>
+    <ResponseField name='previousDigest' type='string'>
+      Digest of the previous checkpoint
+    </ResponseField>
+    <ResponseField name='sequenceNumber' type='string'>
+      Checkpoint sequence number
+    </ResponseField>
+    <ResponseField name='timestampMs' type='string'>
+      Checkpoint timestamp in milliseconds since epoch
+    </ResponseField>
+    <ResponseField name='transactions' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          Transaction digests
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='validatorSignature' type='string'>
+      Validator’s signature of this checkpoint
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +82,6 @@ curl --request POST \
       "1000"
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getCheckpoint",
-  "params": [
-    "1000"
-  ]
-}
 ```
 
 </RequestExample>
@@ -65,19 +107,7 @@ curl --request POST \
     "transactions": [
       "mN8YNBgVR3wB7vfXmjVgDRF4oqxVRRjzmJ6U4mzbq77"
     ],
-    "checkpointCommitments": [],
-    "validatorSignature": "wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
+    "__truncated": true
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: 'getFeeStats'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -27,15 +27,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getFeeStats",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -52,17 +43,6 @@ curl --request POST \
       "mode": "100",
       "p10": "100"
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

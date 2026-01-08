@@ -1,7 +1,7 @@
 ---
 title: 'klay_getBlockWithConsensusInfoByNumberRange'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,10 @@ Parameters: [startBlockNumber, endBlockNumber].
 
 <ResponseField body='result' type='array'>
   Array of block objects with consensus metadata.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "klay_getBlockWithConsensusInfoByNumberRange",
-  "params": [
-    0,
-    ""
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

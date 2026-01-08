@@ -1,7 +1,7 @@
 ---
 title: 'zks_getAllAccountBalances'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -29,17 +29,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getAllAccountBalances",
-  "params": [
-    "0x98E9D288743839e96A8005a6B51C770Bbf7788C0"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -49,17 +38,6 @@ curl --request POST \
   "id": 1,
   "result": {
     "0x0000000000000000000000000000000000000000": "0x2fbd72a1121b3100"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

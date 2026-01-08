@@ -1,7 +1,7 @@
 ---
 title: 'index.getContainerByID'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,23 @@ Parameters to identify and retrieve the container.
 
 <ResponseField body='result' type='object'>
   The container data and metadata.
+  <Expandable title='properties'>
+    <ResponseField name='id' type='string'>
+      The unique ID of the container.
+    </ResponseField>
+    <ResponseField name='bytes' type='string'>
+      Hex-encoded byte representation of the container.
+    </ResponseField>
+    <ResponseField name='timestamp' type='string'>
+      Timestamp when the node accepted this container.
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      The encoding format of the `bytes` field (always "hex").
+    </ResponseField>
+    <ResponseField name='index' type='string'>
+      The sequential index of this container in the accepted container list.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +50,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.getContainerByID",
-  "params": {
-    "id": "CRKUaHg85WmLtMc2AbiWVh87Vi5PKBVZFFLhWPtZyRDv6SHSS",
-    "encoding": "hex"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +58,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

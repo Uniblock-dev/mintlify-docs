@@ -1,7 +1,7 @@
 ---
 title: 'starknet_getNonce'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -35,20 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getNonce",
-  "params": {
-    "block_id": {
-      "block_number": 470207
-    },
-    "contract_address": "0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x1c"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

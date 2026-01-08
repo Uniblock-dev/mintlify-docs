@@ -1,7 +1,7 @@
 ---
 title: 'avm.getAssetDescription'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,20 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='assetID' type='string'>
+      The ID of the queried asset.
+    </ResponseField>
+    <ResponseField name='name' type='string'>
+      The human-readable name of the asset.
+    </ResponseField>
+    <ResponseField name='symbol' type='string'>
+      The short symbol used to represent the asset.
+    </ResponseField>
+    <ResponseField name='denomination' type='integer'>
+      Determines display formatting. E.g., denomination=9 means 1000000000 base units = 1 displayed unit.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +41,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "avm.getAssetDescription",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +49,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

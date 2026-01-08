@@ -1,7 +1,7 @@
 ---
 title: 'kaia_signTransaction'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,14 @@ Parameters: [transactionObject].
 
 <ResponseField body='result' type='object'>
   Signed transaction information.
+  <Expandable title='properties'>
+    <ResponseField name='raw' type='string'>
+      Raw signed transaction data.
+    </ResponseField>
+    <ResponseField name='tx' type='string'>
+      The transaction.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +39,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_signTransaction",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +47,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

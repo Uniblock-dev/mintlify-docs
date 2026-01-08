@@ -1,7 +1,7 @@
 ---
 title: 'block_search'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,38 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   Paginated list of blocks matching the query.
+  <Expandable title='properties'>
+    <ResponseField name='total_count' type='integer'>
+    </ResponseField>
+    <ResponseField name='page' type='integer'>
+    </ResponseField>
+    <ResponseField name='per_page' type='integer'>
+    </ResponseField>
+    <ResponseField name='blocks' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          Block metadata
+          <Expandable title='properties'>
+            <ResponseField name='height' type='string'>
+            </ResponseField>
+            <ResponseField name='block_id' type='string'>
+            </ResponseField>
+            <ResponseField name='time' type='string'>
+            </ResponseField>
+            <ResponseField name='proposer_address' type='string'>
+            </ResponseField>
+            <ResponseField name='txs' type='array'>
+              List of transaction hashes
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +61,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "block_search",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +69,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

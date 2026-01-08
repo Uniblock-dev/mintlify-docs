@@ -1,7 +1,7 @@
 ---
 title: 'kaia_getStorageAt'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -35,19 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_getStorageAt",
-  "params": [
-    "0x8d97689c9818892b700e27f316cc3e41e17fbeb9",
-    "0x0",
-    "latest"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

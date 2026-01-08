@@ -1,7 +1,7 @@
 ---
 title: 'starknet_getStorageAt'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -37,21 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getStorageAt",
-  "params": {
-    "contract_address": "0x04D88BeCbd1DC984ae04A96E77828E603c5244e68224903D92CA0a1Ff1C8e807",
-    "key": "0x21",
-    "block_id": {
-      "block_hash": "0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"
-    }
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -60,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x0"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

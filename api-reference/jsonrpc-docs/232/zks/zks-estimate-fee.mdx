@@ -1,7 +1,7 @@
 ---
 title: 'zks_estimateFee'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,20 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='gas_limit' type='string'>
+      Maximum amount of gas the transaction is allowed to use (hex).
+    </ResponseField>
+    <ResponseField name='gas_per_pubdata_limit' type='string'>
+      Amount of gas consumed per public data byte (hex).
+    </ResponseField>
+    <ResponseField name='max_fee_per_gas' type='string'>
+      Maximum fee in wei that can be paid per gas unit (hex).
+    </ResponseField>
+    <ResponseField name='max_priority_fee_per_gas' type='string'>
+      Maximum priority fee in wei that can be paid per gas unit (hex).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,21 +47,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_estimateFee",
-  "params": [
-    {
-      "from": "0x1111111111111111111111111111111111111111",
-      "to": "0x2222222222222222222222222222222222222222",
-      "data": "0xffffffff"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -60,17 +59,6 @@ curl --request POST \
     "gas_per_pubdata_limit": "0x143b",
     "max_fee_per_gas": "0xee6b280",
     "max_priority_fee_per_gas": "0x0"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

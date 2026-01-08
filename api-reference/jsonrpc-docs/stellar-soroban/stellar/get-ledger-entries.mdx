@@ -1,7 +1,7 @@
 ---
 title: 'getLedgerEntries'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -12,6 +12,28 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   Resolved ledger entries and optional proof data.
+  <Expandable title='properties'>
+    <ResponseField name='entries' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='key' type='string'>
+              Base64 XDR LedgerKey.
+            </ResponseField>
+            <ResponseField name='xdr' type='string'>
+              Base64 XDR-encoded LedgerEntry data.
+            </ResponseField>
+            <ResponseField name='lastModifiedLedgerSeq' type='integer'>
+              Ledger in which the entry was last modified.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='latestLedger' type='integer'>
+      Current latest ledger at the time of query.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -32,19 +54,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getLedgerEntries",
-  "params": {
-    "keys": [
-      "YOUR_KEYS_OF_LEDGER_ENTRIES"
-    ]
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +62,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

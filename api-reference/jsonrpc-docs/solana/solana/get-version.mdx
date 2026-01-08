@@ -1,6 +1,6 @@
 ---
 title: 'getVersion'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,14 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Solana software version information.
+  <Expandable title='properties'>
+    <ResponseField name='solana-core' type='string'>
+      Software version of solana-core.
+    </ResponseField>
+    <ResponseField name='feature-set' type='integer'>
+      Unique identifier of the current software feature set.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getVersion",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +45,6 @@ curl --request POST \
   "result": {
     "solana-core": "1.16.7",
     "feature-set": 2891131721
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

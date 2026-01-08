@@ -1,7 +1,7 @@
 ---
 title: 'dag_getEvent'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,49 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   Returns an event object, or null if not found.
+  <Expandable title='properties'>
+    <ResponseField name='version' type='integer'>
+    </ResponseField>
+    <ResponseField name='epoch' type='integer'>
+    </ResponseField>
+    <ResponseField name='seq' type='integer'>
+    </ResponseField>
+    <ResponseField name='hash' type='string'>
+      Hex-encoded 32-byte hash
+    </ResponseField>
+    <ResponseField name='frame' type='integer'>
+    </ResponseField>
+    <ResponseField name='creator' type='string'>
+      Address of the event creator
+    </ResponseField>
+    <ResponseField name='prevEpochHash' type='string'>
+    </ResponseField>
+    <ResponseField name='parents' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          Parent event ID
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='gasPowerLeft' type='string'>
+    </ResponseField>
+    <ResponseField name='gasPowerUsed' type='string'>
+    </ResponseField>
+    <ResponseField name='lamport' type='integer'>
+    </ResponseField>
+    <ResponseField name='creationTime' type='string'>
+      UnixNano timestamp
+    </ResponseField>
+    <ResponseField name='medianTime' type='string'>
+      UnixNano timestamp
+    </ResponseField>
+    <ResponseField name='extraData' type='string'>
+      Optional extra data
+    </ResponseField>
+    <ResponseField name='transactionsRoot' type='string'>
+      Hash of transaction trie root
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +72,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "dag_getEvent",
-  "params": [
-    "0x000170430000080cd8f7b782afe5d1f63be6cd73631598313200777062ba7383"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +80,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

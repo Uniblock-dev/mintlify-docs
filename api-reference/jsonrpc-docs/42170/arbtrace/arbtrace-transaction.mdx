@@ -1,7 +1,7 @@
 ---
 title: 'arbtrace_transaction'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,72 @@ Array with a single element: the hash of the transaction.
 
 <ResponseField body='result' type='array'>
   Array of Parity trace objects for the specified transaction.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='action' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='from' type='string'>
+              Sender address
+            </ResponseField>
+            <ResponseField name='to' type='string'>
+              Recipient address
+            </ResponseField>
+            <ResponseField name='callType' type='string'>
+              Call type (e.g., call, delegatecall)
+            </ResponseField>
+            <ResponseField name='gas' type='string'>
+              Gas sent (hex)
+            </ResponseField>
+            <ResponseField name='input' type='string'>
+              Transaction input data
+            </ResponseField>
+            <ResponseField name='value' type='string'>
+              Transferred value in wei (hex)
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='blockHash' type='string'>
+          Block hash where the tx was included
+        </ResponseField>
+        <ResponseField name='blockNumber' type='string'>
+          Block number (hex)
+        </ResponseField>
+        <ResponseField name='error' type='string'>
+          Error message if any
+        </ResponseField>
+        <ResponseField name='result' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='gasUsed' type='string'>
+              Gas used for the call (hex)
+            </ResponseField>
+            <ResponseField name='output' type='string'>
+              Return data from the call (hex)
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='subtraces' type='integer'>
+          Number of sub-calls
+        </ResponseField>
+        <ResponseField name='traceAddress' type='array'>
+          Execution path hierarchy (list of integers).
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='integer'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='transactionHash' type='string'>
+          Hash of the transaction
+        </ResponseField>
+        <ResponseField name='transactionPosition' type='integer'>
+          Index of tx in block
+        </ResponseField>
+        <ResponseField name='type' type='string'>
+          Type of the trace (e.g., call, create)
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +97,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "arbtrace_transaction",
-  "params": [
-    "0xa3a97b9d1de234efb2ca9374c5918f9a7fc2adff4102aff686df01b6a3dc74f7"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +105,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

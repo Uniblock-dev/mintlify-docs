@@ -1,7 +1,7 @@
 ---
 title: 'starknet_getStateUpdate'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,20 @@ Parameters for starknet_getStateUpdate
 
 <ResponseField body='result' type='object'>
   State update object returned by starknet_getStateUpdate
+  <Expandable title='properties'>
+    <ResponseField name='block_hash' type='string'>
+      Hash of the block. Not included in pending state update.
+    </ResponseField>
+    <ResponseField name='old_root' type='string'>
+      Previous global state root.
+    </ResponseField>
+    <ResponseField name='new_root' type='string'>
+      New global state root. Not included in pending state update.
+    </ResponseField>
+    <ResponseField name='state_diff' type='object'>
+      State diff applied in this block (map of address to changes).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,19 +47,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getStateUpdate",
-  "params": {
-    "block_id": {
-      "block_hash": "0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"
-    }
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -60,43 +61,20 @@ curl --request POST \
     "state_diff": {
       "storage_diffs": [
         {
-          "address": "0x653d92ffdf2b532003d5e989f763fdedc16dc389e0b3889398a6eb1dac0d849",
-          "key": "0xf920571b9f85bdd92a867cfdc73319d0f8836f0e69e06e4c5566b6203f75cc",
-          "value": "0x69577e6756a99b584b5d1ce8e60650ae33b6e2b13541783458268f07da6b38a"
+          "__truncated": true
         },
         {
-          "address": "0x653d92ffdf2b532003d5e989f763fdedc16dc389e0b3889398a6eb1dac0d849",
-          "key": "0x1379ac0624b939ceb9dede92211d7db5ee174fe28be72245b0a1a2abd81c98f",
-          "value": "0x36dbe3ef0a6ef13fc20e65315840832c0595986d54eba528e22483c7746c005"
+          "__truncated": true
         },
         {
-          "address": "0x653d92ffdf2b532003d5e989f763fdedc16dc389e0b3889398a6eb1dac0d849",
-          "key": "0x1813aac5f5e7799684c6dc33e51f44d3627fd748c800724a184ed5be09b713e",
-          "value": "0x4"
+          "__truncated": true
         },
         {
-          "address": "0x653d92ffdf2b532003d5e989f763fdedc16dc389e0b3889398a6eb1dac0d849",
-          "key": "0x321bace1036eaff095582583849a03598bd5764a6265edac86916b830a29d55",
-          "value": "0x1"
+          "__truncated": true
         },
-        {
-          "address": "0x653d92ffdf2b532003d5e989f763fdedc16dc389e0b3889398a6eb1dac0d849",
-          "key": "0x37501df619c4fc4e96f6c0243f55e3abe7d1aca7db9af8f3740ba3696b3fdac",
-          "value": "0x3"
-        }
+        "..."
       ]
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: 'getInflationGovernor'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,23 @@ Parameters for method getInflationGovernor: [config]
 
 <ResponseField body='result' type='object'>
   Inflation parameters describing how new tokens are distributed over time.
+  <Expandable title='properties'>
+    <ResponseField name='foundation' type='number'>
+      Percentage of total inflation allocated to the foundation.
+    </ResponseField>
+    <ResponseField name='foundationTerm' type='number'>
+      Duration in years for which foundation inflation is active.
+    </ResponseField>
+    <ResponseField name='initial' type='number'>
+      Initial inflation rate (as a decimal) from genesis (time 0).
+    </ResponseField>
+    <ResponseField name='taper' type='number'>
+      Annual reduction rate for inflation (tapering schedule).
+    </ResponseField>
+    <ResponseField name='terminal' type='number'>
+      Terminal (long-term) inflation rate after tapering ends.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +48,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getInflationGovernor",
-  "params": [
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -55,17 +61,6 @@ curl --request POST \
     "initial": 0.15,
     "taper": 0.15,
     "terminal": 0.015
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: 'dag_getEventPayload'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -12,6 +12,72 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   An event object, or null if no event was found.
+  <Expandable title='properties'>
+    <ResponseField name='version' type='integer'>
+    </ResponseField>
+    <ResponseField name='epoch' type='integer'>
+    </ResponseField>
+    <ResponseField name='seq' type='integer'>
+    </ResponseField>
+    <ResponseField name='hash' type='string'>
+    </ResponseField>
+    <ResponseField name='frame' type='integer'>
+    </ResponseField>
+    <ResponseField name='creator' type='string'>
+      Validator address
+    </ResponseField>
+    <ResponseField name='prevEpochHash' type='string'>
+    </ResponseField>
+    <ResponseField name='parents' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='gasPowerLeft' type='string'>
+    </ResponseField>
+    <ResponseField name='gasPowerUsed' type='string'>
+    </ResponseField>
+    <ResponseField name='lamport' type='integer'>
+    </ResponseField>
+    <ResponseField name='creationTime' type='string'>
+    </ResponseField>
+    <ResponseField name='medianTime' type='string'>
+    </ResponseField>
+    <ResponseField name='extraData' type='string'>
+    </ResponseField>
+    <ResponseField name='transactionsRoot' type='string'>
+    </ResponseField>
+    <ResponseField name='transactions' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='oneOf'>
+          Transaction hash
+          <Expandable title='variants'>
+            <ResponseField name='variant1' type='string'>
+              Transaction hash
+            </ResponseField>
+            <ResponseField name='variant2' type='object'>
+              Transaction object
+              <Expandable title='properties'>
+                <ResponseField name='hash' type='string'>
+                </ResponseField>
+                <ResponseField name='from' type='string'>
+                </ResponseField>
+                <ResponseField name='to' type='string'>
+                </ResponseField>
+                <ResponseField name='value' type='string'>
+                </ResponseField>
+                <ResponseField name='gas' type='string'>
+                </ResponseField>
+                <ResponseField name='input' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,18 +97,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "dag_getEventPayload",
-  "params": [
-    "0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e",
-    true
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -51,17 +105,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

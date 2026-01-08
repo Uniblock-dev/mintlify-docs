@@ -1,7 +1,7 @@
 ---
 title: 'getchaintips'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,10 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='array'>
   Chain tips with status, branch length, and block hash.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getchaintips",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +39,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'getRecentPerformanceSamples'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,28 @@ The parameters for method getRecentPerformanceSamples: [samples].
 
 <ResponseField body='result' type='array'>
   Array of performance sample objects representing validator activity during sample periods.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Performance sample object.
+      <Expandable title='properties'>
+        <ResponseField name='slot' type='integer'>
+          Slot in which the sample was taken.
+        </ResponseField>
+        <ResponseField name='numTransactions' type='integer'>
+          Number of transactions processed during the sample period.
+        </ResponseField>
+        <ResponseField name='numSlots' type='integer'>
+          Number of slots completed during the sample period.
+        </ResponseField>
+        <ResponseField name='samplePeriodSecs' type='integer'>
+          Duration of the sample period in seconds.
+        </ResponseField>
+        <ResponseField name='numNonVoteTransactions' type='integer'>
+          Number of non-vote transactions processed during the sample period (available from Solana v1.15). To compute number of voting transactions: numTransactions - numNonVoteTransactions.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +51,6 @@ curl --request POST \
       5
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getRecentPerformanceSamples",
-  "params": [
-    5
-  ]
-}
 ```
 
 </RequestExample>
@@ -65,17 +76,6 @@ curl --request POST \
       "numNonVoteTransactions": 1
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

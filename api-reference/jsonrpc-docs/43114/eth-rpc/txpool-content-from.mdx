@@ -1,6 +1,6 @@
 ---
 title: 'txpool_contentFrom'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,14 @@ Array containing the address to filter transactions by.
 
 <ResponseField body='result' type='object'>
   Pending and queued transactions for the specified address.
+  <Expandable title='properties'>
+    <ResponseField name='pending' type='array'>
+      List of pending transactions grouped by nonce.
+    </ResponseField>
+    <ResponseField name='queued' type='array'>
+      List of queued transactions grouped by nonce.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +39,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "txpool_contentFrom",
-  "params": [
-    "0x9431D1615FA755Faa25A74da7f34C8Bd6963bd0A"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +47,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'starknet_getBlockWithReceipts'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,65 @@ Parameters for starknet_getBlockWithReceipts: [block_id]
 
 <ResponseField body='result' type='object'>
   Detailed block information with full transactions and receipts
+  <Expandable title='properties'>
+    <ResponseField name='status' type='string'>
+      Status of the block
+    </ResponseField>
+    <ResponseField name='block_hash' type='string'>
+      Block hash
+    </ResponseField>
+    <ResponseField name='parent_hash' type='string'>
+      Parent block hash
+    </ResponseField>
+    <ResponseField name='block_number' type='string'>
+      Block number
+    </ResponseField>
+    <ResponseField name='new_root' type='string'>
+      New global state root
+    </ResponseField>
+    <ResponseField name='timestamp' type='integer'>
+      Block creation time in Unix timestamp
+    </ResponseField>
+    <ResponseField name='sequencer_address' type='string'>
+      Starknet sequencer address
+    </ResponseField>
+    <ResponseField name='l1_gas_price' type='object'>
+      L1 gas price details
+      <Expandable title='properties'>
+        <ResponseField name='price_in_fri' type='string'>
+          Gas price in fri
+        </ResponseField>
+        <ResponseField name='price_in_wei' type='string'>
+          Gas price in wei
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='l1_data_gas_price' type='object'>
+      L1 data gas price details
+      <Expandable title='properties'>
+        <ResponseField name='price_in_fri' type='string'>
+          Data gas price in fri
+        </ResponseField>
+        <ResponseField name='price_in_wei' type='string'>
+          Data gas price in wei
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='l1_da_mode' type='string'>
+      Data availability mode
+    </ResponseField>
+    <ResponseField name='starknet_version' type='string'>
+      Starknet protocol version
+    </ResponseField>
+    <ResponseField name='transactions' type='array'>
+      Array of transactions with receipts
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          Transaction object with receipts
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +90,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getBlockWithReceipts",
-  "params": [
-    ""
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +98,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

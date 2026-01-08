@@ -1,6 +1,6 @@
 ---
 title: 'info.uptime'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,14 @@ Optional object specifying a particular subnet ID to evaluate uptime against.
 
 <ResponseField body='result' type='object'>
   Uptime metrics based on stake-weighted observations from the network.
+  <Expandable title='properties'>
+    <ResponseField name='rewardingStakePercentage' type='string'>
+      Percentage of stake that sees this node as meeting the uptime requirement.
+    </ResponseField>
+    <ResponseField name='weightedAveragePercentage' type='string'>
+      Stake-weighted average of observed uptime for this node.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,15 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "info.uptime",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

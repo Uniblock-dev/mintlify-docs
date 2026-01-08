@@ -1,6 +1,6 @@
 ---
 title: 'getSlotLeaders'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -14,6 +14,11 @@ Parameters for method getSlotLeaders: [startSlot, limit]
 
 <ResponseField body='result' type='array'>
   Array of base-58 encoded public keys of slot leaders.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='string'>
+      Base-58 encoded public key of the slot leader.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getSlotLeaders",
-  "params": [
-    100,
-    10
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,24 +50,8 @@ curl --request POST \
     "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
     "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
     "ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n",
-    "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-    "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-    "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-    "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
-    "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP",
-    "DWvDTSh3qfn88UoQTEKRV2JnLt5jtJAVoiCo3ivtMwXP"
+    "..."
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'eth_getBlockRange'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,80 @@ Parameters for eth_getBlockRange: [startBlockTag, endBlockTag, fullTxObjects]
 
 <ResponseField body='result' type='array'>
   List of block objects in the specified range.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Block object structure.
+      <Expandable title='properties'>
+        <ResponseField name='difficulty' type='string'>
+          Block difficulty (hex).
+        </ResponseField>
+        <ResponseField name='extraData' type='string'>
+          Extra data field (hex).
+        </ResponseField>
+        <ResponseField name='gasLimit' type='string'>
+          Maximum gas allowed (hex).
+        </ResponseField>
+        <ResponseField name='gasUsed' type='string'>
+          Total gas used (hex).
+        </ResponseField>
+        <ResponseField name='hash' type='string'>
+          Block hash (32 bytes hex).
+        </ResponseField>
+        <ResponseField name='logsBloom' type='string'>
+          Bloom filter (256 bytes hex).
+        </ResponseField>
+        <ResponseField name='miner' type='string'>
+          Miner address (20 bytes hex).
+        </ResponseField>
+        <ResponseField name='nonce' type='string'>
+          Block nonce (8 bytes hex).
+        </ResponseField>
+        <ResponseField name='number' type='string'>
+          Block number (hex).
+        </ResponseField>
+        <ResponseField name='parentHash' type='string'>
+          Parent block hash (hex).
+        </ResponseField>
+        <ResponseField name='receiptsRoot' type='string'>
+          Receipts trie root (hex).
+        </ResponseField>
+        <ResponseField name='sha3Uncles' type='string'>
+          SHA3 of uncles (hex).
+        </ResponseField>
+        <ResponseField name='size' type='string'>
+          Block size in bytes (hex).
+        </ResponseField>
+        <ResponseField name='stateRoot' type='string'>
+          State trie root (hex).
+        </ResponseField>
+        <ResponseField name='timestamp' type='string'>
+          Unix timestamp (hex).
+        </ResponseField>
+        <ResponseField name='totalDifficulty' type='string'>
+          Total difficulty up to this block (hex).
+        </ResponseField>
+        <ResponseField name='transactions' type='array'>
+          Array of transaction objects or transaction hashes.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+              Transaction hash (32 bytes hex) or transaction object.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='transactionsRoot' type='string'>
+          Transaction trie root (hex).
+        </ResponseField>
+        <ResponseField name='uncles' type='array'>
+          Array of uncle hashes.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+              Uncle hash (hex).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,19 +109,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getBlockRange",
-  "params": [
-    "0x1",
-    "0x2",
-    false
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -65,32 +126,9 @@ curl --request POST \
       "logsBloom": "0x00000000...",
       "miner": "0x0000000000000000000000000000000000000000",
       "nonce": "0x0000000000000000",
-      "number": "0x1",
-      "parentHash": "0x7ca38a19...",
-      "receiptsRoot": "0xf4c97b11...",
-      "sha3Uncles": "0x1dcc4de8...",
-      "size": "0x30c",
-      "stateRoot": "0xd3ac4085...",
-      "timestamp": "0x618d4769",
-      "totalDifficulty": "0x3",
-      "transactions": [
-        "0x5e77a04531c7c107af1882d76cbff9486d0a9aa53701c30888509d4f5f2b003a"
-      ],
-      "transactionsRoot": "0x19f5efd0...",
-      "uncles": []
+      "__truncated": true
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

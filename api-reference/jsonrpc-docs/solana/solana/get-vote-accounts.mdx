@@ -1,6 +1,6 @@
 ---
 title: 'getVoteAccounts'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,40 @@ Parameters for method getVoteAccounts: [config].
 
 <ResponseField body='result' type='object'>
   Vote account information.
+  <Expandable title='properties'>
+    <ResponseField name='votePubkey' type='string'>
+      Vote account pubkey (base-58 encoded).
+    </ResponseField>
+    <ResponseField name='nodePubkey' type='string'>
+      Validator identity pubkey (base-58 encoded).
+    </ResponseField>
+    <ResponseField name='activatedStake' type='integer'>
+      Stake delegated to this vote account.
+    </ResponseField>
+    <ResponseField name='epochVoteAccount' type='boolean'>
+      True if vote account is staked for this epoch.
+    </ResponseField>
+    <ResponseField name='commission' type='number'>
+      Percentage (0-100) of rewards payout owed to vote account.
+    </ResponseField>
+    <ResponseField name='lastVote' type='integer'>
+      Most recent slot voted on by this vote account.
+    </ResponseField>
+    <ResponseField name='epochCredits' type='array'>
+      Epoch vote credits history.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='integer'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='rootSlot' type='integer'>
+      Current root slot for this vote account.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,19 +67,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getVoteAccounts",
-  "params": [
-    {
-      "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -63,31 +84,11 @@ curl --request POST \
         "commission": 0,
         "lastVote": 147,
         "epochCredits": [
-          [
-            1,
-            64,
-            0
-          ],
-          [
-            2,
-            192,
-            64
-          ]
+          "..."
         ]
       }
     ],
     "delinquent": []
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

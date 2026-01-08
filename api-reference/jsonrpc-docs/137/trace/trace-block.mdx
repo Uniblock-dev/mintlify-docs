@@ -1,6 +1,6 @@
 ---
 title: 'trace_block'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -14,6 +14,75 @@ Parameters for trace_block method: [defaultBlock]
 
 <ResponseField body='result' type='array'>
   Array - Block traces.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Single block-level trace result.
+      <Expandable title='properties'>
+        <ResponseField name='action' type='object'>
+          Details of the action performed (e.g., call, create, suicide).
+          <Expandable title='properties'>
+            <ResponseField name='callType' type='string'>
+              Type of call (e.g., call, delegatecall, staticcall, etc.).
+            </ResponseField>
+            <ResponseField name='from' type='string'>
+              Address that initiated the action.
+            </ResponseField>
+            <ResponseField name='to' type='string'>
+              Recipient address (if applicable).
+            </ResponseField>
+            <ResponseField name='input' type='string'>
+              Input data sent along with the call.
+            </ResponseField>
+            <ResponseField name='value' type='string'>
+              Value transferred in Wei.
+            </ResponseField>
+            <ResponseField name='init' type='string'>
+              Contract creation code (only for create).
+            </ResponseField>
+            <ResponseField name='address' type='string'>
+              Contract address created or affected.
+            </ResponseField>
+            <ResponseField name='balance' type='string'>
+              Balance involved in suicide actions.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='result' type='object'>
+          Result of the action (if successful).
+          <Expandable title='properties'>
+            <ResponseField name='gasUsed' type='string'>
+              Gas used for this action.
+            </ResponseField>
+            <ResponseField name='output' type='string'>
+              Returned data (if any).
+            </ResponseField>
+            <ResponseField name='code' type='string'>
+              Deployed contract code (if applicable).
+            </ResponseField>
+            <ResponseField name='address' type='string'>
+              Address created (for contract creations).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='subtraces' type='integer'>
+          Number of nested trace steps inside this one.
+        </ResponseField>
+        <ResponseField name='traceAddress' type='array'>
+          Path to this trace in nested trace structure.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='integer'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='type' type='string'>
+          Type of trace (e.g., call, create, suicide).
+        </ResponseField>
+        <ResponseField name='error' type='string'>
+          Error message if the trace step failed.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -30,17 +99,6 @@ curl --request POST \
       "0x2ed119"
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "trace_block",
-  "params": [
-    "0x2ed119"
-  ]
-}
 ```
 
 </RequestExample>
@@ -70,20 +128,9 @@ curl --request POST \
       "traceAddress": [],
       "transactionHash": "0x07da28d752aba3b9dd7060005e554719c6205c8a3aea358599fc9b245c52f1f6",
       "transactionPosition": 0,
-      "type": "call"
+      "__truncated": true
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

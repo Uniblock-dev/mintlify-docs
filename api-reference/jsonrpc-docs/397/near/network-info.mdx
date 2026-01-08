@@ -1,7 +1,7 @@
 ---
 title: 'network_info'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,56 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Current node networking status including peers, bandwidth usage, and known producers.
+  <Expandable title='properties'>
+    <ResponseField name='active_peers' type='array'>
+      Information about the active peers.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='id' type='string'>
+              The id of the active peer.
+            </ResponseField>
+            <ResponseField name='addr' type='string'>
+              The address of the active peer.
+            </ResponseField>
+            <ResponseField name='account_id' type='string'>
+              The identifier for the account associated with this peer, if available.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='num_active_peers' type='integer'>
+      The number of active peers.
+    </ResponseField>
+    <ResponseField name='peer_max_count' type='integer'>
+      The maximum count of peers that can be connected to this node.
+    </ResponseField>
+    <ResponseField name='sent_bytes_per_sec' type='integer'>
+      The amount of bytes sent per second.
+    </ResponseField>
+    <ResponseField name='received_bytes_per_sec' type='integer'>
+      The amount of bytes received per second.
+    </ResponseField>
+    <ResponseField name='known_producers' type='array'>
+      The known block producers.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='account_id' type='string'>
+              The identifier for the account.
+            </ResponseField>
+            <ResponseField name='addr' type='string'>
+              The peer address.
+            </ResponseField>
+            <ResponseField name='peer_id' type='string'>
+              The account id of the peer.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +77,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "network_info",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +85,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

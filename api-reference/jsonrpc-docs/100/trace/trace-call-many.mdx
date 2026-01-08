@@ -1,7 +1,7 @@
 ---
 title: 'trace_callMany'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,10 @@ Parameters for the trace call method: [traceCalls, block identifier]. The first 
 
 <ResponseField body='result' type='array'>
   Array - Array of the given transactions’ traces
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "trace_callMany",
-  "params": [
-    [],
-    0
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -58,21 +50,7 @@ curl --request POST \
       "stateDiff": null,
       "trace": [
         {
-          "action": {
-            "callType": "call",
-            "from": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-            "gas": "0x1dcd12f8",
-            "input": "0x",
-            "to": "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-            "value": "0x186a0"
-          },
-          "result": {
-            "gasUsed": "0x0",
-            "output": "0x"
-          },
-          "subtraces": 0,
-          "traceAddress": [],
-          "type": "call"
+          "__truncated": true
         }
       ],
       "vmTrace": null
@@ -82,37 +60,12 @@ curl --request POST \
       "stateDiff": null,
       "trace": [
         {
-          "action": {
-            "callType": "call",
-            "from": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-            "gas": "0x1dcd12f8",
-            "input": "0x",
-            "to": "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-            "value": "0x186a0"
-          },
-          "result": {
-            "gasUsed": "0x0",
-            "output": "0x"
-          },
-          "subtraces": 0,
-          "traceAddress": [],
-          "type": "call"
+          "__truncated": true
         }
       ],
       "vmTrace": null
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

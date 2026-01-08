@@ -1,6 +1,6 @@
 ---
 title: 'eth_createAccessList'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -14,6 +14,30 @@ Parameters: [transaction call object, block identifier]
 
 <ResponseField body='result' type='object'>
   Access list and estimated gas usage.
+  <Expandable title='properties'>
+    <ResponseField name='accessList' type='array'>
+      List of addresses and storage keys accessed.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='address' type='string'>
+              Hex-encoded address accessed.
+            </ResponseField>
+            <ResponseField name='storageKeys' type='array'>
+              List of accessed storage keys.
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='gasUsed' type='string'>
+      Estimated gas usage with the generated access list (hex).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -37,22 +61,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_createAccessList",
-  "params": [
-    {
-      "from": "0xaeA8F8f781326bfE6A7683C2BD48Dd6AA4d3Ba63",
-      "to": "0xa02457e5dfd32bda5fc7e1f1b008aa5979568150",
-      "data": "0x608060806080608155"
-    },
-    "pending"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -65,22 +73,11 @@ curl --request POST \
       {
         "address": "0xa02457e5dfd32bda5fc7e1f1b008aa5979568150",
         "storageKeys": [
-          "0x0000000000000000000000000000000000000000000000000000000000000081"
+          "..."
         ]
       }
     ],
     "gasUsed": "0x125f8"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

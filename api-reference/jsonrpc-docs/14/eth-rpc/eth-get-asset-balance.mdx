@@ -1,7 +1,7 @@
 ---
 title: 'eth_getAssetBalance'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -35,19 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getAssetBalance",
-  "params": [
-    "0x8D97689C9818892B700e27F316cc3E41e17fBeb9",
-    "latest",
-    "0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x16345785d8a0000"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

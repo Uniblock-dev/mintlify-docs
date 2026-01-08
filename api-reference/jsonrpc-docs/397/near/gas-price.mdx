@@ -1,7 +1,7 @@
 ---
 title: 'gas_price'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,11 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='gas_price' type='string'>
+      The gas price in yoctoNEAR
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,19 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "gas_price",
-  "params": [
-    0,
-    "",
-    ""
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -55,17 +47,6 @@ curl --request POST \
   "id": 1,
   "result": {
     "gas_price": "100000000"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

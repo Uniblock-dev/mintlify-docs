@@ -1,7 +1,7 @@
 ---
 title: 'ots_hasCode'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -33,18 +33,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "ots_hasCode",
-  "params": [
-    "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95",
-    "latest"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +41,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": false
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

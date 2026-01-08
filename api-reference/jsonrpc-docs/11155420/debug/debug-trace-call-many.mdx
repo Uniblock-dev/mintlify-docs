@@ -1,7 +1,7 @@
 ---
 title: 'debug_traceCallMany'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -17,6 +17,137 @@ Parameters for debug_traceCallMany. 1. Bundles (required): an array of bundles. 
 
 <ResponseField body='result' type='array'>
   Array of trace responses corresponding to each simulated bundle. Each trace response is one of: callTracer response, prestateTracer response, or opcode (struct) response.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='oneOf'>
+      CallTracer response.
+      <Expandable title='variants'>
+        <ResponseField name='variant1' type='object'>
+          CallTracer response.
+          <Expandable title='properties'>
+            <ResponseField name='type' type='string'>
+              Type of the call.
+            </ResponseField>
+            <ResponseField name='from' type='string'>
+              Sender address.
+            </ResponseField>
+            <ResponseField name='to' type='string'>
+              Recipient address.
+            </ResponseField>
+            <ResponseField name='gas' type='string'>
+              Gas provided by the sender.
+            </ResponseField>
+            <ResponseField name='transactionValue' type='string'>
+              Actual value deducted from the sender (per gas).
+            </ResponseField>
+            <ResponseField name='gasUsed' type='string'>
+              Total gas used by the call.
+            </ResponseField>
+            <ResponseField name='input' type='string'>
+              Input data (4-byte method selector).
+            </ResponseField>
+            <ResponseField name='output' type='string'>
+              Return value (hex).
+            </ResponseField>
+            <ResponseField name='error' type='string'>
+              Error message if execution failed.
+            </ResponseField>
+            <ResponseField name='calls' type='array'>
+              List of sub-calls (nested call frames).
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  A nested call frame with additional details.
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='revertReason' type='string'>
+              Revert reason, if available.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='variant2' type='object'>
+          PrestateTracer response.
+          <Expandable title='properties'>
+            <ResponseField name='contractAddress' type='string'>
+              Smart contract address associated with the result.
+            </ResponseField>
+            <ResponseField name='balance' type='string'>
+              Balance of the contract in wei (hex).
+            </ResponseField>
+            <ResponseField name='code' type='string'>
+              Bytecode of the contract (hex).
+            </ResponseField>
+            <ResponseField name='nonce' type='integer'>
+              Nonce of the contract account.
+            </ResponseField>
+            <ResponseField name='storage' type='object'>
+              Mapping of storage slots (hex keys and values).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='variant3' type='object'>
+          Opcode (struct) trace response.
+          <Expandable title='properties'>
+            <ResponseField name='failed' type='boolean'>
+              Indicates whether the execution failed.
+            </ResponseField>
+            <ResponseField name='gas' type='string'>
+              Total consumed gas (hex).
+            </ResponseField>
+            <ResponseField name='returnValue' type='string'>
+              Return value of the executed call (hex).
+            </ResponseField>
+            <ResponseField name='structLogs' type='array'>
+              Array of execution step logs.
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='pc' type='integer'>
+                      Program counter.
+                    </ResponseField>
+                    <ResponseField name='op' type='string'>
+                      Operation name.
+                    </ResponseField>
+                    <ResponseField name='gas' type='string'>
+                      Available gas at this step.
+                    </ResponseField>
+                    <ResponseField name='gasCost' type='string'>
+                      Gas cost of the operation.
+                    </ResponseField>
+                    <ResponseField name='depth' type='integer'>
+                      Call depth.
+                    </ResponseField>
+                    <ResponseField name='stack' type='array'>
+                      Stack values at this step.
+                      <Expandable title='items'>
+                        <ResponseField name='items[]' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                    <ResponseField name='storage' type='object'>
+                      Storage state at this step.
+                    </ResponseField>
+                    <ResponseField name='refund' type='string'>
+                      Refund amount (hex).
+                    </ResponseField>
+                    <ResponseField name='error' type='string'>
+                      Error message, if any.
+                    </ResponseField>
+                    <ResponseField name='memory' type='array'>
+                      Memory snapshot at this step (array of hex strings).
+                      <Expandable title='items'>
+                        <ResponseField name='items[]' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -39,21 +170,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "debug_traceCallMany",
-  "params": [
-    [],
-    {},
-    {},
-    5000,
-    {}
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -62,17 +178,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

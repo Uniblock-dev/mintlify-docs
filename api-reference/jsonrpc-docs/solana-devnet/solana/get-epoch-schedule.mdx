@@ -1,7 +1,7 @@
 ---
 title: 'getEpochSchedule'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,23 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Information about epoch configuration and schedule.
+  <Expandable title='properties'>
+    <ResponseField name='slotsPerEpoch' type='integer'>
+      Maximum number of slots in each epoch.
+    </ResponseField>
+    <ResponseField name='leaderScheduleSlotOffset' type='integer'>
+      Number of slots before the start of an epoch to calculate the leader schedule.
+    </ResponseField>
+    <ResponseField name='warmup' type='boolean'>
+      Whether epochs begin short and grow (i.e., using warmup epochs).
+    </ResponseField>
+    <ResponseField name='firstNormalEpoch' type='integer'>
+      First normal-length epoch. Calculated as log2(slotsPerEpoch) - log2(MINIMUM_SLOTS_PER_EPOCH).
+    </ResponseField>
+    <ResponseField name='firstNormalSlot' type='integer'>
+      The first slot of the first normal-length epoch, i.e., the point at which warmup epochs stop.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +44,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getEpochSchedule",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -49,17 +57,6 @@ curl --request POST \
     "leaderScheduleSlotOffset": 8192,
     "slotsPerEpoch": 8192,
     "warmup": true
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

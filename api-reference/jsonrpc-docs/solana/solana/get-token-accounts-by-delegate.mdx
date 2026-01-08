@@ -1,6 +1,6 @@
 ---
 title: 'getTokenAccountsByDelegate'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -15,6 +15,57 @@ Parameters for method getTokenAccountsByDelegate: [delegateAddress, filter, conf
 
 <ResponseField body='result' type='array'>
   Array of token accounts owned by delegate.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Token account object.
+      <Expandable title='properties'>
+        <ResponseField name='pubkey' type='string'>
+          Account Pubkey (base-58 encoded).
+        </ResponseField>
+        <ResponseField name='account' type='object'>
+          Token account data object.
+          <Expandable title='properties'>
+            <ResponseField name='lamports' type='integer'>
+              Number of lamports assigned to this account.
+            </ResponseField>
+            <ResponseField name='owner' type='string'>
+              Pubkey of the program that owns this account (base-58 encoded).
+            </ResponseField>
+            <ResponseField name='data' type='oneOf'>
+              Encoded data as [data, encoding] tuple.
+              <Expandable title='variants'>
+                <ResponseField name='variant1' type='array'>
+                  Encoded data as [data, encoding] tuple.
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='oneOf'>
+                      <Expandable title='variants'>
+                        <ResponseField name='variant1' type='string'>
+                        </ResponseField>
+                        <ResponseField name='variant2' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='variant2' type='object'>
+                  Token state data in JSON format (if jsonParsed encoding).
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='executable' type='boolean'>
+              True if the account contains a program (strictly read-only).
+            </ResponseField>
+            <ResponseField name='rentEpoch' type='integer'>
+              Epoch when this account will next owe rent.
+            </ResponseField>
+            <ResponseField name='space' type='integer'>
+              Data size of the account in bytes.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -39,23 +90,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getTokenAccountsByDelegate",
-  "params": [
-    "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
-    {
-      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
-    },
-    {
-      "encoding": "jsonParsed"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -64,17 +98,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'getBlocks'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -34,18 +34,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getBlocks",
-  "params": [
-    5,
-    10
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -58,20 +46,8 @@ curl --request POST \
     6,
     7,
     8,
-    9,
-    10
+    "..."
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

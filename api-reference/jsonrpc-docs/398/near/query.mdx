@@ -1,7 +1,7 @@
 ---
 title: 'query'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,20 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='nonce' type='string'>
+      A nonce which increments each time the access key is used
+    </ResponseField>
+    <ResponseField name='permission' type='object'>
+      Either full access or a limited function-call permission
+      <Expandable title='variants'>
+        <ResponseField name='variant1' type='object'>
+        </ResponseField>
+        <ResponseField name='variant2' type='object'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -36,20 +50,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "query",
-  "params": {
-    "request_type": "view_access_key",
-    "finality": "final",
-    "account_id": "account.rpc-examples.testnet",
-    "public_key": "ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -66,17 +66,6 @@ curl --request POST \
       }
     ],
     "block_id": "6RWmTYhXCzjMjoY3Mz1rfFcnBm8E6XeDDbFEPUA4sv1w"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

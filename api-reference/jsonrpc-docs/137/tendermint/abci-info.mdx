@@ -1,6 +1,6 @@
 ---
 title: 'abci_info'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -27,15 +27,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "abci_info",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -49,17 +40,6 @@ curl --request POST \
       "version": "0.16.1",
       "app_version": "1314126"
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

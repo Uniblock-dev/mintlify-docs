@@ -1,7 +1,7 @@
 ---
 title: 'index.getIndex'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,11 @@ Parameters to identify the container and specify encoding.
 
 <ResponseField body='result' type='object'>
   The index result of the given container.
+  <Expandable title='properties'>
+    <ResponseField name='index' type='string'>
+      The index position of the container in the sequence.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.getIndex",
-  "params": {
-    "containerID": "CRKUaHg85WmLtMc2AbiWVh87Vi5PKBVZFFLhWPtZyRDv6SHSS",
-    "encoding": "hex"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +46,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

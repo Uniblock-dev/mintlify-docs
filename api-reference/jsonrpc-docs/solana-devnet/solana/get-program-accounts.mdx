@@ -1,7 +1,7 @@
 ---
 title: 'getProgramAccounts'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,57 @@ Parameters for method getProgramAccounts: [programId, config]
 
 <ResponseField body='result' type='array'>
   Array of account info objects. If withContext=true, response will be wrapped in RpcResponse object.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Program account object.
+      <Expandable title='properties'>
+        <ResponseField name='pubkey' type='string'>
+          Account Pubkey (base-58 encoded).
+        </ResponseField>
+        <ResponseField name='account' type='object'>
+          Account data object.
+          <Expandable title='properties'>
+            <ResponseField name='lamports' type='integer'>
+              Lamports assigned to this account.
+            </ResponseField>
+            <ResponseField name='owner' type='string'>
+              Pubkey of the program this account has been assigned to.
+            </ResponseField>
+            <ResponseField name='data' type='oneOf'>
+              Tuple of [encoded data string, encoding type].
+              <Expandable title='variants'>
+                <ResponseField name='variant1' type='array'>
+                  Tuple of [encoded data string, encoding type].
+                  <Expandable title='items'>
+                    <ResponseField name='items[]' type='oneOf'>
+                      <Expandable title='variants'>
+                        <ResponseField name='variant1' type='string'>
+                        </ResponseField>
+                        <ResponseField name='variant2' type='string'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name='variant2' type='object'>
+                  JSON object representing program-specific state (if jsonParsed).
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='executable' type='boolean'>
+              True if the account contains a program (strictly read-only).
+            </ResponseField>
+            <ResponseField name='rentEpoch' type='integer'>
+              Epoch at which this account will next owe rent.
+            </ResponseField>
+            <ResponseField name='space' type='integer'>
+              Data size of the account (in bytes).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -45,30 +96,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getProgramAccounts",
-  "params": [
-    "4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",
-    {
-      "filters": [
-        {
-          "dataSize": 17
-        },
-        {
-          "memcmp": {
-            "offset": 4,
-            "bytes": "3Mc6vR"
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -89,17 +116,6 @@ curl --request POST \
       }
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

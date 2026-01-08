@@ -1,7 +1,7 @@
 ---
 title: 'starknet_blockHashAndNumber'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,14 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   BlockID object containing hash and number.
+  <Expandable title='properties'>
+    <ResponseField name='hash' type='string'>
+      Block hash (32 Bytes, DATA).
+    </ResponseField>
+    <ResponseField name='number' type='string'>
+      Block number (QUANTITY, 64 Bits).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_blockHashAndNumber",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +45,6 @@ curl --request POST \
   "result": {
     "block_hash": "0x1ba5d3910676f8383a1c472f1092a77cbe438b108face7873e0407ceee8da1e",
     "block_number": 4504
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: 'zks_getL2ToL1MsgProof'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,21 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='id' type='integer'>
+      The position of the message in the Merkle tree.
+    </ResponseField>
+    <ResponseField name='proof' type='array'>
+      The Merkle proof array for the message.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='root' type='string'>
+      The Merkle root at the time the message was logged.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -34,19 +49,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getL2ToL1MsgProof",
-  "params": [
-    5187,
-    "0x87869cb87c4Fa78ca278dF358E890FF73B42a39E",
-    "0x22de7debaa98758afdaee89f447ff43bab5da3de6acca7528b281cc2f1be2ee9"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,17 +63,6 @@ curl --request POST \
       "0xdef456..."
     ],
     "root": "0xf1adac176fc939313eea4b72055db0622a10bbd9b7a83097286e84e471d2e7df"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

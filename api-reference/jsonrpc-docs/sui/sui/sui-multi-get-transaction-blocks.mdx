@@ -1,7 +1,7 @@
 ---
 title: 'sui_multiGetTransactionBlocks'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,69 @@ Retrieve multiple transaction blocks by digest.
 
 <ResponseField body='result' type='array'>
   Array of detailed transaction block responses.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      A transaction block and metadata.
+      <Expandable title='properties'>
+        <ResponseField name='digest' type='string'>
+          Digest hash of the transaction block.
+        </ResponseField>
+        <ResponseField name='transaction' type='object'>
+          Transaction input data if requested.
+        </ResponseField>
+        <ResponseField name='rawTransaction' type='string'>
+          Raw BCS-encoded SenderSignedData, if enabled.
+        </ResponseField>
+        <ResponseField name='effects' type='object'>
+          Execution effects of the transaction.
+        </ResponseField>
+        <ResponseField name='events' type='array'>
+          Events emitted by the transaction.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='objectChanges' type='array'>
+          Object state changes triggered by the transaction.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='balanceChanges' type='array'>
+          Balance changes due to the transaction.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='checkpoint' type='string'>
+          Checkpoint number where the transaction was finalized.
+        </ResponseField>
+        <ResponseField name='confirmedLocalExecution' type='boolean'>
+          Whether the node has locally confirmed execution.
+        </ResponseField>
+        <ResponseField name='timestampMs' type='string'>
+          Unix timestamp in milliseconds.
+        </ResponseField>
+        <ResponseField name='errors' type='array'>
+          Errors associated with the transaction.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='rawEffects' type='array'>
+          Raw effect logs if requested.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -45,30 +108,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_multiGetTransactionBlocks",
-  "params": [
-    [
-      "EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo",
-      "Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX",
-      "9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"
-    ],
-    {
-      "showInput": true,
-      "showRawInput": false,
-      "showEffects": true,
-      "showEvents": true,
-      "showObjectChanges": false,
-      "showBalanceChanges": false,
-      "showRawEffects": false
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -77,17 +116,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

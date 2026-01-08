@@ -1,7 +1,7 @@
 ---
 title: 'kaia_syncing'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,80 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Snapshot of rollup driver sync status.
+  <Expandable title='properties'>
+    <ResponseField name='current_l1' type='object'>
+      L1BlockRef object with hash, number, parentHash, and timestamp.
+      <Expandable title='properties'>
+        <ResponseField name='hash' type='string'>
+          Hash of the block (32 Bytes).
+        </ResponseField>
+        <ResponseField name='number' type='string'>
+          Block number (QUANTITY, 64 Bits).
+        </ResponseField>
+        <ResponseField name='parentHash' type='string'>
+          Parent block hash (32 Bytes).
+        </ResponseField>
+        <ResponseField name='timestamp' type='string'>
+          Block timestamp (QUANTITY, 64 Bits).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='current_l1_finalized' type='object'>
+      L1BlockRef object with hash, number, parentHash, and timestamp.
+    </ResponseField>
+    <ResponseField name='head_l1' type='object'>
+      L1BlockRef object with hash, number, parentHash, and timestamp.
+    </ResponseField>
+    <ResponseField name='safe_l1' type='object'>
+      L1BlockRef object with hash, number, parentHash, and timestamp.
+    </ResponseField>
+    <ResponseField name='finalized_l1' type='object'>
+      L1BlockRef object with hash, number, parentHash, and timestamp.
+    </ResponseField>
+    <ResponseField name='unsafe_l2' type='object'>
+      L2BlockRef object with hash, number, parentHash, timestamp, l1origin, and sequenceNumber.
+      <Expandable title='properties'>
+        <ResponseField name='hash' type='string'>
+          Hash of the block (32 Bytes).
+        </ResponseField>
+        <ResponseField name='number' type='string'>
+          Block number (QUANTITY, 64 Bits).
+        </ResponseField>
+        <ResponseField name='parentHash' type='string'>
+          Parent block hash (32 Bytes).
+        </ResponseField>
+        <ResponseField name='timestamp' type='string'>
+          Block timestamp (QUANTITY, 64 Bits).
+        </ResponseField>
+        <ResponseField name='l1origin' type='object'>
+          BlockID object containing hash and number.
+          <Expandable title='properties'>
+            <ResponseField name='block_hash' type='string'>
+              Block hash (32 Bytes, DATA).
+            </ResponseField>
+            <ResponseField name='block_number' type='string'>
+              Block number (QUANTITY, 64 Bits).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='sequenceNumber' type='string'>
+          Distance to first block of epoch (QUANTITY, 64 Bits).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='safe_l2' type='object'>
+      L2BlockRef object with hash, number, parentHash, timestamp, l1origin, and sequenceNumber.
+    </ResponseField>
+    <ResponseField name='finalized_l2' type='object'>
+      L2BlockRef object with hash, number, parentHash, timestamp, l1origin, and sequenceNumber.
+    </ResponseField>
+    <ResponseField name='pending_safe_l2' type='object'>
+      L2BlockRef object with hash, number, parentHash, timestamp, l1origin, and sequenceNumber.
+    </ResponseField>
+    <ResponseField name='queued_unsafe_l2' type='object'>
+      L2BlockRef object with hash, number, parentHash, timestamp, l1origin, and sequenceNumber.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +101,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_syncing",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +109,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'getTransactionsForAddress'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -39,25 +39,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getTransactionsForAddress",
-  "params": [
-    [
-      "ADDRESS_PUBLIC_KEY",
-      {
-        "transactionDetails": "signatures",
-        "sortOrder": "desc",
-        "limit": 1000,
-        "commitment": "finalized"
-      }
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -71,27 +52,11 @@ curl --request POST \
     "result": {
       "data": [
         {
-          "signature": "5h6xBEauJ3PK6SWCZ1PGjBvj8vDdWG3KpwATGy1ARAXFSDwt8GFXM7W5Ncn16wmqokgpiKRLuS83KUxyZyv2sUYv",
-          "slot": 1054,
-          "err": null,
-          "memo": null,
-          "blockTime": 1641038400,
-          "confirmationStatus": "finalized"
+          "__truncated": true
         }
       ],
       "paginationToken": "1055:5"
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

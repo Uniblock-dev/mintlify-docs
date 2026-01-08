@@ -1,7 +1,7 @@
 ---
 title: 'unsafe_moveCall'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -21,6 +21,47 @@ Create an unsigned transaction to execute a Move call on the network.
 
 <ResponseField body='result' type='object'>
   Unsigned transaction block for executing a Move function.
+  <Expandable title='properties'>
+    <ResponseField name='gas' type='array'>
+      List of gas objects used in the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+              Object ID of the gas coin.
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+              Version of the object.
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+              Digest of the object.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='inputObjects' type='array'>
+      Objects used in the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+              Object ID used in the call.
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+              Version of the object.
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+              Digest of the object.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='txBytes' type='string'>
+      BCS serialized transaction data bytes, base64 encoded.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -52,30 +93,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_moveCall",
-  "params": [
-    "0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",
-    "0x2",
-    "pay",
-    "split",
-    [
-      "0x2::sui::SUI"
-    ],
-    [
-      "\"10000\"",
-      "\"0x5eeb1d...\""
-    ],
-    "0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051",
-    "100000",
-    "Commit"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -84,17 +101,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'trace_replayTransaction'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -35,20 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "trace_replayTransaction",
-  "params": [
-    "0x02d4a872e096445e80d05276ee756cefef7f3b376bcec14246469c0cd97dad8f",
-    [
-      "trace"
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,28 +47,20 @@ curl --request POST \
     "stateDiff": null,
     "trace": [
       {
-        "action": {},
+        "action": {
+          "__truncated": true
+        },
         "result": {
-          "gasUsed": "0x0",
-          "output": "0x"
+          "__truncated": true
         },
         "subtraces": 0,
-        "traceAddress": [],
+        "traceAddress": [
+          "..."
+        ],
         "type": "call"
       }
     ],
     "vmTrace": null
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

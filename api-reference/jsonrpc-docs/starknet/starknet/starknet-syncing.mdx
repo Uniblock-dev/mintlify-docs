@@ -1,7 +1,7 @@
 ---
 title: 'starknet_syncing'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,34 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='oneOf'>
   A syncing status object containing:
+  <Expandable title='variants'>
+    <ResponseField name='variant1' type='boolean'>
+      Returns false if the node is not currently syncing state.
+    </ResponseField>
+    <ResponseField name='variant2' type='object'>
+      Syncing status object containing progress details.
+      <Expandable title='properties'>
+        <ResponseField name='starting_block_hash' type='string'>
+          The hash of the block from which the sync started.
+        </ResponseField>
+        <ResponseField name='starting_block_num' type='string'>
+          The number of the block from which the sync started.
+        </ResponseField>
+        <ResponseField name='current_block_hash' type='string'>
+          The hash of the current block being synchronized.
+        </ResponseField>
+        <ResponseField name='current_block_num' type='string'>
+          The number of the current block being synchronized.
+        </ResponseField>
+        <ResponseField name='highest_block_hash' type='string'>
+          The hash of the estimated highest block to be synchronized.
+        </ResponseField>
+        <ResponseField name='highest_block_num' type='string'>
+          The number of the estimated highest block to be synchronized.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +55,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_syncing",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +69,6 @@ curl --request POST \
     "current_block_num": "0x1199",
     "highest_block_hash": "0x59c29817b8d4f71fd355180aad76785a801d54eb08fdd2945d1eec8c1dfcd0b",
     "highest_block_num": "0x1199"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

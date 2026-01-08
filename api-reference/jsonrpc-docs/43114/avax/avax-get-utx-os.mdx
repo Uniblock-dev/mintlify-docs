@@ -1,6 +1,6 @@
 ---
 title: 'avax.getUTXOs'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -15,6 +15,31 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='numFetched' type='string'>
+      Number of UTXOs fetched
+    </ResponseField>
+    <ResponseField name='utxos' type='array'>
+      List of UTXO strings
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          Encoded UTXO
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='endIndex' type='object'>
+      Index of the last UTXO returned; use this to continue pagination
+      <Expandable title='properties'>
+        <ResponseField name='address' type='string'>
+        </ResponseField>
+        <ResponseField name='utxo' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      Encoding of returned UTXOs
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,15 +56,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "avax.getUTXOs",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +64,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

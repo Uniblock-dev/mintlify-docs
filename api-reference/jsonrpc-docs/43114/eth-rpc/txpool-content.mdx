@@ -1,6 +1,6 @@
 ---
 title: 'txpool_content'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,14 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Transaction pool content separated by pending and queued states.
+  <Expandable title='properties'>
+    <ResponseField name='pending' type='object'>
+      Mapping of sender addresses to nonce-indexed pending transactions.
+    </ResponseField>
+    <ResponseField name='queued' type='object'>
+      Mapping of sender addresses to nonce-indexed queued transactions.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "txpool_content",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +43,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'unsafe_payAllSui'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -16,6 +16,44 @@ Create an unsigned transaction to send all SUI coins to a recipient.
 
 <ResponseField body='result' type='object'>
   Unsigned transaction block for sending all SUI coins to a recipient.
+  <Expandable title='properties'>
+    <ResponseField name='gas' type='array'>
+      List of gas objects used in the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+              Object ID of the gas coin.
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+              Version of the gas coin.
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+              Digest of the gas coin.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='inputObjects' type='array'>
+      Objects used in this transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='txBytes' type='string'>
+      Base64-encoded BCS serialized transaction bytes.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -41,24 +79,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_payAllSui",
-  "params": [
-    "0xabcde1234567890abcde1234567890abcde1234567890abcde1234567890abcd",
-    [
-      "0xcoin1",
-      "0xcoin2",
-      "0xcoin3"
-    ],
-    "0xrecipientaddress1234567890abcdefabcdef1234567890abcdef",
-    "100000"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -67,17 +87,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

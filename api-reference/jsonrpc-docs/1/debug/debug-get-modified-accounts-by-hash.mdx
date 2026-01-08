@@ -1,6 +1,6 @@
 ---
 title: 'debug_getModifiedAccountsByHash'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,11 @@ Parameters: [blockHash].
 
 <ResponseField body='result' type='array'>
   Modified account addresses.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='string'>
+      The address.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +36,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "debug_getModifiedAccountsByHash",
-  "params": [
-    ""
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +44,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": []
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'suix_getAllBalances'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,25 @@ Parameters for method suix_getAllBalances: [ownerAddress]
 
 <ResponseField body='result' type='array'>
   Array - Balances for the address in the request.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      SuixBalance object
+      <Expandable title='properties'>
+        <ResponseField name='coinObjectCount' type='integer'>
+          Number of coin objects
+        </ResponseField>
+        <ResponseField name='coinType' type='string'>
+          Type of coin
+        </ResponseField>
+        <ResponseField name='lockedBalance' type='object'>
+          Map of locked balances
+        </ResponseField>
+        <ResponseField name='totalBalance' type='string'>
+          Total balance formatted as uint128 string
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +50,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getAllBalances",
-  "params": [
-    "0x94f1a597b4e8f709a396f7f6b1482bdcd65a673d111e49286c527fab7c2d0961"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,17 +65,6 @@ curl --request POST \
       "lockedBalance": {}
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

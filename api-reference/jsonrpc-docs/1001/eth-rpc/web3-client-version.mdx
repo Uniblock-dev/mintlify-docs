@@ -1,7 +1,7 @@
 ---
 title: 'web3_clientVersion'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -27,15 +27,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "web3_clientVersion",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +35,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "OpenEthereum//v3.0.1-stable-8ca8089-20200601/x86_64-unknown-linux-gnu/rustc1.43.1"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

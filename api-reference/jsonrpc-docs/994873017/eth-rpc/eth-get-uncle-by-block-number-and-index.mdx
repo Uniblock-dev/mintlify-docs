@@ -1,7 +1,7 @@
 ---
 title: 'eth_getUncleByBlockNumberAndIndex'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,108 @@ Parameters for eth_getUncleByBlockNumberAndIndex: [defaultBlock, index].
 
 <ResponseField body='result' type='oneOf'>
   Ethereum block object. Null when no block was found.
+  <Expandable title='variants'>
+    <ResponseField name='variant1' type='object'>
+      Ethereum block object. Null when no block was found.
+      <Expandable title='properties'>
+        <ResponseField name='number' type='string'>
+          The block number. Null when pending.
+        </ResponseField>
+        <ResponseField name='hash' type='string'>
+          Hash of the block. Null when pending.
+        </ResponseField>
+        <ResponseField name='parentHash' type='string'>
+          Hash of the parent block.
+        </ResponseField>
+        <ResponseField name='nonce' type='string'>
+          8-byte proof-of-work nonce. Null when pending or in PoA networks.
+        </ResponseField>
+        <ResponseField name='sha3Uncles' type='string'>
+          SHA3 of the uncles data.
+        </ResponseField>
+        <ResponseField name='logsBloom' type='string'>
+          Bloom filter for logs in the block. Null when pending.
+        </ResponseField>
+        <ResponseField name='transactionsRoot' type='string'>
+          Root of the transaction trie.
+        </ResponseField>
+        <ResponseField name='stateRoot' type='string'>
+          Root of the final state trie.
+        </ResponseField>
+        <ResponseField name='receiptsRoot' type='string'>
+          Root of the receipts trie.
+        </ResponseField>
+        <ResponseField name='author' type='string'>
+          Address of the block author (beneficiary).
+        </ResponseField>
+        <ResponseField name='miner' type='string'>
+          Alias of `author`. Address of the miner.
+        </ResponseField>
+        <ResponseField name='difficulty' type='string'>
+          Block difficulty.
+        </ResponseField>
+        <ResponseField name='totalDifficulty' type='string'>
+          Total difficulty of the chain up to this block.
+        </ResponseField>
+        <ResponseField name='extraData' type='string'>
+          Extra data field of the block.
+        </ResponseField>
+        <ResponseField name='size' type='string'>
+          Size of the block in bytes.
+        </ResponseField>
+        <ResponseField name='gasLimit' type='string'>
+          Maximum gas allowed in the block.
+        </ResponseField>
+        <ResponseField name='gasUsed' type='string'>
+          Total gas used by all transactions.
+        </ResponseField>
+        <ResponseField name='timestamp' type='string'>
+          Unix timestamp for when the block was collated.
+        </ResponseField>
+        <ResponseField name='transactions' type='array'>
+          Array of either 32-byte transaction hashes or full transaction objects, depending on the request.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='oneOf'>
+              Transaction hash.
+              <Expandable title='variants'>
+                <ResponseField name='variant1' type='string'>
+                  Transaction hash.
+                </ResponseField>
+                <ResponseField name='variant2' type='object'>
+                  Full transaction object.
+                  <Expandable title='properties'>
+                    <ResponseField name='hash' type='string'>
+                    </ResponseField>
+                    <ResponseField name='from' type='string'>
+                    </ResponseField>
+                    <ResponseField name='to' type='string'>
+                    </ResponseField>
+                    <ResponseField name='value' type='string'>
+                    </ResponseField>
+                    <ResponseField name='gas' type='string'>
+                    </ResponseField>
+                    <ResponseField name='gasPrice' type='string'>
+                    </ResponseField>
+                    <ResponseField name='nonce' type='string'>
+                    </ResponseField>
+                    <ResponseField name='input' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='uncles' type='array'>
+          Array of uncle block hashes.
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,18 +133,6 @@ curl --request POST \
       0
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getUncleByBlockNumberAndIndex",
-  "params": [
-    0,
-    0
-  ]
-}
 ```
 
 </RequestExample>
@@ -64,31 +154,7 @@ curl --request POST \
     "logsBloom": "0xbfb3bb785c60ee4f93aa6e506f6f5d5fc5173301f537d856cac59d91e7a0ce09",
     "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
     "stateRoot": "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
-    "miner": "0x4e65fda2159562a496f9f3522f89122a3088497a",
-    "difficulty": "0x27f07",
-    "totalDifficulty": "0x27f07",
-    "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "size": "0x27f07",
-    "gasLimit": "0x9f759",
-    "minGasPrice": "0x9f759",
-    "gasUsed": "0x9f759",
-    "timestamp": "0x54e34e8e",
-    "transactions": [],
-    "uncles": [
-      "0x1606e5...",
-      "0xd5145a9..."
-    ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
+    "__truncated": true
   }
 }
 ```

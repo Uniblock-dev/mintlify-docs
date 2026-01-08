@@ -1,7 +1,7 @@
 ---
 title: 'EXPERIMENTAL_changes'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,37 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='changes' type='array'>
+      All access-key changes in that block matching the requested keys
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='account_id' type='string'>
+              The NEAR account that owns this key
+            </ResponseField>
+            <ResponseField name='public_key' type='string'>
+              The public key that was added or removed
+            </ResponseField>
+            <ResponseField name='change_type' type='string'>
+              Whether the key was added or removed in that block
+            </ResponseField>
+            <ResponseField name='access_key' type='object'>
+              If `change_type` is `Added`, the new key data; if `Removed`, may be `null`
+              <Expandable title='variants'>
+                <ResponseField name='variant1' type='object'>
+                </ResponseField>
+                <ResponseField name='variant2' type='object'>
+                </ResponseField>
+                <ResponseField name='variant3' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -30,15 +61,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "EXPERIMENTAL_changes",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -47,17 +69,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

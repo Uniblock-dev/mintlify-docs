@@ -1,6 +1,6 @@
 ---
 title: 'getLatestBlockhash'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -13,6 +13,27 @@ Parameters for method getLatestBlockhash: [config]
 
 <ResponseField body='result' type='object'>
   RPC response object containing blockhash info in the value field.
+  <Expandable title='properties'>
+    <ResponseField name='context' type='object'>
+      Context information including slot.
+      <Expandable title='properties'>
+        <ResponseField name='slot' type='integer'>
+          Slot at which the blockhash was queried.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='value' type='object'>
+      Blockhash information.
+      <Expandable title='properties'>
+        <ResponseField name='blockhash' type='string'>
+          Blockhash as a base-58 encoded string.
+        </ResponseField>
+        <ResponseField name='lastValidBlockHeight' type='integer'>
+          Last block height at which the blockhash will be valid.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,19 +54,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getLatestBlockhash",
-  "params": [
-    {
-      "commitment": "processed"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,17 +69,6 @@ curl --request POST \
       "blockhash": "EkSnNWid2cvwEVnVx9aBqawnmiCNiDgp3gUdkDPTKN1N",
       "lastValidBlockHeight": 3090
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

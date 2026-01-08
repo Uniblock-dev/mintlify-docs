@@ -1,6 +1,6 @@
 ---
 title: 'index.isAccepted'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -14,6 +14,11 @@ Parameters used to check the acceptance status of a container.
 
 <ResponseField body='result' type='object'>
   Boolean result indicating whether the container is accepted.
+  <Expandable title='properties'>
+    <ResponseField name='isAccepted' type='boolean'>
+      True if the container is accepted in the index, false otherwise.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.isAccepted",
-  "params": {
-    "containerID": "2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ",
-    "encoding": "hex"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +46,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'unsafe_requestAddStake'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -18,6 +18,44 @@ Create an unsigned transaction to stake SUI to a validator.
 
 <ResponseField body='result' type='object'>
   The unsigned transaction block for the stake operation.
+  <Expandable title='properties'>
+    <ResponseField name='gas' type='array'>
+      The gas objects to be used for the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+              ID of the gas object.
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+              Version of the gas object.
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+              Digest of the gas object.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='inputObjects' type='array'>
+      Objects used in this staking transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='txBytes' type='string'>
+      Base64-encoded BCS serialized transaction data.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -41,22 +79,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_requestAddStake",
-  "params": [
-    "0xabc123456789defabc123456789defabc123456789defabc123456789defabcd",
-    [],
-    "100000000",
-    "0xval123456789abcdef123456789abcdef123456789abcdef123456789abcdef",
-    "0xgasobject1234567890abcdef",
-    "50000"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -65,17 +87,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

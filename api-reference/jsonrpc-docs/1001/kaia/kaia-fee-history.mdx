@@ -1,7 +1,7 @@
 ---
 title: 'kaia_feeHistory'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,36 @@ Parameters: [blockCount, newestBlock, rewardPercentiles].
 
 <ResponseField body='result' type='object'>
   Base fee history for the requested block range.
+  <Expandable title='properties'>
+    <ResponseField name='oldestBlock' type='string'>
+      Hex block number of the first block in the range.
+    </ResponseField>
+    <ResponseField name='baseFeePerGas' type='array'>
+      Base fee per gas for each block in the range.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='gasUsedRatio' type='array'>
+      Gas used ratio for each returned block.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='number'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='reward' type='array'>
+      Priority fee rewards per percentile requested (omitted if no percentages were supplied).
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -39,23 +69,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_feeHistory",
-  "params": [
-    "0x5",
-    0,
-    [
-      10,
-      50,
-      90
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -64,17 +77,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

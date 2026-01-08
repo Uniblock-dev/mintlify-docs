@@ -1,7 +1,7 @@
 ---
 title: 'klay_accounts'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,11 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='array'>
   Account addresses managed by the client.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='string'>
+      The address.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +32,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "klay_accounts",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -46,17 +42,6 @@ curl --request POST \
   "result": [
     "0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90"
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

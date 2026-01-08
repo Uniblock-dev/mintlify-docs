@@ -1,7 +1,7 @@
 ---
 title: 'header'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,58 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='header' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='version' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='block' type='string'>
+            </ResponseField>
+            <ResponseField name='app' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='chain_id' type='string'>
+        </ResponseField>
+        <ResponseField name='height' type='string'>
+        </ResponseField>
+        <ResponseField name='time' type='string'>
+        </ResponseField>
+        <ResponseField name='last_block_id' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='hash' type='string'>
+            </ResponseField>
+            <ResponseField name='parts' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='total' type='integer'>
+                </ResponseField>
+                <ResponseField name='hash' type='string'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='last_commit_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='data_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='validators_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='next_validators_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='consensus_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='app_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='last_results_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='evidence_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='proposer_address' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +79,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "header",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +87,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

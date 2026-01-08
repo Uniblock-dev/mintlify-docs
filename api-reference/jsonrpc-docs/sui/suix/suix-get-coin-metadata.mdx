@@ -1,7 +1,7 @@
 ---
 title: 'suix_getCoinMetadata'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,26 @@ Paramters for method suix_getCoinMetadata: [coinType].
 
 <ResponseField body='result' type='object'>
   The metadata for the coin type in the request
+  <Expandable title='properties'>
+    <ResponseField name='decimals' type='integer'>
+      Number of decimal places the coin uses.
+    </ResponseField>
+    <ResponseField name='description' type='string'>
+      Description of the token
+    </ResponseField>
+    <ResponseField name='iconUrl' type='string'>
+      URL for the token logo
+    </ResponseField>
+    <ResponseField name='id' type='string'>
+      Object ID for the CoinMetadata object
+    </ResponseField>
+    <ResponseField name='name' type='string'>
+      Name for the token
+    </ResponseField>
+    <ResponseField name='symbol' type='string'>
+      Symbol for the token
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +51,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getCoinMetadata",
-  "params": [
-    "0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +65,6 @@ curl --request POST \
     "description": "Stable coin.",
     "iconUrl": null,
     "id": "0x51ceab2edc89f74730e683ebee65578cb3bc9237ba6fca019438a9737cf156ae"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

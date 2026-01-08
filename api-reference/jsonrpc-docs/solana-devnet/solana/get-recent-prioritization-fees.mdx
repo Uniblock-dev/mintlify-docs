@@ -1,7 +1,7 @@
 ---
 title: 'getRecentPrioritizationFees'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,19 @@ The parameters for method getRecentPrioritizationFees: [accountAddresses]
 
 <ResponseField body='result' type='array'>
   Array of prioritization fee objects from recent blocks.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Prioritization fee information for a specific slot.
+      <Expandable title='properties'>
+        <ResponseField name='slot' type='integer'>
+          Slot in which the fee was observed.
+        </ResponseField>
+        <ResponseField name='prioritizationFee' type='integer'>
+          Per-compute-unit fee paid by at least one successfully landed transaction, in micro-lamports (0.000001 lamports).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,19 +44,6 @@ curl --request POST \
       ]
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getRecentPrioritizationFees",
-  "params": [
-    [
-      "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
-    ]
-  ]
-}
 ```
 
 </RequestExample>
@@ -70,22 +70,8 @@ curl --request POST \
       "slot": 348128,
       "prioritizationFee": 0
     },
-    {
-      "slot": 348129,
-      "prioritizationFee": 1234
-    }
+    "..."
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

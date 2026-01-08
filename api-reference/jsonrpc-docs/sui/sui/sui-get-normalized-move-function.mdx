@@ -1,7 +1,7 @@
 ---
 title: 'sui_getNormalizedMoveFunction'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,42 @@ Parameters for retrieving a normalized Move function.
 
 <ResponseField body='result' type='object'>
   Structured representation of a Move function definition.
+  <Expandable title='properties'>
+    <ResponseField name='isEntry' type='boolean'>
+      Indicates whether the function is an entry point.
+    </ResponseField>
+    <ResponseField name='parameters' type='array'>
+      List of input parameter types.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          A normalized Move type string.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='return' type='array'>
+      List of return types.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          A normalized Move return type string.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='typeParameters' type='array'>
+      List of Move ability sets required for type parameters.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+              A Move ability (e.g., copy, drop, store, key).
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='visibility' type='string'>
+      Visibility of the function (public, private, friend).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -35,19 +71,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getNormalizedMoveFunction",
-  "params": [
-    "0x9c4eb6769ca8b6a23efeb7298cf0a8d0b837b78749c2cfc711c42036cc6b7621",
-    "moduleName",
-    "functionName"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -56,17 +79,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

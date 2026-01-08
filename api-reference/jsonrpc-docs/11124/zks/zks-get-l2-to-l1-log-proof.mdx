@@ -1,7 +1,7 @@
 ---
 title: 'zks_getL2ToL1LogProof'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -12,6 +12,22 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='id' type='integer'>
+      The position of the leaf in the Merkle tree of L2->L1 messages for the block.
+    </ResponseField>
+    <ResponseField name='proof' type='array'>
+      The Merkle proof for the message.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          Hex-encoded proof element.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='root' type='string'>
+      The root hash representing the Merkle tree root at the time the L2 to L1 log was generated.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,18 +47,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getL2ToL1LogProof",
-  "params": [
-    "0x2a1c6c74b184965c0cb015aae9ea134fd96215d2e4f4979cfec12563295f610e",
-    0
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,17 +61,6 @@ curl --request POST \
       "0xdef456def456def456def456def456def456def456def456def456def456def4"
     ],
     "root": "0xabc123def4567890abc123def4567890abc123def4567890abc123def4567890"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

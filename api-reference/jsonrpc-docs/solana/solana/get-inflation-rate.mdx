@@ -1,6 +1,6 @@
 ---
 title: 'getInflationRate'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -11,6 +11,20 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Breakdown of inflation allocation for a specific epoch.
+  <Expandable title='properties'>
+    <ResponseField name='total' type='number'>
+      Total inflation rate (as a decimal).
+    </ResponseField>
+    <ResponseField name='validator' type='number'>
+      Portion of inflation allocated to validators.
+    </ResponseField>
+    <ResponseField name='foundation' type='number'>
+      Portion of inflation allocated to the foundation.
+    </ResponseField>
+    <ResponseField name='epoch' type='integer'>
+      Epoch for which the inflation values apply.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +41,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getInflationRate",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +53,6 @@ curl --request POST \
     "validator": 0.148,
     "foundation": 0.001,
     "epoch": 100
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

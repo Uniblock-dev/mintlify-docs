@@ -1,7 +1,7 @@
 ---
 title: 'unsafe_transferSui'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -17,6 +17,44 @@ Create an unsigned transaction to send SUI coin to a recipient. The SUI object i
 
 <ResponseField body='result' type='object'>
   Unsigned transaction block containing base64 encoded BCS bytes and transaction metadata.
+  <Expandable title='properties'>
+    <ResponseField name='gas' type='array'>
+      The gas objects used for the transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+              Gas object ID
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+              Gas object version
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+              Object digest
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='inputObjects' type='array'>
+      Input objects used in this transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='objectId' type='string'>
+            </ResponseField>
+            <ResponseField name='version' type='string'>
+            </ResponseField>
+            <ResponseField name='digest' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='txBytes' type='string'>
+      Base64-encoded BCS serialized transaction data (without type tag).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -39,21 +77,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_transferSui",
-  "params": [
-    "0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f",
-    "0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-    "100000",
-    "0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788",
-    "50000"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -62,17 +85,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

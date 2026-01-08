@@ -1,7 +1,7 @@
 ---
 title: 'getNetwork'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,17 @@ This method does not require any parameters.
 
 <ResponseField body='result' type='object'>
   Network information for the connected Soroban network.
+  <Expandable title='properties'>
+    <ResponseField name='networkPassphrase' type='string'>
+      Stellar network passphrase.
+    </ResponseField>
+    <ResponseField name='protocolVersion' type='integer'>
+      Current protocol version supported.
+    </ResponseField>
+    <ResponseField name='friendbotUrl' type='string'>
+      Optional friendbot URL if provided by the server.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -27,15 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getNetwork",
-  "params": []
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -44,17 +46,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

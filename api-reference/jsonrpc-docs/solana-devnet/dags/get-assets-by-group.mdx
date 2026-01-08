@@ -1,7 +1,7 @@
 ---
 title: 'getAssetsByGroup'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,66 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='assetList' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='total' type='integer'>
+        </ResponseField>
+        <ResponseField name='limit' type='integer'>
+        </ResponseField>
+        <ResponseField name='page' type='integer'>
+        </ResponseField>
+        <ResponseField name='cursor' type='string'>
+        </ResponseField>
+        <ResponseField name='items' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='asset' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='interface' type='string'>
+                    </ResponseField>
+                    <ResponseField name='id' type='string'>
+                    </ResponseField>
+                    <ResponseField name='content' type='object'>
+                      <Expandable title='properties'>
+                        <ResponseField name='$schema' type='string'>
+                        </ResponseField>
+                        <ResponseField name='json_uri' type='string'>
+                        </ResponseField>
+                        <ResponseField name='files' type='array'>
+                          <Expandable title='items'>
+                            <ResponseField name='items[]' type='object'>
+                              <Expandable title='properties'>
+                                <ResponseField name='uri' type='string'>
+                                </ResponseField>
+                                <ResponseField name='mime' type='string'>
+                                </ResponseField>
+                                <ResponseField name='quality' type='object'>
+                                </ResponseField>
+                                <ResponseField name='contexts' type='array'>
+                                  <Expandable title='items'>
+                                    <ResponseField name='items[]' type='string'>
+                                    </ResponseField>
+                                  </Expandable>
+                                </ResponseField>
+                              </Expandable>
+                            </ResponseField>
+                          </Expandable>
+                        </ResponseField>
+                        <ResponseField name='metadata' type='object'>
+                        </ResponseField>
+                      </Expandable>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -40,28 +100,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getAssetsByGroup",
-  "params": [
-    {
-      "groupKey": "collection",
-      "groupValue": "J2ZfLdQsaZ3GCmbucJef3cPnPwGcgjDW1SSYtMdq3L9p",
-      "options": {
-        "limit": 10,
-        "sortBy": {
-          "sortBy": "created",
-          "sortDirection": "desc"
-        },
-        "showCollectionMetadata": true
-      }
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -77,35 +115,10 @@ curl --request POST \
       "cursor": null,
       "items": [
         {
-          "asset": {
-            "interface": "V1_NFT",
-            "id": "9ARngHhVaCtH5JFieRdSS5Y8cdZk2TMF4tfGSWFB9iSK",
-            "content": {
-              "$schema": "https://schema.metaplex.com",
-              "json_uri": "https://example.com/metadata.json",
-              "files": [
-                {
-                  "uri": "https://example.com/image.png",
-                  "mime": "image/png"
-                }
-              ],
-              "metadata": {}
-            }
-          }
+          "__truncated": true
         }
       ]
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

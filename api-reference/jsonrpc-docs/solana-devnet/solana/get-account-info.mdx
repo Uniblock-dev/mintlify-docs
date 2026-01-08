@@ -1,7 +1,7 @@
 ---
 title: 'getAccountInfo'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -35,20 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getAccountInfo",
-  "params": [
-    "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
-    {
-      "encoding": "base58"
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -72,17 +58,6 @@ curl --request POST \
       "rentEpoch": "18446744073709551615",
       "space": 0
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

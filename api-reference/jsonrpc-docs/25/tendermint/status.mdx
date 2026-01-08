@@ -1,7 +1,7 @@
 ---
 title: 'status'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -25,15 +25,6 @@ curl --request POST \
     "method": "status",
     "params": []
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "status",
-  "params": []
-}
 ```
 
 </RequestExample>
@@ -70,7 +61,7 @@ curl --request POST \
       "earliest_app_hash": "C9AEBB441B787D9F1D846DE51F3826F4FD386108B59B08239653ABF59455C3F8",
       "earliest_block_height": "1262196",
       "earliest_block_time": "2019-08-01T11:52:22.818762194Z",
-      "catching_up": false
+      "__truncated": true
     },
     "validator_info": {
       "address": "5D6A51A8E9899C44079C6AF90618BA0369070E6E",
@@ -80,17 +71,6 @@ curl --request POST \
       },
       "voting_power": "0"
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

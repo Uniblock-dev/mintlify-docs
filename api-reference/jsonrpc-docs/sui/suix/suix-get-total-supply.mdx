@@ -1,7 +1,7 @@
 ---
 title: 'suix_getTotalSupply'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getTotalSupply",
-  "params": [
-    "0xe5c651321915b06c81838c2e370109b554a448a78d3a56220f798398dde66eab::acoin::ACOIN"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -51,17 +40,6 @@ curl --request POST \
   "id": 1,
   "result": {
     "value": "12023692"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

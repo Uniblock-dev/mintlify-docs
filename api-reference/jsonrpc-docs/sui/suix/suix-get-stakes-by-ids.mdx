@@ -1,7 +1,7 @@
 ---
 title: 'suix_getStakesByIds'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,19 @@ Parameters for suix_getStakesByIds: [staked_sui_ids].
 
 <ResponseField body='result' type='array'>
   Array of DelegatedStake objects representing stake status by ID.
+  <Expandable title='items'>
+    <ResponseField name='items[]' type='object'>
+      Object representing a delegated stake.
+      <Expandable title='properties'>
+        <ResponseField name='validator' type='string'>
+          The Sui address of the validator receiving the stake.
+        </ResponseField>
+        <ResponseField name='stake_amount' type='string'>
+          The amount staked (u64, as a string representing a BigInt).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +42,6 @@ curl --request POST \
       []
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getStakesByIds",
-  "params": [
-    []
-  ]
-}
 ```
 
 </RequestExample>
@@ -61,17 +63,6 @@ curl --request POST \
       "status": "Unstaked"
     }
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

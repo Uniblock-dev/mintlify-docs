@@ -1,7 +1,7 @@
 ---
 title: 'zks_getBlockDetails'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -11,6 +11,48 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   Detailed information about a ZKsync L2 block.
+  <Expandable title='properties'>
+    <ResponseField name='baseSystemContractsHashes' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='bootloader' type='string'>
+        </ResponseField>
+        <ResponseField name='default_aa' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='commitTxHash' type='string'>
+    </ResponseField>
+    <ResponseField name='committedAt' type='string'>
+    </ResponseField>
+    <ResponseField name='executeTxHash' type='string'>
+    </ResponseField>
+    <ResponseField name='executedAt' type='string'>
+    </ResponseField>
+    <ResponseField name='l1BatchNumber' type='integer'>
+    </ResponseField>
+    <ResponseField name='l1GasPrice' type='integer'>
+    </ResponseField>
+    <ResponseField name='l1TxCount' type='integer'>
+    </ResponseField>
+    <ResponseField name='l2FairGasPrice' type='integer'>
+    </ResponseField>
+    <ResponseField name='l2TxCount' type='integer'>
+    </ResponseField>
+    <ResponseField name='number' type='integer'>
+    </ResponseField>
+    <ResponseField name='operatorAddress' type='string'>
+    </ResponseField>
+    <ResponseField name='proveTxHash' type='string'>
+    </ResponseField>
+    <ResponseField name='provenAt' type='string'>
+    </ResponseField>
+    <ResponseField name='rootHash' type='string'>
+    </ResponseField>
+    <ResponseField name='status' type='string'>
+    </ResponseField>
+    <ResponseField name='timestamp' type='integer'>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -29,17 +71,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getBlockDetails",
-  "params": [
-    140599
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +79,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

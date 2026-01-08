@@ -1,6 +1,6 @@
 ---
 title: 'getBlock'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -38,23 +38,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getBlock",
-  "params": [
-    430,
-    {
-      "encoding": "json",
-      "maxSupportedTransactionVersion": 0,
-      "transactionDetails": "full",
-      "rewards": false
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -70,21 +53,14 @@ curl --request POST \
     "previousBlockhash": "mfcyqEXB3DnHXki6KjjmZck6YjmZLvpAByy2fj4nh6B",
     "transactions": [
       {
-        "meta": {},
-        "transaction": {}
+        "meta": {
+          "__truncated": true
+        },
+        "transaction": {
+          "__truncated": true
+        }
       }
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

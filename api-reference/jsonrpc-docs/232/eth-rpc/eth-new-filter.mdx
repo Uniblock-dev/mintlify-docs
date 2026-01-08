@@ -1,7 +1,7 @@
 ---
 title: 'eth_newFilter'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -43,29 +43,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_newFilter",
-  "params": [
-    {
-      "fromBlock": "0x1",
-      "toBlock": "0x2",
-      "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-      "topics": [
-        "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-        null,
-        [
-          "0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-          "0x000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"
-        ]
-      ]
-    }
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -74,17 +51,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x1"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

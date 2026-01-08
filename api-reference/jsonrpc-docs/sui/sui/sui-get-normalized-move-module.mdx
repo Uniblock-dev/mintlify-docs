@@ -1,7 +1,7 @@
 ---
 title: 'sui_getNormalizedMoveModule'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,31 @@ Parameters for retrieving a normalized Move module.
 
 <ResponseField body='result' type='object'>
   Structured representation of a Move module.
+  <Expandable title='properties'>
+    <ResponseField name='fileFormatVersion' type='integer'>
+      The Move binary file format version.
+    </ResponseField>
+    <ResponseField name='address' type='string'>
+      The hexadecimal address of the package.
+    </ResponseField>
+    <ResponseField name='name' type='string'>
+      Name of the module.
+    </ResponseField>
+    <ResponseField name='friends' type='array'>
+      List of module IDs that this module declares as friends.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          SuiMoveModuleId (formatted as <address>::<module>).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='structs' type='object'>
+      Map of struct names to normalized struct definitions.
+    </ResponseField>
+    <ResponseField name='exposedFunctions' type='object'>
+      Map of function names to normalized function definitions.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +58,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getNormalizedMoveModule",
-  "params": [
-    "0x0047d5fa0a823e7d0ff4d55c32b09995a0ae1eedfee9c7b1354e805ed10ee3d0",
-    "module"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -53,17 +66,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

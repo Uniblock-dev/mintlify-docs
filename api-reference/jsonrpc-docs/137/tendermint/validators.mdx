@@ -1,6 +1,6 @@
 ---
 title: 'validators'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -35,19 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "validators",
-  "params": [
-    0,
-    0,
-    0
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,8 +48,7 @@ curl --request POST \
       {
         "address": "000001E443FD237E4B616E2FA69DF4EE3D49A94F",
         "pub_key": {
-          "type": "tendermint/PubKeyEd25519",
-          "value": "9tK9IT+FPdf2qm+5c2qaxi10sWP+3erWTKgftn2PaQM="
+          "__truncated": true
         },
         "voting_power": "239727",
         "proposer_priority": "-11896414"
@@ -70,17 +56,6 @@ curl --request POST \
     ],
     "count": "1",
     "total": "25"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

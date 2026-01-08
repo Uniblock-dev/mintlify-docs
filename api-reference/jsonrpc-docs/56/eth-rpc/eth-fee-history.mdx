@@ -1,6 +1,6 @@
 ---
 title: 'eth_feeHistory'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -15,6 +15,50 @@ Parameters: [blockCount, newestBlock, rewardPercentiles]
 
 <ResponseField body='result' type='object'>
   Historical gas fee statistics over the requested range of blocks.
+  <Expandable title='properties'>
+    <ResponseField name='oldestBlock' type='string'>
+      The lowest block number in the returned range (hex).
+    </ResponseField>
+    <ResponseField name='baseFeePerGas' type='array'>
+      Base fee per gas for each block in the range, plus one for the next block.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='baseFeePerBlobGas' type='array'>
+      Base fee per blob gas (EIP-4844). Zeroes for pre-4844 blocks.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='gasUsedRatio' type='array'>
+      Ratio of gas used to gas limit for each block.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='number'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='blobGasUsedRatio' type='array'>
+      Ratio of blob gas used to max blob gas per block (EIP-4844).
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='number'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='reward' type='array'>
+      Effective priority fees per gas for specified percentiles across each block.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -38,22 +82,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_feeHistory",
-  "params": [
-    "0x5",
-    "latest",
-    [
-      20,
-      30
-    ]
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -68,30 +96,28 @@ curl --request POST \
       "0x2a63ee068",
       "0x2a01a5449",
       "0x299fc09af",
-      "0x29aa0b0c5",
-      "0x28b21aaec"
+      "..."
     ],
     "baseFeePerBlobGas": [
       "0xe3f5193b",
       "0xf6942037",
       "0xdb2e5553",
       "0xc2d3d9e8",
-      "0xdb2e5553",
-      "0xed15d41e"
+      "..."
     ],
     "gasUsedRatio": [
       0.7806543666666667,
       0.46377263333333335,
       0.46358696666666666,
       0.503863,
-      0.40701746666666666
+      "..."
     ],
     "blobGasUsedRatio": [
       0.8333333333333334,
       0,
       0,
       1,
-      0.8333333333333334
+      "..."
     ],
     "reward": [
       [
@@ -110,22 +136,8 @@ curl --request POST \
         "0x6824280",
         "0x214c9a15"
       ],
-      [
-        "0x4b571c0",
-        "0x1ac123d6"
-      ]
+      "..."
     ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

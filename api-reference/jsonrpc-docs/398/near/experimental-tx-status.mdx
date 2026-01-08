@@ -1,7 +1,7 @@
 ---
 title: 'EXPERIMENTAL_tx_status'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -15,6 +15,86 @@ Checks status of a transaction by hash and includes all receipt outcomes and met
 
 <ResponseField body='result' type='object'>
   Complete transaction status, including all related receipts and outcomes.
+  <Expandable title='properties'>
+    <ResponseField name='final_execution_status' type='string'>
+      Final status of the transaction execution.
+    </ResponseField>
+    <ResponseField name='transaction' type='object'>
+      <Expandable title='properties'>
+        <ResponseField name='signer_id' type='string'>
+        </ResponseField>
+        <ResponseField name='receiver_id' type='string'>
+        </ResponseField>
+        <ResponseField name='hash' type='string'>
+        </ResponseField>
+        <ResponseField name='actions' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              Action objects such as Transfer, CreateAccount, etc.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='transaction_outcome' type='object'>
+      Execution result of the transaction itself.
+      <Expandable title='properties'>
+        <ResponseField name='block_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='outcome' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='gas_burnt' type='integer'>
+            </ResponseField>
+            <ResponseField name='tokens_burnt' type='string'>
+            </ResponseField>
+            <ResponseField name='status' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='receipts' type='array'>
+      List of receipts generated from this transaction.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='receipt_id' type='string'>
+            </ResponseField>
+            <ResponseField name='receiver_id' type='string'>
+            </ResponseField>
+            <ResponseField name='receipt' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='receipts_outcome' type='array'>
+      Execution results of each receipt.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='id' type='string'>
+            </ResponseField>
+            <ResponseField name='outcome' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='gas_burnt' type='integer'>
+                </ResponseField>
+                <ResponseField name='tokens_burnt' type='string'>
+                </ResponseField>
+                <ResponseField name='executor_id' type='string'>
+                </ResponseField>
+                <ResponseField name='status' type='object'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='status' type='object'>
+      Overall final execution status.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,15 +111,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "EXPERIMENTAL_tx_status",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -48,17 +119,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

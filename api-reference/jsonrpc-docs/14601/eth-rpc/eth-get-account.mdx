@@ -1,7 +1,7 @@
 ---
 title: 'eth_getAccount'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,20 @@ Parameters: [address, blockReference]
 
 <ResponseField body='result' type='object'>
   Account information at the specified block.
+  <Expandable title='properties'>
+    <ResponseField name='codeHash' type='string'>
+      32-byte hash of the account’s code.
+    </ResponseField>
+    <ResponseField name='storageRoot' type='string'>
+      Hash of the account’s storage trie.
+    </ResponseField>
+    <ResponseField name='balance' type='string'>
+      Account balance in wei (hexadecimal).
+    </ResponseField>
+    <ResponseField name='nonce' type='string'>
+      Number of transactions sent from the account.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -33,18 +47,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getAccount",
-  "params": [
-    "0x8D97689C9818892B700e27F316cc3E41e17fBeb9",
-    "latest"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -57,17 +59,6 @@ curl --request POST \
     "storageRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
     "balance": "0x38d7ea4c68000",
     "nonce": "0x10"
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: 'getTokenSupply'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -14,6 +14,20 @@ Parameters for method getTokenSupply: [mintAddress, config]
 
 <ResponseField body='result' type='object'>
   Token supply information for the given mint.
+  <Expandable title='properties'>
+    <ResponseField name='amount' type='string'>
+      The raw total token supply without decimals (string representation of u64).
+    </ResponseField>
+    <ResponseField name='decimals' type='integer'>
+      Number of base 10 digits to the right of the decimal place.
+    </ResponseField>
+    <ResponseField name='uiAmount' type='number'>
+      Total token supply using mint-prescribed decimals (deprecated).
+    </ResponseField>
+    <ResponseField name='uiAmountString' type='string'>
+      Total token supply as a string using mint-prescribed decimals.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -30,17 +44,6 @@ curl --request POST \
       "3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"
     ]
   }'
-```
-
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getTokenSupply",
-  "params": [
-    "3wyAj7Rt1TWVPZVteFJPLa26JmLvdb1CAKEFZm3NY75E"
-  ]
-}
 ```
 
 </RequestExample>
@@ -60,17 +63,6 @@ curl --request POST \
       "uiAmount": 1000,
       "uiAmountString": "1000"
     }
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
   }
 }
 ```

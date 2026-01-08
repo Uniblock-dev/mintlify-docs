@@ -1,7 +1,7 @@
 ---
 title: 'starknet_getTransactionByHash'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -31,17 +31,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getTransactionByHash",
-  "params": {
-    "transaction_hash": "0x121aaba2894a63cce81acabb559eb2c114f4859dc5803e0b91349ec398d2eb0"
-  }
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,31 +50,7 @@ curl --request POST \
     "nonce": "0x0",
     "contract_address": "0x206cd6b8b25de0ca44b944d13c2608b355e9a9224a887e2e9447cf5ae3cb2a8",
     "entry_point_selector": "0x15d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad",
-    "calldata": [
-      "0x1",
-      "0x173f81c529191726c6e7287e24626fe24760ac44dae2a1f7e02080230f8458b",
-      "0x68bcbdba7cc8cac2832d23e2c32e9eec39a9f1d03521eff5dff800a62725fa",
-      "0x0",
-      "0x5",
-      "0x5",
-      "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
-      "0x7c57808b9cea7130c44aab2f8ca6147b04408943b48c6d8c3c83eb8cfdd8c0b",
-      "0xd6f06df0e9632b",
-      "0x0",
-      "0x6873917301545706d657c47a11d83ad9840fbeb3",
-      "0x9"
-    ]
-  }
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
+    "__truncated": true
   }
 }
 ```

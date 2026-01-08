@@ -1,7 +1,7 @@
 ---
 title: 'sui_getMoveFunctionArgTypes'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -35,19 +35,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getMoveFunctionArgTypes",
-  "params": [
-    "0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c",
-    "suifrens",
-    "mint"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -64,27 +51,8 @@ curl --request POST \
     {
       "Object": "ByValue"
     },
-    {
-      "Object": "ByImmutableReference"
-    },
-    {
-      "Object": "ByValue"
-    },
-    {
-      "Object": "ByMutableReference"
-    }
+    "..."
   ]
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: 'avm.getTx'
-openapi: 'POST /json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
 playground: 'interactive'
 ---
 ### Parameters
@@ -12,6 +12,34 @@ playground: 'interactive'
 
 <ResponseField body='result' type='object'>
   The JSON-RPC result.
+  <Expandable title='properties'>
+    <ResponseField name='tx' type='oneOf'>
+      The transaction data in the requested encoding format.
+      <Expandable title='variants'>
+        <ResponseField name='variant1' type='string'>
+          Hex-encoded transaction string (if encoding is "hex").
+        </ResponseField>
+        <ResponseField name='variant2' type='object'>
+          Full JSON representation of the transaction (if encoding is "json").
+          <Expandable title='properties'>
+            <ResponseField name='unsignedTx' type='object'>
+            </ResponseField>
+            <ResponseField name='credentials' type='array'>
+              <Expandable title='items'>
+                <ResponseField name='items[]' type='object'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name='id' type='string'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='encoding' type='string'>
+      The encoding format of the returned transaction.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -28,15 +56,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "avm.getTx",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -45,17 +64,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

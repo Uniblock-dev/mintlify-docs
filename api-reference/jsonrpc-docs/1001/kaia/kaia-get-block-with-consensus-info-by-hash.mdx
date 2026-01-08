@@ -1,7 +1,7 @@
 ---
 title: 'kaia_getBlockWithConsensusInfoByHash'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -13,6 +13,22 @@ Parameters: [blockHash].
 
 <ResponseField body='result' type='object'>
   Block data combined with consensus information.
+  <Expandable title='properties'>
+    <ResponseField name='block' type='object'>
+      Block information similar to kaia_getBlockByHash.
+    </ResponseField>
+    <ResponseField name='committee' type='array'>
+      Addresses of committee members.
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='string'>
+          The address.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='proposer' type='string'>
+      Address of the committee member who proposed the block.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -31,17 +47,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_getBlockWithConsensusInfoByHash",
-  "params": [
-    ""
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -50,17 +55,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 'klay_call'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -37,22 +37,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "klay_call",
-  "params": [
-    {
-      "from": "0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90",
-      "to": "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
-      "data": "0x"
-    },
-    "latest"
-  ]
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -61,17 +45,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": "0x"
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 

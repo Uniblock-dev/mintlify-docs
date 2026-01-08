@@ -1,7 +1,7 @@
 ---
 title: 'send_tx'
-openapi: 'POST /json-rpc'
-playground: 'interactive'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+playground: 'none'
 ---
 ### Parameters
 
@@ -14,6 +14,86 @@ Submits a signed transaction and optionally waits for a specific level of execut
 
 <ResponseField body='result' type='object'>
   Complete status and outcome details of the submitted transaction.
+  <Expandable title='properties'>
+    <ResponseField name='final_execution_status' type='string'>
+      Final result of the transaction execution
+    </ResponseField>
+    <ResponseField name='status' type='object'>
+      Transaction execution status
+    </ResponseField>
+    <ResponseField name='transaction' type='object'>
+      Transaction metadata
+      <Expandable title='properties'>
+        <ResponseField name='signer_id' type='string'>
+        </ResponseField>
+        <ResponseField name='public_key' type='string'>
+        </ResponseField>
+        <ResponseField name='nonce' type='integer'>
+        </ResponseField>
+        <ResponseField name='receiver_id' type='string'>
+        </ResponseField>
+        <ResponseField name='actions' type='array'>
+          <Expandable title='items'>
+            <ResponseField name='items[]' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='Transfer' type='object'>
+                  <Expandable title='properties'>
+                    <ResponseField name='deposit' type='string'>
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name='signature' type='string'>
+        </ResponseField>
+        <ResponseField name='hash' type='string'>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='transaction_outcome' type='object'>
+      Outcome of the transaction root action
+      <Expandable title='properties'>
+        <ResponseField name='block_hash' type='string'>
+        </ResponseField>
+        <ResponseField name='outcome' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='gas_burnt' type='integer'>
+            </ResponseField>
+            <ResponseField name='tokens_burnt' type='string'>
+            </ResponseField>
+            <ResponseField name='executor_id' type='string'>
+            </ResponseField>
+            <ResponseField name='status' type='object'>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name='receipts_outcome' type='array'>
+      <Expandable title='items'>
+        <ResponseField name='items[]' type='object'>
+          <Expandable title='properties'>
+            <ResponseField name='block_hash' type='string'>
+            </ResponseField>
+            <ResponseField name='outcome' type='object'>
+              <Expandable title='properties'>
+                <ResponseField name='gas_burnt' type='integer'>
+                </ResponseField>
+                <ResponseField name='tokens_burnt' type='string'>
+                </ResponseField>
+                <ResponseField name='executor_id' type='string'>
+                </ResponseField>
+                <ResponseField name='status' type='object'>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <RequestExample>
@@ -30,15 +110,6 @@ curl --request POST \
   }'
 ```
 
-```json JSON-RPC
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "send_tx",
-  "params": {}
-}
-```
-
 </RequestExample>
 <ResponseExample>
 
@@ -47,17 +118,6 @@ curl --request POST \
   "jsonrpc": "2.0",
   "id": 1,
   "result": {}
-}
-```
-
-```json Error
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "error": {
-    "code": -32600,
-    "message": "Invalid Request"
-  }
 }
 ```
 
