@@ -5,9 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method debug_getRawReceipts: [blockNrOrHash].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80002'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_getRawReceipts'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[]` (string): The block number or hash.
+<ParamField body='params' type='object' required placeholder='["0x1"]'>
+  The parameters for method debug_getRawReceipts: [blockNrOrHash].
+  
+  Positional parameters for <code>debug_getRawReceipts</code>:
+  <ul>
+  <li><code>params[]</code>: The block number or hash.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

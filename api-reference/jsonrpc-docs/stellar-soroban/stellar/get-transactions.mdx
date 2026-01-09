@@ -5,17 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params.startLedger' type='number'>
-  Inclusive starting ledger sequence to list from.
-</ParamField>
-<ParamField body='params.order' type='string'>
-  Sort order by creation time.
-</ParamField>
-<ParamField body='params.account' type='string'>
-  Optional account to filter transactions by.
-</ParamField>
-<ParamField body='params.pagination' type='object'>
-  Pagination controls.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='stellar-soroban'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getTransactions'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' placeholder='{"startLedger":"LEDGER_SEQUENCE","pagination":{"limit":10}}'>
+  Parameters for <code>getTransactions</code>:
+  <ul>
+  <li><code>params.startLedger</code>: Inclusive starting ledger sequence to list from.</li>
+  <li><code>params.order</code>: Sort order by creation time.</li>
+  <li><code>params.account</code>: Optional account to filter transactions by.</li>
+  <li><code>params.pagination</code>: Pagination controls.</li>
+  </ul>
 </ParamField>
 
 ### Returns

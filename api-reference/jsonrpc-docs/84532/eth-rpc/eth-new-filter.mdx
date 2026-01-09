@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_newFilter: [filterObject]. See below for filterObject properties.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='84532'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_newFilter'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.
+<ParamField body='params' type='object' required placeholder='[{"fromBlock":"0x1","toBlock":"0x2","address":"0x8888f1f195afa192cfee860698584c030f4c9db1","topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b",null,["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b","0x000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc"]]}]'>
+  Parameters for eth_newFilter: [filterObject]. See below for filterObject properties.
+  
+  Positional parameters for <code>eth_newFilter</code>:
+  <ul>
+  <li><code>params[0]</code>: Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.</li>
+  </ul>
 </ParamField>
 
 ### Returns

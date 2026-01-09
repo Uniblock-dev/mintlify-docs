@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_subscribe: [subscriptionType, options]. The second parameter is required only for "logs".
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='3636'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_subscribe'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Subscription type. Must be either "newHeads" or "logs".
-</ParamField>
-<ParamField body='params[1]' type='object' required>
-  Filter options for "logs" subscription, or empty object for "newHeads".
+<ParamField body='params' type='object' required placeholder='["logs",{"fromBlock":"latest","toBlock":"latest"}]'>
+  Parameters for eth_subscribe: [subscriptionType, options]. The second parameter is required only for "logs".
+  
+  Positional parameters for <code>eth_subscribe</code>:
+  <ul>
+  <li><code>params[0]</code>: Subscription type. Must be either "newHeads" or "logs".</li>
+  <li><code>params[1]</code>: Filter options for "logs" subscription, or empty object for "newHeads".</li>
+  </ul>
 </ParamField>
 
 ### Returns

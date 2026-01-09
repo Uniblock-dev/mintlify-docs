@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method trace_filter: [filterObject]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80094'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='trace_filter'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='object' required>
-  Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.
+<ParamField body='params' type='object' required placeholder='[{"fromBlock":"0x2ed0c4","toBlock":"0x2ed128","toAddress":["0x8bbB73BCB5d553B5A556358d27625323Fd781D37"],"after":1000,"count":100}]'>
+  Parameters for method trace_filter: [filterObject]
+  
+  Positional parameters for <code>trace_filter</code>:
+  <ul>
+  <li><code>params[]</code>: Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.</li>
+  </ul>
 </ParamField>
 
 ### Returns

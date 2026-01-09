@@ -5,20 +5,30 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.addresses' type='string[]' required>
-  A list of X-Chain addresses to fetch UTXOs for.
-</ParamField>
-<ParamField body='params.limit' type='number'>
-  Optional maximum number of UTXOs to return. Defaults to 1024 if omitted or exceeded.
-</ParamField>
-<ParamField body='params.startIndex' type='object'>
-  Pagination index from the previous response's endIndex.
-</ParamField>
-<ParamField body='params.sourceChain' type='string'>
-  Optional source chain ID (e.g., "P" or "C"). Used when fetching atomic UTXOs.
-</ParamField>
-<ParamField body='params.encoding' type='string'>
-  Encoding format for the returned UTXOs. Must be "hex" if specified.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='avm.getUTXOs'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>avm.getUTXOs</code>:
+  <ul>
+  <li><code>params.addresses</code>: A list of X-Chain addresses to fetch UTXOs for.</li>
+  <li><code>params.limit</code>: Optional maximum number of UTXOs to return. Defaults to 1024 if omitted or exceeded.</li>
+  <li><code>params.startIndex</code>: Pagination index from the previous response's endIndex.</li>
+  <li><code>params.sourceChain</code>: Optional source chain ID (e.g., "P" or "C"). Used when fetching atomic UTXOs.</li>
+  <li><code>params.encoding</code>: Encoding format for the returned UTXOs. Must be "hex" if specified.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,11 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='string' required>
-  The full event ID (hex-encoded 32 bytes) or short event ID.
-</ParamField>
-<ParamField body='params[1]' type='boolean' required>
-  If true, returns full transaction objects; otherwise, returns transaction hashes.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='146'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='dag_getEventPayload'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='["0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e",true]'>
+  Positional parameters for <code>dag_getEventPayload</code>:
+  <ul>
+  <li><code>params[0]</code>: The full event ID (hex-encoded 32 bytes) or short event ID.</li>
+  <li><code>params[1]</code>: If true, returns full transaction objects; otherwise, returns transaction hashes.</li>
+  </ul>
 </ParamField>
 
 ### Returns

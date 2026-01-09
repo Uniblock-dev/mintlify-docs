@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockHash, fullTransactions].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='8217'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='klay_getBlockByHash'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - hash of the block where this transaction was included. Null when pending.
-</ParamField>
-<ParamField body='params[1]' type='boolean' required>
-  If true, includes full transaction objects instead of hashes.
+<ParamField body='params' type='object' required placeholder='["",false]'>
+  Parameters: [blockHash, fullTransactions].
+  
+  Positional parameters for <code>klay_getBlockByHash</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - hash of the block where this transaction was included. Null when pending.</li>
+  <li><code>params[1]</code>: If true, includes full transaction objects instead of hashes.</li>
+  </ul>
 </ParamField>
 
 ### Returns

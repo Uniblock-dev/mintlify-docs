@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Retrieve multiple transaction blocks by digest.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_multiGetTransactionBlocks'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string[]' required>
-  List of transaction digests.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional settings to configure the returned transaction block fields.
+<ParamField body='params' type='object' required placeholder='[["EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo","Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX","9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"],{"showInput":true,"showRawInput":false,"showEffects":true,"showEvents":true,"showObjectChanges":false,"showBalanceChanges":false,"showRawEffects":false}]'>
+  Retrieve multiple transaction blocks by digest.
+  
+  Positional parameters for <code>sui_multiGetTransactionBlocks</code>:
+  <ul>
+  <li><code>params[0]</code>: List of transaction digests.</li>
+  <li><code>params[1]</code>: Optional settings to configure the returned transaction block fields.</li>
+  </ul>
 </ParamField>
 
 ### Returns

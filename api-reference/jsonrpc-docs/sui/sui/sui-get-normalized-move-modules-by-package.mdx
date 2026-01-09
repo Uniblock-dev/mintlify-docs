@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for retrieving all normalized Move modules in a package.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getNormalizedMoveModulesByPackage'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  Object ID of the Move package.
+<ParamField body='params' type='object' required placeholder='["0x61630d3505f8905a0f4d42c6ff39a78a6ba2b28f68a3299ec3417bbabc6717dc"]'>
+  Parameters for retrieving all normalized Move modules in a package.
+  
+  Positional parameters for <code>sui_getNormalizedMoveModulesByPackage</code>:
+  <ul>
+  <li><code>params[]</code>: Object ID of the Move package.</li>
+  </ul>
 </ParamField>
 
 ### Returns

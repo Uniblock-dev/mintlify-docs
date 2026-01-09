@@ -5,11 +5,27 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.size' type='number' required>
-  Number of validators to sample from the specified Subnet.
-</ParamField>
-<ParamField body='params.subnetID' type='string'>
-  Optional Subnet ID to sample validators from. Defaults to the Primary Network.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='platform.sampleValidators'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>platform.sampleValidators</code>:
+  <ul>
+  <li><code>params.size</code>: Number of validators to sample from the specified Subnet.</li>
+  <li><code>params.subnetID</code>: Optional Subnet ID to sample validators from. Defaults to the Primary Network.</li>
+  </ul>
 </ParamField>
 
 ### Returns

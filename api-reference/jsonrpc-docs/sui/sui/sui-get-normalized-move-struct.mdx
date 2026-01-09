@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for retrieving a structured representation of a Move struct.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getNormalizedMoveStruct'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Object ID of the package containing the Move module.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Name of the Move module.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Name of the Move struct.
+<ParamField body='params' type='object' required placeholder='["0xc95b9e341bc3aba1654bdbad707dcd773bd6309363447ef3fe58a960de92aa93","module","StructName"]'>
+  Parameters for retrieving a structured representation of a Move struct.
+  
+  Positional parameters for <code>sui_getNormalizedMoveStruct</code>:
+  <ul>
+  <li><code>params[0]</code>: Object ID of the package containing the Move module.</li>
+  <li><code>params[1]</code>: Name of the Move module.</li>
+  <li><code>params[2]</code>: Name of the Move struct.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for the trace_rawTransaction method: [transactionData, traceType].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='9745'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='trace_rawTransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string'>
-  Data - Raw transaction data.
-</ParamField>
-<ParamField body='params[1]' type='string[]'>
-  Types of traces to collect: "vmTrace", "trace", and/or "stateDiff".
+<ParamField body='params' type='object' placeholder='["",[]]'>
+  Parameters for the trace_rawTransaction method: [transactionData, traceType].
+  
+  Positional parameters for <code>trace_rawTransaction</code>:
+  <ul>
+  <li><code>params[0]</code>: Data - Raw transaction data.</li>
+  <li><code>params[1]</code>: Types of traces to collect: "vmTrace", "trace", and/or "stateDiff".</li>
+  </ul>
 </ParamField>
 
 ### Returns

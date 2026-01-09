@@ -5,9 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [filePath].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='5165'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_stacks'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[]` (string): Destination file path.
+<ParamField body='params' type='object' required placeholder='[""]'>
+  Parameters: [filePath].
+  
+  Positional parameters for <code>debug_stacks</code>:
+  <ul>
+  <li><code>params[]</code>: Destination file path.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

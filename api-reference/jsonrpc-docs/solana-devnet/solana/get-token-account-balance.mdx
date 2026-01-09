@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method getTokenAccountBalance: [tokenAccountAddress, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getTokenAccountBalance'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Pubkey of the Token account to query (base-58 encoded string).
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["7fUAJdStEuGbc3sM84cKRL6yYaaSstyLSU4ve5oovLS7"]'>
+  Parameters for method getTokenAccountBalance: [tokenAccountAddress, config]
+  
+  Positional parameters for <code>getTokenAccountBalance</code>:
+  <ul>
+  <li><code>params[0]</code>: Pubkey of the Token account to query (base-58 encoded string).</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

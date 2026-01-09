@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockNumber]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='5373'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getBlockReceipts'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  Block identifier (hex block number or one of the tags: "latest", "earliest", "pending", "finalized", "safe").
+<ParamField body='params' type='object' required placeholder='["latest"]'>
+  Parameters: [blockNumber]
+  
+  Positional parameters for <code>eth_getBlockReceipts</code>:
+  <ul>
+  <li><code>params[]</code>: Block identifier (hex block number or one of the tags: "latest", "earliest", "pending", "finalized", "safe").</li>
+  </ul>
 </ParamField>
 
 ### Returns

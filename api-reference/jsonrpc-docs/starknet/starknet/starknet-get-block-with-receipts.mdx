@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for starknet_getBlockWithReceipts: [block_id]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='starknet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='starknet_getBlockWithReceipts'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string'>
-  Block identifier, block hash or block number of block tag.
+<ParamField body='params' type='object' placeholder='[""]'>
+  Parameters for starknet_getBlockWithReceipts: [block_id]
+  
+  Positional parameters for <code>starknet_getBlockWithReceipts</code>:
+  <ul>
+  <li><code>params[0]</code>: Block identifier, block hash or block number of block tag.</li>
+  </ul>
 </ParamField>
 
 ### Returns

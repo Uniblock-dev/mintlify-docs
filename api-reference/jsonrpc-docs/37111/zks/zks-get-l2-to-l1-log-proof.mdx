@@ -5,11 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='string' required>
-  The hash of the L2 transaction.
-</ParamField>
-<ParamField body='params[1]' type='number' default={0}>
-  The index of the L2 to L1 log in the transaction.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='37111'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getL2ToL1LogProof'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='["0x2a1c6c74b184965c0cb015aae9ea134fd96215d2e4f4979cfec12563295f610e",0]'>
+  Positional parameters for <code>zks_getL2ToL1LogProof</code>:
+  <ul>
+  <li><code>params[0]</code>: The hash of the L2 transaction.</li>
+  <li><code>params[1]</code>: The index of the L2 to L1 log in the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

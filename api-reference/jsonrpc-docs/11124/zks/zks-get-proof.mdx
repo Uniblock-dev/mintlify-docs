@@ -5,14 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='string' required>
-  The account address to fetch storage proofs for.
-</ParamField>
-<ParamField body='params[1]' type='string[]' required>
-  Vector of storage keys in the account.
-</ParamField>
-<ParamField body='params[2]' type='number' required default={0}>
-  The L1 batch number specifying the point in time for the storage proof.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='11124'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getProof'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='["0x0000000000000000000000000000000000008003",["0x8b65c0cf1012ea9f393197eb24619fd814379b298b238285649e14f936a5eb12"],354895]'>
+  Positional parameters for <code>zks_getProof</code>:
+  <ul>
+  <li><code>params[0]</code>: The account address to fetch storage proofs for.</li>
+  <li><code>params[1]</code>: Vector of storage keys in the account.</li>
+  <li><code>params[2]</code>: The L1 batch number specifying the point in time for the storage proof.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Retrieve object data at a specific version (if retained by the node).
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_tryGetPastObject'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Object ID in hex format.
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  The version of the object to retrieve.
-</ParamField>
-<ParamField body='params[2]' type='object'>
-  Options for customizing the object response fields.
+<ParamField body='params' type='object' required placeholder='["0x11af4b844ff94b3fbef6e36b518da3ad4c5856fa686464524a876b463d129760",4,{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
+  Retrieve object data at a specific version (if retained by the node).
+  
+  Positional parameters for <code>sui_tryGetPastObject</code>:
+  <ul>
+  <li><code>params[0]</code>: Object ID in hex format.</li>
+  <li><code>params[1]</code>: The version of the object to retrieve.</li>
+  <li><code>params[2]</code>: Options for customizing the object response fields.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,10 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters for method getTransactionsForAddress: [address, txFilteringOptions]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getTransactionsForAddress'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='object' default={["ADDRESS_PUBLIC_KEY",{"transactionDetails":"signatures","sortOrder":"desc","limit":1000,"commitment":"finalized"}]}>
-  Base-58 encoded public key of the account to query transaction history for.
+<ParamField body='params' type='object' placeholder='[["ADDRESS_PUBLIC_KEY",{"transactionDetails":"signatures","sortOrder":"desc","limit":1000,"commitment":"finalized"}]]'>
+  Parameters for method getTransactionsForAddress: [address, txFilteringOptions]
+  
+  Positional parameters for <code>getTransactionsForAddress</code>:
+  <ul>
+  <li><code>params[]</code>: Base-58 encoded public key of the account to query transaction history for.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_getBalance [ownerAddress, coin_type]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getBalance'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required default='0xa6f5a7953a75dc632e696cabe60560522a017bf2fb0bd930d1ec22c06f1ee4e4'>
-  The owner's Sui address
-</ParamField>
-<ParamField body='params[1]' type='string' default='0x2::sui::SUI'>
-  Optional coin type. Defaults to 0x2::sui::SUI if not provided.
+<ParamField body='params' type='object' required placeholder='["0xa6f5a7953a75dc632e696cabe60560522a017bf2fb0bd930d1ec22c06f1ee4e4","0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC"]'>
+  Parameters for suix_getBalance [ownerAddress, coin_type]
+  
+  Positional parameters for <code>suix_getBalance</code>:
+  <ul>
+  <li><code>params[0]</code>: The owner's Sui address</li>
+  <li><code>params[1]</code>: Optional coin type. Defaults to 0x2::sui::SUI if not provided.</li>
+  </ul>
 </ParamField>
 
 ### Returns

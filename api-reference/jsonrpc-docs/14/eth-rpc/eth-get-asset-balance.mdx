@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [address, blk, assetID]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='14'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getAssetBalance'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The address of the asset owner.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Block identifier: block number or block hash (hex or tag).
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  The asset ID for which the balance is requested.
+<ParamField body='params' type='object' required placeholder='["0x8D97689C9818892B700e27F316cc3E41e17fBeb9","latest","0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15"]'>
+  Parameters: [address, blk, assetID]
+  
+  Positional parameters for <code>eth_getAssetBalance</code>:
+  <ul>
+  <li><code>params[0]</code>: The address of the asset owner.</li>
+  <li><code>params[1]</code>: Block identifier: block number or block hash (hex or tag).</li>
+  <li><code>params[2]</code>: The asset ID for which the balance is requested.</li>
+  </ul>
 </ParamField>
 
 ### Returns

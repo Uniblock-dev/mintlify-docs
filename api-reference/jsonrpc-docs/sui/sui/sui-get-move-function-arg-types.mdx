@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters to get the argument types of a Move function.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getMoveFunctionArgTypes'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Object ID of the Move package.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Module name within the package.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Function name in the module.
+<ParamField body='params' type='object' required placeholder='["0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c","suifrens","mint"]'>
+  Parameters to get the argument types of a Move function.
+  
+  Positional parameters for <code>sui_getMoveFunctionArgTypes</code>:
+  <ul>
+  <li><code>params[0]</code>: Object ID of the Move package.</li>
+  <li><code>params[1]</code>: Module name within the package.</li>
+  <li><code>params[2]</code>: Function name in the module.</li>
+  </ul>
 </ParamField>
 
 ### Returns

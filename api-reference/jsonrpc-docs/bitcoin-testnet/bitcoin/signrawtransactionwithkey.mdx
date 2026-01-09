@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [rawTx, privKeys, prevTxs?, sighashType?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin-testnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='signrawtransactionwithkey'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Raw transaction hex.
-</ParamField>
-<ParamField body='params[1]' type='string[]' required>
-  Private keys in WIF format.
-</ParamField>
-<ParamField body='params[2]' type='object[]'>
-  Optional previous transaction outputs used for signing.
-</ParamField>
-<ParamField body='params[3]' type='string'>
-  Optional signature hash type (e.g., ALL).
+<ParamField body='params' type='object' required placeholder='["",[],[],""]'>
+  Parameters: [rawTx, privKeys, prevTxs?, sighashType?].
+  
+  Positional parameters for <code>signrawtransactionwithkey</code>:
+  <ul>
+  <li><code>params[0]</code>: Raw transaction hex.</li>
+  <li><code>params[1]</code>: Private keys in WIF format.</li>
+  <li><code>params[2]</code>: Optional previous transaction outputs used for signing.</li>
+  <li><code>params[3]</code>: Optional signature hash type (e.g., ALL).</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getBalanceValues: [address, blockTag]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='23888'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getBalanceValues'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Address to query (20 bytes, hex-encoded).
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Block tag (e.g., "latest", "earliest", or a hex block number).
+<ParamField body='params' type='object' required placeholder='["0x742d35Cc6634C0532925a3b844Bc454e4438f44e","latest"]'>
+  Parameters for eth_getBalanceValues: [address, blockTag]
+  
+  Positional parameters for <code>eth_getBalanceValues</code>:
+  <ul>
+  <li><code>params[0]</code>: Address to query (20 bytes, hex-encoded).</li>
+  <li><code>params[1]</code>: Block tag (e.g., "latest", "earliest", or a hex block number).</li>
+  </ul>
 </ParamField>
 
 ### Returns

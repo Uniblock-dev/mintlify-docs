@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for starknet_getBlockWithTxHashes: [block_id].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='starknet-sepolia'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='starknet_getBlockWithTxHashes'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.block_id' type='object' required>
-  BlockID object containing hash and number.
+<ParamField body='params' type='object' required placeholder='{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"}}'>
+  Parameters for starknet_getBlockWithTxHashes: [block_id].
+  
+  Parameters for <code>starknet_getBlockWithTxHashes</code>:
+  <ul>
+  <li><code>params.block_id</code>: BlockID object containing hash and number.</li>
+  </ul>
 </ParamField>
 
 ### Returns

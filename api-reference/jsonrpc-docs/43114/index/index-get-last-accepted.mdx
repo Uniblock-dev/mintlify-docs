@@ -5,10 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Encoding configuration for the returned data.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='index.getLastAccepted'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.encoding' type='string' required>
-  Specifies the encoding format. Must be "hex".
+<ParamField body='params' type='object' required placeholder='{"encoding":"hex"}'>
+  Encoding configuration for the returned data.
+  
+  Parameters for <code>index.getLastAccepted</code>:
+  <ul>
+  <li><code>params.encoding</code>: Specifies the encoding format. Must be "hex".</li>
+  </ul>
 </ParamField>
 
 ### Returns

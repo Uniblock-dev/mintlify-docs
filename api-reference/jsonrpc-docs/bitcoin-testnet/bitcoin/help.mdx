@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [command?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin-testnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='help'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string'>
-  Optional command name to get detailed help for.
+<ParamField body='params' type='object' placeholder='[""]'>
+  Parameters: [command?].
+  
+  Positional parameters for <code>help</code>:
+  <ul>
+  <li><code>params[]</code>: Optional command name to get detailed help for.</li>
+  </ul>
 </ParamField>
 
 ### Returns

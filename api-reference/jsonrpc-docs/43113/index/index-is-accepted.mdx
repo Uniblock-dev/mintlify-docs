@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters used to check the acceptance status of a container.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43113'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='index.isAccepted'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.containerID' type='string' required>
-  The ID of the container to check.
-</ParamField>
-<ParamField body='params.encoding' type='string' required>
-  The encoding format of the request. Only "hex" is supported.
+<ParamField body='params' type='object' required placeholder='{"containerID":"2dGz8JSfX17QqW12pARrt2iWNhXdcpXMYPVSYRn9HrReGpMXqQ","encoding":"hex"}'>
+  Parameters used to check the acceptance status of a container.
+  
+  Parameters for <code>index.isAccepted</code>:
+  <ul>
+  <li><code>params.containerID</code>: The ID of the container to check.</li>
+  <li><code>params.encoding</code>: The encoding format of the request. Only "hex" is supported.</li>
+  </ul>
 </ParamField>
 
 ### Returns

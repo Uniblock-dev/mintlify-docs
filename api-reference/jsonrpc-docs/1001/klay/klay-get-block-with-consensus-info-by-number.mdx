@@ -5,10 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockNumber].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1001'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='klay_getBlockWithConsensusInfoByNumber'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number' required />
-<ParamField body='params[1]' type='string' />
+<ParamField body='params' type='object' required placeholder='[0,""]'>
+  Parameters: [blockNumber].
+  
+  Positional parameters for <code>klay_getBlockWithConsensusInfoByNumber</code>:
+  <ul>
+  <li><code>params[0]</code>: Type: number.</li>
+  <li><code>params[1]</code>: Type: string.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

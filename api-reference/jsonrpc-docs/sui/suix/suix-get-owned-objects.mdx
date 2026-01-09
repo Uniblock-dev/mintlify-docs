@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_getOwnedObjects: [address, query, cursor, limit]. Only the address is required; query, cursor, and limit are optional.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getOwnedObjects'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The owner's Sui address.
-</ParamField>
-<ParamField body='params[1]' type='object' default={{}}>
-  Optional objects query criteria.
-</ParamField>
-<ParamField body='params[2]' type='string' default=''>
-  Optional paging cursor. If provided, the query will start from the next item after the specified cursor. If not provided, paging starts from the first item.
-</ParamField>
-<ParamField body='params[3]' type='number' default={100}>
-  Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+<ParamField body='params' type='object' required placeholder='["0xdbc9abc01a87906b033a75750e741edb2df5ea5d55c96a611371d22799d26827",{"filter":{"MatchAll":[{"StructType":"0x2::coin::Coin<0x2::sui::SUI>"},{"AddressOwner":"0xdbc9abc01a87906b033a75750e741edb2df5ea5d55c96a611371d22799d26827"},{"Version":"13488"}]},"options":{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":false,"showBcs":false,"showStorageRebate":false}},"0x0cd4bb4d4f520fe9bbf0cf1cebe3f2549412826c3c9261bff9786c240123749f",3]'>
+  Parameters for suix_getOwnedObjects: [address, query, cursor, limit]. Only the address is required; query, cursor, and limit are optional.
+  
+  Positional parameters for <code>suix_getOwnedObjects</code>:
+  <ul>
+  <li><code>params[0]</code>: The owner's Sui address.</li>
+  <li><code>params[1]</code>: Optional objects query criteria.</li>
+  <li><code>params[2]</code>: Optional paging cursor. If provided, the query will start from the next item after the specified cursor. If not provided, paging starts from the first item.</li>
+  <li><code>params[3]</code>: Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.</li>
+  </ul>
 </ParamField>
 
 ### Returns

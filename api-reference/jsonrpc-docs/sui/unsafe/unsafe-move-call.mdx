@@ -5,34 +5,36 @@ playground: 'none'
 ---
 ### Parameters
 
-Create an unsigned transaction to execute a Move call on the network.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unsafe_moveCall'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The signer's Sui address.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The Move package ID.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  The Move module name.
-</ParamField>
-<ParamField body='params[3]' type='string' required>
-  The Move function name.
-</ParamField>
-<ParamField body='params[4]' type='string[]' required>
-  The type arguments of the Move function.
-</ParamField>
-<ParamField body='params[5]' type='string[]' required>
-  Arguments for the Move function, in SuiJson format.
-</ParamField>
-<ParamField body='params[6]' type='string' required>
-  Optional gas object to use. If not provided, one will be auto-selected.
-</ParamField>
-<ParamField body='params[7]' type='string' required>
-  The gas budget for the transaction.
-</ParamField>
-<ParamField body='params[8]' type='string' required>
-  Execution mode: normal or dev inspect.
+<ParamField body='params' type='object' required placeholder='["0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6","0x2","pay","split",["0x2::sui::SUI"],["\"10000\"","\"0x5eeb1d...\""],"0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051","100000","Commit"]'>
+  Create an unsigned transaction to execute a Move call on the network.
+  
+  Positional parameters for <code>unsafe_moveCall</code>:
+  <ul>
+  <li><code>params[0]</code>: The signer's Sui address.</li>
+  <li><code>params[1]</code>: The Move package ID.</li>
+  <li><code>params[2]</code>: The Move module name.</li>
+  <li><code>params[3]</code>: The Move function name.</li>
+  <li><code>params[4]</code>: The type arguments of the Move function.</li>
+  <li><code>params[5]</code>: Arguments for the Move function, in SuiJson format.</li>
+  <li><code>params[6]</code>: Optional gas object to use. If not provided, one will be auto-selected.</li>
+  <li><code>params[7]</code>: The gas budget for the transaction.</li>
+  <li><code>params[8]</code>: Execution mode: normal or dev inspect.</li>
+  </ul>
 </ParamField>
 
 ### Returns

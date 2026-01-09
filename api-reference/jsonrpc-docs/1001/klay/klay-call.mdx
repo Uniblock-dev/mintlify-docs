@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [call object, block parameter]. The transaction object omits "nonce" and may omit "from".
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1001'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='klay_call'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Legacy transaction (pre-EIP-2718).
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params' type='object' required placeholder='[{"from":"0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90","to":"0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b","data":"0x"},"latest"]'>
+  Parameters: [call object, block parameter]. The transaction object omits "nonce" and may omit "from".
+  
+  Positional parameters for <code>klay_call</code>:
+  <ul>
+  <li><code>params[0]</code>: Legacy transaction (pre-EIP-2718).</li>
+  <li><code>params[1]</code>: Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".</li>
+  </ul>
 </ParamField>
 
 ### Returns

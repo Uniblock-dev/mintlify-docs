@@ -5,10 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Optional object specifying a particular subnet ID to evaluate uptime against.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='info.uptime'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.subnetID' type='string'>
-  Optional subnet ID to query uptime within. If omitted, uptime is evaluated on the Primary Network.
+<ParamField body='params' type='object'>
+  Optional object specifying a particular subnet ID to evaluate uptime against.
+  
+  Parameters for <code>info.uptime</code>:
+  <ul>
+  <li><code>params.subnetID</code>: Optional subnet ID to query uptime within. If omitted, uptime is evaluated on the Primary Network.</li>
+  </ul>
 </ParamField>
 
 ### Returns

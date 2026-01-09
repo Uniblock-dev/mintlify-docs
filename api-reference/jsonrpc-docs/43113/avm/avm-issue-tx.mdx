@@ -5,11 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params.tx' type='string' required>
-  The signed transaction, encoded in hex or CB58 (default).
-</ParamField>
-<ParamField body='params.encoding' type='string'>
-  Optional. Encoding of the signed transaction. Can only be "hex" if specified.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43113'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='avm.issueTx'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>avm.issueTx</code>:
+  <ul>
+  <li><code>params.tx</code>: The signed transaction, encoded in hex or CB58 (default).</li>
+  <li><code>params.encoding</code>: Optional. Encoding of the signed transaction. Can only be "hex" if specified.</li>
+  </ul>
 </ParamField>
 
 ### Returns

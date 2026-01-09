@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_uninstallFilter: [filterID].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='81457'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_uninstallFilter'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The filter ID as a hex quantity (e.g., "0x16" for 22).
+<ParamField body='params' type='object' required placeholder='["0x1"]'>
+  Parameters for eth_uninstallFilter: [filterID].
+  
+  Positional parameters for <code>eth_uninstallFilter</code>:
+  <ul>
+  <li><code>params[0]</code>: The filter ID as a hex quantity (e.g., "0x16" for 22).</li>
+  </ul>
 </ParamField>
 
 ### Returns

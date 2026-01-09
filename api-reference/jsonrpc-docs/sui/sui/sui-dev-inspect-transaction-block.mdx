@@ -5,22 +5,32 @@ playground: 'none'
 ---
 ### Parameters
 
-Run a transaction in dev-inspect mode for debugging and analysis purposes.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_devInspectTransactionBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Sender address (SuiAddress).
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  BCS encoded TransactionKind (base64).
-</ParamField>
-<ParamField body='params[2]' type='string'>
-  Gas price used for gas cost estimation.
-</ParamField>
-<ParamField body='params[3]' type='string'>
-  Epoch number to use for dev inspection.
-</ParamField>
-<ParamField body='params[4]' type='object'>
-  Optional DevInspectArgs including gas budget, gas objects, skip checks, etc.
+<ParamField body='params' type='object' required placeholder='["0xd70420418b84502e506794227f897237764dde8d79a01ab2104bf742a277a2ab","AAACACBnxtMcbJcOVn8D72fYEaT4Q2ZbjePygvpIs+AQO6m77QEAagY...","1000","8888",{}]'>
+  Run a transaction in dev-inspect mode for debugging and analysis purposes.
+  
+  Positional parameters for <code>sui_devInspectTransactionBlock</code>:
+  <ul>
+  <li><code>params[0]</code>: Sender address (SuiAddress).</li>
+  <li><code>params[1]</code>: BCS encoded TransactionKind (base64).</li>
+  <li><code>params[2]</code>: Gas price used for gas cost estimation.</li>
+  <li><code>params[3]</code>: Epoch number to use for dev inspection.</li>
+  <li><code>params[4]</code>: Optional DevInspectArgs including gas budget, gas objects, skip checks, etc.</li>
+  </ul>
 </ParamField>
 
 ### Returns

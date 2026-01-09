@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [subscriptionId].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='223'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='klay_unsubscribe'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  Subscription identifier.
+<ParamField body='params' type='object' required placeholder='[""]'>
+  Parameters: [subscriptionId].
+  
+  Positional parameters for <code>klay_unsubscribe</code>:
+  <ul>
+  <li><code>params[]</code>: Subscription identifier.</li>
+  </ul>
 </ParamField>
 
 ### Returns

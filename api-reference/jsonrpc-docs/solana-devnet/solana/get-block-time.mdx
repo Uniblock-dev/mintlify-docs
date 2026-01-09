@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method getBlockTime: [slot].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getBlockTime'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='number' required>
-  Slot number of the block to retrieve.
+<ParamField body='params' type='object' required placeholder='[5]'>
+  The parameters for method getBlockTime: [slot].
+  
+  Positional parameters for <code>getBlockTime</code>:
+  <ul>
+  <li><code>params[]</code>: Slot number of the block to retrieve.</li>
+  </ul>
 </ParamField>
 
 ### Returns

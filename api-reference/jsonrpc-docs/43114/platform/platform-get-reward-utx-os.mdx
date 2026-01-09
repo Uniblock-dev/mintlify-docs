@@ -5,13 +5,29 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Returns UTXOs rewarded after the staking or delegation period ended for the given transaction. Deprecated as of v1.9.12.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='platform.getRewardUTXOs'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.txID' type='string' required>
-  ID of the staking or delegating transaction.
-</ParamField>
-<ParamField body='params.encoding' type='string'>
-  Format for returned UTXOs. Only "hex" is supported if provided.
+<ParamField body='params' type='object' required>
+  Returns UTXOs rewarded after the staking or delegation period ended for the given transaction. Deprecated as of v1.9.12.
+  
+  Parameters for <code>platform.getRewardUTXOs</code>:
+  <ul>
+  <li><code>params.txID</code>: ID of the staking or delegating transaction.</li>
+  <li><code>params.encoding</code>: Format for returned UTXOs. Only "hex" is supported if provided.</li>
+  </ul>
 </ParamField>
 
 ### Returns

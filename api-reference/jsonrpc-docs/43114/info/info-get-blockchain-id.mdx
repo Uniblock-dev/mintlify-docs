@@ -5,8 +5,26 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.alias' type='string' required>
-  The alias of the blockchain.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='info.getBlockchainID'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>info.getBlockchainID</code>:
+  <ul>
+  <li><code>params.alias</code>: The alias of the blockchain.</li>
+  </ul>
 </ParamField>
 
 ### Returns

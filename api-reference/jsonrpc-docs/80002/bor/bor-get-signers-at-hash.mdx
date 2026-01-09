@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for bor_getSignersAtHash: [blockHash]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80002'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='bor_getSignersAtHash'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  32-byte block hash (hex-encoded, 0x-prefixed).
+<ParamField body='params' type='object' required placeholder='["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"]'>
+  Parameters for bor_getSignersAtHash: [blockHash]
+  
+  Positional parameters for <code>bor_getSignersAtHash</code>:
+  <ul>
+  <li><code>params[]</code>: 32-byte block hash (hex-encoded, 0x-prefixed).</li>
+  </ul>
 </ParamField>
 
 ### Returns

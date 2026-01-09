@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getTransactionByHash: [transactionHash].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='42793'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getTransactionReceipt'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - Hash of the transaction.
+<ParamField body='params' type='object' required placeholder='["0x444172bef57ad978655171a8af2cfd89baa02a97fcb773067aef7794d6913374"]'>
+  Parameters for eth_getTransactionByHash: [transactionHash].
+  
+  Positional parameters for <code>eth_getTransactionReceipt</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - Hash of the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

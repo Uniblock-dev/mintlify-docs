@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Execute a signed transaction and optionally wait for effects or local execution.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_executeTransactionBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Base64-encoded BCS serialized transaction data (without type tag).
-</ParamField>
-<ParamField body='params[1]' type='string[]' required>
-  Array of base64-encoded signatures.
-</ParamField>
-<ParamField body='params[2]' type='object'>
-  Optional transaction response options.
-</ParamField>
-<ParamField body='params[3]' type='string' default='WaitForEffectsCert'>
-  Execution mode indicating how long to wait for confirmation.
+<ParamField body='params' type='object' required placeholder='["AAACACBqEB6aOvXIBwES+Ahkizbvv43uihqC3kbZUE6WoRCKFwEAjvdvVs...",[],{},"WaitForEffectsCert"]'>
+  Execute a signed transaction and optionally wait for effects or local execution.
+  
+  Positional parameters for <code>sui_executeTransactionBlock</code>:
+  <ul>
+  <li><code>params[0]</code>: Base64-encoded BCS serialized transaction data (without type tag).</li>
+  <li><code>params[1]</code>: Array of base64-encoded signatures.</li>
+  <li><code>params[2]</code>: Optional transaction response options.</li>
+  <li><code>params[3]</code>: Execution mode indicating how long to wait for confirmation.</li>
+  </ul>
 </ParamField>
 
 ### Returns

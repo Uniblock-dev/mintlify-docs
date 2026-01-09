@@ -5,8 +5,26 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[]' type='string' required default='0x0000000000000000000000000000000000000000000000000000000000000000'>
-  The hash of the bytecode to retrieve.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='300'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getBytecodeByHash'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='["0x0100067d861e2f5717a12c3e869cfb657793b86bbb0caa05cc1421f16c5217bc"]'>
+  Positional parameters for <code>zks_getBytecodeByHash</code>:
+  <ul>
+  <li><code>params[]</code>: The hash of the bytecode to retrieve.</li>
+  </ul>
 </ParamField>
 
 ### Returns

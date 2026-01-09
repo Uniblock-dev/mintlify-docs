@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method getTokenAccountsByOwner: [ownerAddress, filter, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getTokenAccountsByOwner'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Pubkey of the token account owner (base-58 encoded).
-</ParamField>
-<ParamField body='params[1]' type='object' required>
-  Filter object - must specify either mint or programId.
-</ParamField>
-<ParamField body='params[2]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["A1TMhSGzQxMr1TboBKtgixKz1sS6REASMxPo1qsyTSJd",{"programId":"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"},{"encoding":"jsonParsed"}]'>
+  Parameters for method getTokenAccountsByOwner: [ownerAddress, filter, config]
+  
+  Positional parameters for <code>getTokenAccountsByOwner</code>:
+  <ul>
+  <li><code>params[0]</code>: Pubkey of the token account owner (base-58 encoded).</li>
+  <li><code>params[1]</code>: Filter object - must specify either mint or programId.</li>
+  <li><code>params[2]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

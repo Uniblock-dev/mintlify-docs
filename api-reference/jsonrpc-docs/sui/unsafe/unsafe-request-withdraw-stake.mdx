@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Creates an unsigned transaction to withdraw staked SUI.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unsafe_requestWithdrawStake'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The Sui address of the transaction signer.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The object ID of the staked SUI to withdraw.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Optional gas object ID. If omitted, a gas object will be selected automatically.
-</ParamField>
-<ParamField body='params[3]' type='string' required>
-  The gas budget for the transaction.
+<ParamField body='params' type='object' required placeholder='["0xabc123456789abcdef123456789abcdef123456789abcdef123456789abcdef","0xstakeobject1234567890abcdef1234567890abcdef","0xgasobject1234567890abcdef","100000"]'>
+  Creates an unsigned transaction to withdraw staked SUI.
+  
+  Positional parameters for <code>unsafe_requestWithdrawStake</code>:
+  <ul>
+  <li><code>params[0]</code>: The Sui address of the transaction signer.</li>
+  <li><code>params[1]</code>: The object ID of the staked SUI to withdraw.</li>
+  <li><code>params[2]</code>: Optional gas object ID. If omitted, a gas object will be selected automatically.</li>
+  <li><code>params[3]</code>: The gas budget for the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

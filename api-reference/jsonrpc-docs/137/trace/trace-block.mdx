@@ -5,13 +5,29 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters for trace_block method: [defaultBlock]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='137'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='trace_block'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number' required>
-  Integer block number.
-</ParamField>
-<ParamField body='params[1]' type='string'>
-  Block tag: "earliest", "latest", or "pending".
+<ParamField body='params' type='object' required placeholder='["0x2ed119"]'>
+  Parameters for trace_block method: [defaultBlock]
+  
+  Positional parameters for <code>trace_block</code>:
+  <ul>
+  <li><code>params[0]</code>: Integer block number.</li>
+  <li><code>params[1]</code>: Block tag: "earliest", "latest", or "pending".</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [address, storageKeys, blockParameter]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='44787'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getProof'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The 20-byte address to check for balance, nonce, and storage.
-</ParamField>
-<ParamField body='params[1]' type='string[]' required>
-  Array of 32-byte storage keys (hex) to be included in the proof.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Block number or tag ("latest", "earliest", "pending", "safe", "finalized").
+<ParamField body='params' type='object' required placeholder='["0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842",["0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"],"latest"]'>
+  Parameters: [address, storageKeys, blockParameter]
+  
+  Positional parameters for <code>eth_getProof</code>:
+  <ul>
+  <li><code>params[0]</code>: The 20-byte address to check for balance, nonce, and storage.</li>
+  <li><code>params[1]</code>: Array of 32-byte storage keys (hex) to be included in the proof.</li>
+  <li><code>params[2]</code>: Block number or tag ("latest", "earliest", "pending", "safe", "finalized").</li>
+  </ul>
 </ParamField>
 
 ### Returns

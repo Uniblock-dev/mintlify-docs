@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_queryEvents: [query, cursor, limit, descending_order]. The query object specifies event filter criteria. Cursor, limit, and descending_order are optional.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_queryEvents'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Event query criteria object. See Event filter documentation for examples.
-</ParamField>
-<ParamField body='params[1]' type='string'>
-  Optional paging cursor. If provided, the query will start from the next item after this cursor.
-</ParamField>
-<ParamField body='params[2]' type='number' default={1000}>
-  Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
-</ParamField>
-<ParamField body='params[3]' type='boolean' default={false}>
-  Query result ordering. Default is false (ascending order, oldest record first).
+<ParamField body='params' type='object' required placeholder='[{"MoveModule":{"package":"0xa395759ca37c6e1ffc179184e98a6f9a2da5d78f6e34b0e5044ed52a6bc0a1bc","module":"test"}},{"txDigest":"Eg3ynETJfTfPKyvJzq3VLG6MngURYHPMjjUJ3Xt1t7tf","eventSeq":"1"},100,false]'>
+  Parameters for suix_queryEvents: [query, cursor, limit, descending_order]. The query object specifies event filter criteria. Cursor, limit, and descending_order are optional.
+  
+  Positional parameters for <code>suix_queryEvents</code>:
+  <ul>
+  <li><code>params[0]</code>: Event query criteria object. See Event filter documentation for examples.</li>
+  <li><code>params[1]</code>: Optional paging cursor. If provided, the query will start from the next item after this cursor.</li>
+  <li><code>params[2]</code>: Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.</li>
+  <li><code>params[3]</code>: Query result ordering. Default is false (ascending order, oldest record first).</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,22 +5,32 @@ playground: 'none'
 ---
 ### Parameters
 
-Create an unsigned transaction to send SUI coin to a recipient. The SUI object is used as both transfer and gas coin.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unsafe_transferSui'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The signer's Sui address.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The SUI coin object to use in this transaction.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Gas budget for the transaction.
-</ParamField>
-<ParamField body='params[3]' type='string' required>
-  The recipient's Sui address.
-</ParamField>
-<ParamField body='params[4]' type='string'>
-  Optional transfer amount. If not provided, all balance is transferred minus gas cost.
+<ParamField body='params' type='object' required placeholder='["0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f","0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef","100000","0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788","50000"]'>
+  Create an unsigned transaction to send SUI coin to a recipient. The SUI object is used as both transfer and gas coin.
+  
+  Positional parameters for <code>unsafe_transferSui</code>:
+  <ul>
+  <li><code>params[0]</code>: The signer's Sui address.</li>
+  <li><code>params[1]</code>: The SUI coin object to use in this transaction.</li>
+  <li><code>params[2]</code>: Gas budget for the transaction.</li>
+  <li><code>params[3]</code>: The recipient's Sui address.</li>
+  <li><code>params[4]</code>: Optional transfer amount. If not provided, all balance is transferred minus gas cost.</li>
+  </ul>
 </ParamField>
 
 ### Returns

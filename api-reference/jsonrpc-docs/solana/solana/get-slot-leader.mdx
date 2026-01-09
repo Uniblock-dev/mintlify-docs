@@ -5,10 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters for method getSlotLeader: [config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getSlotLeader'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' placeholder='[{}]'>
+  Parameters for method getSlotLeader: [config]
+  
+  Positional parameters for <code>getSlotLeader</code>:
+  <ul>
+  <li><code>params[]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

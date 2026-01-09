@@ -5,22 +5,32 @@ playground: 'none'
 ---
 ### Parameters
 
-Creates an unsigned transaction to split a coin object into multiple equal-size coins.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unsafe_splitCoinEqual'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The transaction signer's Sui address.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The coin object ID to split.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  The number of equal-sized coins to split into.
-</ParamField>
-<ParamField body='params[3]' type='string' required>
-  Optional gas object ID. If not specified, the node selects one.
-</ParamField>
-<ParamField body='params[4]' type='string' required>
-  The gas budget for the transaction.
+<ParamField body='params' type='object' required placeholder='["0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788","0xcoinobjectabc123456789abcdef","3","0xgasobject001122334455","100000"]'>
+  Creates an unsigned transaction to split a coin object into multiple equal-size coins.
+  
+  Positional parameters for <code>unsafe_splitCoinEqual</code>:
+  <ul>
+  <li><code>params[0]</code>: The transaction signer's Sui address.</li>
+  <li><code>params[1]</code>: The coin object ID to split.</li>
+  <li><code>params[2]</code>: The number of equal-sized coins to split into.</li>
+  <li><code>params[3]</code>: Optional gas object ID. If not specified, the node selects one.</li>
+  <li><code>params[4]</code>: The gas budget for the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

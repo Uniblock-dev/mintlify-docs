@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method blockchain: [minHeight, maxHeight].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='2222'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='blockchain'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number' required>
-  Integer - minHeight to return.
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  Integer - maxHeight to return.
+<ParamField body='params' type='object' required placeholder='[1,100]'>
+  The parameters for method blockchain: [minHeight, maxHeight].
+  
+  Positional parameters for <code>blockchain</code>:
+  <ul>
+  <li><code>params[0]</code>: Integer - minHeight to return.</li>
+  <li><code>params[1]</code>: Integer - maxHeight to return.</li>
+  </ul>
 </ParamField>
 
 ### Returns

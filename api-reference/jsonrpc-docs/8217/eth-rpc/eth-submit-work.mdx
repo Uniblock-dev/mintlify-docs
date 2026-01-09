@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_submitWork: [nonce, powHash, mixHash].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='8217'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_submitWork'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  8 Bytes - The nonce found (64 bits).
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  32 Bytes - The header’s pow-hash (256 bits)
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  Data - 32 Bytes - The mix digest (256 bits).
+<ParamField body='params' type='object' required placeholder='["0x0000000000000001","0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef","0xD1FE5700000000000000000000000000D1FE5700000000000000000000000000"]'>
+  Parameters for eth_submitWork: [nonce, powHash, mixHash].
+  
+  Positional parameters for <code>eth_submitWork</code>:
+  <ul>
+  <li><code>params[0]</code>: 8 Bytes - The nonce found (64 bits).</li>
+  <li><code>params[1]</code>: 32 Bytes - The header’s pow-hash (256 bits)</li>
+  <li><code>params[2]</code>: Data - 32 Bytes - The mix digest (256 bits).</li>
+  </ul>
 </ParamField>
 
 ### Returns

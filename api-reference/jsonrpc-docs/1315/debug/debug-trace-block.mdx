@@ -5,10 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method debug_traceBlock: [blockRlp, traceConfig].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1315'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_traceBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[0]` (string): The RLP encoded block.
-- `params[1]` (object): Optional configuration object passed to tracing RPC methods.
+<ParamField body='params' type='object' required placeholder='["RLP_ENCODED_BLOCK",{"tracer":"callTracer"}]'>
+  The parameters for method debug_traceBlock: [blockRlp, traceConfig].
+  
+  Positional parameters for <code>debug_traceBlock</code>:
+  <ul>
+  <li><code>params[0]</code>: The RLP encoded block.</li>
+  <li><code>params[1]</code>: Optional configuration object passed to tracing RPC methods.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

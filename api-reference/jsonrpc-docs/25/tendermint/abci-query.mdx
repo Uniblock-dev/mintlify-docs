@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Query parameters for method abci_query in the order: [path, data, height, prove]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='25'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='abci_query'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Path to the data (e.g., "/a/b/c")
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Data content to query
-</ParamField>
-<ParamField body='params[2]' type='number' required default={0}>
-  Block height. 0 means latest.
-</ParamField>
-<ParamField body='params[3]' type='boolean' required default={false}>
-  Whether to include proofs of transaction inclusion.
+<ParamField body='params' type='object' required placeholder='["/a/b/c","IHAVENOIDEA",1,false]'>
+  Query parameters for method abci_query in the order: [path, data, height, prove]
+  
+  Positional parameters for <code>abci_query</code>:
+  <ul>
+  <li><code>params[0]</code>: Path to the data (e.g., "/a/b/c")</li>
+  <li><code>params[1]</code>: Data content to query</li>
+  <li><code>params[2]</code>: Block height. 0 means latest.</li>
+  <li><code>params[3]</code>: Whether to include proofs of transaction inclusion.</li>
+  </ul>
 </ParamField>
 
 ### Returns

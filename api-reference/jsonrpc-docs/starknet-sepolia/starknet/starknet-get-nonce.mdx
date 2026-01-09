@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for starknet_getNonce: [block_id, contract_address].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='starknet-sepolia'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='starknet_getNonce'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.block_id' type='object' required>
-  BlockID object containing hash and number.
-</ParamField>
-<ParamField body='params.contract_address' type='string' required>
-  The address of the request contract.
+<ParamField body='params' type='object' required placeholder='{"block_id":{"block_number":470207},"contract_address":"0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"}'>
+  Parameters for starknet_getNonce: [block_id, contract_address].
+  
+  Parameters for <code>starknet_getNonce</code>:
+  <ul>
+  <li><code>params.block_id</code>: BlockID object containing hash and number.</li>
+  <li><code>params.contract_address</code>: The address of the request contract.</li>
+  </ul>
 </ParamField>
 
 ### Returns

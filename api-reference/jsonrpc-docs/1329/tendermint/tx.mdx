@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method tx: [transactionHash, prove].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1329'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='tx'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - Hash of the transaction.
-</ParamField>
-<ParamField body='params[1]' type='boolean'>
-  To include proofs into the response.
+<ParamField body='params' type='object' required placeholder='["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",true]'>
+  The parameters for method tx: [transactionHash, prove].
+  
+  Positional parameters for <code>tx</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - Hash of the transaction.</li>
+  <li><code>params[1]</code>: To include proofs into the response.</li>
+  </ul>
 </ParamField>
 
 ### Returns

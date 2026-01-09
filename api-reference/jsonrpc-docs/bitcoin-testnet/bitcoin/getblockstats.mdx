@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [hash_or_height, metrics?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin-testnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getblockstats'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Block hash or height.
-</ParamField>
-<ParamField body='params[1]' type='string[]'>
-  Optional list of metrics to compute.
+<ParamField body='params' type='object' required placeholder='["",[]]'>
+  Parameters: [hash_or_height, metrics?].
+  
+  Positional parameters for <code>getblockstats</code>:
+  <ul>
+  <li><code>params[0]</code>: Block hash or height.</li>
+  <li><code>params[1]</code>: Optional list of metrics to compute.</li>
+  </ul>
 </ParamField>
 
 ### Returns

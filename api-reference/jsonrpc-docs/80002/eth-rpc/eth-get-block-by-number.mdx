@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getBlockByNumber: [blockNumber, fullTransactions].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80002'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getBlockByNumber'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
-</ParamField>
-<ParamField body='params[1]' type='boolean' required>
-  If true, returns the full transaction objects. If false, returns only the transaction hashes.
+<ParamField body='params' type='object' required placeholder='["0x1b4",true]'>
+  Parameters for eth_getBlockByNumber: [blockNumber, fullTransactions].
+  
+  Positional parameters for <code>eth_getBlockByNumber</code>:
+  <ul>
+  <li><code>params[0]</code>: Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".</li>
+  <li><code>params[1]</code>: If true, returns the full transaction objects. If false, returns only the transaction hashes.</li>
+  </ul>
 </ParamField>
 
 ### Returns

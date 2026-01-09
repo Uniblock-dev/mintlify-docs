@@ -5,11 +5,27 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.txID' type='string' required>
-  The transaction ID (in CB58 format).
-</ParamField>
-<ParamField body='params.encoding' type='string'>
-  Optional encoding format of the result. Only "hex" is allowed.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='avax.getAtomicTx'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>avax.getAtomicTx</code>:
+  <ul>
+  <li><code>params.txID</code>: The transaction ID (in CB58 format).</li>
+  <li><code>params.encoding</code>: Optional encoding format of the result. Only "hex" is allowed.</li>
+  </ul>
 </ParamField>
 
 ### Returns

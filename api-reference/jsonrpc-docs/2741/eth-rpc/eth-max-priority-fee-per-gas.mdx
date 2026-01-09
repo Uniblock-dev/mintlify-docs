@@ -5,7 +5,24 @@ playground: 'none'
 ---
 ### Parameters
 
-This method does not accept any parameters.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='2741'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_maxPriorityFeePerGas'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' placeholder='[null]'>
+  This method does not accept any parameters.
+</ParamField>
 
 ### Returns
 

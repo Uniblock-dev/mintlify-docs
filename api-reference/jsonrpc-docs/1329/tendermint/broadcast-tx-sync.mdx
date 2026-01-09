@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method broadcast_tx_async: [tx].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1329'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='broadcast_tx_sync'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string'>
-  The transaction.
+<ParamField body='params' type='object' placeholder='[""]'>
+  The parameters for method broadcast_tx_async: [tx].
+  
+  Positional parameters for <code>broadcast_tx_sync</code>:
+  <ul>
+  <li><code>params[]</code>: The transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

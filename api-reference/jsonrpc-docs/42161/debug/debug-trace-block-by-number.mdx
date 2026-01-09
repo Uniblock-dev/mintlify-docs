@@ -5,10 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method debug_traceBlockByNumber: [blockNumber, traceConfig]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='42161'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_traceBlockByNumber'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[0]` (oneOf): Block number where this transaction was included. Null when pending.
-- `params[1]` (object): Optional configuration object passed to tracing RPC methods.
+<ParamField body='params' type='object' required placeholder='["0xccde12",{"tracer":"callTracer"}]'>
+  Parameters for method debug_traceBlockByNumber: [blockNumber, traceConfig]
+  
+  Positional parameters for <code>debug_traceBlockByNumber</code>:
+  <ul>
+  <li><code>params[0]</code>: Block number where this transaction was included. Null when pending.</li>
+  <li><code>params[1]</code>: Optional configuration object passed to tracing RPC methods.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

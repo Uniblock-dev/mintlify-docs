@@ -5,12 +5,32 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockIdentifier, startKey, maxResults, context?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='1924'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_accountRange'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[0]` (string): Block number or hash at which to inspect state (hex quantity or 32-byte hash).
-- `params[1]` (string): Hex-encoded start account key (inclusive).
-- `params[2]` (integer): Maximum number of accounts to return.
-- `params[3]` (object): Optional context returned from a previous call to continue iteration.
+<ParamField body='params' type='object' required placeholder='["","",0,{}]'>
+  Parameters: [blockIdentifier, startKey, maxResults, context?].
+  
+  Positional parameters for <code>debug_accountRange</code>:
+  <ul>
+  <li><code>params[0]</code>: Block number or hash at which to inspect state (hex quantity or 32-byte hash).</li>
+  <li><code>params[1]</code>: Hex-encoded start account key (inclusive).</li>
+  <li><code>params[2]</code>: Maximum number of accounts to return.</li>
+  <li><code>params[3]</code>: Optional context returned from a previous call to continue iteration.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for retrieving a normalized Move function.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getNormalizedMoveFunction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Object ID of the Move package.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The name of the Move module.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  The name of the function to normalize.
+<ParamField body='params' type='object' required placeholder='["0x9c4eb6769ca8b6a23efeb7298cf0a8d0b837b78749c2cfc711c42036cc6b7621","moduleName","functionName"]'>
+  Parameters for retrieving a normalized Move function.
+  
+  Positional parameters for <code>sui_getNormalizedMoveFunction</code>:
+  <ul>
+  <li><code>params[0]</code>: Object ID of the Move package.</li>
+  <li><code>params[1]</code>: The name of the Move module.</li>
+  <li><code>params[2]</code>: The name of the function to normalize.</li>
+  </ul>
 </ParamField>
 
 ### Returns

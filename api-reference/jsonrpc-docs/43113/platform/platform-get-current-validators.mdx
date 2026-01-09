@@ -5,11 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params.subnetID' type='string'>
-  Optional ID of the subnet. If omitted, returns validators of the Primary Network.
-</ParamField>
-<ParamField body='params.nodeIDs' type='string[]'>
-  Optional list of NodeIDs to filter the validators returned.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43113'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='platform.getCurrentValidators'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object'>
+  Parameters for <code>platform.getCurrentValidators</code>:
+  <ul>
+  <li><code>params.subnetID</code>: Optional ID of the subnet. If omitted, returns validators of the Primary Network.</li>
+  <li><code>params.nodeIDs</code>: Optional list of NodeIDs to filter the validators returned.</li>
+  </ul>
 </ParamField>
 
 ### Returns

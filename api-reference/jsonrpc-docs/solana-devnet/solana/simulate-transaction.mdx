@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method simulateTransaction: [transaction, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='simulateTransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Transaction as an encoded string (base58 or base64 depending on config). The transaction must have a valid blockhash but is not required to be signed.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEDArczbMia1tLmq7zz4DinMNN0pJ1JtLdqIJPUw3YrGCzYAMHBsgN27lcgB6H2WQvFgyZuJYHa46puOQo9yQ8CVQbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCp20C7Wj2aiuk5TReAXo+VTVg8QTHjs0UjNMMKCvpzZ+ABAgEBARU=",{"encoding":"base64"}]'>
+  Parameters for method simulateTransaction: [transaction, config]
+  
+  Positional parameters for <code>simulateTransaction</code>:
+  <ul>
+  <li><code>params[0]</code>: Transaction as an encoded string (base58 or base64 depending on config). The transaction must have a valid blockhash but is not required to be signed.</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

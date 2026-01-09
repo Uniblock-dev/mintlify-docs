@@ -5,14 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='number' required>
-  Block height for gas price query
-</ParamField>
-<ParamField body='params[1]' type='string'>
-  Block hash for gas price query
-</ParamField>
-<ParamField body='params[2]' type='string'>
-  Fetch gas price for the latest block
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='397'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='gas_price'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='[0,"",""]'>
+  Positional parameters for <code>gas_price</code>:
+  <ul>
+  <li><code>params[0]</code>: Block height for gas price query</li>
+  <li><code>params[1]</code>: Block hash for gas price query</li>
+  <li><code>params[2]</code>: Fetch gas price for the latest block</li>
+  </ul>
 </ParamField>
 
 ### Returns

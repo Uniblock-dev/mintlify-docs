@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method web3_sha3: [data].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='9745'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='web3_sha3'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  String - The data to convert into a SHA3 hash.
+<ParamField body='params' type='object' required placeholder='["0x68656c6c6f20776f726c64"]'>
+  Parameters for method web3_sha3: [data].
+  
+  Positional parameters for <code>web3_sha3</code>:
+  <ul>
+  <li><code>params[]</code>: String - The data to convert into a SHA3 hash.</li>
+  </ul>
 </ParamField>
 
 ### Returns

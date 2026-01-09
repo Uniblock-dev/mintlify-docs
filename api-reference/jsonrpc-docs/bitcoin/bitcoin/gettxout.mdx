@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [txid, vout, includeMempool?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='gettxout'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - hash of the transaction.
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  Output index.
-</ParamField>
-<ParamField body='params[2]' type='boolean'>
-  Include mempool transactions (default true).
+<ParamField body='params' type='object' required placeholder='["",0,false]'>
+  Parameters: [txid, vout, includeMempool?].
+  
+  Positional parameters for <code>gettxout</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - hash of the transaction.</li>
+  <li><code>params[1]</code>: Output index.</li>
+  <li><code>params[2]</code>: Include mempool transactions (default true).</li>
+  </ul>
 </ParamField>
 
 ### Returns

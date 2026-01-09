@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-The parameters for method unconfirmed_txs: [limit].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='25'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unconfirmed_txs'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='number' required>
-  The maximum number of unconfirmed transactions to return.
+<ParamField body='params' type='object' required placeholder='[10]'>
+  The parameters for method unconfirmed_txs: [limit].
+  
+  Positional parameters for <code>unconfirmed_txs</code>:
+  <ul>
+  <li><code>params[]</code>: The maximum number of unconfirmed transactions to return.</li>
+  </ul>
 </ParamField>
 
 ### Returns

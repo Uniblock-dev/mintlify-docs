@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Fetch a paginated list of checkpoints.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getCheckpoints'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  An optional paging cursor (sequence number).
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  Maximum number of items to return per page.
-</ParamField>
-<ParamField body='params[2]' type='boolean' required>
-  Whether to return results in descending order.
+<ParamField body='params' type='object' required placeholder='["1004",4,false]'>
+  Fetch a paginated list of checkpoints.
+  
+  Positional parameters for <code>sui_getCheckpoints</code>:
+  <ul>
+  <li><code>params[0]</code>: An optional paging cursor (sequence number).</li>
+  <li><code>params[1]</code>: Maximum number of items to return per page.</li>
+  <li><code>params[2]</code>: Whether to return results in descending order.</li>
+  </ul>
 </ParamField>
 
 ### Returns

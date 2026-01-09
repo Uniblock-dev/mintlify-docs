@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method getTransaction: [transactionSignature, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getTransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Transaction signature as base-58 encoded string.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["2nBhEBYYvfaAe16UMNqRHre4YNSskvuYgx3M6E4JP1oDYvZEJHvoPzyUidNgNX5r9sTyN1J9UxtbCXy2rqYcuyuv","json"]'>
+  Parameters for method getTransaction: [transactionSignature, config]
+  
+  Positional parameters for <code>getTransaction</code>:
+  <ul>
+  <li><code>params[0]</code>: Transaction signature as base-58 encoded string.</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

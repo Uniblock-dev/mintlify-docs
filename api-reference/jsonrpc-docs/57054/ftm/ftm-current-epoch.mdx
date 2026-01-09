@@ -5,7 +5,24 @@ playground: 'none'
 ---
 ### Parameters
 
-No parameters are required for this method.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='57054'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='ftm_currentEpoch'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object'>
+  No parameters are required for this method.
+</ParamField>
 
 ### Returns
 

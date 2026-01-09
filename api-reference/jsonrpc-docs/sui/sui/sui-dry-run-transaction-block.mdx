@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Base64-encoded BCS transaction block data.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_dryRunTransactionBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  BCS-encoded transaction block (TransactionKind).
+<ParamField body='params' type='object' required placeholder='["AAACACB7qR3cfnF89wjJNwYPBASHNuwz+xdG2Zml5YzVxnftgAEAT4LxyFh7mNZMAL..."]'>
+  Base64-encoded BCS transaction block data.
+  
+  Positional parameters for <code>sui_dryRunTransactionBlock</code>:
+  <ul>
+  <li><code>params[]</code>: BCS-encoded transaction block (TransactionKind).</li>
+  </ul>
 </ParamField>
 
 ### Returns

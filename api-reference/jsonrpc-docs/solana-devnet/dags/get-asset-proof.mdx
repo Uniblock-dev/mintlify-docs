@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Request parameters for retrieving asset proof.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getAssetProof'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.id' type='string'>
-  The ID of the compressed asset.
+<ParamField body='params' type='object' placeholder='{"id":"Bu1DEKeawy7txbnCEJE4BU3BKLXaNAKCYcHR4XhndGss"}'>
+  Request parameters for retrieving asset proof.
+  
+  Parameters for <code>getAssetProof</code>:
+  <ul>
+  <li><code>params.id</code>: The ID of the compressed asset.</li>
+  </ul>
 </ParamField>
 
 ### Returns

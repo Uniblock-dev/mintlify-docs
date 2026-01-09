@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method getSignatureStatuses: [signatures, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getSignatureStatuses'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string[]' required>
-  Array of transaction signatures (txids), base-58 encoded (up to 256).
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='[["5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW"],{"searchTransactionHistory":true}]'>
+  Parameters for method getSignatureStatuses: [signatures, config]
+  
+  Positional parameters for <code>getSignatureStatuses</code>:
+  <ul>
+  <li><code>params[0]</code>: Array of transaction signatures (txids), base-58 encoded (up to 256).</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,7 +5,27 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params[]' type='object' required />
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getAssetsByCreator'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='{"creatorAddress":"7zL7HVn85F5yFT6XM3BsJcQF7PBcNE7R2BT5GyfunpKe","limit":10}'>
+  Positional parameters for <code>getAssetsByCreator</code>:
+  <ul>
+  <li><code>params[]</code>: Type: object.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

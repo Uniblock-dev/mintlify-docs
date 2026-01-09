@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Array with a single element: the hash of the transaction.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='42170'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='arbtrace_transaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  The transaction hash (32-byte hex string).
+<ParamField body='params' type='object' required placeholder='["0xa3a97b9d1de234efb2ca9374c5918f9a7fc2adff4102aff686df01b6a3dc74f7"]'>
+  Array with a single element: the hash of the transaction.
+  
+  Positional parameters for <code>arbtrace_transaction</code>:
+  <ul>
+  <li><code>params[]</code>: The transaction hash (32-byte hex string).</li>
+  </ul>
 </ParamField>
 
 ### Returns

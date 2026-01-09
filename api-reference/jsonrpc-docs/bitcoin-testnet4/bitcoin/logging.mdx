@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [include?, exclude?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin-testnet4'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='logging'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string[]'>
-  List of log categories to include or exclude.
+<ParamField body='params' type='object' placeholder='[[]]'>
+  Parameters: [include?, exclude?].
+  
+  Positional parameters for <code>logging</code>:
+  <ul>
+  <li><code>params[]</code>: List of log categories to include or exclude.</li>
+  </ul>
 </ParamField>
 
 ### Returns

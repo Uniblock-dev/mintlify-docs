@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getUncleCountByBlockNumber: [defaultBlock].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='999999999'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getUncleCountByBlockNumber'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params' type='object' required placeholder='["latest"]'>
+  Parameters for eth_getUncleCountByBlockNumber: [defaultBlock].
+  
+  Positional parameters for <code>eth_getUncleCountByBlockNumber</code>:
+  <ul>
+  <li><code>params[0]</code>: Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,22 +5,32 @@ playground: 'none'
 ---
 ### Parameters
 
-Event filter and pagination options.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='stellar-soroban'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getEvents'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.startLedger' type='number'>
-  Inclusive starting ledger sequence to search from.
-</ParamField>
-<ParamField body='params.endLedger' type='number'>
-  Exclusive ending ledger sequence to stop at.
-</ParamField>
-<ParamField body='params.contractIds' type='string[]'>
-  Optional list of contract IDs to filter on.
-</ParamField>
-<ParamField body='params.topics' type='string[]'>
-  Optional list of topic filters. Provider-specific matching may apply.
-</ParamField>
-<ParamField body='params.pagination' type='object'>
-  Pagination controls.
+<ParamField body='params' type='object' placeholder='{"startLedger":"LEDGER_SEQUENCE","pagination":{"limit":100}}'>
+  Event filter and pagination options.
+  
+  Parameters for <code>getEvents</code>:
+  <ul>
+  <li><code>params.startLedger</code>: Inclusive starting ledger sequence to search from.</li>
+  <li><code>params.endLedger</code>: Exclusive ending ledger sequence to stop at.</li>
+  <li><code>params.contractIds</code>: Optional list of contract IDs to filter on.</li>
+  <li><code>params.topics</code>: Optional list of topic filters. Provider-specific matching may apply.</li>
+  <li><code>params.pagination</code>: Pagination controls.</li>
+  </ul>
 </ParamField>
 
 ### Returns

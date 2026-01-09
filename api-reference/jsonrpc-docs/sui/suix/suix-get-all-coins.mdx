@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_getAllCoins: [ownerAddress, cursor, limit]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getAllCoins'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The owner's Sui address
-</ParamField>
-<ParamField body='params[1]' type='string'>
-  Optional paging cursor
-</ParamField>
-<ParamField body='params[2]' type='number'>
-  Maximum number of items per page
+<ParamField body='params' type='object' required placeholder='["0x41f5975e3c6bd5c95f041a8493ad7e9934be26e69152d2c2e86d8a9bdbd242b3","0x2564cd31a71cf9833609b111436d8f0f47b7f8b9927ec3f8975a1dcbf9b25564",3]'>
+  Parameters for suix_getAllCoins: [ownerAddress, cursor, limit]
+  
+  Positional parameters for <code>suix_getAllCoins</code>:
+  <ul>
+  <li><code>params[0]</code>: The owner's Sui address</li>
+  <li><code>params[1]</code>: Optional paging cursor</li>
+  <li><code>params[2]</code>: Maximum number of items per page</li>
+  </ul>
 </ParamField>
 
 ### Returns

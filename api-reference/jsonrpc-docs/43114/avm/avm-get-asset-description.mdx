@@ -5,8 +5,26 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.assetID' type='string' required>
-  The asset ID to query. For example, the AVAX asset ID differs by network (Mainnet: FvwEAhmxK..., Testnet: U8iRqJoi...).
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='avm.getAssetDescription'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>avm.getAssetDescription</code>:
+  <ul>
+  <li><code>params.assetID</code>: The asset ID to query. For example, the AVAX asset ID differs by network (Mainnet: FvwEAhmxK..., Testnet: U8iRqJoi...).</li>
+  </ul>
 </ParamField>
 
 ### Returns

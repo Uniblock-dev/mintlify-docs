@@ -5,14 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<ParamField body='params.networkID' type='number' required>
-  The network ID for which the genesis state will be generated.
-</ParamField>
-<ParamField body='params.genesisData' type='object' required>
-  JSON description of each asset in the genesis state.
-</ParamField>
-<ParamField body='params.encoding' type='string'>
-  The encoding format of the returned genesis bytes.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='avm.buildGenesis'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required>
+  Parameters for <code>avm.buildGenesis</code>:
+  <ul>
+  <li><code>params.networkID</code>: The network ID for which the genesis state will be generated.</li>
+  <li><code>params.genesisData</code>: JSON description of each asset in the genesis state.</li>
+  <li><code>params.encoding</code>: The encoding format of the returned genesis bytes.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [signedTransaction, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='stellar-soroban-testnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sendTransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Fully-signed Transaction as an encoded string (base58 or base64 depending on config).
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["4hXTCkRzt9WyecNzV1XPgCDfGAZzQKNxLXgynz5QDuWWPSAZBZSHptvWRL3BjCvzUXRdKvHL2b7yGrRQcWyaqsaBCncVG7BFggS8w9snUts67BSh3EqKpXLUm5UMHfD7ZBe9GhARjbNQMLJ1QD3Spr6oMTBU6EhdB4RD8CP2xUxr2u3d6fos36PD98XS6oX8TQjLpsMwncs5DAMiD4nNnR8NBfyghGCWvCVifVwvA8B8TJxE1aiyiv2L429BCWfyzAme5sZW8rDb14NeCQHhZbtNqfXhcp2tAnaAT"]'>
+  Parameters: [signedTransaction, config]
+  
+  Positional parameters for <code>sendTransaction</code>:
+  <ul>
+  <li><code>params[0]</code>: Fully-signed Transaction as an encoded string (base58 or base64 depending on config).</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

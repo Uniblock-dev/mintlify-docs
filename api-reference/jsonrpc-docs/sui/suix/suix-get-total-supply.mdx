@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-The paramters for method suix_getTotalSupply: [coinType].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getTotalSupply'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' default='0x2::sui::SUI'>
-  Coin type
+<ParamField body='params' type='object' placeholder='["0xe5c651321915b06c81838c2e370109b554a448a78d3a56220f798398dde66eab::acoin::ACOIN"]'>
+  The paramters for method suix_getTotalSupply: [coinType].
+  
+  Positional parameters for <code>suix_getTotalSupply</code>:
+  <ul>
+  <li><code>params[]</code>: Coin type</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for fetching object data from Sui.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_getObject'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The object ID to query.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional flags to control which parts of the object data are returned.
+<ParamField body='params' type='object' required placeholder='["0x53e4567ccafa5f36ce84c80aa8bc9be64e0d5ae796884274aef3005ae6733809",{}]'>
+  Parameters for fetching object data from Sui.
+  
+  Positional parameters for <code>sui_getObject</code>:
+  <ul>
+  <li><code>params[0]</code>: The object ID to query.</li>
+  <li><code>params[1]</code>: Optional flags to control which parts of the object data are returned.</li>
+  </ul>
 </ParamField>
 
 ### Returns

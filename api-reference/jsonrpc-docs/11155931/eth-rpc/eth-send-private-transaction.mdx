@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [transactionPayload]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='11155931'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_sendPrivateTransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='object' required>
-  Payload object containing raw transaction and optional execution constraints.
+<ParamField body='params' type='object' required placeholder='[{"tx":"0xf86c808504a817c80082520894a0df350d2637096571f7a701cb5b1660d90cecb380b844a9059cbb000000000000000000000000b60e8dd61c5d32be8058bb8eb970870f07233155","maxBlockNumber":"0x10fb80","preferences":{"fast":true}}]'>
+  Parameters: [transactionPayload]
+  
+  Positional parameters for <code>eth_sendPrivateTransaction</code>:
+  <ul>
+  <li><code>params[]</code>: Payload object containing raw transaction and optional execution constraints.</li>
+  </ul>
 </ParamField>
 
 ### Returns

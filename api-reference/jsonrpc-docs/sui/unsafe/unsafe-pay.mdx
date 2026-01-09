@@ -5,25 +5,33 @@ playground: 'none'
 ---
 ### Parameters
 
-Create an unsigned transaction to send Coin<T> to multiple recipients.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='unsafe_pay'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The signer's Sui address.
-</ParamField>
-<ParamField body='params[1]' type='string[]' required>
-  The Sui coin object IDs to use for payment.
-</ParamField>
-<ParamField body='params[2]' type='string[]' required>
-  List of recipient Sui addresses.
-</ParamField>
-<ParamField body='params[3]' type='string[]' required>
-  Amounts to send to each recipient, in the same order.
-</ParamField>
-<ParamField body='params[4]' type='string' required>
-  Optional gas object ID. If not provided, the node will select one.
-</ParamField>
-<ParamField body='params[5]' type='string' required>
-  Gas budget for the transaction.
+<ParamField body='params' type='object' required placeholder='["0xabcde1234567890abcde1234567890abcde1234567890abcde1234567890abcd",["0xcoin1","0xcoin2"],["0xrecipient1","0xrecipient2"],["10000","5000"],"0xgasobject","100000"]'>
+  Create an unsigned transaction to send Coin<T> to multiple recipients.
+  
+  Positional parameters for <code>unsafe_pay</code>:
+  <ul>
+  <li><code>params[0]</code>: The signer's Sui address.</li>
+  <li><code>params[1]</code>: The Sui coin object IDs to use for payment.</li>
+  <li><code>params[2]</code>: List of recipient Sui addresses.</li>
+  <li><code>params[3]</code>: Amounts to send to each recipient, in the same order.</li>
+  <li><code>params[4]</code>: Optional gas object ID. If not provided, the node will select one.</li>
+  <li><code>params[5]</code>: Gas budget for the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,25 +5,33 @@ playground: 'none'
 ---
 ### Parameters
 
-Transaction search parameters in the order: [query, prove, page, per_page, order_by, match_events]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='2222'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='tx_search'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  A transaction query string (e.g., "tx.height=1000").
-</ParamField>
-<ParamField body='params[1]' type='boolean' default={false}>
-  Include proofs of the transaction inclusion in the block.
-</ParamField>
-<ParamField body='params[2]' type='number' default={1}>
-  Page number (1-based).
-</ParamField>
-<ParamField body='params[3]' type='number' default={30}>
-  Number of entries per page (max: 100).
-</ParamField>
-<ParamField body='params[4]' type='string' default='asc'>
-  Order of transaction sorting ("asc" or "desc"), by height & index.
-</ParamField>
-<ParamField body='params[5]' type='boolean' default={false}>
-  Match attributes in query within events in addition to height & txhash.
+<ParamField body='params' type='object' required placeholder='["tx.height=1000",true,1,30,"asc",true]'>
+  Transaction search parameters in the order: [query, prove, page, per_page, order_by, match_events]
+  
+  Positional parameters for <code>tx_search</code>:
+  <ul>
+  <li><code>params[0]</code>: A transaction query string (e.g., "tx.height=1000").</li>
+  <li><code>params[1]</code>: Include proofs of the transaction inclusion in the block.</li>
+  <li><code>params[2]</code>: Page number (1-based).</li>
+  <li><code>params[3]</code>: Number of entries per page (max: 100).</li>
+  <li><code>params[4]</code>: Order of transaction sorting ("asc" or "desc"), by height & index.</li>
+  <li><code>params[5]</code>: Match attributes in query within events in addition to height & txhash.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [address, blockReference]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='146'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getAccount'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The address of the account (20-byte hex string).
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Block reference: block number in hex, integer, or tag ("latest", "pending", "safe", "finalized").
+<ParamField body='params' type='object' required placeholder='["0x8D97689C9818892B700e27F316cc3E41e17fBeb9","latest"]'>
+  Parameters: [address, blockReference]
+  
+  Positional parameters for <code>eth_getAccount</code>:
+  <ul>
+  <li><code>params[0]</code>: The address of the account (20-byte hex string).</li>
+  <li><code>params[1]</code>: Block reference: block number in hex, integer, or tag ("latest", "pending", "safe", "finalized").</li>
+  </ul>
 </ParamField>
 
 ### Returns

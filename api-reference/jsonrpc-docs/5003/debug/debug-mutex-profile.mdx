@@ -5,10 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [filePath, seconds].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='5003'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_mutexProfile'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[0]` (string): Destination file for the mutex profile.
-- `params[1]` (integer): Duration to capture in seconds.
+<ParamField body='params' type='object' required placeholder='["",0]'>
+  Parameters: [filePath, seconds].
+  
+  Positional parameters for <code>debug_mutexProfile</code>:
+  <ul>
+  <li><code>params[0]</code>: Destination file for the mutex profile.</li>
+  <li><code>params[1]</code>: Duration to capture in seconds.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

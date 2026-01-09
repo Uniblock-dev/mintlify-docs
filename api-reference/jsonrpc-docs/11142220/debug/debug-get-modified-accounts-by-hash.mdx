@@ -5,9 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockHash].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='11142220'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_getModifiedAccountsByHash'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
+<ParamField body='params' type='object' required placeholder='[""]'>
+  Parameters: [blockHash].
+  
+  Positional parameters for <code>debug_getModifiedAccountsByHash</code>:
+  <ul>
+  <li><code>params[]</code>: 32 Bytes - hash of the block where this transaction was included. Null when pending.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

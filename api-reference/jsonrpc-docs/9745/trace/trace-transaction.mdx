@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for method trace_transaction: [transactionHash].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='9745'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='trace_transaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string'>
-  32 Bytes - Hash of the transaction.
+<ParamField body='params' type='object' placeholder='["0x17104ac9d3312d8c136b7f44d4b8b47852618065ebfa534bd2d3b5ef218ca1f3"]'>
+  Parameters for method trace_transaction: [transactionHash].
+  
+  Positional parameters for <code>trace_transaction</code>:
+  <ul>
+  <li><code>params[]</code>: 32 Bytes - Hash of the transaction.</li>
+  </ul>
 </ParamField>
 
 ### Returns

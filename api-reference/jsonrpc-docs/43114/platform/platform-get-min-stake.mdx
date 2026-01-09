@@ -5,10 +5,28 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Returns the minimum amount of tokens required to validate or delegate on the given Subnet.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='platform.getMinStake'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.subnetID' type='string'>
-  Optional ID of the subnet to query. Defaults to the Primary Network if omitted.
+<ParamField body='params' type='object'>
+  Returns the minimum amount of tokens required to validate or delegate on the given Subnet.
+  
+  Parameters for <code>platform.getMinStake</code>:
+  <ul>
+  <li><code>params.subnetID</code>: Optional ID of the subnet to query. Defaults to the Primary Network if omitted.</li>
+  </ul>
 </ParamField>
 
 ### Returns

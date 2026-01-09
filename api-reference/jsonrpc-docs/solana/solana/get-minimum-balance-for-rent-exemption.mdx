@@ -5,13 +5,29 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters for method getMinimumBalanceForRentExemption: [dataLength, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getMinimumBalanceForRentExemption'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number'>
-  Length of the data in bytes for which to calculate the minimum balance.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' placeholder='[0,{}]'>
+  Parameters for method getMinimumBalanceForRentExemption: [dataLength, config]
+  
+  Positional parameters for <code>getMinimumBalanceForRentExemption</code>:
+  <ul>
+  <li><code>params[0]</code>: Length of the data in bytes for which to calculate the minimum balance.</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getTransactionByBlockHashAndIndex: [blockHash, index].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='204'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getTransactionByBlockHashAndIndex'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - hash of the block where this transaction was included. Null when pending.
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  Integer of the transaction index position.
+<ParamField body='params' type='object' required placeholder='["0xbfb3bb785c60ee4f93aa6e506f6f5d5fc5173301f537d856cac59d91e7a0ce09","0x0"]'>
+  Parameters for eth_getTransactionByBlockHashAndIndex: [blockHash, index].
+  
+  Positional parameters for <code>eth_getTransactionByBlockHashAndIndex</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - hash of the block where this transaction was included. Null when pending.</li>
+  <li><code>params[1]</code>: Integer of the transaction index position.</li>
+  </ul>
 </ParamField>
 
 ### Returns

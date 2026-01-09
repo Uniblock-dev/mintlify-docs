@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters to specify the range of containers to fetch.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43113'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='index.getContainerRange'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.startIndex' type='number' required>
-  The index of the first container to return.
-</ParamField>
-<ParamField body='params.numToFetch' type='number' required>
-  The number of containers to fetch (max 1024).
-</ParamField>
-<ParamField body='params.encoding' type='string' required>
-  The encoding format for the returned container bytes. Must be "hex".
+<ParamField body='params' type='object' required placeholder='{"startIndex":0,"numToFetch":100,"encoding":"hex"}'>
+  Parameters to specify the range of containers to fetch.
+  
+  Parameters for <code>index.getContainerRange</code>:
+  <ul>
+  <li><code>params.startIndex</code>: The index of the first container to return.</li>
+  <li><code>params.numToFetch</code>: The number of containers to fetch (max 1024).</li>
+  <li><code>params.encoding</code>: The encoding format for the returned container bytes. Must be "hex".</li>
+  </ul>
 </ParamField>
 
 ### Returns

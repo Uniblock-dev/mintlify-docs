@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_submitHashrate: [hashrate, id].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='2810'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_submitHashrate'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Data - a hexadecimal string representation (32 bytes) of the hash rate.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Data - A random hexadecimal(32 bytes) ID identifying the client.
+<ParamField body='params' type='object' required placeholder='["0x0000000000000000000000000000000000000000000000000000000000500000","0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"]'>
+  Parameters for eth_submitHashrate: [hashrate, id].
+  
+  Positional parameters for <code>eth_submitHashrate</code>:
+  <ul>
+  <li><code>params[0]</code>: Data - a hexadecimal string representation (32 bytes) of the hash rate.</li>
+  <li><code>params[1]</code>: Data - A random hexadecimal(32 bytes) ID identifying the client.</li>
+  </ul>
 </ParamField>
 
 ### Returns

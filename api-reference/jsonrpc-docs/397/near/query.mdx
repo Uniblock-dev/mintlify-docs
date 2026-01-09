@@ -5,20 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params.request_type' type='string' required>
-  Must be `"view_access_key"`
-</ParamField>
-<ParamField body='params.account_id' type='string' required>
-  The NEAR account you are querying
-</ParamField>
-<ParamField body='params.public_key' type='string' required>
-  The public key to look up
-</ParamField>
-<ParamField body='params.finality' type='string'>
-  Query the latest state with the given finality
-</ParamField>
-<ParamField body='params.block_id' type='object'>
-  Alternative to `finality`—specify a block hash, height, or full block-id object
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='397'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='query'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='{"request_type":"view_access_key","finality":"final","account_id":"account.rpc-examples.testnet","public_key":"ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"}'>
+  Parameters for <code>query</code>:
+  <ul>
+  <li><code>params.request_type</code>: Must be `"view_access_key"`</li>
+  <li><code>params.account_id</code>: The NEAR account you are querying</li>
+  <li><code>params.public_key</code>: The public key to look up</li>
+  <li><code>params.finality</code>: Query the latest state with the given finality</li>
+  <li><code>params.block_id</code>: Alternative to `finality`—specify a block hash, height, or full block-id object</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [descriptor, range?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin-testnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='deriveaddresses'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Output descriptor.
-</ParamField>
-<ParamField body='params[1]' type='number[]'>
-  Optional range [start, end] for ranged descriptors.
+<ParamField body='params' type='object' required placeholder='["",[]]'>
+  Parameters: [descriptor, range?].
+  
+  Positional parameters for <code>deriveaddresses</code>:
+  <ul>
+  <li><code>params[0]</code>: Output descriptor.</li>
+  <li><code>params[1]</code>: Optional range [start, end] for ranged descriptors.</li>
+  </ul>
 </ParamField>
 
 ### Returns

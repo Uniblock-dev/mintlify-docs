@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_getCommitteeInfo: [epoch]. The epoch is optional; if omitted, the latest epoch is used.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getCommitteeInfo'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string'>
-  The epoch number as a BigInt for uint64, represented as a string (e.g., "1234567890").
+<ParamField body='params' type='object' placeholder='[5000]'>
+  Parameters for suix_getCommitteeInfo: [epoch]. The epoch is optional; if omitted, the latest epoch is used.
+  
+  Positional parameters for <code>suix_getCommitteeInfo</code>:
+  <ul>
+  <li><code>params[]</code>: The epoch number as a BigInt for uint64, represented as a string (e.g., "1234567890").</li>
+  </ul>
 </ParamField>
 
 ### Returns

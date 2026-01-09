@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for bor_getRootHash: [fromBlock, toBlock]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80002'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='bor_getRootHash'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number' required>
-  Starting block number (inclusive).
-</ParamField>
-<ParamField body='params[1]' type='number' required>
-  Ending block number (inclusive). Maximum difference: 32,767 blocks.
+<ParamField body='params' type='object' required placeholder='[1000,1032]'>
+  Parameters for bor_getRootHash: [fromBlock, toBlock]
+  
+  Positional parameters for <code>bor_getRootHash</code>:
+  <ul>
+  <li><code>params[0]</code>: Starting block number (inclusive).</li>
+  <li><code>params[1]</code>: Ending block number (inclusive). Maximum difference: 32,767 blocks.</li>
+  </ul>
 </ParamField>
 
 ### Returns

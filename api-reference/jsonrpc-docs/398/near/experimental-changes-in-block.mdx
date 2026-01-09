@@ -5,11 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params.finality' type='string'>
-  Optional finality condition. Use instead of block_id.
-</ParamField>
-<ParamField body='params.block_id' type='object'>
-  Optional block ID. Use instead of finality.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='398'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='EXPERIMENTAL_changes_in_block'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' placeholder='{"block_id":187310138}'>
+  Parameters for <code>EXPERIMENTAL_changes_in_block</code>:
+  <ul>
+  <li><code>params.finality</code>: Optional finality condition. Use instead of block_id.</li>
+  <li><code>params.block_id</code>: Optional block ID. Use instead of finality.</li>
+  </ul>
 </ParamField>
 
 ### Returns

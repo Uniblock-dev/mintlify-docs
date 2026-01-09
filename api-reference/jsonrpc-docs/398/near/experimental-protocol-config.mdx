@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Specify either `finality` or `block_id` to get protocol config at a given block state.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='398'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='EXPERIMENTAL_protocol_config'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.finality' type='string'>
-  Optional finality level to query protocol config at. Cannot be used with block_id.
-</ParamField>
-<ParamField body='params.block_id' type='object'>
-  Block height or hash. Cannot be used with finality.
+<ParamField body='params' type='object' placeholder='{"finality":"final"}'>
+  Specify either `finality` or `block_id` to get protocol config at a given block state.
+  
+  Parameters for <code>EXPERIMENTAL_protocol_config</code>:
+  <ul>
+  <li><code>params.finality</code>: Optional finality level to query protocol config at. Cannot be used with block_id.</li>
+  <li><code>params.block_id</code>: Block height or hash. Cannot be used with finality.</li>
+  </ul>
 </ParamField>
 
 ### Returns

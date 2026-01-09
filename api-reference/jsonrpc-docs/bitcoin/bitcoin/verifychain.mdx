@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [checkLevel?, numBlocks?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='verifychain'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='number'>
-  Check level (0-4).
-</ParamField>
-<ParamField body='params[1]' type='number'>
-  Number of blocks to check from the tip.
+<ParamField body='params' type='object' placeholder='[0,0]'>
+  Parameters: [checkLevel?, numBlocks?].
+  
+  Positional parameters for <code>verifychain</code>:
+  <ul>
+  <li><code>params[0]</code>: Check level (0-4).</li>
+  <li><code>params[1]</code>: Number of blocks to check from the tip.</li>
+  </ul>
 </ParamField>
 
 ### Returns

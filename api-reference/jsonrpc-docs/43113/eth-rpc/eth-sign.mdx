@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_sign: [address, data].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43113'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_sign'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The address.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Data which hash to sign.
+<ParamField body='params' type='object' required placeholder='["0xcd2a3d9f938e13cd947ec05abc7fe734df8dd826","0x5363686f6f6c627573"]'>
+  Parameters for eth_sign: [address, data].
+  
+  Positional parameters for <code>eth_sign</code>:
+  <ul>
+  <li><code>params[0]</code>: The address.</li>
+  <li><code>params[1]</code>: Data which hash to sign.</li>
+  </ul>
 </ParamField>
 
 ### Returns

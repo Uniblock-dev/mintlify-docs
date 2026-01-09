@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Block number to get raw transaction data from.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='232'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getRawBlockTransactions'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='number' default={0}>
-  The L2 block number.
+<ParamField body='params' type='object' placeholder='[5817]'>
+  Block number to get raw transaction data from.
+  
+  Positional parameters for <code>zks_getRawBlockTransactions</code>:
+  <ul>
+  <li><code>params[]</code>: The L2 block number.</li>
+  </ul>
 </ParamField>
 
 ### Returns

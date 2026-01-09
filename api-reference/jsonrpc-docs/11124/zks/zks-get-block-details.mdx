@@ -5,8 +5,26 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[]' type='number' required>
-  The number of the L2 block to fetch details for.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='11124'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getBlockDetails'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='[140599]'>
+  Positional parameters for <code>zks_getBlockDetails</code>:
+  <ul>
+  <li><code>params[]</code>: The number of the L2 block to fetch details for.</li>
+  </ul>
 </ParamField>
 
 ### Returns

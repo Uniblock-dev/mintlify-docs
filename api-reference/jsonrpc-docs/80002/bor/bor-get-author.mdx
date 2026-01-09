@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for bor_getAuthor: [blockNumber]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='80002'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='bor_getAuthor'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  Block number in hexadecimal format (e.g., "0x1000") or the string tag "latest".
+<ParamField body='params' type='object' required placeholder='["0x1000"]'>
+  Parameters for bor_getAuthor: [blockNumber]
+  
+  Positional parameters for <code>bor_getAuthor</code>:
+  <ul>
+  <li><code>params[]</code>: Block number in hexadecimal format (e.g., "0x1000") or the string tag "latest".</li>
+  </ul>
 </ParamField>
 
 ### Returns

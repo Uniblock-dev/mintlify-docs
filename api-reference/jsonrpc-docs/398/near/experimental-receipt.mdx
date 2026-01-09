@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Returns the original receipt object by ID, without execution outcome or status.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='398'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='EXPERIMENTAL_receipt'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.receipt_id' type='string' required>
-  Base58-encoded receipt ID. You can find valid IDs via transaction status results.
+<ParamField body='params' type='object' required>
+  Returns the original receipt object by ID, without execution outcome or status.
+  
+  Parameters for <code>EXPERIMENTAL_receipt</code>:
+  <ul>
+  <li><code>params.receipt_id</code>: Base58-encoded receipt ID. You can find valid IDs via transaction status results.</li>
+  </ul>
 </ParamField>
 
 ### Returns

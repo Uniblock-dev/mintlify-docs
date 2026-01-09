@@ -5,10 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockHash, options?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='8217'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_traceBadBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[0]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
-- `params[1]` (object): Optional tracer configuration.
+<ParamField body='params' type='object' required placeholder='["",{}]'>
+  Parameters: [blockHash, options?].
+  
+  Positional parameters for <code>debug_traceBadBlock</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - hash of the block where this transaction was included. Null when pending.</li>
+  <li><code>params[1]</code>: Optional tracer configuration.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

@@ -5,17 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='number' required default={0}>
-  The block number in which the message was emitted.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The address that sent the message.
-</ParamField>
-<ParamField body='params[2]' type='string' required>
-  The keccak256 hash of the message being proved.
-</ParamField>
-<ParamField body='params[3]' type='number'>
-  Optional index in the block of the L1Messenger event log. Defaults to the first message if omitted.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='2741'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='zks_getL2ToL1MsgProof'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='[5187,"0x87869cb87c4Fa78ca278dF358E890FF73B42a39E","0x22de7debaa98758afdaee89f447ff43bab5da3de6acca7528b281cc2f1be2ee9"]'>
+  Positional parameters for <code>zks_getL2ToL1MsgProof</code>:
+  <ul>
+  <li><code>params[0]</code>: The block number in which the message was emitted.</li>
+  <li><code>params[1]</code>: The address that sent the message.</li>
+  <li><code>params[2]</code>: The keccak256 hash of the message being proved.</li>
+  <li><code>params[3]</code>: Optional index in the block of the L1Messenger event log. Defaults to the first message if omitted.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_getStakes: [owner]. The owner is a SuiAddress (base-58 encoded string).
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_getStakes'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[]' type='string' required>
-  The owner's Sui address.
+<ParamField body='params' type='object' required placeholder='["0xa6f5a7953a75dc632e696cabe60560522a017bf2fb0bd930d1ec22c06f1ee4e4"]'>
+  Parameters for suix_getStakes: [owner]. The owner is a SuiAddress (base-58 encoded string).
+  
+  Positional parameters for <code>suix_getStakes</code>:
+  <ul>
+  <li><code>params[]</code>: The owner's Sui address.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,7 +5,27 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[]' type='object' required />
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana-devnet'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getSignaturesForAsset'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='[{"id":"FNt6A9Mfnqbwc1tY7uwAguKQ1JcpBrxmhczDgbdJy5AC","page":1,"limit":100,"before":"string","after":"string"}]'>
+  Positional parameters for <code>getSignaturesForAsset</code>:
+  <ul>
+  <li><code>params[]</code>: Type: object.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

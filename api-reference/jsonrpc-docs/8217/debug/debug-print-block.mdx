@@ -5,9 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockIdentifier].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='8217'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='debug_printBlock'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-- `params[]` (string): Block number or hash.
+<ParamField body='params' type='object' required placeholder='[""]'>
+  Parameters: [blockIdentifier].
+  
+  Positional parameters for <code>debug_printBlock</code>:
+  <ul>
+  <li><code>params[]</code>: Block number or hash.</li>
+  </ul>
+</ParamField>
 
 ### Returns
 

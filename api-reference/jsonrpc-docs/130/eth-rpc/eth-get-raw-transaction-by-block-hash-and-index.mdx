@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockHash, transactionIndex]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='130'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getRawTransactionByBlockHashAndIndex'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The hash of the block containing the transaction.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  The index position of the transaction in the block (hexadecimal).
+<ParamField body='params' type='object' required placeholder='["0x7e4aea365093a183b0df5f003f26144ef04ec8a6e7f4910356590c5fc7b1671f","0x1"]'>
+  Parameters: [blockHash, transactionIndex]
+  
+  Positional parameters for <code>eth_getRawTransactionByBlockHashAndIndex</code>:
+  <ul>
+  <li><code>params[0]</code>: The hash of the block containing the transaction.</li>
+  <li><code>params[1]</code>: The index position of the transaction in the block (hexadecimal).</li>
+  </ul>
 </ParamField>
 
 ### Returns

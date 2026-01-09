@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for suix_queryTransactionBlocks: [query, cursor, limit, descending_order]. The query object specifies the criteria, while cursor, limit, and descending_order are optional pagination and ordering parameters.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='suix_queryTransactionBlocks'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Transaction query criteria (TransactionBlockResponseQuery).
-</ParamField>
-<ParamField body='params[1]' type='string'>
-  Optional paging cursor (TransactionDigest). If provided, the query will start from the next item after the cursor.
-</ParamField>
-<ParamField body='params[2]' type='number' default={100}>
-  Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
-</ParamField>
-<ParamField body='params[3]' type='boolean' default={false}>
-  Determines the ordering of results. Default is false (ascending order, oldest record first).
+<ParamField body='params' type='object' required placeholder='[{"filter":{"InputObject":"0x93633829fcba6d6e0ccb13d3dbfe7614b81ea76b255e5d435032cd8595f37eb8"},"options":null},"HxidAfFfyr4kXSiWeVq1J6Tk526YUVDoSUY5PSnS4tEJ",100,false]'>
+  Parameters for suix_queryTransactionBlocks: [query, cursor, limit, descending_order]. The query object specifies the criteria, while cursor, limit, and descending_order are optional pagination and ordering parameters.
+  
+  Positional parameters for <code>suix_queryTransactionBlocks</code>:
+  <ul>
+  <li><code>params[0]</code>: Transaction query criteria (TransactionBlockResponseQuery).</li>
+  <li><code>params[1]</code>: Optional paging cursor (TransactionDigest). If provided, the query will start from the next item after the cursor.</li>
+  <li><code>params[2]</code>: Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.</li>
+  <li><code>params[3]</code>: Determines the ordering of results. Default is false (ascending order, oldest record first).</li>
+  </ul>
 </ParamField>
 
 ### Returns

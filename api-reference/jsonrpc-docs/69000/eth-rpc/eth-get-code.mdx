@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getCode: [address, defaultBlock].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='69000'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getCode'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  The address.
-</ParamField>
-<ParamField body='params[1]' type='object' required>
-  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params' type='object' required placeholder='["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b","0x2"]'>
+  Parameters for eth_getCode: [address, defaultBlock].
+  
+  Positional parameters for <code>eth_getCode</code>:
+  <ul>
+  <li><code>params[0]</code>: The address.</li>
+  <li><code>params[1]</code>: Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".</li>
+  </ul>
 </ParamField>
 
 ### Returns

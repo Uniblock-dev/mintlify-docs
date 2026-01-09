@@ -5,13 +5,29 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters to specify the container index and encoding format.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='43114'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='index.getContainerByIndex'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.index' type='number' required>
-  The sequential index of the container (starting from 0).
-</ParamField>
-<ParamField body='params.encoding' type='string' required>
-  The encoding format for the container data. Only "hex" is supported.
+<ParamField body='params' type='object' required placeholder='{"index":0,"encoding":"hex"}'>
+  Parameters to specify the container index and encoding format.
+  
+  Parameters for <code>index.getContainerByIndex</code>:
+  <ul>
+  <li><code>params.index</code>: The sequential index of the container (starting from 0).</li>
+  <li><code>params.encoding</code>: The encoding format for the container data. Only "hex" is supported.</li>
+  </ul>
 </ParamField>
 
 ### Returns

@@ -5,10 +5,28 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for eth_getLogs: [filterObject].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='8822'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_getLogs'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.
+<ParamField body='params' type='object' required placeholder='[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}]'>
+  Parameters for eth_getLogs: [filterObject].
+  
+  Positional parameters for <code>eth_getLogs</code>:
+  <ul>
+  <li><code>params[0]</code>: Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.</li>
+  </ul>
 </ParamField>
 
 ### Returns

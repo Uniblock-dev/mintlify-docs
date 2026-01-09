@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Get data for multiple past objects with optional display options.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='sui'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sui_tryMultiGetPastObjects'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object[]' required>
-  Array of GetPastObjectRequest objects.
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Options for customizing the object response fields.
+<ParamField body='params' type='object' required placeholder='[[],{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
+  Get data for multiple past objects with optional display options.
+  
+  Positional parameters for <code>sui_tryMultiGetPastObjects</code>:
+  <ul>
+  <li><code>params[0]</code>: Array of GetPastObjectRequest objects.</li>
+  <li><code>params[1]</code>: Options for customizing the object response fields.</li>
+  </ul>
 </ParamField>
 
 ### Returns

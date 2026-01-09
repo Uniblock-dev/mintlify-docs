@@ -5,8 +5,26 @@ playground: 'none'
 ---
 ### Parameters
 
-<ParamField body='params[0]' type='string' required>
-  The full event ID (hex-encoded 32 bytes) or short event ID.
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='250'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='dag_getEvent'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
+
+<ParamField body='params' type='object' required placeholder='["0x000170430000080cd8f7b782afe5d1f63be6cd73631598313200777062ba7383"]'>
+  Positional parameters for <code>dag_getEvent</code>:
+  <ul>
+  <li><code>params[0]</code>: The full event ID (hex-encoded 32 bytes) or short event ID.</li>
+  </ul>
 </ParamField>
 
 ### Returns

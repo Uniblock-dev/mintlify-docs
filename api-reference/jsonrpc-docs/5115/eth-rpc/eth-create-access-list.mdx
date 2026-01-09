@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [transaction call object, block identifier]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='5115'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_createAccessList'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object' required>
-  Transaction call object used to simulate the access list.
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Block identifier: number, block hash, or tag ("latest", "earliest", "pending", "safe", or "finalized").
+<ParamField body='params' type='object' required placeholder='[{"from":"0xaeA8F8f781326bfE6A7683C2BD48Dd6AA4d3Ba63","to":"0xa02457e5dfd32bda5fc7e1f1b008aa5979568150","data":"0x608060806080608155"},"pending"]'>
+  Parameters: [transaction call object, block identifier]
+  
+  Positional parameters for <code>eth_createAccessList</code>:
+  <ul>
+  <li><code>params[0]</code>: Transaction call object used to simulate the access list.</li>
+  <li><code>params[1]</code>: Block identifier: number, block hash, or tag ("latest", "earliest", "pending", "safe", or "finalized").</li>
+  </ul>
 </ParamField>
 
 ### Returns

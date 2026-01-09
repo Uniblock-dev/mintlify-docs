@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [hexstring, maxfeerate?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='sendrawtransaction'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Raw transaction hex.
-</ParamField>
-<ParamField body='params[1]' type='number'>
-  Optional max fee rate (BTC/kvB) to reject if exceeded.
+<ParamField body='params' type='object' required placeholder='["",0]'>
+  Parameters: [hexstring, maxfeerate?].
+  
+  Positional parameters for <code>sendrawtransaction</code>:
+  <ul>
+  <li><code>params[0]</code>: Raw transaction hex.</li>
+  <li><code>params[1]</code>: Optional max fee rate (BTC/kvB) to reject if exceeded.</li>
+  </ul>
 </ParamField>
 
 ### Returns

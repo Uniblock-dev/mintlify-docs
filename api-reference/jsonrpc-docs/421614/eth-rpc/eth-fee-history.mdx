@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [blockCount, newestBlock, rewardPercentiles]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='421614'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='eth_feeHistory'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Hex-encoded number of blocks in the requested range (max: 0x400 / 1024 blocks).
-</ParamField>
-<ParamField body='params[1]' type='string' required>
-  Newest block identifier: a hex block number or one of: "latest", "earliest", "pending".
-</ParamField>
-<ParamField body='params[2]' type='number[]'>
-  Optional array of integers representing percentiles (ascending).
+<ParamField body='params' type='object' required placeholder='["0x5","latest",[20,30]]'>
+  Parameters: [blockCount, newestBlock, rewardPercentiles]
+  
+  Positional parameters for <code>eth_feeHistory</code>:
+  <ul>
+  <li><code>params[0]</code>: Hex-encoded number of blocks in the requested range (max: 0x400 / 1024 blocks).</li>
+  <li><code>params[1]</code>: Newest block identifier: a hex block number or one of: "latest", "earliest", "pending".</li>
+  <li><code>params[2]</code>: Optional array of integers representing percentiles (ascending).</li>
+  </ul>
 </ParamField>
 
 ### Returns

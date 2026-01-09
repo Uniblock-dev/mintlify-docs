@@ -5,13 +5,29 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [txid, verbose?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getmempooldescendants'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  32 Bytes - hash of the transaction.
-</ParamField>
-<ParamField body='params[1]' type='boolean'>
-  If true, return detailed objects instead of just txids.
+<ParamField body='params' type='object' required placeholder='["",false]'>
+  Parameters: [txid, verbose?].
+  
+  Positional parameters for <code>getmempooldescendants</code>:
+  <ul>
+  <li><code>params[0]</code>: 32 Bytes - hash of the transaction.</li>
+  <li><code>params[1]</code>: If true, return detailed objects instead of just txids.</li>
+  </ul>
 </ParamField>
 
 ### Returns

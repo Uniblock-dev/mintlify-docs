@@ -5,16 +5,30 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters for starknet_getStorageAt: [contract_address, key, block_id]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='starknet-sepolia'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='starknet_getStorageAt'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params.contract_address' type='string'>
-  Address of the contract to read from.
-</ParamField>
-<ParamField body='params.key' type='string'>
-  Key to the storage value for the specified contract.
-</ParamField>
-<ParamField body='params.block_id' type='object'>
-  BlockID object containing hash and number.
+<ParamField body='params' type='object' placeholder='{"contract_address":"0x04D88BeCbd1DC984ae04A96E77828E603c5244e68224903D92CA0a1Ff1C8e807","key":"0x21","block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"}}'>
+  Parameters for starknet_getStorageAt: [contract_address, key, block_id]
+  
+  Parameters for <code>starknet_getStorageAt</code>:
+  <ul>
+  <li><code>params.contract_address</code>: Address of the contract to read from.</li>
+  <li><code>params.key</code>: Key to the storage value for the specified contract.</li>
+  <li><code>params.block_id</code>: BlockID object containing hash and number.</li>
+  </ul>
 </ParamField>
 
 ### Returns

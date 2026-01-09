@@ -5,13 +5,29 @@ playground: 'interactive'
 ---
 ### Parameters
 
-Parameters for method getProgramAccounts: [programId, config]
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='solana'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='getProgramAccounts'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='string' required>
-  Pubkey of the program (base-58 encoded).
-</ParamField>
-<ParamField body='params[1]' type='object'>
-  Optional configuration object.
+<ParamField body='params' type='object' required placeholder='["4Nd1mBQtrMJVYVfKf2PJy9NZUZdTAsp7D4xWLs4gDB4T",{"filters":[{"dataSize":17},{"memcmp":{"offset":4,"bytes":"3Mc6vR"}}]}]'>
+  Parameters for method getProgramAccounts: [programId, config]
+  
+  Positional parameters for <code>getProgramAccounts</code>:
+  <ul>
+  <li><code>params[0]</code>: Pubkey of the program (base-58 encoded).</li>
+  <li><code>params[1]</code>: Optional configuration object.</li>
+  </ul>
 </ParamField>
 
 ### Returns

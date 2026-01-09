@@ -5,19 +5,31 @@ playground: 'none'
 ---
 ### Parameters
 
-Parameters: [inputs, outputs, locktime?, replaceable?].
+<Expandable title='Default parameters'>
+  <ParamField query='chainId' type='string' required default='bitcoin'>
+    Unique identifier for a blockchain network.
+  </ParamField>
+  <ParamField body='id' type='number' required default={1}>
+    Request identifier used to match responses.
+  </ParamField>
+  <ParamField body='jsonrpc' type='string' required default='2.0'>
+    JSON-RPC version.
+  </ParamField>
+  <ParamField body='method' type='string' required default='createpsbt'>
+    JSON-RPC method name.
+  </ParamField>
+</Expandable>
 
-<ParamField body='params[0]' type='object[]' required>
-  Transaction inputs (each with txid, vout, sequence).
-</ParamField>
-<ParamField body='params[1]' type='object' required>
-  Transaction outputs mapping addresses to amounts or scripts.
-</ParamField>
-<ParamField body='params[2]' type='number'>
-  Optional locktime.
-</ParamField>
-<ParamField body='params[3]' type='boolean'>
-  Optional replaceable flag.
+<ParamField body='params' type='object' required placeholder='[[],{},0,false]'>
+  Parameters: [inputs, outputs, locktime?, replaceable?].
+  
+  Positional parameters for <code>createpsbt</code>:
+  <ul>
+  <li><code>params[0]</code>: Transaction inputs (each with txid, vout, sequence).</li>
+  <li><code>params[1]</code>: Transaction outputs mapping addresses to amounts or scripts.</li>
+  <li><code>params[2]</code>: Optional locktime.</li>
+  <li><code>params[3]</code>: Optional replaceable flag.</li>
+  </ul>
 </ParamField>
 
 ### Returns
