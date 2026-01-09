@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='137'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='bor_getSignersAtHash'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"]'>
+<ParamField body='params' type='object' required default={["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"]} placeholder='["0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"]'>
   Parameters for bor_getSignersAtHash: [blockHash]
   
   Positional parameters for <code>bor_getSignersAtHash</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='398'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='tx'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",true]'>
+<ParamField body='params' type='object' required default={["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",true]} placeholder='["0xD70952032620CC4E2737EB8AC379806359D8E0B17B0488F627997A0B043ABDED",true]'>
   The parameters for method tx: [transactionHash, prove].
   
   Positional parameters for <code>tx</code>:

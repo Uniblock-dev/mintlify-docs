@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='starknet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='starknet_getClassHashAt'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"contract_address":"0x03b554093fb0a7460913be2d5c011cb5ac4333dfcfe6125851bcd3f926a3b558"}'>
+<ParamField body='params' type='object' default={{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"contract_address":"0x03b554093fb0a7460913be2d5c011cb5ac4333dfcfe6125851bcd3f926a3b558"}} placeholder='{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"contract_address":"0x03b554093fb0a7460913be2d5c011cb5ac4333dfcfe6125851bcd3f926a3b558"}'>
   Parameters for method starknet_getClassHashAt: [block_id, contract_address]
   
   Parameters for <code>starknet_getClassHashAt</code>:

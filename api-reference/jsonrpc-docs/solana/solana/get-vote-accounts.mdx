@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='getVoteAccounts'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='[{"votePubkey":"3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"}]'>
+<ParamField body='params' type='object' default={[{"votePubkey":"3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"}]} placeholder='[{"votePubkey":"3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"}]'>
   Parameters for method getVoteAccounts: [config].
   
   Positional parameters for <code>getVoteAccounts</code>:

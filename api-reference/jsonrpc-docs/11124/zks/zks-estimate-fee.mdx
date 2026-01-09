@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='11124'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zks_estimateFee'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"from":"0x1111111111111111111111111111111111111111","to":"0x2222222222222222222222222222222222222222","data":"0xffffffff"}]'>
+<ParamField body='params' type='object' required default={[{"from":"0x1111111111111111111111111111111111111111","to":"0x2222222222222222222222222222222222222222","data":"0xffffffff"}]} placeholder='[{"from":"0x1111111111111111111111111111111111111111","to":"0x2222222222222222222222222222222222222222","data":"0xffffffff"}]'>
   Positional parameters for <code>zks_estimateFee</code>:
   <ul>
   <li><code>params[]</code>: Type: object.</li>

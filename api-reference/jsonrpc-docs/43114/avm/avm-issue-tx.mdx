@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='43114'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='avm.issueTx'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required>
+<ParamField body='params' type='object' required default={{}}>
   Parameters for <code>avm.issueTx</code>:
   <ul>
   <li><code>params.tx</code>: The signed transaction, encoded in hex or CB58 (default).</li>

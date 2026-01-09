@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='unsafe_publish'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xaabbccddeeff00112233445566778899aabbccdd",[],[],"0x1234567890abcdef","100000"]'>
+<ParamField body='params' type='object' required default={["0xaabbccddeeff00112233445566778899aabbccdd",[],[],"0x1234567890abcdef","100000"]} placeholder='["0xaabbccddeeff00112233445566778899aabbccdd",[],[],"0x1234567890abcdef","100000"]'>
   Create an unsigned transaction to publish a Move package.
   
   Positional parameters for <code>unsafe_publish</code>:

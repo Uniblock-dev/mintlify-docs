@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='2222'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='tx_search'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["tx.height=1000",true,1,30,"asc",true]'>
+<ParamField body='params' type='object' required default={["tx.height=1000",true,1,30,"asc",true]} placeholder='["tx.height=1000",true,1,30,"asc",true]'>
   Transaction search parameters in the order: [query, prove, page, per_page, order_by, match_events]
   
   Positional parameters for <code>tx_search</code>:

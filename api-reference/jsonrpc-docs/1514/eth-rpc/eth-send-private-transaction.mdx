@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1514'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='eth_sendPrivateTransaction'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"tx":"0xf86c808504a817c80082520894a0df350d2637096571f7a701cb5b1660d90cecb380b844a9059cbb000000000000000000000000b60e8dd61c5d32be8058bb8eb970870f07233155","maxBlockNumber":"0x10fb80","preferences":{"fast":true}}]'>
+<ParamField body='params' type='object' required default={[{"tx":"0xf86c808504a817c80082520894a0df350d2637096571f7a701cb5b1660d90cecb380b844a9059cbb000000000000000000000000b60e8dd61c5d32be8058bb8eb970870f07233155","maxBlockNumber":"0x10fb80","preferences":{"fast":true}}]} placeholder='[{"tx":"0xf86c808504a817c80082520894a0df350d2637096571f7a701cb5b1660d90cecb380b844a9059cbb000000000000000000000000b60e8dd61c5d32be8058bb8eb970870f07233155","maxBlockNumber":"0x10fb80","preferences":{"fast":true}}]'>
   Parameters: [transactionPayload]
   
   Positional parameters for <code>eth_sendPrivateTransaction</code>:

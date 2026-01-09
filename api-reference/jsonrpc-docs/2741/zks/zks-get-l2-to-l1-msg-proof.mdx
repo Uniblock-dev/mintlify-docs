@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='2741'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zks_getL2ToL1MsgProof'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[5187,"0x87869cb87c4Fa78ca278dF358E890FF73B42a39E","0x22de7debaa98758afdaee89f447ff43bab5da3de6acca7528b281cc2f1be2ee9"]'>
+<ParamField body='params' type='object' required default={[5187,"0x87869cb87c4Fa78ca278dF358E890FF73B42a39E","0x22de7debaa98758afdaee89f447ff43bab5da3de6acca7528b281cc2f1be2ee9"]} placeholder='[5187,"0x87869cb87c4Fa78ca278dF358E890FF73B42a39E","0x22de7debaa98758afdaee89f447ff43bab5da3de6acca7528b281cc2f1be2ee9"]'>
   Positional parameters for <code>zks_getL2ToL1MsgProof</code>:
   <ul>
   <li><code>params[0]</code>: The block number in which the message was emitted.</li>

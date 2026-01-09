@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='250'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='dag_getEventPayload'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e",true]'>
+<ParamField body='params' type='object' required default={["0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e",true]} placeholder='["0x00033bbf00000719167a3b2c445bd3e53e9c35d16cf52ac24852317b9605d07e",true]'>
   Positional parameters for <code>dag_getEventPayload</code>:
   <ul>
   <li><code>params[0]</code>: The full event ID (hex-encoded 32 bytes) or short event ID.</li>

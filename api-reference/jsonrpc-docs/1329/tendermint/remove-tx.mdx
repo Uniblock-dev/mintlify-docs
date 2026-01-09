@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1329'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='remove_tx'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x7d7e3b8b2a0b7266b25559c9ff6224b6c5b8f6e9d7b3f7efb690e28e46ff13c3"]'>
+<ParamField body='params' type='object' required default={["0x7d7e3b8b2a0b7266b25559c9ff6224b6c5b8f6e9d7b3f7efb690e28e46ff13c3"]} placeholder='["0x7d7e3b8b2a0b7266b25559c9ff6224b6c5b8f6e9d7b3f7efb690e28e46ff13c3"]'>
   Positional parameters for <code>remove_tx</code>:
   <ul>
   <li><code>params[0]</code>: The hash or unique identifier of the transaction to be removed</li>

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='unsafe_requestAddStake'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xabc123456789defabc123456789defabc123456789defabc123456789defabcd",[],"100000000","0xval123456789abcdef123456789abcdef123456789abcdef123456789abcdef","0xgasobject1234567890abcdef","50000"]'>
+<ParamField body='params' type='object' required default={["0xabc123456789defabc123456789defabc123456789defabc123456789defabcd",[],"100000000","0xval123456789abcdef123456789abcdef123456789abcdef123456789abcdef","0xgasobject1234567890abcdef","50000"]} placeholder='["0xabc123456789defabc123456789defabc123456789defabc123456789defabcd",[],"100000000","0xval123456789abcdef123456789abcdef123456789abcdef123456789abcdef","0xgasobject1234567890abcdef","50000"]'>
   Create an unsigned transaction to stake SUI to a validator.
   
   Positional parameters for <code>unsafe_requestAddStake</code>:

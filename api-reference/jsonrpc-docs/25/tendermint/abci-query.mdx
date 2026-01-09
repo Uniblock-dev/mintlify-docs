@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='25'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='abci_query'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["/a/b/c","IHAVENOIDEA",1,false]'>
+<ParamField body='params' type='object' required default={["/a/b/c","IHAVENOIDEA",1,false]} placeholder='["/a/b/c","IHAVENOIDEA",1,false]'>
   Query parameters for method abci_query in the order: [path, data, height, prove]
   
   Positional parameters for <code>abci_query</code>:

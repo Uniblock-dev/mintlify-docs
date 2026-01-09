@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1001'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='klay_recoverFromMessage'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x48656c6c6f20576f726c64","0xf8549a3b..."]'>
+<ParamField body='params' type='object' required default={["0x48656c6c6f20576f726c64","0xf8549a3b..."]} placeholder='["0x48656c6c6f20576f726c64","0xf8549a3b..."]'>
   Parameters: [message, signature].
   
   Positional parameters for <code>klay_recoverFromMessage</code>:

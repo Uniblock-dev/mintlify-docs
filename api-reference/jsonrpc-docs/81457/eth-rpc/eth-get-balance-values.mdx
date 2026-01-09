@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='81457'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='eth_getBalanceValues'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x742d35Cc6634C0532925a3b844Bc454e4438f44e","latest"]'>
+<ParamField body='params' type='object' required default={["0x742d35Cc6634C0532925a3b844Bc454e4438f44e","latest"]} placeholder='["0x742d35Cc6634C0532925a3b844Bc454e4438f44e","latest"]'>
   Parameters for eth_getBalanceValues: [address, blockTag]
   
   Positional parameters for <code>eth_getBalanceValues</code>:

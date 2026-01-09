@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana-devnet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getSignaturesForAddress'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["Vote111111111111111111111111111111111111111",{"limit":1}]'>
+<ParamField body='params' type='object' required default={["Vote111111111111111111111111111111111111111",{"limit":1}]} placeholder='["Vote111111111111111111111111111111111111111",{"limit":1}]'>
   Parameters for method getSignaturesForAddress: [address, config]
   
   Positional parameters for <code>getSignaturesForAddress</code>:

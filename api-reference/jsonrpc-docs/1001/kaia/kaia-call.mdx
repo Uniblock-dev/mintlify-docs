@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1001'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='kaia_call'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"from":"0x8d97689c9818892b700e27f316cc3e41e17fbeb9","to":"0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15","data":"0x"},"latest"]'>
+<ParamField body='params' type='object' required default={[{"from":"0x8d97689c9818892b700e27f316cc3e41e17fbeb9","to":"0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15","data":"0x"},"latest"]} placeholder='[{"from":"0x8d97689c9818892b700e27f316cc3e41e17fbeb9","to":"0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15","data":"0x"},"latest"]'>
   Parameters: [call object, block parameter]. Call object follows Kaia transaction fields with nonce omitted.
   
   Positional parameters for <code>kaia_call</code>:

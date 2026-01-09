@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='starknet-sepolia'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='starknet_call'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"request":{"contract_address":"0x049E0cCb70e1F1684F43116e9E42e60D0f64d3D254Be8D8A1143dba43dEad733","calldata":["0xbfc2ea1a458d7cac752a4a688dbb8e0cff399e1b"],"entry_point_selector":"0x12ead94ae9d3f9d2bdb6b847cf255f1f398193a1f88884a0ae8e18f24a037b6"},"block_id":{"block_number":470207}}'>
+<ParamField body='params' type='object' required default={{"request":{"contract_address":"0x049E0cCb70e1F1684F43116e9E42e60D0f64d3D254Be8D8A1143dba43dEad733","calldata":["0xbfc2ea1a458d7cac752a4a688dbb8e0cff399e1b"],"entry_point_selector":"0x12ead94ae9d3f9d2bdb6b847cf255f1f398193a1f88884a0ae8e18f24a037b6"},"block_id":{"block_number":470207}}} placeholder='{"request":{"contract_address":"0x049E0cCb70e1F1684F43116e9E42e60D0f64d3D254Be8D8A1143dba43dEad733","calldata":["0xbfc2ea1a458d7cac752a4a688dbb8e0cff399e1b"],"entry_point_selector":"0x12ead94ae9d3f9d2bdb6b847cf255f1f398193a1f88884a0ae8e18f24a037b6"},"block_id":{"block_number":470207}}'>
   Parameters for starknet_call: [contract_address, entry_point_selector, calldata].
   
   Parameters for <code>starknet_call</code>:

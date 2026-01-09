@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='137'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='bor_getAuthor'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x1000"]'>
+<ParamField body='params' type='object' required default={["0x1000"]} placeholder='["0x1000"]'>
   Parameters for bor_getAuthor: [blockNumber]
   
   Positional parameters for <code>bor_getAuthor</code>:

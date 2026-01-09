@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='11124'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zks_getProof'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x0000000000000000000000000000000000008003",["0x8b65c0cf1012ea9f393197eb24619fd814379b298b238285649e14f936a5eb12"],354895]'>
+<ParamField body='params' type='object' required default={["0x0000000000000000000000000000000000008003",["0x8b65c0cf1012ea9f393197eb24619fd814379b298b238285649e14f936a5eb12"],354895]} placeholder='["0x0000000000000000000000000000000000008003",["0x8b65c0cf1012ea9f393197eb24619fd814379b298b238285649e14f936a5eb12"],354895]'>
   Positional parameters for <code>zks_getProof</code>:
   <ul>
   <li><code>params[0]</code>: The account address to fetch storage proofs for.</li>

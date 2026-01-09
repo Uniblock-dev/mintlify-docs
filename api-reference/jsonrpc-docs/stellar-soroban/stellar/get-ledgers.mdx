@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='stellar-soroban'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getLedgers'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='{"startLedger":"LEDGER_SEQUENCE","pagination":{"limit":10}}'>
+<ParamField body='params' type='object' default={{"startLedger":"LEDGER_SEQUENCE","pagination":{"limit":10}}} placeholder='{"startLedger":"LEDGER_SEQUENCE","pagination":{"limit":10}}'>
   Parameters for <code>getLedgers</code>:
   <ul>
   <li><code>params.startLedger</code>: Inclusive starting ledger sequence to list from.</li>

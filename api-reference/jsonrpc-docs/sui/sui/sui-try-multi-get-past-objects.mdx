@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='sui_tryMultiGetPastObjects'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[[],{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
+<ParamField body='params' type='object' required default={[[],{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]} placeholder='[[],{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
   Get data for multiple past objects with optional display options.
   
   Positional parameters for <code>sui_tryMultiGetPastObjects</code>:

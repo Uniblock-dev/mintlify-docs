@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='starknet-sepolia'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='starknet_getClass'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"class_hash":"0x515dd668a1798214e7ca9ec90c52e267229b8104fb296a90f20b6f70baaef53"}'>
+<ParamField body='params' type='object' required default={{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"class_hash":"0x515dd668a1798214e7ca9ec90c52e267229b8104fb296a90f20b6f70baaef53"}} placeholder='{"block_id":{"block_hash":"0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"},"class_hash":"0x515dd668a1798214e7ca9ec90c52e267229b8104fb296a90f20b6f70baaef53"}'>
   Parameters for starknet_getClass: [block_id, class_hash].
   
   Parameters for <code>starknet_getClass</code>:

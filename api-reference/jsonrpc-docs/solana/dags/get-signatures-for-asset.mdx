@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='getSignaturesForAsset'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"id":"FNt6A9Mfnqbwc1tY7uwAguKQ1JcpBrxmhczDgbdJy5AC","page":1,"limit":100,"before":"string","after":"string"}]'>
+<ParamField body='params' type='object' required default={[{"id":"FNt6A9Mfnqbwc1tY7uwAguKQ1JcpBrxmhczDgbdJy5AC","page":1,"limit":100,"before":"string","after":"string"}]} placeholder='[{"id":"FNt6A9Mfnqbwc1tY7uwAguKQ1JcpBrxmhczDgbdJy5AC","page":1,"limit":100,"before":"string","after":"string"}]'>
   Positional parameters for <code>getSignaturesForAsset</code>:
   <ul>
   <li><code>params[]</code>: Type: object.</li>

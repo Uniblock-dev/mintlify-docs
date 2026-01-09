@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='25'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='debug_traceTransaction'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x9e63085271890a141297039b3b711913699f1ee4db1acb667ad7ce304772036b",{"tracer":"callTracer"}]'>
+<ParamField body='params' type='object' required default={["0x9e63085271890a141297039b3b711913699f1ee4db1acb667ad7ce304772036b",{"tracer":"callTracer"}]} placeholder='["0x9e63085271890a141297039b3b711913699f1ee4db1acb667ad7ce304772036b",{"tracer":"callTracer"}]'>
   Parameters for method debug_traceTransaction: [txHash, traceConfig].
   
   Positional parameters for <code>debug_traceTransaction</code>:

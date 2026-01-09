@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='11155111'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='eth_subscribe'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["logs",{"fromBlock":"latest","toBlock":"latest"}]'>
+<ParamField body='params' type='object' required default={["logs",{"fromBlock":"latest","toBlock":"latest"}]} placeholder='["logs",{"fromBlock":"latest","toBlock":"latest"}]'>
   Parameters for eth_subscribe: [subscriptionType, options]. The second parameter is required only for "logs".
   
   Positional parameters for <code>eth_subscribe</code>:

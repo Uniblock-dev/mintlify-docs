@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana-devnet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getAssetsByCreator'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"creatorAddress":"7zL7HVn85F5yFT6XM3BsJcQF7PBcNE7R2BT5GyfunpKe","limit":10}'>
+<ParamField body='params' type='object' required default={{"creatorAddress":"7zL7HVn85F5yFT6XM3BsJcQF7PBcNE7R2BT5GyfunpKe","limit":10}} placeholder='{"creatorAddress":"7zL7HVn85F5yFT6XM3BsJcQF7PBcNE7R2BT5GyfunpKe","limit":10}'>
   Positional parameters for <code>getAssetsByCreator</code>:
   <ul>
   <li><code>params[]</code>: Type: object.</li>

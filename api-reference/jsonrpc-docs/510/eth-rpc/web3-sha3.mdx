@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='510'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='web3_sha3'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x68656c6c6f20776f726c64"]'>
+<ParamField body='params' type='object' required default={["0x68656c6c6f20776f726c64"]} placeholder='["0x68656c6c6f20776f726c64"]'>
   Parameters for method web3_sha3: [data].
   
   Positional parameters for <code>web3_sha3</code>:

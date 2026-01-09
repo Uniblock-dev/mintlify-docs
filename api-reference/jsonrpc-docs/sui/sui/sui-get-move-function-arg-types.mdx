@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='sui_getMoveFunctionArgTypes'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c","suifrens","mint"]'>
+<ParamField body='params' type='object' required default={["0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c","suifrens","mint"]} placeholder='["0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c","suifrens","mint"]'>
   Parameters to get the argument types of a Move function.
   
   Positional parameters for <code>sui_getMoveFunctionArgTypes</code>:

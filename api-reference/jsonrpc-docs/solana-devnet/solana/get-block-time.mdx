@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana-devnet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getBlockTime'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[5]'>
+<ParamField body='params' type='object' required default={[5]} placeholder='[5]'>
   The parameters for method getBlockTime: [slot].
   
   Positional parameters for <code>getBlockTime</code>:

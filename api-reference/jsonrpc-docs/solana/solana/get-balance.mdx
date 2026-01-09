@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='getBalance'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"]'>
+<ParamField body='params' type='object' required default={["83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"]} placeholder='["83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"]'>
   Parameters for method getBalance: [pubkey, config]
   
   Positional parameters for <code>getBalance</code>:

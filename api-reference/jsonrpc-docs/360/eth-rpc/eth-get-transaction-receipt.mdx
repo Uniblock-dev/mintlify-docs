@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='360'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='eth_getTransactionReceipt'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x444172bef57ad978655171a8af2cfd89baa02a97fcb773067aef7794d6913374"]'>
+<ParamField body='params' type='object' required default={["0x444172bef57ad978655171a8af2cfd89baa02a97fcb773067aef7794d6913374"]} placeholder='["0x444172bef57ad978655171a8af2cfd89baa02a97fcb773067aef7794d6913374"]'>
   Parameters for eth_getTransactionByHash: [transactionHash].
   
   Positional parameters for <code>eth_getTransactionReceipt</code>:

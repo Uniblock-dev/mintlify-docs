@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='debug_traceBlockByNumber'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xccde12",{"tracer":"callTracer"}]'>
+<ParamField body='params' type='object' required default={["0xccde12",{"tracer":"callTracer"}]} placeholder='["0xccde12",{"tracer":"callTracer"}]'>
   Parameters for method debug_traceBlockByNumber: [blockNumber, traceConfig]
   
   Positional parameters for <code>debug_traceBlockByNumber</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='sui_tryGetPastObject'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x11af4b844ff94b3fbef6e36b518da3ad4c5856fa686464524a876b463d129760",4,{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
+<ParamField body='params' type='object' required default={["0x11af4b844ff94b3fbef6e36b518da3ad4c5856fa686464524a876b463d129760",4,{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]} placeholder='["0x11af4b844ff94b3fbef6e36b518da3ad4c5856fa686464524a876b463d129760",4,{"showType":true,"showOwner":true,"showPreviousTransaction":true,"showDisplay":false,"showContent":true,"showBcs":false,"showStorageRebate":true}]'>
   Retrieve object data at a specific version (if retained by the node).
   
   Positional parameters for <code>sui_tryGetPastObject</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='unsafe_paySui'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0xaabbccddeeff00112233445566778899aabbccdd00112233445566778899aabb",["0xcoin1","0xcoin2","0xcoin3"],["0xrecipient1","0xrecipient2"],["1000000","250000"],"50000"]'>
+<ParamField body='params' type='object' required default={["0xaabbccddeeff00112233445566778899aabbccdd00112233445566778899aabb",["0xcoin1","0xcoin2","0xcoin3"],["0xrecipient1","0xrecipient2"],["1000000","250000"],"50000"]} placeholder='["0xaabbccddeeff00112233445566778899aabbccdd00112233445566778899aabb",["0xcoin1","0xcoin2","0xcoin3"],["0xrecipient1","0xrecipient2"],["1000000","250000"],"50000"]'>
   Create an unsigned transaction to send SUI coins to multiple recipients with defined amounts.
   
   Positional parameters for <code>unsafe_paySui</code>:

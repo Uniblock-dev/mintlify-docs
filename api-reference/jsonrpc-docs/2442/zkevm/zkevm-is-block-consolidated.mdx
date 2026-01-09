@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='2442'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zkevm_isBlockConsolidated'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x2a3b"]'>
+<ParamField body='params' type='object' required default={["0x2a3b"]} placeholder='["0x2a3b"]'>
   Positional parameters for <code>zkevm_isBlockConsolidated</code>:
   <ul>
   <li><code>params[]</code>: The block number to check if it is connected to a verified batch, encoded as a hexadecimal string.</li>

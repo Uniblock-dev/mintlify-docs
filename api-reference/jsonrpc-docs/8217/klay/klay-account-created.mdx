@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='8217'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='klay_accountCreated'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90","latest"]'>
+<ParamField body='params' type='object' required default={["0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90","latest"]} placeholder='["0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90","latest"]'>
   Parameters: [address, block parameter].
   
   Positional parameters for <code>klay_accountCreated</code>:

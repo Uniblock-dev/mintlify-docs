@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1001'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='kaia_getBlockTransactionCountByHash'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x9a4e12c1b8ef6f2f726755efaf3f0b0f3788c2d9d11b9bd65d9f8c17e7a019d2"]'>
+<ParamField body='params' type='object' required default={["0x9a4e12c1b8ef6f2f726755efaf3f0b0f3788c2d9d11b9bd65d9f8c17e7a019d2"]} placeholder='["0x9a4e12c1b8ef6f2f726755efaf3f0b0f3788c2d9d11b9bd65d9f8c17e7a019d2"]'>
   Parameters: [blockHash].
   
   Positional parameters for <code>kaia_getBlockTransactionCountByHash</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='3637'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='debug_getRawHeader'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x1"]'>
+<ParamField body='params' type='object' required default={["0x1"]} placeholder='["0x1"]'>
   The parameters for method debug_getRawHeader: [blockNrOrHash].
   
   Positional parameters for <code>debug_getRawHeader</code>:

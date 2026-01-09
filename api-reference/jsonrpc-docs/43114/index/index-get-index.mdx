@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='43114'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='index.getIndex'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"containerID":"CRKUaHg85WmLtMc2AbiWVh87Vi5PKBVZFFLhWPtZyRDv6SHSS","encoding":"hex"}'>
+<ParamField body='params' type='object' required default={{"containerID":"CRKUaHg85WmLtMc2AbiWVh87Vi5PKBVZFFLhWPtZyRDv6SHSS","encoding":"hex"}} placeholder='{"containerID":"CRKUaHg85WmLtMc2AbiWVh87Vi5PKBVZFFLhWPtZyRDv6SHSS","encoding":"hex"}'>
   Parameters to identify the container and specify encoding.
   
   Parameters for <code>index.getIndex</code>:

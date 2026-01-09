@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='starknet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='starknet_getNonce'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"block_id":{"block_number":470207},"contract_address":"0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"}'>
+<ParamField body='params' type='object' required default={{"block_id":{"block_number":470207},"contract_address":"0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"}} placeholder='{"block_id":{"block_number":470207},"contract_address":"0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"}'>
   Parameters for starknet_getNonce: [block_id, contract_address].
   
   Parameters for <code>starknet_getNonce</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='sui_multiGetTransactionBlocks'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[["EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo","Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX","9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"],{"showInput":true,"showRawInput":false,"showEffects":true,"showEvents":true,"showObjectChanges":false,"showBalanceChanges":false,"showRawEffects":false}]'>
+<ParamField body='params' type='object' required default={[["EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo","Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX","9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"],{"showInput":true,"showRawInput":false,"showEffects":true,"showEvents":true,"showObjectChanges":false,"showBalanceChanges":false,"showRawEffects":false}]} placeholder='[["EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo","Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX","9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"],{"showInput":true,"showRawInput":false,"showEffects":true,"showEvents":true,"showObjectChanges":false,"showBalanceChanges":false,"showRawEffects":false}]'>
   Retrieve multiple transaction blocks by digest.
   
   Positional parameters for <code>sui_multiGetTransactionBlocks</code>:

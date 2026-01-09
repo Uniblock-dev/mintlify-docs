@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='397'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='EXPERIMENTAL_protocol_config'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='{"finality":"final"}'>
+<ParamField body='params' type='object' default={{"finality":"final"}} placeholder='{"finality":"final"}'>
   Specify either `finality` or `block_id` to get protocol config at a given block state.
   
   Parameters for <code>EXPERIMENTAL_protocol_config</code>:

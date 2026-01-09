@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='suix_getCoins'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x6d907beaa3a49db57bdfdb3557e6d405cbf01c293a53e01457d65e92b5d8dd68","0x2::sui::SUI","0xee6b5173afedb35330f60397c2cbb48196ba41921246c304be7b490cee0904eb",3]'>
+<ParamField body='params' type='object' required default={["0x6d907beaa3a49db57bdfdb3557e6d405cbf01c293a53e01457d65e92b5d8dd68","0x2::sui::SUI","0xee6b5173afedb35330f60397c2cbb48196ba41921246c304be7b490cee0904eb",3]} placeholder='["0x6d907beaa3a49db57bdfdb3557e6d405cbf01c293a53e01457d65e92b5d8dd68","0x2::sui::SUI","0xee6b5173afedb35330f60397c2cbb48196ba41921246c304be7b490cee0904eb",3]'>
   Parameters for suix_getCoins: [ownerAddress, coinType, cursor, limit].
   
   Positional parameters for <code>suix_getCoins</code>:

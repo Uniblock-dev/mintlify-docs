@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='398'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='query'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"request_type":"view_access_key","finality":"final","account_id":"account.rpc-examples.testnet","public_key":"ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"}'>
+<ParamField body='params' type='object' required default={{"request_type":"view_access_key","finality":"final","account_id":"account.rpc-examples.testnet","public_key":"ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"}} placeholder='{"request_type":"view_access_key","finality":"final","account_id":"account.rpc-examples.testnet","public_key":"ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"}'>
   Parameters for <code>query</code>:
   <ul>
   <li><code>params.request_type</code>: Must be `"view_access_key"`</li>

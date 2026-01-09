@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='146'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='dag_getHeads'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["pending"]'>
+<ParamField body='params' type='object' required default={["pending"]} placeholder='["pending"]'>
   Positional parameters for <code>dag_getHeads</code>:
   <ul>
   <li><code>params[]</code>: Epoch tag to query (e.g., "pending" or a specific epoch number as a string).</li>

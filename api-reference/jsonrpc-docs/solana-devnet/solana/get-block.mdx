@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana-devnet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getBlock'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[430,{"encoding":"json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}]'>
+<ParamField body='params' type='object' required default={[430,{"encoding":"json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}]} placeholder='[430,{"encoding":"json","maxSupportedTransactionVersion":0,"transactionDetails":"full","rewards":false}]'>
   Parameters for method getBlock: [slot, config]
   
   Positional parameters for <code>getBlock</code>:

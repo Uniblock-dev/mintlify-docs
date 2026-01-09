@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='43113'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='avm.getAddressTxs'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"address":"X-avax19pm62y5n0yt76wgp8pd7jdhepmppc67y7yg0cq","assetID":"AVAX","pageSize":20}'>
+<ParamField body='params' type='object' required default={{"address":"X-avax19pm62y5n0yt76wgp8pd7jdhepmppc67y7yg0cq","assetID":"AVAX","pageSize":20}} placeholder='{"address":"X-avax19pm62y5n0yt76wgp8pd7jdhepmppc67y7yg0cq","assetID":"AVAX","pageSize":20}'>
   Filter options to query transactions for an address and asset.
   
   Parameters for <code>avm.getAddressTxs</code>:

@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='1'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='ots_getBlockDetails'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x1"]'>
+<ParamField body='params' type='object' required default={["0x1"]} placeholder='["0x1"]'>
   The parameters for ots_getBlockDetails: [blockNumber].
   
   Positional parameters for <code>ots_getBlockDetails</code>:

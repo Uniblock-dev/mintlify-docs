@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='42170'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='arbtrace_filter'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"fromBlock":"0xa7816b","toBlock":"0xa7816c","fromAddress":["0x1c7d91ccbdbf378bac0f074678b09cb589184e4e"]}]'>
+<ParamField body='params' type='object' required default={[{"fromBlock":"0xa7816b","toBlock":"0xa7816c","fromAddress":["0x1c7d91ccbdbf378bac0f074678b09cb589184e4e"]}]} placeholder='[{"fromBlock":"0xa7816b","toBlock":"0xa7816c","fromAddress":["0x1c7d91ccbdbf378bac0f074678b09cb589184e4e"]}]'>
   An array with a single object specifying filter criteria.
   
   Positional parameters for <code>arbtrace_filter</code>:

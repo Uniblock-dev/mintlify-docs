@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='324'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zks_getL2ToL1LogProof'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x2a1c6c74b184965c0cb015aae9ea134fd96215d2e4f4979cfec12563295f610e",0]'>
+<ParamField body='params' type='object' required default={["0x2a1c6c74b184965c0cb015aae9ea134fd96215d2e4f4979cfec12563295f610e",0]} placeholder='["0x2a1c6c74b184965c0cb015aae9ea134fd96215d2e4f4979cfec12563295f610e",0]'>
   Positional parameters for <code>zks_getL2ToL1LogProof</code>:
   <ul>
   <li><code>params[0]</code>: The hash of the L2 transaction.</li>

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='starknet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='starknet_getTransactionByHash'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='{"transaction_hash":"0x121aaba2894a63cce81acabb559eb2c114f4859dc5803e0b91349ec398d2eb0"}'>
+<ParamField body='params' type='object' required default={{"transaction_hash":"0x121aaba2894a63cce81acabb559eb2c114f4859dc5803e0b91349ec398d2eb0"}} placeholder='{"transaction_hash":"0x121aaba2894a63cce81acabb559eb2c114f4859dc5803e0b91349ec398d2eb0"}'>
   The parameters for method starknet_getTransactionByHash: [transaction_hash].
   
   Parameters for <code>starknet_getTransactionByHash</code>:

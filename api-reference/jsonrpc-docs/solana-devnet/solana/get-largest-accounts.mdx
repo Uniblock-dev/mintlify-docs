@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana-devnet'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='getLargestAccounts'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='[{}]'>
+<ParamField body='params' type='object' default={[{}]} placeholder='[{}]'>
   Parameters for method getLargestAccounts: [config]
   
   Positional parameters for <code>getLargestAccounts</code>:

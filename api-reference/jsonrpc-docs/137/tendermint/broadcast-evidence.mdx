@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='137'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='broadcast_evidence'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='"JSON_EVIDENCE_encoded"'>
+<ParamField body='params' type='object' required default='JSON_EVIDENCE_encoded' placeholder='"JSON_EVIDENCE_encoded"'>
   The parameters for method broadcast_evidence: [evidence].
   
   Positional parameters for <code>broadcast_evidence</code>:

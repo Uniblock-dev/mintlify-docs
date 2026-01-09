@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='2442'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='zkevm_getBatchByNumber'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='["0x12a"]'>
+<ParamField body='params' type='object' default={["0x12a"]} placeholder='["0x12a"]'>
   Array containing a single batch number to query. Can be a hexadecimal string or an integer.
   
   Positional parameters for <code>zkevm_getBatchByNumber</code>:

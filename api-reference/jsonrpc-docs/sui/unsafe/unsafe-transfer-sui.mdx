@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='unsafe_transferSui'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f","0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef","100000","0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788","50000"]'>
+<ParamField body='params' type='object' required default={["0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f","0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef","100000","0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788","50000"]} placeholder='["0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f","0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef","100000","0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788","50000"]'>
   Create an unsigned transaction to send SUI coin to a recipient. The SUI object is used as both transfer and gas coin.
   
   Positional parameters for <code>unsafe_transferSui</code>:

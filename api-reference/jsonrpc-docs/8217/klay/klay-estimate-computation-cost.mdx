@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='8217'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='klay_estimateComputationCost'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{},0]'>
+<ParamField body='params' type='object' required default={[{},0]} placeholder='[{},0]'>
   Parameters: [transaction object, block parameter].
   
   Positional parameters for <code>klay_estimateComputationCost</code>:

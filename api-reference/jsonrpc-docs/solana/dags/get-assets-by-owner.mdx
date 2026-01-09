@@ -5,7 +5,6 @@ playground: 'interactive'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='solana'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'interactive'
   <ParamField body='method' type='string' required default='getAssetsByOwner'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='[{"ownerAddress":"E645TckHQnDcavVv92Etc6xSWQaq8zzPtPRGBheviRAk","options":{"limit":10,"sortBy":{"sortBy":"created","sortDirection":"desc"},"showCollectionMetadata":true}}]'>
+<ParamField body='params' type='object' required default={[{"ownerAddress":"E645TckHQnDcavVv92Etc6xSWQaq8zzPtPRGBheviRAk","options":{"limit":10,"sortBy":{"sortBy":"created","sortDirection":"desc"},"showCollectionMetadata":true}}]} placeholder='[{"ownerAddress":"E645TckHQnDcavVv92Etc6xSWQaq8zzPtPRGBheviRAk","options":{"limit":10,"sortBy":{"sortBy":"created","sortDirection":"desc"},"showCollectionMetadata":true}}]'>
   Positional parameters for <code>getAssetsByOwner</code>:
   <ul>
   <li><code>params[]</code>: Type: object.</li>

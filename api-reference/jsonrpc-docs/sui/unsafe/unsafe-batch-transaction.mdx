@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='unsafe_batchTransaction'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",[],"0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051","100000","Commit"]'>
+<ParamField body='params' type='object' required default={["0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",[],"0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051","100000","Commit"]} placeholder='["0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",[],"0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051","100000","Commit"]'>
   Create an unsigned batched transaction.
   
   Positional parameters for <code>unsafe_batchTransaction</code>:

@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='11297108099'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='eth_getUncleCountByBlockNumber'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["latest"]'>
+<ParamField body='params' type='object' required default={["latest"]} placeholder='["latest"]'>
   Parameters for eth_getUncleCountByBlockNumber: [defaultBlock].
   
   Positional parameters for <code>eth_getUncleCountByBlockNumber</code>:

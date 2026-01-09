@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='sui'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='sui_getEvents'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' required placeholder='["11a72GCQ5hGNpWGh2QhQkkusTEGS6EDqifJqxr7nSYX"]'>
+<ParamField body='params' type='object' required default={["11a72GCQ5hGNpWGh2QhQkkusTEGS6EDqifJqxr7nSYX"]} placeholder='["11a72GCQ5hGNpWGh2QhQkkusTEGS6EDqifJqxr7nSYX"]'>
   Get all events emitted by the transaction.
   
   Positional parameters for <code>sui_getEvents</code>:

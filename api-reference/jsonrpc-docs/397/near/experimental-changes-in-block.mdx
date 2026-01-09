@@ -5,7 +5,6 @@ playground: 'none'
 ---
 ### Parameters
 
-<Expandable title='Default parameters'>
   <ParamField query='chainId' type='string' required default='397'>
     Unique identifier for a blockchain network.
   </ParamField>
@@ -18,9 +17,8 @@ playground: 'none'
   <ParamField body='method' type='string' required default='EXPERIMENTAL_changes_in_block'>
     JSON-RPC method name.
   </ParamField>
-</Expandable>
 
-<ParamField body='params' type='object' placeholder='{"block_id":187310138}'>
+<ParamField body='params' type='object' default={{"block_id":187310138}} placeholder='{"block_id":187310138}'>
   Parameters for <code>EXPERIMENTAL_changes_in_block</code>:
   <ul>
   <li><code>params.finality</code>: Optional finality condition. Use instead of block_id.</li>
