@@ -7,9 +7,15 @@ playground: 'interactive'
 
 Parameters for method getBlocks: [startSlot, endSlot, config]
 
-- `params[0]` (integer): Starting slot number for the range.
-- `params[1]` (integer): Ending slot number for the range.
-- `params[2]` (object): Optional configuration object.
+<ParamField body='params[0]' type='number' required>
+  Starting slot number for the range.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Ending slot number for the range.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

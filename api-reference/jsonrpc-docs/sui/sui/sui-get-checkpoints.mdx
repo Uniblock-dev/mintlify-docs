@@ -7,9 +7,15 @@ playground: 'none'
 
 Fetch a paginated list of checkpoints.
 
-- `params[0]` (string): An optional paging cursor (sequence number).
-- `params[1]` (integer): Maximum number of items to return per page.
-- `params[2]` (boolean): Whether to return results in descending order.
+<ParamField body='params[0]' type='string' required>
+  An optional paging cursor (sequence number).
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Maximum number of items to return per page.
+</ParamField>
+<ParamField body='params[2]' type='boolean' required>
+  Whether to return results in descending order.
+</ParamField>
 
 ### Returns
 

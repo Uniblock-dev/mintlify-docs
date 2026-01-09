@@ -7,8 +7,12 @@ playground: 'none'
 
 Retrieve multiple transaction blocks by digest.
 
-- `params[0]` (array): List of transaction digests.
-- `params[1]` (object): Optional settings to configure the returned transaction block fields.
+<ParamField body='params[0]' type='string[]' required>
+  List of transaction digests.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional settings to configure the returned transaction block fields.
+</ParamField>
 
 ### Returns
 

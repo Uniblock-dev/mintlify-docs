@@ -7,10 +7,18 @@ playground: 'none'
 
 Execute a signed transaction and optionally wait for effects or local execution.
 
-- `params[0]` (string): Base64-encoded BCS serialized transaction data (without type tag).
-- `params[1]` (array): Array of base64-encoded signatures.
-- `params[2]` (object): Optional transaction response options.
-- `params[3]` (string): Execution mode indicating how long to wait for confirmation.
+<ParamField body='params[0]' type='string' required>
+  Base64-encoded BCS serialized transaction data (without type tag).
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Array of base64-encoded signatures.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional transaction response options.
+</ParamField>
+<ParamField body='params[3]' type='string' default='WaitForEffectsCert'>
+  Execution mode indicating how long to wait for confirmation.
+</ParamField>
 
 ### Returns
 

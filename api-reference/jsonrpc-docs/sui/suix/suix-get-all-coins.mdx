@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for suix_getAllCoins: [ownerAddress, cursor, limit]
 
-- `params[0]` (string): The owner's Sui address
-- `params[1]` (string): Optional paging cursor
-- `params[2]` (integer): Maximum number of items per page
+<ParamField body='params[0]' type='string' required>
+  The owner's Sui address
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Optional paging cursor
+</ParamField>
+<ParamField body='params[2]' type='number'>
+  Maximum number of items per page
+</ParamField>
 
 ### Returns
 

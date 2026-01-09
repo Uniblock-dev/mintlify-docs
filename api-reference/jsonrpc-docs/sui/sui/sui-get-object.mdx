@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for fetching object data from Sui.
 
-- `params[0]` (string): The object ID to query.
-- `params[1]` (object): Optional flags to control which parts of the object data are returned.
+<ParamField body='params[0]' type='string' required>
+  The object ID to query.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional flags to control which parts of the object data are returned.
+</ParamField>
 
 ### Returns
 

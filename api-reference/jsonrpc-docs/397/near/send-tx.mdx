@@ -7,8 +7,12 @@ playground: 'none'
 
 Submits a signed transaction and optionally waits for a specific level of execution confirmation.
 
-- `signed_tx_base64` (string): Base64-encoded signed transaction.
-- `wait_until` (string): Minimal execution level required. Determines when the response is returned.
+<ParamField body='params.signed_tx_base64' type='string' required>
+  Base64-encoded signed transaction.
+</ParamField>
+<ParamField body='params.wait_until' type='string' default='EXECUTED_OPTIMISTIC'>
+  Minimal execution level required. Determines when the response is returned.
+</ParamField>
 
 ### Returns
 

@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned transaction to send SUI coin to a recipient. The SUI object is used as both transfer and gas coin.
 
-- `params[0]` (string): The signer's Sui address.
-- `params[1]` (string): The SUI coin object to use in this transaction.
-- `params[2]` (string): Gas budget for the transaction.
-- `params[3]` (string): The recipient's Sui address.
-- `params[4]` (string): Optional transfer amount. If not provided, all balance is transferred minus gas cost.
+<ParamField body='params[0]' type='string' required>
+  The signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The SUI coin object to use in this transaction.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Gas budget for the transaction.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  The recipient's Sui address.
+</ParamField>
+<ParamField body='params[4]' type='string'>
+  Optional transfer amount. If not provided, all balance is transferred minus gas cost.
+</ParamField>
 
 ### Returns
 

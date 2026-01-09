@@ -7,10 +7,18 @@ playground: 'none'
 
 Filter options to query transactions for an address and asset.
 
-- `address` (string): The address for which to fetch balance-changing transactions.
-- `assetID` (string): The asset ID or alias to filter transactions by.
-- `cursor` (integer): Pagination offset (page number or record index). Optional.
-- `pageSize` (integer): Number of transactions to return per page. Defaults to 1024.
+<ParamField body='params.address' type='string' required>
+  The address for which to fetch balance-changing transactions.
+</ParamField>
+<ParamField body='params.assetID' type='string' required>
+  The asset ID or alias to filter transactions by.
+</ParamField>
+<ParamField body='params.cursor' type='number'>
+  Pagination offset (page number or record index). Optional.
+</ParamField>
+<ParamField body='params.pageSize' type='number' default={1024}>
+  Number of transactions to return per page. Defaults to 1024.
+</ParamField>
 
 ### Returns
 

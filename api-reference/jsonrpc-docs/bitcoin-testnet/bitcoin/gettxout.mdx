@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [txid, vout, includeMempool?].
 
-- `params[0]` (string): 32 Bytes - hash of the transaction.
-- `params[1]` (integer): Output index.
-- `params[2]` (boolean): Include mempool transactions (default true).
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Output index.
+</ParamField>
+<ParamField body='params[2]' type='boolean'>
+  Include mempool transactions (default true).
+</ParamField>
 
 ### Returns
 

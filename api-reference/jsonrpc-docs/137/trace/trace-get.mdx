@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for method trace_get: [transactionHash, index].
 
-- `params[0]` (string): 32 Bytes - Hash of the transaction.
-- `params[1]` (array): Array - Index positions of the traces.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - Hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Array - Index positions of the traces.
+</ParamField>
 
 ### Returns
 

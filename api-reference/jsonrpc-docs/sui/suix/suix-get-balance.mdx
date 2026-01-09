@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for suix_getBalance [ownerAddress, coin_type]
 
-- `params[0]` (string): The owner's Sui address
-- `params[1]` (string): Optional coin type. Defaults to 0x2::sui::SUI if not provided.
+<ParamField body='params[0]' type='string' required default='0xa6f5a7953a75dc632e696cabe60560522a017bf2fb0bd930d1ec22c06f1ee4e4'>
+  The owner's Sui address
+</ParamField>
+<ParamField body='params[1]' type='string' default='0x2::sui::SUI'>
+  Optional coin type. Defaults to 0x2::sui::SUI if not provided.
+</ParamField>
 
 ### Returns
 

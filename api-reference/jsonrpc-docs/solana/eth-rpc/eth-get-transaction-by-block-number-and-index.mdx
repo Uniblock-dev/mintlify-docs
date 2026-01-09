@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for eth_getTransactionByBlockNumberAndIndex: [blockNumber, index].
 
-- `params[0]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
-- `params[1]` (integer): Integer of the transaction index position.
+<ParamField body='params[0]' type='object' required>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Integer of the transaction index position.
+</ParamField>
 
 ### Returns
 

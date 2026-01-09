@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [blockHash, verbosity?].
 
-- `params[0]` (string): 32 Bytes - hash of the transaction.
-- `params[1]` (integer): Verbosity level (0-3) controlling JSON detail.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='number'>
+  Verbosity level (0-3) controlling JSON detail.
+</ParamField>
 
 ### Returns
 

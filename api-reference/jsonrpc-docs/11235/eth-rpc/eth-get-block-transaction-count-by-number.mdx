@@ -7,7 +7,9 @@ playground: 'none'
 
 Parameters for eth_getBlockTransactionCountByNumber: [blockNumber].
 
-- `params[0]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params[0]' type='object' required>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
 
 ### Returns
 

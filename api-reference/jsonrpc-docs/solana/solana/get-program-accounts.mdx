@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for method getProgramAccounts: [programId, config]
 
-- `params[0]` (string): Pubkey of the program (base-58 encoded).
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Pubkey of the program (base-58 encoded).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

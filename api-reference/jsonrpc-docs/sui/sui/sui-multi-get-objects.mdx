@@ -7,8 +7,12 @@ playground: 'none'
 
 Fetch metadata for multiple Sui objects by ID.
 
-- `params[0]` (array): Array of Object IDs to retrieve.
-- `params[1]` (object): Optional flags to customize object data returned.
+<ParamField body='params[0]' type='string[]' required>
+  Array of Object IDs to retrieve.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional flags to customize object data returned.
+</ParamField>
 
 ### Returns
 

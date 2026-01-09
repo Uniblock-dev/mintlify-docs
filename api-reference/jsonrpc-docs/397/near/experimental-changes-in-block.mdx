@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `finality` (string): Optional finality condition. Use instead of block_id.
-- `block_id` (oneOf): Optional block ID. Use instead of finality.
+<ParamField body='params.finality' type='string'>
+  Optional finality condition. Use instead of block_id.
+</ParamField>
+<ParamField body='params.block_id' type='object'>
+  Optional block ID. Use instead of finality.
+</ParamField>
 
 ### Returns
 

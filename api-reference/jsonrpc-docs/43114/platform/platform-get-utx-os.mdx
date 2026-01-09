@@ -5,11 +5,21 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `addresses` (array): A list of addresses to fetch UTXOs for.
-- `limit` (integer): Maximum number of UTXOs to fetch (max: 1024).
-- `startIndex` (object): Pagination start index.
-- `sourceChain` (string): Source chain ID (e.g. "X" or "C") to retrieve atomic UTXOs.
-- `encoding` (string): Encoding for the UTXOs (currently supports "hex").
+<ParamField body='params.addresses' type='string[]' required>
+  A list of addresses to fetch UTXOs for.
+</ParamField>
+<ParamField body='params.limit' type='number'>
+  Maximum number of UTXOs to fetch (max: 1024).
+</ParamField>
+<ParamField body='params.startIndex' type='object'>
+  Pagination start index.
+</ParamField>
+<ParamField body='params.sourceChain' type='string'>
+  Source chain ID (e.g. "X" or "C") to retrieve atomic UTXOs.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Encoding for the UTXOs (currently supports "hex").
+</ParamField>
 
 ### Returns
 

@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned batched transaction.
 
-- `params[0]` (string): The transaction signer's Sui address.
-- `params[1]` (array): List of transaction request parameters.
-- `params[2]` (string): Optional gas object ID to be used. If not provided, one will be chosen by the node.
-- `params[3]` (string): Gas budget (maximum gas units that can be used).
-- `params[4]` (string): Transaction builder mode. Optional.
+<ParamField body='params[0]' type='string' required>
+  The transaction signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='object[]' required>
+  List of transaction request parameters.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Optional gas object ID to be used. If not provided, one will be chosen by the node.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  Gas budget (maximum gas units that can be used).
+</ParamField>
+<ParamField body='params[4]' type='string'>
+  Transaction builder mode. Optional.
+</ParamField>
 
 ### Returns
 

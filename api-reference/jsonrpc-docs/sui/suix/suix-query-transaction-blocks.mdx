@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters for suix_queryTransactionBlocks: [query, cursor, limit, descending_order]. The query object specifies the criteria, while cursor, limit, and descending_order are optional pagination and ordering parameters.
 
-- `params[0]` (object): Transaction query criteria (TransactionBlockResponseQuery).
-- `params[1]` (string): Optional paging cursor (TransactionDigest). If provided, the query will start from the next item after the cursor.
-- `params[2]` (integer): Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
-- `params[3]` (boolean): Determines the ordering of results. Default is false (ascending order, oldest record first).
+<ParamField body='params[0]' type='object' required>
+  Transaction query criteria (TransactionBlockResponseQuery).
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Optional paging cursor (TransactionDigest). If provided, the query will start from the next item after the cursor.
+</ParamField>
+<ParamField body='params[2]' type='number' default={100}>
+  Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+</ParamField>
+<ParamField body='params[3]' type='boolean' default={false}>
+  Determines the ordering of results. Default is false (ascending order, oldest record first).
+</ParamField>
 
 ### Returns
 

@@ -5,8 +5,12 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `tx` (string): The serialized transaction bytes, typically hex-encoded and prefixed with 0x.
-- `encoding` (string): The encoding format of the transaction. Can only be "hex" when provided.
+<ParamField body='params.tx' type='string' required>
+  The serialized transaction bytes, typically hex-encoded and prefixed with 0x.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  The encoding format of the transaction. Can only be "hex" when provided.
+</ParamField>
 
 ### Returns
 

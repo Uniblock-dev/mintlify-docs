@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [txids, blockHash?].
 
-- `params[0]` (array): List of transaction ids to prove.
-- `params[1]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
+<ParamField body='params[0]' type='string[]' required>
+  List of transaction ids to prove.
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  32 Bytes - hash of the block where this transaction was included. Null when pending.
+</ParamField>
 
 ### Returns
 

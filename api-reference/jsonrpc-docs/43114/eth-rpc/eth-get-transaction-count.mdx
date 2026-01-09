@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for eth_getTransactionCount: [address, defaultBlock].
 
-- `params[0]` (string): The address.
-- `params[1]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params[0]' type='string' required>
+  The address.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
 
 ### Returns
 

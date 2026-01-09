@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters for suix_getCoins: [ownerAddress, coinType, cursor, limit].
 
-- `params[0]` (string): The owner's Sui address
-- `params[1]` (string): Optional type name for the coin
-- `params[2]` (string): Optional paging cursor
-- `params[3]` (integer): Maximum number of items per page
+<ParamField body='params[0]' type='string' required>
+  The owner's Sui address
+</ParamField>
+<ParamField body='params[1]' type='string' default='0x2::sui::SUI'>
+  Optional type name for the coin
+</ParamField>
+<ParamField body='params[2]' type='string'>
+  Optional paging cursor
+</ParamField>
+<ParamField body='params[3]' type='number'>
+  Maximum number of items per page
+</ParamField>
 
 ### Returns
 

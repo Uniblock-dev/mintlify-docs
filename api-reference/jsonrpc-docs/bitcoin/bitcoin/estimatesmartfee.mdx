@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [confTarget, estimateMode?].
 
-- `params[0]` (integer): Target confirmation window in blocks.
-- `params[1]` (string): Optional estimate mode (UNSET, ECONOMICAL, CONSERVATIVE).
+<ParamField body='params[0]' type='number' required>
+  Target confirmation window in blocks.
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Optional estimate mode (UNSET, ECONOMICAL, CONSERVATIVE).
+</ParamField>
 
 ### Returns
 

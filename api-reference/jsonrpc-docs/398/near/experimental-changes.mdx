@@ -5,10 +5,18 @@ playground: 'none'
 ---
 ### Parameters
 
-- `changes_type` (string): Must be `"single_access_key_changes"`
-- `keys` (array): List of (account_id, public_key) pairs to query
-- `finality` (string): Either `finality` or `block_id`, not both
-- `block_id` (oneOf): Either `block_id` or `finality`, not both
+<ParamField body='params.changes_type' type='string' required>
+  Must be `"single_access_key_changes"`
+</ParamField>
+<ParamField body='params.keys' type='object[]' required>
+  List of (account_id, public_key) pairs to query
+</ParamField>
+<ParamField body='params.finality' type='string'>
+  Either `finality` or `block_id`, not both
+</ParamField>
+<ParamField body='params.block_id' type='object'>
+  Either `block_id` or `finality`, not both
+</ParamField>
 
 ### Returns
 

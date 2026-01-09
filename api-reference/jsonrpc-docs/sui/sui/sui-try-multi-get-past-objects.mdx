@@ -7,8 +7,12 @@ playground: 'none'
 
 Get data for multiple past objects with optional display options.
 
-- `params[0]` (array): Array of GetPastObjectRequest objects.
-- `params[1]` (object): Options for customizing the object response fields.
+<ParamField body='params[0]' type='object[]' required>
+  Array of GetPastObjectRequest objects.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Options for customizing the object response fields.
+</ParamField>
 
 ### Returns
 

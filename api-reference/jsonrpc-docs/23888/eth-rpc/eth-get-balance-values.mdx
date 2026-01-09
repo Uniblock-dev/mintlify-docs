@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for eth_getBalanceValues: [address, blockTag]
 
-- `params[0]` (string): Address to query (20 bytes, hex-encoded).
-- `params[1]` (string): Block tag (e.g., "latest", "earliest", or a hex block number).
+<ParamField body='params[0]' type='string' required>
+  Address to query (20 bytes, hex-encoded).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Block tag (e.g., "latest", "earliest", or a hex block number).
+</ParamField>
 
 ### Returns
 

@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for suix_getDynamicFields.
 
-- `params[0]` (string): The ID of the parent object.
-- `params[1]` (string): Optional paging cursor. If provided, the query will start from the item after this cursor.
-- `params[2]` (integer): Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+<ParamField body='params[0]' type='string'>
+  The ID of the parent object.
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Optional paging cursor. If provided, the query will start from the item after this cursor.
+</ParamField>
+<ParamField body='params[2]' type='number' default={100}>
+  Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+</ParamField>
 
 ### Returns
 

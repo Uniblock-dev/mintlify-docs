@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters: [rawTx, privKeys, prevTxs?, sighashType?].
 
-- `params[0]` (string): Raw transaction hex.
-- `params[1]` (array): Private keys in WIF format.
-- `params[2]` (array): Optional previous transaction outputs used for signing.
-- `params[3]` (string): Optional signature hash type (e.g., ALL).
+<ParamField body='params[0]' type='string' required>
+  Raw transaction hex.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Private keys in WIF format.
+</ParamField>
+<ParamField body='params[2]' type='object[]'>
+  Optional previous transaction outputs used for signing.
+</ParamField>
+<ParamField body='params[3]' type='string'>
+  Optional signature hash type (e.g., ALL).
+</ParamField>
 
 ### Returns
 

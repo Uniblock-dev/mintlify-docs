@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method simulateTransaction: [transaction, config]
 
-- `params[0]` (string): Transaction as an encoded string (base58 or base64 depending on config). The transaction must have a valid blockhash but is not required to be signed.
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Transaction as an encoded string (base58 or base64 depending on config). The transaction must have a valid blockhash but is not required to be signed.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

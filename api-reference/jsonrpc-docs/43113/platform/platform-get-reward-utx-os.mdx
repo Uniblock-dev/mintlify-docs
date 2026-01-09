@@ -7,8 +7,12 @@ playground: 'none'
 
 Returns UTXOs rewarded after the staking or delegation period ended for the given transaction. Deprecated as of v1.9.12.
 
-- `txID` (string): ID of the staking or delegating transaction.
-- `encoding` (string): Format for returned UTXOs. Only "hex" is supported if provided.
+<ParamField body='params.txID' type='string' required>
+  ID of the staking or delegating transaction.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Format for returned UTXOs. Only "hex" is supported if provided.
+</ParamField>
 
 ### Returns
 

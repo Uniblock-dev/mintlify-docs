@@ -7,9 +7,15 @@ playground: 'none'
 
 Checks status of a transaction by hash and includes all receipt outcomes and metadata.
 
-- `tx_hash` (string): Base58-encoded transaction hash.
-- `sender_account_id` (string): Account ID of the sender. Used to determine which shard to search in.
-- `wait_until` (string): Optional execution level to wait for before responding. Use NONE for immediate response.
+<ParamField body='params.tx_hash' type='string' required>
+  Base58-encoded transaction hash.
+</ParamField>
+<ParamField body='params.sender_account_id' type='string' required>
+  Account ID of the sender. Used to determine which shard to search in.
+</ParamField>
+<ParamField body='params.wait_until' type='string' default='EXECUTED_OPTIMISTIC'>
+  Optional execution level to wait for before responding. Use NONE for immediate response.
+</ParamField>
 
 ### Returns
 

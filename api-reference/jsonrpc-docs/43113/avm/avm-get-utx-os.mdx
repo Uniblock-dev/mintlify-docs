@@ -5,11 +5,21 @@ playground: 'none'
 ---
 ### Parameters
 
-- `addresses` (array): A list of X-Chain addresses to fetch UTXOs for.
-- `limit` (integer): Optional maximum number of UTXOs to return. Defaults to 1024 if omitted or exceeded.
-- `startIndex` (object): Pagination index from the previous response's endIndex.
-- `sourceChain` (string): Optional source chain ID (e.g., "P" or "C"). Used when fetching atomic UTXOs.
-- `encoding` (string): Encoding format for the returned UTXOs. Must be "hex" if specified.
+<ParamField body='params.addresses' type='string[]' required>
+  A list of X-Chain addresses to fetch UTXOs for.
+</ParamField>
+<ParamField body='params.limit' type='number'>
+  Optional maximum number of UTXOs to return. Defaults to 1024 if omitted or exceeded.
+</ParamField>
+<ParamField body='params.startIndex' type='object'>
+  Pagination index from the previous response's endIndex.
+</ParamField>
+<ParamField body='params.sourceChain' type='string'>
+  Optional source chain ID (e.g., "P" or "C"). Used when fetching atomic UTXOs.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Encoding format for the returned UTXOs. Must be "hex" if specified.
+</ParamField>
 
 ### Returns
 

@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [descriptor, range?].
 
-- `params[0]` (string): Output descriptor.
-- `params[1]` (array): Optional range [start, end] for ranged descriptors.
+<ParamField body='params[0]' type='string' required>
+  Output descriptor.
+</ParamField>
+<ParamField body='params[1]' type='number[]'>
+  Optional range [start, end] for ranged descriptors.
+</ParamField>
 
 ### Returns
 

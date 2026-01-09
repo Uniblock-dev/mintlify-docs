@@ -7,8 +7,12 @@ playground: 'none'
 
 Specify either `finality` or `block_id` to get protocol config at a given block state.
 
-- `finality` (string): Optional finality level to query protocol config at. Cannot be used with block_id.
-- `block_id` (oneOf): Block height or hash. Cannot be used with finality.
+<ParamField body='params.finality' type='string'>
+  Optional finality level to query protocol config at. Cannot be used with block_id.
+</ParamField>
+<ParamField body='params.block_id' type='object'>
+  Block height or hash. Cannot be used with finality.
+</ParamField>
 
 ### Returns
 

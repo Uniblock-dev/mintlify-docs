@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [txid, dummy, fee_delta].
 
-- `params[0]` (string): 32 Bytes - hash of the transaction.
-- `params[1]` (number): Unused parameter kept for compatibility (set to 0).
-- `params[2]` (integer): Fee delta in satoshis added to virtual priority.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Unused parameter kept for compatibility (set to 0).
+</ParamField>
+<ParamField body='params[2]' type='number' required>
+  Fee delta in satoshis added to virtual priority.
+</ParamField>
 
 ### Returns
 

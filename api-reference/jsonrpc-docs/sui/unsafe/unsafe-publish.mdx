@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned transaction to publish a Move package.
 
-- `params[0]` (string): The Sui address of the transaction signer.
-- `params[1]` (array): List of base64-encoded compiled module bytes for the Move package.
-- `params[2]` (array): List of ObjectIDs representing transitive dependencies.
-- `params[3]` (string): Optional gas object ID to be used. If not provided, one will be selected from signer's coins.
-- `params[4]` (string): Gas budget to be used by this transaction.
+<ParamField body='params[0]' type='string' required>
+  The Sui address of the transaction signer.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  List of base64-encoded compiled module bytes for the Move package.
+</ParamField>
+<ParamField body='params[2]' type='string[]' required>
+  List of ObjectIDs representing transitive dependencies.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  Optional gas object ID to be used. If not provided, one will be selected from signer's coins.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  Gas budget to be used by this transaction.
+</ParamField>
 
 ### Returns
 

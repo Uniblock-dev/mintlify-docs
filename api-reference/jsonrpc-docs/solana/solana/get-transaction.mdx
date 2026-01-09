@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for method getTransaction: [transactionSignature, config]
 
-- `params[0]` (string): Transaction signature as base-58 encoded string.
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Transaction signature as base-58 encoded string.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

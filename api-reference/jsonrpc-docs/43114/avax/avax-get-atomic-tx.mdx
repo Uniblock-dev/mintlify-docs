@@ -5,8 +5,12 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `txID` (string): The transaction ID (in CB58 format).
-- `encoding` (string): Optional encoding format of the result. Only "hex" is allowed.
+<ParamField body='params.txID' type='string' required>
+  The transaction ID (in CB58 format).
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Optional encoding format of the result. Only "hex" is allowed.
+</ParamField>
 
 ### Returns
 

@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for the trace call method: [traceCalls, block identifier]. The first element is an array of trace calls; the second is an optional block identifier.
 
-- `params[0]` (array): List of trace calls. Each trace call is an array of two items: a transaction object and an array of trace types.
-- `params[1]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params[0]' type='object[][]' required>
+  List of trace calls. Each trace call is an array of two items: a transaction object and an array of trace types.
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
 
 ### Returns
 

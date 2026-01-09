@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for bor_getRootHash: [fromBlock, toBlock]
 
-- `params[0]` (integer): Starting block number (inclusive).
-- `params[1]` (integer): Ending block number (inclusive). Maximum difference: 32,767 blocks.
+<ParamField body='params[0]' type='number' required>
+  Starting block number (inclusive).
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Ending block number (inclusive). Maximum difference: 32,767 blocks.
+</ParamField>
 
 ### Returns
 

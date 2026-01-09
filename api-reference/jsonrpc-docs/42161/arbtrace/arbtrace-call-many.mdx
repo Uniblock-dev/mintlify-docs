@@ -7,8 +7,12 @@ playground: 'none'
 
 An array with two elements: an array of call + traceType pairs, and a block tag or number.
 
-- `params[0]` (array): List of transaction call + trace type tuples to simulate sequentially.
-- `params[1]` (string): Block number or tag (e.g., latest, pending) to simulate the calls on.
+<ParamField body='params[0]' type='object[][]' required>
+  List of transaction call + trace type tuples to simulate sequentially.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Block number or tag (e.g., latest, pending) to simulate the calls on.
+</ParamField>
 
 ### Returns
 

@@ -7,9 +7,15 @@ playground: 'interactive'
 
 Parameters for method getTokenAccountsByOwner: [ownerAddress, filter, config]
 
-- `params[0]` (string): Pubkey of the token account owner (base-58 encoded).
-- `params[1]` (object): Filter object - must specify either mint or programId.
-- `params[2]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Pubkey of the token account owner (base-58 encoded).
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Filter object - must specify either mint or programId.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

@@ -7,9 +7,15 @@ playground: 'none'
 
 An array containing the transaction call object, trace types, and block tag/number.
 
-- `params[0]` (object): Transaction call object for simulation.
-- `params[1]` (array): Trace types to return: trace, vmTrace, or stateDiff.
-- `params[2]` (string): Block number (hex) or tag ("latest", "pending").
+<ParamField body='params[0]' type='object' required>
+  Transaction call object for simulation.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Trace types to return: trace, vmTrace, or stateDiff.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Block number (hex) or tag ("latest", "pending").
+</ParamField>
 
 ### Returns
 

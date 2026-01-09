@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for eth_getBlockByNumber: [blockNumber, fullTransactions].
 
-- `params[0]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
-- `params[1]` (boolean): If true, returns the full transaction objects. If false, returns only the transaction hashes.
+<ParamField body='params[0]' type='object' required>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
+<ParamField body='params[1]' type='boolean' required>
+  If true, returns the full transaction objects. If false, returns only the transaction hashes.
+</ParamField>
 
 ### Returns
 

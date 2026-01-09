@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [blockHash, fullTransactions].
 
-- `params[0]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
-- `params[1]` (boolean): If true, includes full transaction objects; otherwise only hashes.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the block where this transaction was included. Null when pending.
+</ParamField>
+<ParamField body='params[1]' type='boolean' required>
+  If true, includes full transaction objects; otherwise only hashes.
+</ParamField>
 
 ### Returns
 

@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [hexstring, isWitness?].
 
-- `params[0]` (string): Raw transaction hex.
-- `params[1]` (boolean): Optional flag to assume witness format when decoding.
+<ParamField body='params[0]' type='string' required>
+  Raw transaction hex.
+</ParamField>
+<ParamField body='params[1]' type='boolean'>
+  Optional flag to assume witness format when decoding.
+</ParamField>
 
 ### Returns
 

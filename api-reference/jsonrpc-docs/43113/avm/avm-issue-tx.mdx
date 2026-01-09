@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `tx` (string): The signed transaction, encoded in hex or CB58 (default).
-- `encoding` (string): Optional. Encoding of the signed transaction. Can only be "hex" if specified.
+<ParamField body='params.tx' type='string' required>
+  The signed transaction, encoded in hex or CB58 (default).
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Optional. Encoding of the signed transaction. Can only be "hex" if specified.
+</ParamField>
 
 ### Returns
 

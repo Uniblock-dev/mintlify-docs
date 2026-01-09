@@ -7,7 +7,9 @@ playground: 'interactive'
 
 Parameters for eth_newFilter: [filterObject]. See below for filterObject properties.
 
-- `params[0]` (object): Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.
+<ParamField body='params[0]' type='object' required>
+  Filter options used to create a new filter for logs. Topics are order-dependent. Nulls or nested arrays are used to match multiple possibilities.
+</ParamField>
 
 ### Returns
 

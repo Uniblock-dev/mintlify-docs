@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [action, scanObjects].
 
-- `params[0]` (string): Action (start, abort, status).
-- `params[1]` (array): Descriptors or addresses to search for.
+<ParamField body='params[0]' type='string' required>
+  Action (start, abort, status).
+</ParamField>
+<ParamField body='params[1]' type='string[]'>
+  Descriptors or addresses to search for.
+</ParamField>
 
 ### Returns
 

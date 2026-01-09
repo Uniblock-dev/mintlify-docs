@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters for suix_queryEvents: [query, cursor, limit, descending_order]. The query object specifies event filter criteria. Cursor, limit, and descending_order are optional.
 
-- `params[0]` (object): Event query criteria object. See Event filter documentation for examples.
-- `params[1]` (string): Optional paging cursor. If provided, the query will start from the next item after this cursor.
-- `params[2]` (integer): Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
-- `params[3]` (boolean): Query result ordering. Default is false (ascending order, oldest record first).
+<ParamField body='params[0]' type='object' required>
+  Event query criteria object. See Event filter documentation for examples.
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Optional paging cursor. If provided, the query will start from the next item after this cursor.
+</ParamField>
+<ParamField body='params[2]' type='number' default={1000}>
+  Maximum number of items per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+</ParamField>
+<ParamField body='params[3]' type='boolean' default={false}>
+  Query result ordering. Default is false (ascending order, oldest record first).
+</ParamField>
 
 ### Returns
 

@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `height` (oneOf): The P-Chain block height to query validator set for.
-- `subnetID` (string): Subnet ID to query validator set for. If omitted, queries the Primary Network.
+<ParamField body='params.height' type='object' required>
+  The P-Chain block height to query validator set for.
+</ParamField>
+<ParamField body='params.subnetID' type='string'>
+  Subnet ID to query validator set for. If omitted, queries the Primary Network.
+</ParamField>
 
 ### Returns
 

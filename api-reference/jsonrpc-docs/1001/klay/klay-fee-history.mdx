@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [blockCount, newestBlock, rewardPercentiles].
 
-- `params[0]` (string): Hex-encoded number of blocks in the request range (max 1024).
-- `params[1]` (oneOf): Block number where this transaction was included. Null when pending.
-- `params[2]` (array): Priority fee percentiles to return (0-100).
+<ParamField body='params[0]' type='string' required>
+  Hex-encoded number of blocks in the request range (max 1024).
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Block number where this transaction was included. Null when pending.
+</ParamField>
+<ParamField body='params[2]' type='number[]' required>
+  Priority fee percentiles to return (0-100).
+</ParamField>
 
 ### Returns
 

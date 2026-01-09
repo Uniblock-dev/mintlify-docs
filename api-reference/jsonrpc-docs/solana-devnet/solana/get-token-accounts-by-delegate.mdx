@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for method getTokenAccountsByDelegate: [delegateAddress, filter, config]
 
-- `params[0]` (string): Pubkey of the account delegate (base-58 encoded).
-- `params[1]` (object): Filter object specifying either mint or programId (exactly one required).
-- `params[2]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Pubkey of the account delegate (base-58 encoded).
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Filter object specifying either mint or programId (exactly one required).
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

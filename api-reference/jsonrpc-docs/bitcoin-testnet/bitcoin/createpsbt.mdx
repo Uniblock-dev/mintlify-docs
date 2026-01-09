@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters: [inputs, outputs, locktime?, replaceable?].
 
-- `params[0]` (array): Transaction inputs (each with txid, vout, sequence).
-- `params[1]` (object): Transaction outputs mapping addresses to amounts or scripts.
-- `params[2]` (integer): Optional locktime.
-- `params[3]` (boolean): Optional replaceable flag.
+<ParamField body='params[0]' type='object[]' required>
+  Transaction inputs (each with txid, vout, sequence).
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Transaction outputs mapping addresses to amounts or scripts.
+</ParamField>
+<ParamField body='params[2]' type='number'>
+  Optional locktime.
+</ParamField>
+<ParamField body='params[3]' type='boolean'>
+  Optional replaceable flag.
+</ParamField>
 
 ### Returns
 

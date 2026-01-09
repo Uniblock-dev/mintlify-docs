@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `params[0]` (string): The hash of the L2 transaction.
-- `params[1]` (integer): The index of the L2 to L1 log in the transaction.
+<ParamField body='params[0]' type='string' required>
+  The hash of the L2 transaction.
+</ParamField>
+<ParamField body='params[1]' type='number' default={0}>
+  The index of the L2 to L1 log in the transaction.
+</ParamField>
 
 ### Returns
 

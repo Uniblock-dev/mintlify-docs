@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for eth_submitWork: [nonce, powHash, mixHash].
 
-- `params[0]` (string): 8 Bytes - The nonce found (64 bits).
-- `params[1]` (string): 32 Bytes - The header’s pow-hash (256 bits)
-- `params[2]` (string): Data - 32 Bytes - The mix digest (256 bits).
+<ParamField body='params[0]' type='string' required>
+  8 Bytes - The nonce found (64 bits).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  32 Bytes - The header’s pow-hash (256 bits)
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Data - 32 Bytes - The mix digest (256 bits).
+</ParamField>
 
 ### Returns
 

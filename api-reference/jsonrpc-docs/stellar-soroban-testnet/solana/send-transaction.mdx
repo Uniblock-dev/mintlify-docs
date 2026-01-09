@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [signedTransaction, config]
 
-- `params[0]` (string): Fully-signed Transaction as an encoded string (base58 or base64 depending on config).
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Fully-signed Transaction as an encoded string (base58 or base64 depending on config).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

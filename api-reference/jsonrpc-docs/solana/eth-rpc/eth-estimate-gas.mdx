@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Two-element array: [modified transaction object, default block]. The transaction omits "nonce" and allows optional "from".
 
-- `params[0]` (allOf): Legacy transaction (pre-EIP-2718).
-- `params[1]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params[0]' type='object' required>
+  Legacy transaction (pre-EIP-2718).
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
 
 ### Returns
 

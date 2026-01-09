@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [psbt, extract?].
 
-- `params[0]` (string): PSBT base64 string.
-- `params[1]` (boolean): If true, also return the final raw transaction hex.
+<ParamField body='params[0]' type='string' required>
+  PSBT base64 string.
+</ParamField>
+<ParamField body='params[1]' type='boolean'>
+  If true, also return the final raw transaction hex.
+</ParamField>
 
 ### Returns
 

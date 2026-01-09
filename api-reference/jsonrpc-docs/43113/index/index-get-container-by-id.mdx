@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters to identify and retrieve the container.
 
-- `id` (string): The container ID to look up.
-- `encoding` (string): The encoding format for the byte output. Must be "hex".
+<ParamField body='params.id' type='string' required>
+  The container ID to look up.
+</ParamField>
+<ParamField body='params.encoding' type='string' required>
+  The encoding format for the byte output. Must be "hex".
+</ParamField>
 
 ### Returns
 

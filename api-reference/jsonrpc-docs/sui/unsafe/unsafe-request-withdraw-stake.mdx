@@ -7,10 +7,18 @@ playground: 'none'
 
 Creates an unsigned transaction to withdraw staked SUI.
 
-- `params[0]` (string): The Sui address of the transaction signer.
-- `params[1]` (string): The object ID of the staked SUI to withdraw.
-- `params[2]` (string): Optional gas object ID. If omitted, a gas object will be selected automatically.
-- `params[3]` (string): The gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The Sui address of the transaction signer.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The object ID of the staked SUI to withdraw.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Optional gas object ID. If omitted, a gas object will be selected automatically.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  The gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

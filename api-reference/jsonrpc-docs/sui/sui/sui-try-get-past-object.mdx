@@ -7,9 +7,15 @@ playground: 'none'
 
 Retrieve object data at a specific version (if retained by the node).
 
-- `params[0]` (string): Object ID in hex format.
-- `params[1]` (integer): The version of the object to retrieve.
-- `params[2]` (object): Options for customizing the object response fields.
+<ParamField body='params[0]' type='string' required>
+  Object ID in hex format.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  The version of the object to retrieve.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Options for customizing the object response fields.
+</ParamField>
 
 ### Returns
 

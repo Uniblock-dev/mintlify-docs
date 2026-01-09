@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `keys` (array): Array of base64-encoded XDR LedgerKey values.
-- `includeProof` (boolean): If true, include cryptographic proofs when supported.
+<ParamField body='params.keys' type='string[]' required>
+  Array of base64-encoded XDR LedgerKey values.
+</ParamField>
+<ParamField body='params.includeProof' type='boolean'>
+  If true, include cryptographic proofs when supported.
+</ParamField>
 
 ### Returns
 

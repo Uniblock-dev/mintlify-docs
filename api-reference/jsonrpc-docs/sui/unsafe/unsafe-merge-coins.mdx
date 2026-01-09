@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned transaction to merge multiple coins into one coin.
 
-- `params[0]` (string): The signer's Sui address.
-- `params[1]` (string): The primary coin object to merge into. This coin will remain.
-- `params[2]` (string): The coin object to be merged. This coin will be destroyed.
-- `params[3]` (string): Optional gas object to be used. Node will auto-select if not provided.
-- `params[4]` (string): Gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The primary coin object to merge into. This coin will remain.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  The coin object to be merged. This coin will be destroyed.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  Optional gas object to be used. Node will auto-select if not provided.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  Gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

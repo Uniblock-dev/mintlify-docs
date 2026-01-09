@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for eth_getBlockRange: [startBlockTag, endBlockTag, fullTxObjects]
 
-- `params[0]` (string): Start block number (hex) or tag (latest, earliest, pending, safe, finalized).
-- `params[1]` (string): End block number (hex) or tag (latest, earliest, pending, safe, finalized).
-- `params[2]` (boolean): Set to true to return full transaction objects, false for only transaction hashes.
+<ParamField body='params[0]' type='string' required>
+  Start block number (hex) or tag (latest, earliest, pending, safe, finalized).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  End block number (hex) or tag (latest, earliest, pending, safe, finalized).
+</ParamField>
+<ParamField body='params[2]' type='boolean' required>
+  Set to true to return full transaction objects, false for only transaction hashes.
+</ParamField>
 
 ### Returns
 

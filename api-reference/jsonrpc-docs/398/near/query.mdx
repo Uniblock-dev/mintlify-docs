@@ -5,11 +5,21 @@ playground: 'none'
 ---
 ### Parameters
 
-- `request_type` (string): Must be `"view_access_key"`
-- `account_id` (string): The NEAR account you are querying
-- `public_key` (string): The public key to look up
-- `finality` (string): Query the latest state with the given finality
-- `block_id` (oneOf): Alternative to `finality`—specify a block hash, height, or full block-id object
+<ParamField body='params.request_type' type='string' required>
+  Must be `"view_access_key"`
+</ParamField>
+<ParamField body='params.account_id' type='string' required>
+  The NEAR account you are querying
+</ParamField>
+<ParamField body='params.public_key' type='string' required>
+  The public key to look up
+</ParamField>
+<ParamField body='params.finality' type='string'>
+  Query the latest state with the given finality
+</ParamField>
+<ParamField body='params.block_id' type='object'>
+  Alternative to `finality`—specify a block hash, height, or full block-id object
+</ParamField>
 
 ### Returns
 

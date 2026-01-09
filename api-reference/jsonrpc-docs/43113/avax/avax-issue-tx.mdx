@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `tx` (string): The signed transaction, serialized and hex-encoded.
-- `encoding` (string): Encoding format of the transaction. Only "hex" is supported if specified.
+<ParamField body='params.tx' type='string' required>
+  The signed transaction, serialized and hex-encoded.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Encoding format of the transaction. Only "hex" is supported if specified.
+</ParamField>
 
 ### Returns
 

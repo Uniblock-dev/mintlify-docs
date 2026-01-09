@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for eth_subscribe: [subscriptionType, options]. The second parameter is required only for "logs".
 
-- `params[0]` (string): Subscription type. Must be either "newHeads" or "logs".
-- `params[1]` (oneOf): Filter options for "logs" subscription, or empty object for "newHeads".
+<ParamField body='params[0]' type='string' required>
+  Subscription type. Must be either "newHeads" or "logs".
+</ParamField>
+<ParamField body='params[1]' type='object' required>
+  Filter options for "logs" subscription, or empty object for "newHeads".
+</ParamField>
 
 ### Returns
 

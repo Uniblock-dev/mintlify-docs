@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [call object, block parameter]. Call object follows Kaia transaction fields with nonce omitted.
 
-- `params[0]` (allOf): Legacy transaction (pre-EIP-2718).
-- `params[1]` (oneOf): Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+<ParamField body='params[0]' type='object' required>
+  Legacy transaction (pre-EIP-2718).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Block identifier. Can be an integer block number or a string tag: "latest", "earliest", or "pending".
+</ParamField>
 
 ### Returns
 

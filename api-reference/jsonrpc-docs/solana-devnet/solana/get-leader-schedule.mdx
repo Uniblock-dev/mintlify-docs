@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method getLeaderSchedule: [slot, config]
 
-- `params[0]` (integer): Fetch the leader schedule for the epoch that corresponds to the provided slot. If unspecified, the leader schedule for the current epoch is fetched.
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='number'>
+  Fetch the leader schedule for the epoch that corresponds to the provided slot. If unspecified, the leader schedule for the current epoch is fetched.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

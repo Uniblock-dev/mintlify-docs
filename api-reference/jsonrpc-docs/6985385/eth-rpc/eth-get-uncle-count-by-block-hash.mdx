@@ -7,7 +7,9 @@ playground: 'none'
 
 Parameters for eth_getUncleCountByBlockHash: [blockHash].
 
-- `params[0]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the block where this transaction was included. Null when pending.
+</ParamField>
 
 ### Returns
 

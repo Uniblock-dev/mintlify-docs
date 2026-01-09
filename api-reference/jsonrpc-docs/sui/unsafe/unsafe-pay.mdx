@@ -7,12 +7,24 @@ playground: 'none'
 
 Create an unsigned transaction to send Coin<T> to multiple recipients.
 
-- `params[0]` (string): The signer's Sui address.
-- `params[1]` (array): The Sui coin object IDs to use for payment.
-- `params[2]` (array): List of recipient Sui addresses.
-- `params[3]` (array): Amounts to send to each recipient, in the same order.
-- `params[4]` (string): Optional gas object ID. If not provided, the node will select one.
-- `params[5]` (string): Gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  The Sui coin object IDs to use for payment.
+</ParamField>
+<ParamField body='params[2]' type='string[]' required>
+  List of recipient Sui addresses.
+</ParamField>
+<ParamField body='params[3]' type='string[]' required>
+  Amounts to send to each recipient, in the same order.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  Optional gas object ID. If not provided, the node will select one.
+</ParamField>
+<ParamField body='params[5]' type='string' required>
+  Gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

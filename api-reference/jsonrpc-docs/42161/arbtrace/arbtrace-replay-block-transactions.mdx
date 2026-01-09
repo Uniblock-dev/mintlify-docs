@@ -7,8 +7,12 @@ playground: 'none'
 
 Array with the block number and trace types to return.
 
-- `params[0]` (string): Block number to replay (hex format).
-- `params[1]` (array): Trace types to include for each transaction in the block.
+<ParamField body='params[0]' type='string' required>
+  Block number to replay (hex format).
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Trace types to include for each transaction in the block.
+</ParamField>
 
 ### Returns
 

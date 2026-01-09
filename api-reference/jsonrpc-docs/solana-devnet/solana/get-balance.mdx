@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method getBalance: [pubkey, config]
 
-- `params[0]` (string): Base-58 encoded public key of the account to query.
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Base-58 encoded public key of the account to query.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

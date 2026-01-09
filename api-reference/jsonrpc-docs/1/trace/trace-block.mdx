@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for trace_block method: [defaultBlock]
 
-- `params[0]` (integer): Integer block number.
-- `params[1]` (string): Block tag: "earliest", "latest", or "pending".
+<ParamField body='params[0]' type='number' required>
+  Integer block number.
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Block tag: "earliest", "latest", or "pending".
+</ParamField>
 
 ### Returns
 

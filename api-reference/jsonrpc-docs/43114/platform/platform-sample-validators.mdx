@@ -5,8 +5,12 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `size` (integer): Number of validators to sample from the specified Subnet.
-- `subnetID` (string): Optional Subnet ID to sample validators from. Defaults to the Primary Network.
+<ParamField body='params.size' type='number' required>
+  Number of validators to sample from the specified Subnet.
+</ParamField>
+<ParamField body='params.subnetID' type='string'>
+  Optional Subnet ID to sample validators from. Defaults to the Primary Network.
+</ParamField>
 
 ### Returns
 

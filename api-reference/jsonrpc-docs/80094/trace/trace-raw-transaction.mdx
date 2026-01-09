@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for the trace_rawTransaction method: [transactionData, traceType].
 
-- `params[0]` (string): Data - Raw transaction data.
-- `params[1]` (array): Types of traces to collect: "vmTrace", "trace", and/or "stateDiff".
+<ParamField body='params[0]' type='string'>
+  Data - Raw transaction data.
+</ParamField>
+<ParamField body='params[1]' type='string[]'>
+  Types of traces to collect: "vmTrace", "trace", and/or "stateDiff".
+</ParamField>
 
 ### Returns
 

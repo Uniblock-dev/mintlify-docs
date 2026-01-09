@@ -5,9 +5,15 @@ playground: 'none'
 ---
 ### Parameters
 
-- `networkID` (integer): The network ID for which the genesis state will be generated.
-- `genesisData` (object): JSON description of each asset in the genesis state.
-- `encoding` (string): The encoding format of the returned genesis bytes.
+<ParamField body='params.networkID' type='number' required>
+  The network ID for which the genesis state will be generated.
+</ParamField>
+<ParamField body='params.genesisData' type='object' required>
+  JSON description of each asset in the genesis state.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  The encoding format of the returned genesis bytes.
+</ParamField>
 
 ### Returns
 

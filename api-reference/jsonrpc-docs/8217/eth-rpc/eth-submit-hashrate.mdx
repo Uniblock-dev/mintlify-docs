@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for eth_submitHashrate: [hashrate, id].
 
-- `params[0]` (string): Data - a hexadecimal string representation (32 bytes) of the hash rate.
-- `params[1]` (string): Data - A random hexadecimal(32 bytes) ID identifying the client.
+<ParamField body='params[0]' type='string' required>
+  Data - a hexadecimal string representation (32 bytes) of the hash rate.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Data - A random hexadecimal(32 bytes) ID identifying the client.
+</ParamField>
 
 ### Returns
 

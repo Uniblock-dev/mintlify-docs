@@ -7,11 +7,21 @@ playground: 'none'
 
 Creates an unsigned transaction to split a coin object into multiple equal-size coins.
 
-- `params[0]` (string): The transaction signer's Sui address.
-- `params[1]` (string): The coin object ID to split.
-- `params[2]` (string): The number of equal-sized coins to split into.
-- `params[3]` (string): Optional gas object ID. If not specified, the node selects one.
-- `params[4]` (string): The gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The transaction signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The coin object ID to split.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  The number of equal-sized coins to split into.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  Optional gas object ID. If not specified, the node selects one.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  The gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

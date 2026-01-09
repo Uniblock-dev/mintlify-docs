@@ -7,8 +7,12 @@ playground: 'interactive'
 
 The parameters for method tx: [transactionHash, prove].
 
-- `params[0]` (string): 32 Bytes - Hash of the transaction.
-- `params[1]` (boolean): To include proofs into the response.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - Hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='boolean'>
+  To include proofs into the response.
+</ParamField>
 
 ### Returns
 

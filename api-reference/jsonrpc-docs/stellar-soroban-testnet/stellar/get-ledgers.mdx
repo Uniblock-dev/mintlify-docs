@@ -5,9 +5,15 @@ playground: 'none'
 ---
 ### Parameters
 
-- `startLedger` (integer): Inclusive starting ledger sequence to list from.
-- `order` (string): Sort order by ledger sequence.
-- `pagination` (object): Pagination controls.
+<ParamField body='params.startLedger' type='number'>
+  Inclusive starting ledger sequence to list from.
+</ParamField>
+<ParamField body='params.order' type='string'>
+  Sort order by ledger sequence.
+</ParamField>
+<ParamField body='params.pagination' type='object'>
+  Pagination controls.
+</ParamField>
 
 ### Returns
 

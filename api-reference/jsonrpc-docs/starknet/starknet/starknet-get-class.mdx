@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for starknet_getClass: [block_id, class_hash].
 
-- `block_id` (object): BlockID object containing hash and number.
-- `class_hash` (string): The class hash of the requested contract class.
+<ParamField body='params.block_id' type='object' required>
+  BlockID object containing hash and number.
+</ParamField>
+<ParamField body='params.class_hash' type='string' required>
+  The class hash of the requested contract class.
+</ParamField>
 
 ### Returns
 

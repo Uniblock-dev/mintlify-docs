@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters for starknet_getStorageAt: [contract_address, key, block_id]
 
-- `contract_address` (string): Address of the contract to read from.
-- `key` (string): Key to the storage value for the specified contract.
-- `block_id` (object): BlockID object containing hash and number.
+<ParamField body='params.contract_address' type='string'>
+  Address of the contract to read from.
+</ParamField>
+<ParamField body='params.key' type='string'>
+  Key to the storage value for the specified contract.
+</ParamField>
+<ParamField body='params.block_id' type='object'>
+  BlockID object containing hash and number.
+</ParamField>
 
 ### Returns
 

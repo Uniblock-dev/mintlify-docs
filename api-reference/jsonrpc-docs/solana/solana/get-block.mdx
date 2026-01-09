@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for method getBlock: [slot, config]
 
-- `params[0]` (integer): Slot number of the block to retrieve.
-- `params[1]` (object): Optional configuration object for getBlock: [commitment, encoding, transactionDetails, maxSupportedTransactionVersion, rewards].
+<ParamField body='params[0]' type='number' required>
+  Slot number of the block to retrieve.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object for getBlock: [commitment, encoding, transactionDetails, maxSupportedTransactionVersion, rewards].
+</ParamField>
 
 ### Returns
 

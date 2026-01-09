@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method getMultipleAccounts: [pubkeys, config]
 
-- `params[0]` (array): List of base-58 encoded public keys for which to retrieve account information.
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string[]'>
+  List of base-58 encoded public keys for which to retrieve account information.
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

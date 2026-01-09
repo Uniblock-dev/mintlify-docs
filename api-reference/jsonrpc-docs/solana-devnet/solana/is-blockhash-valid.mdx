@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method isBlockhashValid: [blockhash, config]
 
-- `params[0]` (string): The blockhash to evaluate (base-58 encoded string).
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  The blockhash to evaluate (base-58 encoded string).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

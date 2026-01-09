@@ -7,10 +7,18 @@ playground: 'none'
 
 Create an unsigned transaction to send all SUI coins to a recipient.
 
-- `params[0]` (string): The Sui address of the transaction signer.
-- `params[1]` (array): List of SUI coin object IDs to be used, including the gas coin.
-- `params[2]` (string): The recipient's Sui address.
-- `params[3]` (string): The gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The Sui address of the transaction signer.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  List of SUI coin object IDs to be used, including the gas coin.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  The recipient's Sui address.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  The gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

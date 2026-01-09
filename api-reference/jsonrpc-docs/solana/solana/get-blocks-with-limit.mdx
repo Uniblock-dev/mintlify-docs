@@ -7,9 +7,15 @@ playground: 'interactive'
 
 Parameters for method getBlocksWithLimit: [startSlot, limit, config]
 
-- `params[0]` (integer): Starting slot number for the range.
-- `params[1]` (integer): Maximum number of results to return.
-- `params[2]` (object): Optional configuration object.
+<ParamField body='params[0]' type='number' required>
+  Starting slot number for the range.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Maximum number of results to return.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

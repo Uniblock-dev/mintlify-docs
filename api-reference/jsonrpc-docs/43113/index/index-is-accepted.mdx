@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters used to check the acceptance status of a container.
 
-- `containerID` (string): The ID of the container to check.
-- `encoding` (string): The encoding format of the request. Only "hex" is supported.
+<ParamField body='params.containerID' type='string' required>
+  The ID of the container to check.
+</ParamField>
+<ParamField body='params.encoding' type='string' required>
+  The encoding format of the request. Only "hex" is supported.
+</ParamField>
 
 ### Returns
 

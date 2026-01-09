@@ -7,11 +7,21 @@ playground: 'none'
 
 Run a transaction in dev-inspect mode for debugging and analysis purposes.
 
-- `params[0]` (string): Sender address (SuiAddress).
-- `params[1]` (string): BCS encoded TransactionKind (base64).
-- `params[2]` (string): Gas price used for gas cost estimation.
-- `params[3]` (string): Epoch number to use for dev inspection.
-- `params[4]` (object): Optional DevInspectArgs including gas budget, gas objects, skip checks, etc.
+<ParamField body='params[0]' type='string' required>
+  Sender address (SuiAddress).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  BCS encoded TransactionKind (base64).
+</ParamField>
+<ParamField body='params[2]' type='string'>
+  Gas price used for gas cost estimation.
+</ParamField>
+<ParamField body='params[3]' type='string'>
+  Epoch number to use for dev inspection.
+</ParamField>
+<ParamField body='params[4]' type='object'>
+  Optional DevInspectArgs including gas budget, gas objects, skip checks, etc.
+</ParamField>
 
 ### Returns
 

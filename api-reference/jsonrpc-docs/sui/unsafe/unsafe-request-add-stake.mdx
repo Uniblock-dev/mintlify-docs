@@ -7,12 +7,24 @@ playground: 'none'
 
 Create an unsigned transaction to stake SUI to a validator.
 
-- `params[0]` (string): The Sui address of the transaction signer.
-- `params[1]` (array): List of Coin<SUI> object IDs to be staked.
-- `params[2]` (string): Amount to stake. If omitted, the full balance of all coins will be used.
-- `params[3]` (string): The validator's Sui address.
-- `params[4]` (string): Optional gas object ID. If not provided, a gas object will be auto-selected.
-- `params[5]` (string): Gas budget for the transaction.
+<ParamField body='params[0]' type='string' required>
+  The Sui address of the transaction signer.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  List of Coin<SUI> object IDs to be staked.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Amount to stake. If omitted, the full balance of all coins will be used.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  The validator's Sui address.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  Optional gas object ID. If not provided, a gas object will be auto-selected.
+</ParamField>
+<ParamField body='params[5]' type='string' required>
+  Gas budget for the transaction.
+</ParamField>
 
 ### Returns
 

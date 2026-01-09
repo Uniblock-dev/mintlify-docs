@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for starknet_getNonce: [block_id, contract_address].
 
-- `block_id` (object): BlockID object containing hash and number.
-- `contract_address` (string): The address of the request contract.
+<ParamField body='params.block_id' type='object' required>
+  BlockID object containing hash and number.
+</ParamField>
+<ParamField body='params.contract_address' type='string' required>
+  The address of the request contract.
+</ParamField>
 
 ### Returns
 

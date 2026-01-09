@@ -7,7 +7,9 @@ playground: 'interactive'
 
 Parameters for method getTransactionsForAddress: [address, txFilteringOptions]
 
-- `params[]` (allOf): Base-58 encoded public key of the account to query transaction history for.
+<ParamField body='params[]' type='object' default={["ADDRESS_PUBLIC_KEY",{"transactionDetails":"signatures","sortOrder":"desc","limit":1000,"commitment":"finalized"}]}>
+  Base-58 encoded public key of the account to query transaction history for.
+</ParamField>
 
 ### Returns
 

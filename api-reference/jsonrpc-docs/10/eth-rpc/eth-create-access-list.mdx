@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [transaction call object, block identifier]
 
-- `params[0]` (object): Transaction call object used to simulate the access list.
-- `params[1]` (string): Block identifier: number, block hash, or tag ("latest", "earliest", "pending", "safe", or "finalized").
+<ParamField body='params[0]' type='object' required>
+  Transaction call object used to simulate the access list.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Block identifier: number, block hash, or tag ("latest", "earliest", "pending", "safe", or "finalized").
+</ParamField>
 
 ### Returns
 

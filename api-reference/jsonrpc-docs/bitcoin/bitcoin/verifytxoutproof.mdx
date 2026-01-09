@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [proof, txids?].
 
-- `params[0]` (string): Proof data hex.
-- `params[1]` (array): Optional list of transaction ids expected in the proof.
+<ParamField body='params[0]' type='string' required>
+  Proof data hex.
+</ParamField>
+<ParamField body='params[1]' type='string[]'>
+  Optional list of transaction ids expected in the proof.
+</ParamField>
 
 ### Returns
 

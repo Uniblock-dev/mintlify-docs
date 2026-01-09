@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [txid, verbose?].
 
-- `params[0]` (string): 32 Bytes - hash of the transaction.
-- `params[1]` (boolean): If true, return detailed objects instead of just txids.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the transaction.
+</ParamField>
+<ParamField body='params[1]' type='boolean'>
+  If true, return detailed objects instead of just txids.
+</ParamField>
 
 ### Returns
 

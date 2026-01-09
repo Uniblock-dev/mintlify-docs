@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters to specify the range of containers to fetch.
 
-- `startIndex` (integer): The index of the first container to return.
-- `numToFetch` (integer): The number of containers to fetch (max 1024).
-- `encoding` (string): The encoding format for the returned container bytes. Must be "hex".
+<ParamField body='params.startIndex' type='number' required>
+  The index of the first container to return.
+</ParamField>
+<ParamField body='params.numToFetch' type='number' required>
+  The number of containers to fetch (max 1024).
+</ParamField>
+<ParamField body='params.encoding' type='string' required>
+  The encoding format for the returned container bytes. Must be "hex".
+</ParamField>
 
 ### Returns
 

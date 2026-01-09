@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [address, blockReference]
 
-- `params[0]` (string): The address of the account (20-byte hex string).
-- `params[1]` (string): Block reference: block number in hex, integer, or tag ("latest", "pending", "safe", "finalized").
+<ParamField body='params[0]' type='string' required>
+  The address of the account (20-byte hex string).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Block reference: block number in hex, integer, or tag ("latest", "pending", "safe", "finalized").
+</ParamField>
 
 ### Returns
 

@@ -5,9 +5,15 @@ playground: 'none'
 ---
 ### Parameters
 
-- `params[0]` (string): The account address to fetch storage proofs for.
-- `params[1]` (array): Vector of storage keys in the account.
-- `params[2]` (integer): The L1 batch number specifying the point in time for the storage proof.
+<ParamField body='params[0]' type='string' required>
+  The account address to fetch storage proofs for.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Vector of storage keys in the account.
+</ParamField>
+<ParamField body='params[2]' type='number' required default={0}>
+  The L1 batch number specifying the point in time for the storage proof.
+</ParamField>
 
 ### Returns
 

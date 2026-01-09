@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [blockCount, newestBlock, rewardPercentiles]
 
-- `params[0]` (string): Hex-encoded number of blocks in the requested range (max: 0x400 / 1024 blocks).
-- `params[1]` (string): Newest block identifier: a hex block number or one of: "latest", "earliest", "pending".
-- `params[2]` (array): Optional array of integers representing percentiles (ascending).
+<ParamField body='params[0]' type='string' required>
+  Hex-encoded number of blocks in the requested range (max: 0x400 / 1024 blocks).
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Newest block identifier: a hex block number or one of: "latest", "earliest", "pending".
+</ParamField>
+<ParamField body='params[2]' type='number[]'>
+  Optional array of integers representing percentiles (ascending).
+</ParamField>
 
 ### Returns
 

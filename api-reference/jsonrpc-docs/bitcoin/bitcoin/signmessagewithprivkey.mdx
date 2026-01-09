@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [privkey, message].
 
-- `params[0]` (string): Private key in WIF.
-- `params[1]` (string): Message to sign.
+<ParamField body='params[0]' type='string' required>
+  Private key in WIF.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Message to sign.
+</ParamField>
 
 ### Returns
 

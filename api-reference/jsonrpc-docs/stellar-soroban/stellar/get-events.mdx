@@ -7,11 +7,21 @@ playground: 'none'
 
 Event filter and pagination options.
 
-- `startLedger` (integer): Inclusive starting ledger sequence to search from.
-- `endLedger` (integer): Exclusive ending ledger sequence to stop at.
-- `contractIds` (array): Optional list of contract IDs to filter on.
-- `topics` (array): Optional list of topic filters. Provider-specific matching may apply.
-- `pagination` (object): Pagination controls.
+<ParamField body='params.startLedger' type='number'>
+  Inclusive starting ledger sequence to search from.
+</ParamField>
+<ParamField body='params.endLedger' type='number'>
+  Exclusive ending ledger sequence to stop at.
+</ParamField>
+<ParamField body='params.contractIds' type='string[]'>
+  Optional list of contract IDs to filter on.
+</ParamField>
+<ParamField body='params.topics' type='string[]'>
+  Optional list of topic filters. Provider-specific matching may apply.
+</ParamField>
+<ParamField body='params.pagination' type='object'>
+  Pagination controls.
+</ParamField>
 
 ### Returns
 

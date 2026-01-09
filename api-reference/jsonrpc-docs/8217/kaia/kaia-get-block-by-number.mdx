@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [blockNumber, fullTransactions].
 
-- `params[0]` (oneOf): Block number where this transaction was included. Null when pending.
-- `params[1]` (boolean): If true, returns full transaction objects instead of hashes.
+<ParamField body='params[0]' type='object' required>
+  Block number where this transaction was included. Null when pending.
+</ParamField>
+<ParamField body='params[1]' type='boolean' required>
+  If true, returns full transaction objects instead of hashes.
+</ParamField>
 
 ### Returns
 

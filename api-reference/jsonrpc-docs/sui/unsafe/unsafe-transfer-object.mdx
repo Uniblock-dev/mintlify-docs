@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned transaction to transfer an object to a recipient. The object must allow public transfers.
 
-- `params[0]` (string): The signer's Sui address.
-- `params[1]` (string): The ID of the object to be transferred.
-- `params[2]` (string): Optional gas object ID. If not specified, the node picks one automatically.
-- `params[3]` (string): The gas budget for the transaction.
-- `params[4]` (string): The recipient's Sui address.
+<ParamField body='params[0]' type='string' required>
+  The signer's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The ID of the object to be transferred.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Optional gas object ID. If not specified, the node picks one automatically.
+</ParamField>
+<ParamField body='params[3]' type='string' required>
+  The gas budget for the transaction.
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  The recipient's Sui address.
+</ParamField>
 
 ### Returns
 

@@ -7,10 +7,18 @@ playground: 'none'
 
 Parameters for suix_getOwnedObjects: [address, query, cursor, limit]. Only the address is required; query, cursor, and limit are optional.
 
-- `params[0]` (string): The owner's Sui address.
-- `params[1]` (object): Optional objects query criteria.
-- `params[2]` (string): Optional paging cursor. If provided, the query will start from the next item after the specified cursor. If not provided, paging starts from the first item.
-- `params[3]` (integer): Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+<ParamField body='params[0]' type='string' required>
+  The owner's Sui address.
+</ParamField>
+<ParamField body='params[1]' type='object' default={{}}>
+  Optional objects query criteria.
+</ParamField>
+<ParamField body='params[2]' type='string' default=''>
+  Optional paging cursor. If provided, the query will start from the next item after the specified cursor. If not provided, paging starts from the first item.
+</ParamField>
+<ParamField body='params[3]' type='number' default={100}>
+  Maximum number of items returned per page. Defaults to QUERY_MAX_RESULT_LIMIT if not specified.
+</ParamField>
 
 ### Returns
 

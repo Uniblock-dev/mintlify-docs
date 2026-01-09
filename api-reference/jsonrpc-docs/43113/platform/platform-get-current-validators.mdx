@@ -5,8 +5,12 @@ playground: 'none'
 ---
 ### Parameters
 
-- `subnetID` (string): Optional ID of the subnet. If omitted, returns validators of the Primary Network.
-- `nodeIDs` (array): Optional list of NodeIDs to filter the validators returned.
+<ParamField body='params.subnetID' type='string'>
+  Optional ID of the subnet. If omitted, returns validators of the Primary Network.
+</ParamField>
+<ParamField body='params.nodeIDs' type='string[]'>
+  Optional list of NodeIDs to filter the validators returned.
+</ParamField>
 
 ### Returns
 

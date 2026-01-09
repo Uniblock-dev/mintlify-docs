@@ -5,8 +5,12 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `txID` (string): The ID of the transaction to retrieve.
-- `encoding` (string): The encoding format for the returned transaction. Defaults to hex.
+<ParamField body='params.txID' type='string' required>
+  The ID of the transaction to retrieve.
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  The encoding format for the returned transaction. Defaults to hex.
+</ParamField>
 
 ### Returns
 

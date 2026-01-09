@@ -7,10 +7,18 @@ playground: 'none'
 
 Query parameters for method abci_query in the order: [path, data, height, prove]
 
-- `params[0]` (string): Path to the data (e.g., "/a/b/c")
-- `params[1]` (string): Data content to query
-- `params[2]` (integer): Block height. 0 means latest.
-- `params[3]` (boolean): Whether to include proofs of transaction inclusion.
+<ParamField body='params[0]' type='string' required>
+  Path to the data (e.g., "/a/b/c")
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Data content to query
+</ParamField>
+<ParamField body='params[2]' type='number' required default={0}>
+  Block height. 0 means latest.
+</ParamField>
+<ParamField body='params[3]' type='boolean' required default={false}>
+  Whether to include proofs of transaction inclusion.
+</ParamField>
 
 ### Returns
 

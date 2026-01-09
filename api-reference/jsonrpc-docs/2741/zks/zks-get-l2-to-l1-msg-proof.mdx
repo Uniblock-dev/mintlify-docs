@@ -5,10 +5,18 @@ playground: 'none'
 ---
 ### Parameters
 
-- `params[0]` (integer): The block number in which the message was emitted.
-- `params[1]` (string): The address that sent the message.
-- `params[2]` (string): The keccak256 hash of the message being proved.
-- `params[3]` (integer): Optional index in the block of the L1Messenger event log. Defaults to the first message if omitted.
+<ParamField body='params[0]' type='number' required default={0}>
+  The block number in which the message was emitted.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The address that sent the message.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  The keccak256 hash of the message being proved.
+</ParamField>
+<ParamField body='params[3]' type='number'>
+  Optional index in the block of the L1Messenger event log. Defaults to the first message if omitted.
+</ParamField>
 
 ### Returns
 

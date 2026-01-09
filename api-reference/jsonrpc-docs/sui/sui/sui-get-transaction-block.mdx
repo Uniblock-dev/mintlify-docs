@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters to fetch transaction block information.
 
-- `params[0]` (string): Transaction digest (base58 string).
-- `params[1]` (object): Optional transaction block response configuration options.
+<ParamField body='params[0]' type='string' required>
+  Transaction digest (base58 string).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional transaction block response configuration options.
+</ParamField>
 
 ### Returns
 

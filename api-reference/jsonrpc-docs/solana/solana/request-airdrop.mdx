@@ -7,9 +7,15 @@ playground: 'interactive'
 
 Parameters for method requestAirdrop: [accountPubkey, lamports, config]
 
-- `params[0]` (string): Pubkey of account to receive lamports (base-58 encoded string).
-- `params[1]` (integer): Amount of lamports to airdrop.
-- `params[2]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Pubkey of account to receive lamports (base-58 encoded string).
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Amount of lamports to airdrop.
+</ParamField>
+<ParamField body='params[2]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

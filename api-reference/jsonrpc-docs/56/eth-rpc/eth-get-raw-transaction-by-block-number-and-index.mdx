@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters: [blockNumber, transactionIndex]
 
-- `params[0]` (string): The block number (hex string or tag like "latest", "finalized", "safe").
-- `params[1]` (string): The index of the transaction within the block (hexadecimal).
+<ParamField body='params[0]' type='string' required>
+  The block number (hex string or tag like "latest", "finalized", "safe").
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  The index of the transaction within the block (hexadecimal).
+</ParamField>
 
 ### Returns
 

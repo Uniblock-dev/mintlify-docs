@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [rawTransactions, maxfeerate?].
 
-- `params[0]` (array): Array of raw transaction hex strings.
-- `params[1]` (number): Optional max fee rate (BTC/kvB).
+<ParamField body='params[0]' type='string[]' required>
+  Array of raw transaction hex strings.
+</ParamField>
+<ParamField body='params[1]' type='number'>
+  Optional max fee rate (BTC/kvB).
+</ParamField>
 
 ### Returns
 

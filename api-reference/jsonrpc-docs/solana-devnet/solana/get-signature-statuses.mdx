@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for method getSignatureStatuses: [signatures, config]
 
-- `params[0]` (array): Array of transaction signatures (txids), base-58 encoded (up to 256).
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string[]' required>
+  Array of transaction signatures (txids), base-58 encoded (up to 256).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

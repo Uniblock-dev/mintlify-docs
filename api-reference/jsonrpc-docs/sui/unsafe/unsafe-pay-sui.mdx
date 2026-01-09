@@ -7,11 +7,21 @@ playground: 'none'
 
 Create an unsigned transaction to send SUI coins to multiple recipients with defined amounts.
 
-- `params[0]` (string): The Sui address of the transaction signer.
-- `params[1]` (array): List of SUI coin object IDs to be used (including gas coin).
-- `params[2]` (array): List of recipient Sui addresses.
-- `params[3]` (array): List of amounts to send to each recipient (in the same order).
-- `params[4]` (string): Gas budget to be used by this transaction.
+<ParamField body='params[0]' type='string' required>
+  The Sui address of the transaction signer.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  List of SUI coin object IDs to be used (including gas coin).
+</ParamField>
+<ParamField body='params[2]' type='string[]' required>
+  List of recipient Sui addresses.
+</ParamField>
+<ParamField body='params[3]' type='string[]' required>
+  List of amounts to send to each recipient (in the same order).
+</ParamField>
+<ParamField body='params[4]' type='string' required>
+  Gas budget to be used by this transaction.
+</ParamField>
 
 ### Returns
 

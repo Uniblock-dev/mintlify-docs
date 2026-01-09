@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters for method getTokenAccountBalance: [tokenAccountAddress, config]
 
-- `params[0]` (string): Pubkey of the Token account to query (base-58 encoded string).
-- `params[1]` (object): Optional configuration object.
+<ParamField body='params[0]' type='string' required>
+  Pubkey of the Token account to query (base-58 encoded string).
+</ParamField>
+<ParamField body='params[1]' type='object'>
+  Optional configuration object.
+</ParamField>
 
 ### Returns
 

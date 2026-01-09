@@ -7,7 +7,9 @@ playground: 'none'
 
 Returns the original receipt object by ID, without execution outcome or status.
 
-- `receipt_id` (string): Base58-encoded receipt ID. You can find valid IDs via transaction status results.
+<ParamField body='params.receipt_id' type='string' required>
+  Base58-encoded receipt ID. You can find valid IDs via transaction status results.
+</ParamField>
 
 ### Returns
 

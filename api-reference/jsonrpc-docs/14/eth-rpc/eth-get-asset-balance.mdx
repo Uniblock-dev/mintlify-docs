@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [address, blk, assetID]
 
-- `params[0]` (string): The address of the asset owner.
-- `params[1]` (string): Block identifier: block number or block hash (hex or tag).
-- `params[2]` (string): The asset ID for which the balance is requested.
+<ParamField body='params[0]' type='string' required>
+  The address of the asset owner.
+</ParamField>
+<ParamField body='params[1]' type='string' required>
+  Block identifier: block number or block hash (hex or tag).
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  The asset ID for which the balance is requested.
+</ParamField>
 
 ### Returns
 

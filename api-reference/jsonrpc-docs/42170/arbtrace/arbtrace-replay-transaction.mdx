@@ -7,8 +7,12 @@ playground: 'none'
 
 An array containing the transaction hash and a list of trace types to include.
 
-- `params[0]` (string): Transaction hash (32-byte hex).
-- `params[1]` (array): List of trace types to include in the output.
+<ParamField body='params[0]' type='string' required>
+  Transaction hash (32-byte hex).
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  List of trace types to include in the output.
+</ParamField>
 
 ### Returns
 

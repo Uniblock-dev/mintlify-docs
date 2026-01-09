@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters for eth_getTransactionByBlockHashAndIndex: [blockHash, index].
 
-- `params[0]` (string): 32 Bytes - hash of the block where this transaction was included. Null when pending.
-- `params[1]` (integer): Integer of the transaction index position.
+<ParamField body='params[0]' type='string' required>
+  32 Bytes - hash of the block where this transaction was included. Null when pending.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  Integer of the transaction index position.
+</ParamField>
 
 ### Returns
 

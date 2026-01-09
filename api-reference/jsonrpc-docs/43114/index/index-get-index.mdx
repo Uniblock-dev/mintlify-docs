@@ -7,8 +7,12 @@ playground: 'interactive'
 
 Parameters to identify the container and specify encoding.
 
-- `containerID` (string): The container ID whose index you want to retrieve.
-- `encoding` (string): The encoding format used. Only "hex" is supported.
+<ParamField body='params.containerID' type='string' required>
+  The container ID whose index you want to retrieve.
+</ParamField>
+<ParamField body='params.encoding' type='string' required>
+  The encoding format used. Only "hex" is supported.
+</ParamField>
 
 ### Returns
 

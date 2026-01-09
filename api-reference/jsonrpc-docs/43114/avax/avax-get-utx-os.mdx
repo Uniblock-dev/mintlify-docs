@@ -5,11 +5,21 @@ playground: 'interactive'
 ---
 ### Parameters
 
-- `addresses` (array): Array of addresses to search UTXOs for.
-- `limit` (integer): Maximum number of UTXOs to fetch (default: 1024)
-- `startIndex` (object): Start index for pagination.
-- `sourceChain` (string): Source chain name (e.g., X, P)
-- `encoding` (string): Optional encoding for returned UTXOs
+<ParamField body='params.addresses' type='string[]' required>
+  Array of addresses to search UTXOs for.
+</ParamField>
+<ParamField body='params.limit' type='number'>
+  Maximum number of UTXOs to fetch (default: 1024)
+</ParamField>
+<ParamField body='params.startIndex' type='object'>
+  Start index for pagination.
+</ParamField>
+<ParamField body='params.sourceChain' type='string' required>
+  Source chain name (e.g., X, P)
+</ParamField>
+<ParamField body='params.encoding' type='string'>
+  Optional encoding for returned UTXOs
+</ParamField>
 
 ### Returns
 

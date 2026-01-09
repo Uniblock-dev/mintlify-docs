@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters to specify the container index and encoding format.
 
-- `index` (integer): The sequential index of the container (starting from 0).
-- `encoding` (string): The encoding format for the container data. Only "hex" is supported.
+<ParamField body='params.index' type='number' required>
+  The sequential index of the container (starting from 0).
+</ParamField>
+<ParamField body='params.encoding' type='string' required>
+  The encoding format for the container data. Only "hex" is supported.
+</ParamField>
 
 ### Returns
 

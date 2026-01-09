@@ -7,9 +7,15 @@ playground: 'none'
 
 Parameters: [address, storageKeys, blockParameter]
 
-- `params[0]` (string): The 20-byte address to check for balance, nonce, and storage.
-- `params[1]` (array): Array of 32-byte storage keys (hex) to be included in the proof.
-- `params[2]` (string): Block number or tag ("latest", "earliest", "pending", "safe", "finalized").
+<ParamField body='params[0]' type='string' required>
+  The 20-byte address to check for balance, nonce, and storage.
+</ParamField>
+<ParamField body='params[1]' type='string[]' required>
+  Array of 32-byte storage keys (hex) to be included in the proof.
+</ParamField>
+<ParamField body='params[2]' type='string' required>
+  Block number or tag ("latest", "earliest", "pending", "safe", "finalized").
+</ParamField>
 
 ### Returns
 

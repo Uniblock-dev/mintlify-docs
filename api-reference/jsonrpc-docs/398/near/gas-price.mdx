@@ -5,9 +5,15 @@ playground: 'none'
 ---
 ### Parameters
 
-- `params[0]` (integer): Block height for gas price query
-- `params[1]` (string): Block hash for gas price query
-- `params[2]` (string): Fetch gas price for the latest block
+<ParamField body='params[0]' type='number' required>
+  Block height for gas price query
+</ParamField>
+<ParamField body='params[1]' type='string'>
+  Block hash for gas price query
+</ParamField>
+<ParamField body='params[2]' type='string'>
+  Fetch gas price for the latest block
+</ParamField>
 
 ### Returns
 

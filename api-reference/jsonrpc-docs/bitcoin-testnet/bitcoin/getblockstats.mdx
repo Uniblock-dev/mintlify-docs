@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [hash_or_height, metrics?].
 
-- `params[0]` (string): Block hash or height.
-- `params[1]` (array): Optional list of metrics to compute.
+<ParamField body='params[0]' type='string' required>
+  Block hash or height.
+</ParamField>
+<ParamField body='params[1]' type='string[]'>
+  Optional list of metrics to compute.
+</ParamField>
 
 ### Returns
 

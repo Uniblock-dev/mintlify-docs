@@ -7,8 +7,12 @@ playground: 'none'
 
 Parameters: [blockNumber, transactionIndex].
 
-- `params[0]` (oneOf): Block number where this transaction was included. Null when pending.
-- `params[1]` (integer): The transaction's index position in the block. Null when pending.
+<ParamField body='params[0]' type='object' required>
+  Block number where this transaction was included. Null when pending.
+</ParamField>
+<ParamField body='params[1]' type='number' required>
+  The transaction's index position in the block. Null when pending.
+</ParamField>
 
 ### Returns
 
