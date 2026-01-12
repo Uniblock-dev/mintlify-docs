@@ -48,10 +48,98 @@
             "pages": ["api-reference/introduction"]
           },
           {
+            "group": "Resources",
+            "pages": [
+              "api-reference/resources/unified-api-reference-overview",
+              "api-reference/resources/pricing-plans",
+              "api-reference/resources/compute-units",
+              "api-reference/resources/chains",
+              {
+                "group": "Chains",
+                "pages": [
+                  "api-reference/resources/chains/supported-chains",
+                  "api-reference/resources/chains/market-data-chains",
+                  "api-reference/resources/chains/supported-json-rpc-methods-by-chain-union-across-services"
+                ]
+              }
+            ]
+          },
+          {
             "group": "Unified APIs",
             "openapi": {
               "source": "api-reference/api-json.json"
-            }
+            },
+            "pages": [
+              "api-reference/unified-api/overview-unified-apis",
+              "api-reference/unified-api/api-overview-jsonrpc",
+              "api-reference/unified-api/api-overview-token",
+              "api-reference/unified-api/api-overview-market-data",
+              "api-reference/unified-api/api-overview-nft",
+              "api-reference/unified-api/api-overview-transaction",
+              "api-reference/unified-api/api-overview-scan",
+              "api-reference/unified-api/stellarhttp",
+              "api-reference/unified-api/uniblock-mcp-server-overview-and-setup"
+            ]
+          },
+          {
+            "group": "Direct API",
+            "pages": [
+              "api-reference/direct-api/overview-direct-api",
+              "api-reference/direct-api/providers-direct-api",
+              {
+                "group": "Providers",
+                "pages": [
+                  "api-reference/direct-api/providers/helius-direct-api",
+                  "api-reference/direct-api/providers/tonapi-direct-api",
+                  "api-reference/direct-api/providers/direct-api-defined",
+                  "api-reference/direct-api/providers/direct-api-lunarcrush",
+                  "api-reference/direct-api/providers/direct-api-coingecko",
+                  "api-reference/direct-api/providers/coinmarketcap",
+                  "api-reference/direct-api/providers/direct-api-solscan",
+                  "api-reference/direct-api/providers/direct-api-shyft",
+                  "api-reference/direct-api/providers/direct-api-birdeye",
+                  "api-reference/direct-api/providers/direct-api-alchemy",
+                  "api-reference/direct-api/providers/direct-api-covalent",
+                  "api-reference/direct-api/providers/direct-api-geniidata",
+                  "api-reference/direct-api/providers/direct-api-mempool",
+                  "api-reference/direct-api/providers/direct-api-magiceden",
+                  "api-reference/direct-api/providers/direct-api-hellomoon"
+                ]
+              },
+              "api-reference/direct-api/direct-api-categories",
+              {
+                "group": "Categories",
+                "pages": [
+                  "api-reference/direct-api/categories/direct-api-defi",
+                  "api-reference/direct-api/categories/direct-api-market-data",
+                  "api-reference/direct-api/categories/direct-api-nft",
+                  "api-reference/direct-api/categories/direct-api-other",
+                  "api-reference/direct-api/categories/direct-api-scan",
+                  "api-reference/direct-api/categories/direct-api-socialfi",
+                  "api-reference/direct-api/categories/direct-api-token",
+                  "api-reference/direct-api/categories/direct-api-transaction",
+                  "api-reference/direct-api/categories/direct-api-wallet"
+                ]
+              }
+            ]
+          },
+
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhook/webhooks-overview",
+              "api-reference/webhook/webhook-quickstart",
+              "api-reference/webhook/event-trigger-types",
+              {
+                "group": "Webhook Types",
+                "pages": [
+                  "api-reference/webhook/webhook-types/event-trigger-address-activity",
+                  "api-reference/webhook/webhook-types/event-trigger-contract-event",
+                  "api-reference/webhook/webhook-types/event-trigger-solana-address-activity",
+                  "api-reference/webhook/webhook-types/event-trigger-providers"
+                ]
+              }
+            ]
           },
           {
             "group": "Ethereum endpoints",
