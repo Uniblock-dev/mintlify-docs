@@ -1,22 +1,6 @@
 ---
 title: 'getVoteAccounts'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getVoteAccounts",
-  "params": [
-    {
-      "votePubkey": "3ZT31jkAGhUaw8jsy4bTknwBMP8i4Eueh52By4zXcsVw"
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

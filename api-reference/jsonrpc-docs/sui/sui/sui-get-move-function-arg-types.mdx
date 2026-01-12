@@ -1,22 +1,6 @@
 ---
 title: 'sui_getMoveFunctionArgTypes'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getMoveFunctionArgTypes",
-  "params": [
-    "0xa0a7b108f5023b7356f2c6a4be6f058e267aae38e08260c7d519d8641897490c",
-    "suifrens",
-    "mint"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

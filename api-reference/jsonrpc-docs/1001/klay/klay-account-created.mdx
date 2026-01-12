@@ -1,21 +1,6 @@
 ---
 title: 'klay_accountCreated'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=1001";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "klay_accountCreated",
-  "params": [
-    "0x1b3c8c1cdb4e6b6b8819345bf3c6d9c926f55f90",
-    "latest"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

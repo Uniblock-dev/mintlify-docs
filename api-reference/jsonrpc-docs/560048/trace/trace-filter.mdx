@@ -1,28 +1,6 @@
 ---
 title: 'trace_filter'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=560048";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "trace_filter",
-  "params": [
-    {
-      "fromBlock": "0x2ed0c4",
-      "toBlock": "0x2ed128",
-      "toAddress": [
-        "0x8bbB73BCB5d553B5A556358d27625323Fd781D37"
-      ],
-      "after": 1000,
-      "count": 100
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

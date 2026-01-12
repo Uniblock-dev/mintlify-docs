@@ -1,34 +1,6 @@
 ---
 title: 'unsafe_paySui'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_paySui",
-  "params": [
-    "0xaabbccddeeff00112233445566778899aabbccdd00112233445566778899aabb",
-    [
-      "0xcoin1",
-      "0xcoin2",
-      "0xcoin3"
-    ],
-    [
-      "0xrecipient1",
-      "0xrecipient2"
-    ],
-    [
-      "1000000",
-      "250000"
-    ],
-    "50000"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

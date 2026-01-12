@@ -1,23 +1,6 @@
 ---
 title: 'starknet_getNonce'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getNonce",
-  "params": {
-    "block_id": {
-      "block_number": 470207
-    },
-    "contract_address": "0x0555ec3ba8aea37915c4cf850b4f9d33e4a0a1caa0ad3953d725860e38fa6e17"
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

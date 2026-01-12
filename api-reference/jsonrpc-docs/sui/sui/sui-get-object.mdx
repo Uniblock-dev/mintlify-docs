@@ -1,21 +1,6 @@
 ---
 title: 'sui_getObject'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_getObject",
-  "params": [
-    "0x53e4567ccafa5f36ce84c80aa8bc9be64e0d5ae796884274aef3005ae6733809",
-    {}
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

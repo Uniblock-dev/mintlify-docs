@@ -1,26 +1,6 @@
 ---
 title: 'getTokenAccountsByOwner'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getTokenAccountsByOwner",
-  "params": [
-    "A1TMhSGzQxMr1TboBKtgixKz1sS6REASMxPo1qsyTSJd",
-    {
-      "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
-    },
-    {
-      "encoding": "jsonParsed"
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

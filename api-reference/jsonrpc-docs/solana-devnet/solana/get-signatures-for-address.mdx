@@ -1,23 +1,6 @@
 ---
 title: 'getSignaturesForAddress'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getSignaturesForAddress",
-  "params": [
-    "Vote111111111111111111111111111111111111111",
-    {
-      "limit": 1
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

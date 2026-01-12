@@ -1,31 +1,6 @@
 ---
 title: 'suix_queryEvents'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_queryEvents",
-  "params": [
-    {
-      "MoveModule": {
-        "package": "0xa395759ca37c6e1ffc179184e98a6f9a2da5d78f6e34b0e5044ed52a6bc0a1bc",
-        "module": "test"
-      }
-    },
-    {
-      "txDigest": "Eg3ynETJfTfPKyvJzq3VLG6MngURYHPMjjUJ3Xt1t7tf",
-      "eventSeq": "1"
-    },
-    100,
-    false
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

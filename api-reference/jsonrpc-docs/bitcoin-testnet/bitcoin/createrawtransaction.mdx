@@ -1,23 +1,6 @@
 ---
 title: 'createrawtransaction'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "createrawtransaction",
-  "params": [
-    [],
-    {},
-    0,
-    false
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

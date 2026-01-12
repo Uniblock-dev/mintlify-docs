@@ -1,24 +1,6 @@
 ---
 title: 'unsafe_batchTransaction'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_batchTransaction",
-  "params": [
-    "0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",
-    [],
-    "0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051",
-    "100000",
-    "Commit"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

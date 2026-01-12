@@ -1,21 +1,6 @@
 ---
 title: 'eth_getBalanceValues'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=81457";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getBalanceValues",
-  "params": [
-    "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-    "latest"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

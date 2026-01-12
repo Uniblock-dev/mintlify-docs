@@ -1,20 +1,6 @@
 ---
 title: 'eth_getUncleCountByBlockHash'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=1625";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getUncleCountByBlockHash",
-  "params": [
-    "0xbfb3bb785c60ee4f93aa6e506f6f5d5fc5173301f537d856cac59d91e7a0ce09"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

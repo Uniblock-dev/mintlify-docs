@@ -1,23 +1,6 @@
 ---
 title: 'query'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=397";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "query",
-  "params": {
-    "request_type": "view_access_key",
-    "finality": "final",
-    "account_id": "account.rpc-examples.testnet",
-    "public_key": "ed25519:EddTahJwZpJjYPPmat7DBm1m2vdrFBzVv7e3T4hzkENd"
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

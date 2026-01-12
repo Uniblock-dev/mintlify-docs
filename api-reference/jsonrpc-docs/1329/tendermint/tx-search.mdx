@@ -1,25 +1,6 @@
 ---
 title: 'tx_search'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=1329";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "tx_search",
-  "params": [
-    "tx.height=1000",
-    true,
-    1,
-    30,
-    "asc",
-    true
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

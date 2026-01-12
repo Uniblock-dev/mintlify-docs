@@ -1,25 +1,6 @@
 ---
 title: 'getSignatureStatuses'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getSignatureStatuses",
-  "params": [
-    [
-      "5VERv8NMvzbJMEkV8xnrLkEaWRtSz9CosKDYjCJjBRnbJLgp8uirBgmQpjKhoR4tjF3ZpRzrFmBV6UjKdiSZkQUW"
-    ],
-    {
-      "searchTransactionHistory": true
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

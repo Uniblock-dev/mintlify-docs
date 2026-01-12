@@ -1,20 +1,6 @@
 ---
 title: 'bor_getSignersAtHash'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=80002";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "bor_getSignersAtHash",
-  "params": [
-    "0x29fa73e3da83ddac98f527254fe37002e052725a88904bac14f03e919e1e2876"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

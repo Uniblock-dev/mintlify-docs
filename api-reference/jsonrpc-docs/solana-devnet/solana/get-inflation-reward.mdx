@@ -1,26 +1,6 @@
 ---
 title: 'getInflationReward'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getInflationReward",
-  "params": [
-    [
-      "6dmNQ5jwLeLk5REvio1JcMshcbvkYMwy26sJ8pbkvStu",
-      "BGsqMegLpV6n6Ve146sSX2dTjUMj3M92HnU8BbNRMhF2"
-    ],
-    {
-      "epoch": 2
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

@@ -1,21 +1,6 @@
 ---
 title: 'getAssetsByAuthority'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getAssetsByAuthority",
-  "params": {
-    "authorityAddress": "mdaoxg4DVGptU4WSpzGyVpK3zqsgn7Qzx5XNgWTcEA2",
-    "limit": 10
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

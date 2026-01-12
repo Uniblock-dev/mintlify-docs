@@ -1,22 +1,6 @@
 ---
 title: 'getRecentPrioritizationFees'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getRecentPrioritizationFees",
-  "params": [
-    [
-      "CxELquR1gPP8wHe33gZ4QxqGB3sZ9RSwsJ2KshVewkFY"
-    ]
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

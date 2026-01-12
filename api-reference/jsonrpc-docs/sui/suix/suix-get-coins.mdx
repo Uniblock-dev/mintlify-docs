@@ -1,23 +1,6 @@
 ---
 title: 'suix_getCoins'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getCoins",
-  "params": [
-    "0x6d907beaa3a49db57bdfdb3557e6d405cbf01c293a53e01457d65e92b5d8dd68",
-    "0x2::sui::SUI",
-    "0xee6b5173afedb35330f60397c2cbb48196ba41921246c304be7b490cee0904eb",
-    3
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

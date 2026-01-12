@@ -1,31 +1,6 @@
 ---
 title: 'getAssetsByGroup'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana-devnet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getAssetsByGroup",
-  "params": [
-    {
-      "groupKey": "collection",
-      "groupValue": "J2ZfLdQsaZ3GCmbucJef3cPnPwGcgjDW1SSYtMdq3L9p",
-      "options": {
-        "limit": 10,
-        "sortBy": {
-          "sortBy": "created",
-          "sortDirection": "desc"
-        },
-        "showCollectionMetadata": true
-      }
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

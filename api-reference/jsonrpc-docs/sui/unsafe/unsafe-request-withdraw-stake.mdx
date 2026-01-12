@@ -1,23 +1,6 @@
 ---
 title: 'unsafe_requestWithdrawStake'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_requestWithdrawStake",
-  "params": [
-    "0xabc123456789abcdef123456789abcdef123456789abcdef123456789abcdef",
-    "0xstakeobject1234567890abcdef1234567890abcdef",
-    "0xgasobject1234567890abcdef",
-    "100000"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

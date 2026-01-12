@@ -1,23 +1,6 @@
 ---
 title: 'getAccountInfo'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getAccountInfo",
-  "params": [
-    "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
-    {
-      "encoding": "base58"
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

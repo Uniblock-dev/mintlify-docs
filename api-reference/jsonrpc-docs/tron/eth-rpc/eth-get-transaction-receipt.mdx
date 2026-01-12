@@ -1,20 +1,6 @@
 ---
 title: 'eth_getTransactionReceipt'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=tron";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getTransactionReceipt",
-  "params": [
-    "0x444172bef57ad978655171a8af2cfd89baa02a97fcb773067aef7794d6913374"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

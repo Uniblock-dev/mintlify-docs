@@ -1,20 +1,6 @@
 ---
 title: 'txpool_contentFrom'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=421614";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "txpool_contentFrom",
-  "params": [
-    "0x9431D1615FA755Faa25A74da7f34C8Bd6963bd0A"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

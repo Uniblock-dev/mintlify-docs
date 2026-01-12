@@ -1,24 +1,6 @@
 ---
 title: 'unsafe_mergeCoins'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_mergeCoins",
-  "params": [
-    "0x9b5cd5df0df2a168259b7115a41ccc0a372b6fd0026e0c63043492ce4d0c19a6",
-    "0x5eeb1d449e2516166d57d71fdeb154d0dc9ecdb7b30057d0a932684cac352cdc",
-    "0x77b3482580ee8d5bdc5b824808df54bfec4fc817622e5add0e48f749f01def98",
-    "0x1a3e898029d024eec1d44c6af5e2facded84d03b5373514f16e3d66e00081051",
-    "100000"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

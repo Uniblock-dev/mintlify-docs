@@ -1,25 +1,6 @@
 ---
 title: 'starknet_getEvents'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getEvents",
-  "params": {
-    "filter": {
-      "from_block": "latest",
-      "to_block": "latest",
-      "address": "0x04c0a5193d58f74fbace4b74dcf65481e734ed1714121bdc571da345540efa05",
-      "chunk_size": 10
-    }
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

@@ -1,24 +1,6 @@
 ---
 title: 'eth_getProof'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=560048";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "eth_getProof",
-  "params": [
-    "0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842",
-    [
-      "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
-    ],
-    "latest"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

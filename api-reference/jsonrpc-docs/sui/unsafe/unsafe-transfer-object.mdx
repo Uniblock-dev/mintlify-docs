@@ -1,24 +1,6 @@
 ---
 title: 'unsafe_transferObject'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_transferObject",
-  "params": [
-    "0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788",
-    "0xobjectid123456789abcdef",
-    "0xgasobject998877",
-    "50000",
-    "0xrecipient00112233445566778899aabbccddeeff0011223344556677889900"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

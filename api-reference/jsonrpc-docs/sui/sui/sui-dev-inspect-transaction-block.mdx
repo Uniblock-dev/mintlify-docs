@@ -1,24 +1,6 @@
 ---
 title: 'sui_devInspectTransactionBlock'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_devInspectTransactionBlock",
-  "params": [
-    "0xd70420418b84502e506794227f897237764dde8d79a01ab2104bf742a277a2ab",
-    "AAACACBnxtMcbJcOVn8D72fYEaT4Q2ZbjePygvpIs+AQO6m77QEAagY...",
-    "1000",
-    "8888",
-    {}
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

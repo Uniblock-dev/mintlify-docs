@@ -1,22 +1,6 @@
 ---
 title: 'getLedgerEntries'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=stellar-soroban";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getLedgerEntries",
-  "params": {
-    "keys": [
-      "YOUR_KEYS_OF_LEDGER_ENTRIES"
-    ]
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

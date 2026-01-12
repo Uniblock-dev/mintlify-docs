@@ -1,24 +1,6 @@
 ---
 title: 'unsafe_transferSui'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_transferSui",
-  "params": [
-    "0x9f8e7d6c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0e9f",
-    "0x123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-    "100000",
-    "0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788",
-    "50000"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

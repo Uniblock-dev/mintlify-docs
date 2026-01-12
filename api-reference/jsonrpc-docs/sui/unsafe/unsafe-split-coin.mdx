@@ -1,24 +1,6 @@
 ---
 title: 'unsafe_splitCoin'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "unsafe_splitCoin",
-  "params": [
-    "0xaabbccddeeff0011223344556677889900aabbccddeeff001122334455667788",
-    "0xcoinobjectabc123456789abcdef",
-    [],
-    "0xgasobject001122334455",
-    "100000"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

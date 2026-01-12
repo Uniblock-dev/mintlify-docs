@@ -1,20 +1,6 @@
 ---
 title: 'zks_getL1BatchBlockRange'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=232";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getL1BatchBlockRange",
-  "params": [
-    12345
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

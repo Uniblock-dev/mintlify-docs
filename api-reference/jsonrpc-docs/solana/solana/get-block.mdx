@@ -1,26 +1,6 @@
 ---
 title: 'getBlock'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=solana";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "getBlock",
-  "params": [
-    430,
-    {
-      "encoding": "json",
-      "maxSupportedTransactionVersion": 0,
-      "transactionDetails": "full",
-      "rewards": false
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

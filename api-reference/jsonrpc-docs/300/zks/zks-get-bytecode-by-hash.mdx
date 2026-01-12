@@ -1,20 +1,6 @@
 ---
 title: 'zks_getBytecodeByHash'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=300";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "zks_getBytecodeByHash",
-  "params": [
-    "0x0100067d861e2f5717a12c3e869cfb657793b86bbb0caa05cc1421f16c5217bc"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

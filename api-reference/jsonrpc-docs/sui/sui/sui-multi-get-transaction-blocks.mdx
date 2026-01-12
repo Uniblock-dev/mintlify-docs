@@ -1,33 +1,6 @@
 ---
 title: 'sui_multiGetTransactionBlocks'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sui_multiGetTransactionBlocks",
-  "params": [
-    [
-      "EMqJqkQip6UaTkdff493ewAQNHGQFJwXDDn6m9CTgZzo",
-      "Hn3B25vTQNTFAdThFkWvfkiAAUZxzwTaj4uEengu1ACX",
-      "9vLSG9a4QcLcMdG1xCu6FRdXAjWWqvJHoHBCJfPMKkR9"
-    ],
-    {
-      "showInput": true,
-      "showRawInput": false,
-      "showEffects": true,
-      "showEvents": true,
-      "showObjectChanges": false,
-      "showBalanceChanges": false,
-      "showRawEffects": false
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

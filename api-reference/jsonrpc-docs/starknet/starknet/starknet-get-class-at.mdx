@@ -1,23 +1,6 @@
 ---
 title: 'starknet_getClassAt'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "starknet_getClassAt",
-  "params": {
-    "block_id": {
-      "block_hash": "0x041b10c45dc3f39372f7b9409261cac9d880c5d75a5bb077d028db20b1bd76c4"
-    },
-    "contract_address": "0x03b554093fb0a7460913be2d5c011cb5ac4333dfcfe6125851bcd3f926a3b558"
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

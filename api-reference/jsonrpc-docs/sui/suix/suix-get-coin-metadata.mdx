@@ -1,20 +1,6 @@
 ---
 title: 'suix_getCoinMetadata'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=sui";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "suix_getCoinMetadata",
-  "params": [
-    "0x168da5bf1f48dafc111b0a488fa454aca95e0b5e::usdc::USDC"
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

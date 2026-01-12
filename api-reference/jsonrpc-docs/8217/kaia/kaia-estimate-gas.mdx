@@ -1,24 +1,6 @@
 ---
 title: 'kaia_estimateGas'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=8217";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "kaia_estimateGas",
-  "params": [
-    {
-      "from": "0x8d97689c9818892b700e27f316cc3e41e17fbeb9",
-      "to": "0xf20d962a6c8f70c731bd838a3a388d7d48fa6e15",
-      "value": "0xde0b6b3a7640000"
-    }
-  ]
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

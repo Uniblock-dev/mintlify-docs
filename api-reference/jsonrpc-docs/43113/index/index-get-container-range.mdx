@@ -1,22 +1,6 @@
 ---
 title: 'index.getContainerRange'
 ---
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
-
-export const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=43113";
-
-export const request = {
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "index.getContainerRange",
-  "params": {
-    "startIndex": 0,
-    "numToFetch": 100,
-    "encoding": "hex"
-  }
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success
