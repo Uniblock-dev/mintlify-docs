@@ -1,53 +1,20 @@
 ---
 title: 'logging'
 ---
-### Parameters
+import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
 
-  <ParamField query='chainId' type='string' default='bitcoin-testnet4' required>
-    Unique identifier for a blockchain network.
-  </ParamField>
-  <ParamField body='id' type='number' default={1} required>
-    Request identifier used to match responses.
-  </ParamField>
-  <ParamField body='jsonrpc' type='string' default='2.0' required>
-    JSON-RPC version.
-  </ParamField>
-  <ParamField body='method' type='string' default='logging' required>
-    JSON-RPC method name.
-  </ParamField>
+const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet4";
 
-<ParamField body='params' type='object' default={[[]]} placeholder='[[]]'>
-  Parameters: [include?, exclude?].
-  
-  Positional parameters for <code>logging</code>:
-  <ul>
-  <li><code>params[]</code>: List of log categories to include or exclude.</li>
-  </ul>
-</ParamField>
+const request = {
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "logging",
+  "params": [
+    []
+  ]
+};
 
-### Returns
-
-<ResponseField name='result' type='object'>
-  Map of categories to boolean enabled state.
-</ResponseField>
-
-<RequestExample>
-
-```bash Curl
-curl --request POST \
-  --url https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet4 \
-  --header 'content-type: application/json' \
-  --data '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "logging",
-    "params": [
-      []
-    ]
-  }'
-```
-
-</RequestExample>
+<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

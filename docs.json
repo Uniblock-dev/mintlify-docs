@@ -18099,6 +18099,9 @@
         "name": "x-api-key"
       }
     },
+    "playground": {
+      "display": "none"
+    },
     "examples": {
       "prefill": true
     }

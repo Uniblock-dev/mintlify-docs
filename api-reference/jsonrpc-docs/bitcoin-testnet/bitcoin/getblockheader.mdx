@@ -1,55 +1,21 @@
 ---
 title: 'getblockheader'
 ---
-### Parameters
+import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
 
-  <ParamField query='chainId' type='string' default='bitcoin-testnet' required>
-    Unique identifier for a blockchain network.
-  </ParamField>
-  <ParamField body='id' type='number' default={1} required>
-    Request identifier used to match responses.
-  </ParamField>
-  <ParamField body='jsonrpc' type='string' default='2.0' required>
-    JSON-RPC version.
-  </ParamField>
-  <ParamField body='method' type='string' default='getblockheader' required>
-    JSON-RPC method name.
-  </ParamField>
+const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet";
 
-<ParamField body='params' type='object' default={["",false]} placeholder='["",false]' required>
-  Parameters: [blockHash, verbose?].
-  
-  Positional parameters for <code>getblockheader</code>:
-  <ul>
-  <li><code>params[0]</code>: 32 Bytes - hash of the transaction.</li>
-  <li><code>params[1]</code>: If false, return the header as hex instead of JSON.</li>
-  </ul>
-</ParamField>
+const request = {
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "getblockheader",
+  "params": [
+    "",
+    false
+  ]
+};
 
-### Returns
-
-<ResponseField name='result' type='object'>
-  Block header details or hex string depending on verbose flag.
-</ResponseField>
-
-<RequestExample>
-
-```bash Curl
-curl --request POST \
-  --url https://api.uniblock.dev/uni/v1/json-rpc?chainId=bitcoin-testnet \
-  --header 'content-type: application/json' \
-  --data '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "getblockheader",
-    "params": [
-      "",
-      false
-    ]
-  }'
-```
-
-</RequestExample>
+<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

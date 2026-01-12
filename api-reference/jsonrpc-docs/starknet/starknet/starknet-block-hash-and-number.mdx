@@ -1,52 +1,18 @@
 ---
 title: 'starknet_blockHashAndNumber'
 ---
-### Parameters
+import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
 
-  <ParamField query='chainId' type='string' default='starknet' required>
-    Unique identifier for a blockchain network.
-  </ParamField>
-  <ParamField body='id' type='number' default={1} required>
-    Request identifier used to match responses.
-  </ParamField>
-  <ParamField body='jsonrpc' type='string' default='2.0' required>
-    JSON-RPC version.
-  </ParamField>
-  <ParamField body='method' type='string' default='starknet_blockHashAndNumber' required>
-    JSON-RPC method name.
-  </ParamField>
+const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet";
 
-This method does not require any parameters.
+const request = {
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "starknet_blockHashAndNumber",
+  "params": []
+};
 
-### Returns
-
-<ResponseField name='result' type='object'>
-  BlockID object containing hash and number.
-  <Expandable title='properties'>
-    <ResponseField name='hash' type='string'>
-      Block hash (32 Bytes, DATA).
-    </ResponseField>
-    <ResponseField name='number' type='string'>
-      Block number (QUANTITY, 64 Bits).
-    </ResponseField>
-  </Expandable>
-</ResponseField>
-
-<RequestExample>
-
-```bash Curl
-curl --request POST \
-  --url https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet \
-  --header 'content-type: application/json' \
-  --data '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "starknet_blockHashAndNumber",
-    "params": []
-  }'
-```
-
-</RequestExample>
+<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success

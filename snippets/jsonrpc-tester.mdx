@@ -1,0 +1,24 @@
+import { ApiTester } from '/snippets/ApiTester.jsx';
+
+export default function JsonRpcTester({ endpoint, request }) {
+  const requestBody =
+    typeof request === 'string' ? request : JSON.stringify(request, null, 2);
+
+  return (
+    <>
+      <div style={{ fontSize: 12, opacity: 0.7, marginBottom: 6 }}>
+        Request (JSON-RPC)
+      </div>
+      <pre>
+        <code className='language-json'>{requestBody}</code>
+      </pre>
+      <ApiTester
+        title='Try it'
+        endpoint={endpoint}
+        method='POST'
+        defaultHeaders={{ 'content-type': 'application/json' }}
+        defaultBody={request}
+      />
+    </>
+  );
+}

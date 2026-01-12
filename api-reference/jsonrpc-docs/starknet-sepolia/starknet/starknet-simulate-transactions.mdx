@@ -1,44 +1,18 @@
 ---
 title: 'starknet_simulateTransactions'
 ---
-### Parameters
+import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
 
-  <ParamField query='chainId' type='string' default='starknet-sepolia' required>
-    Unique identifier for a blockchain network.
-  </ParamField>
-  <ParamField body='id' type='number' default={1} required>
-    Request identifier used to match responses.
-  </ParamField>
-  <ParamField body='jsonrpc' type='string' default='2.0' required>
-    JSON-RPC version.
-  </ParamField>
-  <ParamField body='method' type='string' default='starknet_simulateTransactions' required>
-    JSON-RPC method name.
-  </ParamField>
+const endpoint = "https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet-sepolia";
 
-This method does not require any parameters.
+const request = {
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "starknet_simulateTransactions",
+  "params": []
+};
 
-### Returns
-
-<ResponseField name='result' type='object'>
-  The JSON-RPC result.
-</ResponseField>
-
-<RequestExample>
-
-```bash Curl
-curl --request POST \
-  --url https://api.uniblock.dev/uni/v1/json-rpc?chainId=starknet-sepolia \
-  --header 'content-type: application/json' \
-  --data '{
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "starknet_simulateTransactions",
-    "params": []
-  }'
-```
-
-</RequestExample>
+<JsonRpcTester endpoint={endpoint} request={request} />
 <ResponseExample>
 
 ```json Success
