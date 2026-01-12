@@ -1,0 +1,283 @@
+---
+title: "Direct API — Token"
+description: "Ask AI"
+---
+
+API endpoints for Token.
+
+# Token — Direct API Endpoints
+
+## Alchemy
+
+### GET
+
+| Path                                                                                                          | Est. CU | Description                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/prices/v1/tokens/by-symbol](https://docs.alchemy.com/reference/get-token-prices-by-symbol) | 80      | Fetches current prices for multiple tokens using their symbols. Returns a list of token prices, each containing the symbol, prices, and an optional error field. |
+
+### POST
+
+| Path                                                                                                            | Est. CU | Description                                                                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `direct/v1/Alchemy/{chain}/v2`                                                                                  | 20      |                                                                                                                                                                                        |
+| [direct/v1/Alchemy/prices/v1/tokens/by-address](https://docs.alchemy.com/reference/get-token-prices-by-address) | 80      | Fetches current prices for multiple tokens using network and address pairs. Returns a list of token prices, each containing the network, address, prices, and an optional error field. |
+| [direct/v1/Alchemy/prices/v1/tokens/historical](https://docs.alchemy.com/reference/get-historical-token-prices) | 80      | Provides historical price data for a single token over a time range. You can identify the token by symbol or by network and contract address.                                          |
+
+## Birdeye
+
+### GET
+
+| Path                                                                                                                           | Est. CU | Description                     |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------- |
+| [direct/v1/Birdeye/defi/historical\_price\_unix](https://docs.birdeye.so/reference/get_defi-historical-price-unix)             | 705     | Price - Historical by unix time |
+| [direct/v1/Birdeye/defi/history\_price](https://docs.birdeye.so/reference/get_defi-history-price)                              | 4240    | Price - Historical              |
+| [direct/v1/Birdeye/defi/ohlcv](https://docs.birdeye.so/reference/get_defi-ohlcv)                                               | 2120    | OHLCV                           |
+| [direct/v1/Birdeye/defi/ohlcv/base\_quote](https://docs.birdeye.so/reference/get_defi-ohlcv-base-quote)                        | 2120    | OHLCV - Base/Quote              |
+| [direct/v1/Birdeye/defi/ohlcv/pair](https://docs.birdeye.so/reference/get_defi-ohlcv-pair)                                     | 2120    | OHLCV - Pair                    |
+| [direct/v1/Birdeye/defi/price](https://docs.birdeye.so/reference/get_defi-price)                                               | 705     | Price                           |
+| [direct/v1/Birdeye/defi/price\_volume/single](https://docs.birdeye.so/reference/get_defi-price-volume-single)                  | 1060    | Price Volume - Single           |
+| [direct/v1/Birdeye/defi/token\_creation\_info](https://docs.birdeye.so/reference/get_defi-token-creation-info)                 | 3535    | Token - Creation Token Info     |
+| [direct/v1/Birdeye/defi/tokenlist](https://docs.birdeye.so/reference/get_defi-tokenlist)                                       | 2120    | Token - List (V1)               |
+| [direct/v1/Birdeye/defi/token\_overview](https://docs.birdeye.so/reference/get_defi-token-overview)                            | 2120    | Token - Overview                |
+| [direct/v1/Birdeye/defi/token\_security](https://docs.birdeye.so/reference/get_defi-token-security)                            | 3535    | Token - Security                |
+| [direct/v1/Birdeye/defi/token\_trending](https://docs.birdeye.so/reference/get_defi-token-trending)                            | 3535    | Token - Trending List           |
+| [direct/v1/Birdeye/defi/txs/pair](https://docs.birdeye.so/reference/get_defi-txs-pair)                                         | 705     | Trades - Pair                   |
+| [direct/v1/Birdeye/defi/txs/token](https://docs.birdeye.so/reference/get_defi-txs-token)                                       | 705     | Trades - Token                  |
+| [direct/v1/Birdeye/defi/v2/markets](https://docs.birdeye.so/reference/get_defi-v2-markets)                                     | 3535    | Token - All Market List         |
+| [direct/v1/Birdeye/defi/v2/tokens/new\_listing](https://docs.birdeye.so/reference/get_defi-v2-tokens-new-listing)              | 5655    | Token - New listing             |
+| [direct/v1/Birdeye/defi/v2/tokens/top\_traders](https://docs.birdeye.so/reference/get_defi-v2-tokens-top-traders)              | 2120    | Token - Top traders             |
+| [direct/v1/Birdeye/defi/v3/token/holder](https://docs.birdeye.so/reference/get_defi-v3-token-holder)                           | 3535    | Token - Top Holders             |
+| [direct/v1/Birdeye/defi/v3/token/market-data](https://docs.birdeye.so/reference/get_defi-v3-token-market-data)                 | 1060    | Token - Market Data (Single)    |
+| [direct/v1/Birdeye/defi/v3/token/meta-data/multiple](https://docs.birdeye.so/reference/get_defi-v3-token-meta-data-multiple)   | 2230    | Token - Metadata (Multiple)     |
+| [direct/v1/Birdeye/defi/v3/token/meta-data/single](https://docs.birdeye.so/reference/get_defi-v3-token-meta-data-single)       | 355     | Token - Metadata (Single)       |
+| [direct/v1/Birdeye/defi/v3/token/mint-burn-txs](https://docs.birdeye.so/reference/getdefiv3tokenmintburntxs)                   | 70      | Token - Mint/Burn               |
+| [direct/v1/Birdeye/defi/v3/token/trade-data/multiple](https://docs.birdeye.so/reference/get_defi-v3-token-trade-data-multiple) | 6690    | Token - Trade Data (Multiple)   |
+| [direct/v1/Birdeye/defi/v3/token/trade-data/single](https://docs.birdeye.so/reference/get_defi-v3-token-trade-data-single)     | 1060    | Token - Trade Data (Single)     |
+| [direct/v1/Birdeye/v1/wallet/multichain\_token\_list](https://docs.birdeye.so/reference/get_v1-wallet-multichain-token-list)   | 70      | Wallet Portfolio - Multichain   |
+| [direct/v1/Birdeye/v1/wallet/token\_balance](https://docs.birdeye.so/reference/get_v1-wallet-token-balance)                    | 1060    | Wallet - Token Balance          |
+| [direct/v1/Birdeye/v1/wallet/token\_list](https://docs.birdeye.so/reference/get_v1-wallet-token-list)                          | 1060    | Wallet Portfolio                |
+
+### POST
+
+| Path                                                                                                         | Est. CU | Description           |
+| ------------------------------------------------------------------------------------------------------------ | ------- | --------------------- |
+| [direct/v1/Birdeye/defi/multi\_price](https://docs.birdeye.so/reference/post_defi-multi-price)               | 2230    | Price - Multiple      |
+| [direct/v1/Birdeye/defi/price\_volume/multi](https://docs.birdeye.so/reference/post_defi-price-volume-multi) | 2230    | Price Volume - Multi  |
+| [direct/v1/Birdeye/defi/v2/tokens/all](https://docs.birdeye.so/reference/post_defi-v2-tokens-all)            | 70315   | Token - List all (V2) |
+
+## Covalent
+
+### GET
+
+| Path                                                                                                                                                                                                                  | Est. CU | Description                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_native](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-native-token-balance)                                            | 5000    | Get native token balance for address                 |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_v2](https://goldrush.dev/docs/api-reference/balances/get-token-balances-for-address)                                                           | 5000    | Get token balances for address                       |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/transfers\_v2](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-erc20-token-transfers-for-address)                                  | 5000    | Get ERC20 token transfers for address                |
+| [direct/v1/Covalent/v1/chains](https://goldrush.dev/docs/api-reference/foundational-api/utility/get-all-chains)                                                                                                       | 5000    | Get all chains                                       |
+| [direct/v1/Covalent/v1/chains/status](https://goldrush.dev/docs/api-reference/foundational-api/utility/get-all-chain-statuses)                                                                                        | 5000    | Get all chain statuses                               |
+| [direct/v1/Covalent/v1/btc-mainnet/address/\{walletAddress}/balances\_v2](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-bitcoin-balance-for-address)                                          | 5000    | Get Bitcoin balances for non-HD address              |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/collection/\{collectionContract}/token/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/check-ownership-in-nft-collection-token) | 5000    | Check ownership in NFT collection for specific token |
+| [direct/v1/Covalent/v1/pricing/historical\_by\_addresses\_v2/\{chainName}/\{quoteCurrency}/\{contractAddress}](https://goldrush.dev/docs/api-reference/foundational-api/utility/get-historical-token-prices)          | 5000    | Get historical token prices                          |
+| [direct/v1/Covalent/v1/\{chainName}/tokens/\{contractAddress}/nft\_transactions/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-transactions-contract)                               | 5000    | Get NFT transactions for contract                    |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{contractAddress}/metadata/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-metadata-token-id-contract)                                      | 5000    | Get single NFT from contract with metadata           |
+| [direct/v1/Covalent/v1/\{chainName}/approvals/\{walletAddress}](https://goldrush.dev/docs/api-reference/foundational-api/security/get-token-approvals-for-address)                                                    | 5000    | Get token approvals for address                      |
+| [direct/v1/Covalent/v1/\{chainName}/tokens/\{tokenAddress}/token\_holders\_v2](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-token-holders-as-of-any-block-height-v2)                         | 5000    | Get token holders as of any block height (v2)        |
+
+## Defined
+
+### POST
+
+| Path                                                                                                              | Est. CU | Description                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [direct/v1/Defined/balances](https://docs.codex.io/reference/balances)                                            | 3500    | Returns list of token balances that a wallet has                                                                                     |
+| [direct/v1/Defined/chartUrls](https://docs.codex.io/reference/charturls)                                          | 3500    | Returns a URL for a pair chart.                                                                                                      |
+| [direct/v1/Defined/filterTokens](https://docs.codex.io/reference/filtertokens)                                    | 3500    | Returns a list of tokens based on a variety of filters.                                                                              |
+| [direct/v1/Defined/getBars](https://docs.codex.io/reference/getbars)                                              | 3500    | Returns bar chart data to track price changes over time.                                                                             |
+| [direct/v1/Defined/getCommunityNotes](https://docs.codex.io/reference/getcommunitynotes)                          | 3500    | Returns community gathered notes.                                                                                                    |
+| [direct/v1/Defined/getDetailedStats](https://docs.codex.io/reference/getdetailedstats)                            | 3500    | Returns bucketed stats for a given token within a pair.                                                                              |
+| [direct/v1/Defined/getLatestTokens](https://docs.codex.io/reference/getlatesttokens)                              | 3500    | Returns new tokens listed over the last three days.                                                                                  |
+| [direct/v1/Defined/getNetworks](https://docs.codex.io/reference/getnetworks)                                      | 3500    | Returns a list of all networks supported on Defined.                                                                                 |
+| [direct/v1/Defined/getNetworkStatus](https://docs.codex.io/reference/getnetworkstatus)                            | 3500    | Returns the status of a list of networks supported on Defined.                                                                       |
+| [direct/v1/Defined/getSimulateTokenContractResults](https://docs.codex.io/reference/simulatetokencontractresults) | 3500    | Simulates a token contract call.                                                                                                     |
+| [direct/v1/Defined/getSymbol](https://docs.codex.io/reference/getsymbol)                                          | 3500    | Returns metadata for a given pair.                                                                                                   |
+| [direct/v1/Defined/getTokenCount](https://docs.codex.io/reference/gettokencount)                                  | 3500    | Returns the total count of tokens on Defined. This value is updated approximately every 6 hours.                                     |
+| [direct/v1/Defined/getTokenEvents](https://docs.codex.io/reference/gettokenevents)                                | 3500    | Returns transactions for a pair.                                                                                                     |
+| [direct/v1/Defined/getTokenInfo](https://docs.codex.io/reference/gettokeninfo)                                    | 3500    | Returns metadata for a given token.                                                                                                  |
+| [direct/v1/Defined/getTokenPrices](https://docs.codex.io/reference/gettokenprices)                                | 3500    | Returns real-time or historical prices for a list of tokens, fetched in batches.                                                     |
+| [direct/v1/Defined/getTokensInfo](https://docs.codex.io/reference/gettokensinfo)                                  | 3500    | Returns metadata for a list of given tokens.                                                                                         |
+| [direct/v1/Defined/holders](https://docs.codex.io/reference/holders)                                              | 3500    | Returns list of wallets that hold a given token, ordered by holdings descending. Also has the unique count of holders for that token |
+| [direct/v1/Defined/listFavoriteTokens](https://docs.codex.io/reference/listfavoritetokens)                        | 3500    | Returns a list of token metadata.                                                                                                    |
+| [direct/v1/Defined/listPairsForToken](https://docs.codex.io/reference/listpairsfortoken)                          | 3500    | Returns a list of pairs containing a given token.                                                                                    |
+| [direct/v1/Defined/listPairsWithMetadataForToken](https://docs.codex.io/reference/listpairswithmetadatafortoken)  | 3500    | Returns a list of pair metadata for a token.                                                                                         |
+| [direct/v1/Defined/listTopTokens](https://docs.codex.io/reference/listtoptokens)                                  | 3500    | Returns a list of trending tokens across any given network(s).                                                                       |
+| [direct/v1/Defined/searchTokens](https://docs.codex.io/reference/searchtokens)                                    | 3500    | Returns a list of tokens matching a given query string.                                                                              |
+| [direct/v1/Defined/token](https://docs.codex.io/reference/token)                                                  | 3500    | Find a single token by its address & network id.                                                                                     |
+| [direct/v1/Defined/tokens](https://docs.codex.io/reference/tokens)                                                | 3500    | Find a list of tokens by their addresses & network id, with pagination.                                                              |
+| [direct/v1/Defined/tokenSparklines](https://docs.codex.io/reference/tokensparklines)                              | 3500    | Returns a list of token simple chart data (sparklines) for the given tokens.                                                         |
+
+## HelloMoon
+
+### POST
+
+| Path                                                                                                                                                                              | Est. CU | Description                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/defi/fungible-token-info](https://docs.hellomoon.io/reference/post_v0-defi-fungible-token-info)                                                           | 50      | Fetch information on fungible tokens in DeFi settings on Solana.                                |
+| [direct/v1/HelloMoon/v0/defi/high-volume-recent-tokens](https://docs.hellomoon.io/reference/post_v0-defi-high-volume-recent-tokens)                                               | 50      | Fetch data on recently high-volume tokens within DeFi.                                          |
+| [direct/v1/HelloMoon/v0/defi/program-stats/top-tokens](https://docs.hellomoon.io/reference/post_v0-defi-program-stats-top-tokens)                                                 | 50      | Retrieve top tokens based on user interaction within DeFi programs.                             |
+| [direct/v1/HelloMoon/v0/defi/smart-money/top-tokens](https://docs.hellomoon.io/reference/post_v0-defi-smart-money-top-tokens)                                                     | 50      | Retrieve top tokens by smart money inflow.                                                      |
+| [direct/v1/HelloMoon/v0/defi/token-age](https://docs.hellomoon.io/reference/post_v0-defi-token-age)                                                                               | 50      | Retrieve token age statistics within DeFi pools on Solana.                                      |
+| [direct/v1/HelloMoon/v0/defi/token-ath](https://docs.hellomoon.io/reference/post_v0-defi-token-ath)                                                                               | 50      | Fetch data on tokens that have reached all-time highs within DeFi platforms.                    |
+| [direct/v1/HelloMoon/v0/defi/token-buying](https://docs.hellomoon.io/reference/post_v0-defi-token-buying)                                                                         | 50      | Retrieve recent buying activity data for tokens on DeFi platforms.                              |
+| [direct/v1/HelloMoon/v0/defi/trending-tokens-volume](https://docs.hellomoon.io/reference/post_v0-defi-trending-tokens-volume)                                                     | 50      | Retrieve volume data for trending tokens on DeFi platforms.                                     |
+| [direct/v1/HelloMoon/v0/defi/twitter\_accounts/per-token](https://docs.hellomoon.io/reference/post_v0-defi-twitter-accounts-per-token)                                            | 50      | Fetch Twitter account data associated with specific tokens on DeFi platforms.                   |
+| [direct/v1/HelloMoon/v0/token/balances-by-owner-fungible](https://docs.hellomoon.io/reference/post_v0-token-balances-by-owner-fungible)                                           | 50      | Retrieve fungible token balances held by a specified owner on Solana.                           |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/get-preferred-token](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-get-preferred-token)                           | 50      | Retrieve the preferred token settings for a specific user or account on Hello Moon.             |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/set-preferred-token](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-set-preferred-token)                           | 50      | Set the preferred token for a specific user or account on Hello Moon.                           |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/token-unlock-emergency-migration](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-token-unlock-emergency-migration) | 50      | Perform an emergency token unlock or migration for a user on Hello Moon.                        |
+| [direct/v1/HelloMoon/v0/print/top-tokens-by-frequency](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-by-frequency)                                                 | 50      | Fetch tokens sorted by frequency within the Print category.                                     |
+| [direct/v1/HelloMoon/v0/print/top-tokens-by-profit](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-by-profit)                                                       | 50      | Retrieve tokens ranked by profitability within the Print category.                              |
+| [direct/v1/HelloMoon/v0/print/top-tokens-trader-profit](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-trader-profit)                                               | 50      | Fetch tokens ranked by trader profit within Print.                                              |
+| [direct/v1/HelloMoon/v0/print/top-tokens-users](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-users)                                                               | 50      | Retrieve data on top tokens by user count within Print.                                         |
+| [direct/v1/HelloMoon/v0/shit/spl-token](https://docs.hellomoon.io/reference/post_v0-shit-spl-token)                                                                               | 50      | Retrieve SPL token data under the "Shit" category on Hello Moon.                                |
+| [direct/v1/HelloMoon/v0/token/smart-money](https://docs.hellomoon.io/reference/post_v0-token-smart-money)                                                                         | 50      | Fetch data on tokens associated with smart money inflows, with ordering and pagination options. |
+| [direct/v1/HelloMoon/v0/token/sol-balance](https://docs.hellomoon.io/reference/post_v0-token-sol-balance)                                                                         | 50      | Retrieve SOL balance for a specified wallet address.                                            |
+| [direct/v1/HelloMoon/v0/defi/sol-grid-bot/top-tokens-one-min](https://docs.hellomoon.io/reference/post_v0-defi-sol-grid-bot-top-tokens-one-min)                                   | 50      | Fetch one-minute interval data on top tokens from the SOL Grid Bot.                             |
+| [direct/v1/HelloMoon/v0/token-22/buying-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-buying-per-day)                                                             | 50      | Track daily buying activity for Token-22 assets on Solana.                                      |
+| [direct/v1/HelloMoon/v0/token-22/creation-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-creation-per-day)                                                         | 50      | Track daily creation activity for Token-22 assets on Solana.                                    |
+| [direct/v1/HelloMoon/v0/token-22/users-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-users-per-day)                                                               | 50      | Track the daily active users of a specific token.                                               |
+| [direct/v1/HelloMoon/v0/token-22/selling-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-selling-per-day)                                                           | 50      | Track daily selling activity for Token-22 assets on Solana.                                     |
+| [direct/v1/HelloMoon/v0/token-22/swaps-balance-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-swaps-balance-per-day)                                               | 50      | Retrieve daily balance data for swaps involving Token-22 assets.                                |
+| [direct/v1/HelloMoon/v0/token-22/transfers-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-transfers-per-day)                                                       | 50      | Track daily transfer activity for Token-22 assets.                                              |
+| [direct/v1/HelloMoon/v0/token/token-balance](https://docs.hellomoon.io/reference/post_v0-token-token-balance)                                                                     | 50      | Fetch token balance for a specified wallet address and token.                                   |
+| [direct/v1/HelloMoon/v0/token/balances-by-owner](https://docs.hellomoon.io/reference/post_v0-token-balances-by-owner)                                                             | 50      | Retrieve token balances held by a specified owner on Solana.                                    |
+| [direct/v1/HelloMoon/v0/token/blocktime-unified-mint](https://docs.hellomoon.io/reference/post_v0-token-blocktime-unified-mint)                                                   | 50      | Get token block time for unified mint operations on Solana.                                     |
+| [direct/v1/HelloMoon/v0/token/candlesticks](https://docs.hellomoon.io/reference/post_v0-token-candlesticks)                                                                       | 50      | Retrieve candlestick data for token price movements, filtered by start time or other criteria.  |
+| [direct/v1/HelloMoon/v0/token/creation](https://docs.hellomoon.io/reference/post_v0-token-creation)                                                                               | 50      | Retrieve creation information for tokens on Solana.                                             |
+| [direct/v1/HelloMoon/v0/token/daily\_active\_users](https://docs.hellomoon.io/reference/post_v0-token-daily-active-users)                                                         | 50      | Track daily active users for a specified token.                                                 |
+| [direct/v1/HelloMoon/v0/token/daily\_new\_purchases](https://docs.hellomoon.io/reference/post_v0-token-daily-new-purchases)                                                       | 50      | Track daily new purchases for a specified token.                                                |
+| [direct/v1/HelloMoon/v0/token-22/first-time-users-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-first-time-users-per-day)                                         | 50      | Track daily first-time users of a specific token.                                               |
+| [direct/v1/HelloMoon/v0/token/token-leaderboard-max-change](https://docs.hellomoon.io/reference/post_v0-token-token-leaderboard-max-change)                                       | 50      | Retrieve tokens with maximum changes in balance or value.                                       |
+| [direct/v1/HelloMoon/v0/token/list](https://docs.hellomoon.io/reference/post_v0-token-list)                                                                                       | 50      | List available tokens with relevant metadata.                                                   |
+| [direct/v1/HelloMoon/v0/token/price](https://docs.hellomoon.io/reference/post_v0-token-price)                                                                                     | 50      | Fetch the current price of a specified token.                                                   |
+| [direct/v1/HelloMoon/v0/token/price/batched](https://docs.hellomoon.io/reference/post_v0-token-price-batched)                                                                     | 50      | Retrieve batched price information for multiple tokens.                                         |
+| [direct/v1/HelloMoon/v0/token/prices](https://docs.hellomoon.io/reference/post_v0-token-prices)                                                                                   | 50      | Fetch historical and recent price data for a token with specified granularity.                  |
+| [direct/v1/HelloMoon/v0/token/smart-money-inflow](https://docs.hellomoon.io/reference/post_v0-token-smart-money-inflow)                                                           | 50      | Retrieve data on the inflow of smart money into specific tokens.                                |
+| [direct/v1/HelloMoon/v0/token/stats](https://docs.hellomoon.io/reference/post_v0-token-stats)                                                                                     | 50      | Fetch statistical data for tokens on Solana.                                                    |
+| [direct/v1/HelloMoon/v0/token/supply](https://docs.hellomoon.io/reference/post_v0-token-supply)                                                                                   | 50      | Retrieve the circulating supply of a specified token.                                           |
+| [direct/v1/HelloMoon/v0/token/trading-volume](https://docs.hellomoon.io/reference/post_v0-token-trading-volume)                                                                   | 50      | Fetch trading volume data for a specific token.                                                 |
+| [direct/v1/HelloMoon/v0/token/transfers](https://docs.hellomoon.io/reference/post_v0-token-transfers)                                                                             | 50      | Retrieve recent transfer records for a token.                                                   |
+| [direct/v1/HelloMoon/v0/token/transfers/historical](https://docs.hellomoon.io/reference/post_v0-token-transfers-historical)                                                       | 50      | Get historical transfer records for a specified token on Solana.                                |
+| [direct/v1/HelloMoon/v0/token/volume-stats](https://docs.hellomoon.io/reference/post_v0-token-volume-stats)                                                                       | 50      | Retrieve volume statistics for tokens on Solana.                                                |
+| [direct/v1/HelloMoon/v0/defi/top-holders](https://docs.hellomoon.io/reference/post_v0-defi-top-holders)                                                                           | 50      | List top holders of specified DeFi tokens.                                                      |
+| [direct/v1/HelloMoon/v0/defi/top-holders/w-meta](https://docs.hellomoon.io/reference/post_v0-defi-top-holders-w-meta)                                                             | 50      | Retrieve top holders with additional metadata information.                                      |
+
+## Moralis
+
+### GET
+
+| Path                                                                                                                                                      | Est. CU | Description                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [direct/v1/Moralis/web3/version](https://docs.moralis.com/web3-data-api/evm/reference/web3-api-version)                                                   | 20      | Get API version                                      |
+| [direct/v1/Moralis/wallets/balances](https://docs.moralis.com/web3-data-api/evm/reference/get-native-balances-for-addresses)                              | 750     | Get native balance for multiple wallets              |
+| [direct/v1/Moralis/dateToBlock](https://docs.moralis.com/web3-data-api/evm/reference/get-date-to-block)                                                   | 20      | Get block by date                                    |
+| [direct/v1/Moralis/block/\{block\_number\_or\_hash}](https://docs.moralis.com/web3-data-api/evm/reference/get-block)                                      | 15000   | Get block by hash                                    |
+| [direct/v1/Moralis/\{token0\_address}/\{token1\_address}/pairAddres](https://docs.moralis.com/web3-data-api/evm/reference/get-pair-address)               | 20      | Get DEX token pair address                           |
+| [direct/v1/Moralis/\{pair\_address}/reserves](https://docs.moralis.com/web3-data-api/evm/reference/get-pair-reserves)                                     | 750     | Get DEX token pair reserves                          |
+| [direct/v1/Moralis/erc20/\{address}/allowance](https://docs.moralis.com/web3-data-api/evm/reference/get-token-allowance)                                  | 1500    | Get ERC20 token allowance                            |
+| [direct/v1/Moralis/wallets/\{address}/approvals](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals)              | 15000   | Get ERC20 approvals by wallet                        |
+| [direct/v1/Moralis/\{address}/erc20](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)                        | 15000   | Get ERC20 token balance by wallet                    |
+| [direct/v1/Moralis/erc20/metadata](https://docs.moralis.com/web3-data-api/evm/reference/get-token-metadata)                                               | 1500    | Get ERC20 token metadata by contract                 |
+| [direct/v1/Moralis/erc20/metadata/symbols](https://docs.moralis.com/web3-data-api/evm/reference/get-token-metadata-by-symbol)                             | 750     | Get ERC20 token metadata by symbols                  |
+| [direct/v1/Moralis/erc20/\{address}/price](https://docs.moralis.com/web3-data-api/evm/reference/get-token-price)                                          | 7500    | Get ERC20 token price                                |
+| [direct/v1/Moralis/erc20/\{token\_address}/owners](https://docs.moralis.com/web3-data-api/evm/reference/get-token-owners)                                 | 7500    | Get ERC20 token owners                               |
+| [direct/v1/Moralis/erc20/\{address}/stats](https://docs.moralis.com/web3-data-api/evm/reference/get-token-stats)                                          | 18750   | Get ERC20 token stats                                |
+| [direct/v1/Moralis/erc20/\{address}/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-token-transfers)                                  | 7500    | Get ERC20 token transfers by contract                |
+| [direct/v1/Moralis/\{address}/erc20/transfers](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-transfers)                | 7500    | Get ERC20 token transfers by wallet                  |
+| [direct/v1/Moralis/erc20/prices](https://docs.moralis.com/web3-data-api/evm/reference/get-multiple-token-prices)                                          | 15000   | Get multiple token prices                            |
+| [direct/v1/Moralis/\{address}/balance](https://docs.moralis.com/web3-data-api/evm/reference/get-native-balance)                                           | 750     | Get native balance by wallet                         |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-metadata)                                    | 3000    | Get NFT metadata                                     |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/price](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-sale-prices)                           | 6750    | Get sale prices                                      |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/balance](https://docs.moralis.com/web3-data-api/solana/reference/sol-balance)                     | 750     | Get native balance by wallet on Solana               |
+| [direct/v1/Moralis/solana/token/\{network}/pairs/\{address}/ohlcv](https://docs.moralis.com/web3-data-api/solana/reference/get-ohlcv-by-pair-address)     | 11250   | Get candlestick data for a pair on Solana            |
+| [direct/v1/Moralis/solana/token/\{network}/pairs/\{pairAddress}/swaps](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-pair-address) | 3750    | Get swaps for a specific pair address on Solana      |
+| [direct/v1/Moralis/solana/token/\{network}/pairs/\{pairAddress}/stats](https://docs.moralis.com/web3-data-api/solana/reference/get-token-pair-stats)      | 3750    | Get pair stats by address on Solana                  |
+| [direct/v1/Moralis/solana/token/\{network}/pairs/\{address}/snipers](https://docs.moralis.com/web3-data-api/solana/reference/get-snipers-by-pair-address) | 11250   | Get snipers by pair address on Solana                |
+| [direct/v1/Moralis/solana/token/\{network}/\{address}/metadata](https://docs.moralis.com/web3-data-api/solana/reference/get-token-metadata)               | 750     | Get token metadata on Solana                         |
+| [direct/v1/Moralis/solana/token/\{network}/\{address}/pairs](https://docs.moralis.com/web3-data-api/solana/reference/get-token-pairs-by-address)          | 3750    | Get token pairs by address on Solana                 |
+| [direct/v1/Moralis/solana/token/\{network}/\{address}/pairs/stats](https://docs.moralis.com/web3-data-api/solana/reference/get-token-pair-stats)          | 3750    | Get token pair statistics by address on Solana       |
+| [direct/v1/Moralis/solana/token/\{network}/\{address}/price](https://docs.moralis.com/web3-data-api/solana/reference/get-sol-token-price)                 | 750     | Get token price on Solana                            |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/tokens](https://docs.moralis.com/web3-data-api/solana/reference/get-spl)                          | 750     | Get token balance by wallet on Solana                |
+| [direct/v1/Moralis/solana/token/\{network}/\{tokenAddress}/swaps](https://docs.moralis.com/web3-data-api/solana/reference/get-swaps-by-token-address)     | 5250    | Get swaps for a specific token address on Solana     |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/owners](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-token-id-owners)                      | 7500    | Get token ID owners                                  |
+| [direct/v1/Moralis/wallets/\{address}/tokens](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price)            | 15000   | Get Native & ERC20 token balances & prices by wallet |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/stats](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-token-stats)                           | 18750   | Get token stats                                      |
+| [direct/v1/Moralis/erc20/\{address}/top-gainers](https://docs.moralis.com/web3-data-api/evm/reference/get-top-profitable-wallet-per-token)                | 18750   | Get Top Profitable Wallets by Token                  |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/trades](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-trades-by-token)                      | 6000    | Get trades by token                                  |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-transfers)                         | 3000    | Get transfers by contract and token ID               |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/metadata/resync](https://docs.moralis.com/web3-data-api/evm/reference/resync-metadata)                     | 18750   | Resync metadata                                      |
+
+## Shyft
+
+### DELETE
+
+| Path                                                                                                | Est. CU | Description                  |
+| --------------------------------------------------------------------------------------------------- | ------- | ---------------------------- |
+| [direct/v1/Shyft/sol/v1/token/burn\_detach](https://docs.shyft.to/solana-apis/fungible-tokens#burn) | 20      | Burn your own fungible token |
+
+### GET
+
+| Path                                                                                                       | Est. CU | Description                                                                           |
+| ---------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/wallet/all\_tokens](https://docs.shyft.to/solana-apis/wallet#get-all-tokens)       | 20      | Get the balance of all tokens in a wallet                                             |
+| [direct/v1/Shyft/sol/v1/token/get\_owners](https://docs.shyft.to/solana-apis/fungible-tokens#get-owners)   | 20      | Get the owners of a fungible token                                                    |
+| [direct/v1/Shyft/sol/v1/wallet/get\_portfolio](https://docs.shyft.to/solana-apis/wallet#get-portfolio)     | 20      | Get the portfolio of a wallet                                                         |
+| [direct/v1/Shyft/sol/v1/wallet/token\_balance](https://docs.shyft.to/solana-apis/wallet#get-token-balance) | 20      | Get the balance of a particular token in a wallet (Supports Token 2022 token info 🆕) |
+| [direct/v1/Shyft/sol/v1/token/get\_info](https://docs.shyft.to/solana-apis/fungible-tokens#get-token-info) | 20      | Get the info of a token                                                               |
+
+### POST
+
+| Path                                                                                                                                | Est. CU | Description                           |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------- |
+| [direct/v1/Shyft/sol/v1/token/airdrop](https://docs.shyft.to/solana-apis/fungible-tokens#airdrop)                                   | 20      | Airdrop your own fungible token       |
+| [direct/v1/Shyft/sol/v1/token/create\_detach](https://docs.shyft.to/solana-apis/fungible-tokens#create)                             | 20      | Create your own fungible token        |
+| [direct/v1/Shyft/sol/v1/token/create\_from\_metadata](https://docs.shyft.to/solana-apis/fungible-tokens#create-token-from-metadata) | 20      | Create a fungible token from metadata |
+| [direct/v1/Shyft/sol/v1/token/mint\_detach](https://docs.shyft.to/solana-apis/fungible-tokens#mint)                                 | 20      | Mint your own fungible token          |
+| [direct/v1/Shyft/sol/v1/token/transfer\_detach](https://docs.shyft.to/solana-apis/fungible-tokens#transfer)                         | 20      | Transfer your own fungible token      |
+
+## SolScan
+
+### GET
+
+| Path                                                                                                                              | Est. CU | Description                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------- |
+| [direct/v1/SolScan/v1.0/account/splTransfers](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                             | 20      | Get SPL transfers for a specific account on Solana.                     |
+| [direct/v1/SolScan/v1.0/account/tokens](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                   | 20      | Get the tokens of a specific account on Solana.                         |
+| [direct/v1/SolScan/v1.0/block/\{block}](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                   | 20      | Get detailed information for a specific block on Solana.                |
+| [direct/v1/SolScan/v1.0/block/last](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                       | 20      | Get the latest block information on Solana.                             |
+| [direct/v1/SolScan/v1.0/market/token/\{tokenAddress}](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                     | 20      | Get market data for a specific token using the token address on Solana. |
+| [direct/v1/SolScan/v1.0/token/holders](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                    | 20      | Get the list of token holders on Solana.                                |
+| [direct/v1/SolScan/v1.0/token/list](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                       | 20      | Get a list of all tokens available on Solana.                           |
+| [direct/v1/SolScan/v1.0/token/meta](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                       | 20      | Get metadata for a specific token on Solana.                            |
+| [direct/v1/SolScan/v1.0/token/transfer](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                   | 20      | Get transfer information for a specific token on Solana.                |
+| [direct/v1/SolScan/v2.0/account/token-accounts](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-token-accounts) | 650     | Get token accounts for a specific account on Solana.                    |
+| [direct/v1/SolScan/v2.0/block/detail](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-block-detail)                     | 650     | Get detailed information for a specific block on Solana.                |
+| [direct/v1/SolScan/v2.0/block/last](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-block-last)                         | 650     | Get the latest block information on Solana.                             |
+| [direct/v1/SolScan/v2.0/token/defi/activities](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-defi-activities)   | 650     | Get DeFi activities for a specific token on Solana.                     |
+| [direct/v1/SolScan/v2.0/token/holders](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-holders)                   | 650     | Get the list of token holders on Solana.                                |
+| [direct/v1/SolScan/v2.0/token/list](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-list)                         | 650     | Get a list of all tokens available on Solana.                           |
+| [direct/v1/SolScan/v2.0/token/markets](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-markets)                   | 650     | Get market data for a specific token on Solana.                         |
+| [direct/v1/SolScan/v2.0/token/meta](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-meta)                         | 650     | Get metadata for a specific token on Solana.                            |
+| [direct/v1/SolScan/v2.0/token/price](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-price)                       | 650     | Get price data for a specific token on Solana.                          |
+| [direct/v1/SolScan/v2.0/token/transfer](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-transfer)                 | 650     | Get transfer information for a specific token on Solana.                |
+| [direct/v1/SolScan/v2.0/token/trending](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-trending)                 | 650     | Get trending tokens on Solana.                                          |
+
+## TonAPI
+
+### GET
+
+| Path                                                                                                                    | Est. CU | Description                              |
+| ----------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------- |
+| [direct/v1/TonAPI/v2/address/\{account\_id}/parse](https://tonapi.io/api-v2#operations-Address-getAddressParse)         | 20      | parse address and display in all formats |
+| [direct/v1/TonAPI/v2/blockchain/blocks/\{block\_id}](https://tonapi.io/api-v2#operations-Blockchain-getBlockchainBlock) | 20      | Get blockchain block data                |
+| [direct/v1/TonAPI/v2/status](https://tonapi.io/api-v2#operations-Status-getStatus)                                      | 20      | Status                                   |

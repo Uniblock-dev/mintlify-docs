@@ -1,0 +1,317 @@
+---
+title: "Direct API — DeFi"
+description: "Ask AI"
+---
+
+API endpoints for DeFi.
+
+# DeFi — Direct API Endpoints
+
+## Alchemy
+
+### GET
+
+| Path                                                                                                          | Est. CU | Description                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/prices/v1/tokens/by-symbol](https://docs.alchemy.com/reference/get-token-prices-by-symbol) | 80      | Fetches current prices for multiple tokens using their symbols. Returns a list of token prices, each containing the symbol, prices, and an optional error field. |
+
+### POST
+
+| Path                                                                                                            | Est. CU | Description                                                                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/prices/v1/tokens/by-address](https://docs.alchemy.com/reference/get-token-prices-by-address) | 80      | Fetches current prices for multiple tokens using network and address pairs. Returns a list of token prices, each containing the network, address, prices, and an optional error field. |
+| [direct/v1/Alchemy/prices/v1/tokens/historical](https://docs.alchemy.com/reference/get-historical-token-prices) | 80      | Provides historical price data for a single token over a time range. You can identify the token by symbol or by network and contract address.                                          |
+
+## Birdeye
+
+### GET
+
+| Path                                                                                                                           | Est. CU | Description                     |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------- |
+| [direct/v1/Birdeye/defi/historical\_price\_unix](https://docs.birdeye.so/reference/get_defi-historical-price-unix)             | 705     | Price - Historical by unix time |
+| [direct/v1/Birdeye/defi/history\_price](https://docs.birdeye.so/reference/get_defi-history-price)                              | 4240    | Price - Historical              |
+| [direct/v1/Birdeye/defi/networks](https://docs.birdeye.so/reference/get_defi-networks)                                         | 70      | Supported Networks              |
+| [direct/v1/Birdeye/defi/ohlcv](https://docs.birdeye.so/reference/get_defi-ohlcv)                                               | 2120    | OHLCV                           |
+| [direct/v1/Birdeye/defi/ohlcv/base\_quote](https://docs.birdeye.so/reference/get_defi-ohlcv-base-quote)                        | 2120    | OHLCV - Base/Quote              |
+| [direct/v1/Birdeye/defi/ohlcv/pair](https://docs.birdeye.so/reference/get_defi-ohlcv-pair)                                     | 2120    | OHLCV - Pair                    |
+| [direct/v1/Birdeye/defi/price](https://docs.birdeye.so/reference/get_defi-price)                                               | 705     | Price                           |
+| [direct/v1/Birdeye/defi/price\_volume/single](https://docs.birdeye.so/reference/get_defi-price-volume-single)                  | 1060    | Price Volume - Single           |
+| [direct/v1/Birdeye/defi/token\_creation\_info](https://docs.birdeye.so/reference/get_defi-token-creation-info)                 | 3535    | Token - Creation Token Info     |
+| [direct/v1/Birdeye/defi/tokenlist](https://docs.birdeye.so/reference/get_defi-tokenlist)                                       | 2120    | Token - List (V1)               |
+| [direct/v1/Birdeye/defi/token\_overview](https://docs.birdeye.so/reference/get_defi-token-overview)                            | 2120    | Token - Overview                |
+| [direct/v1/Birdeye/defi/token\_security](https://docs.birdeye.so/reference/get_defi-token-security)                            | 3535    | Token - Security                |
+| [direct/v1/Birdeye/defi/token\_trending](https://docs.birdeye.so/reference/get_defi-token-trending)                            | 3535    | Token - Trending List           |
+| [direct/v1/Birdeye/defi/txs/pair](https://docs.birdeye.so/reference/get_defi-txs-pair)                                         | 705     | Trades - Pair                   |
+| [direct/v1/Birdeye/defi/txs/pair/seek\_by\_time](https://docs.birdeye.so/reference/getdefitxspairseekbytime)                   | 1060    | Trades - Pair Seek By Time      |
+| [direct/v1/Birdeye/defi/txs/token](https://docs.birdeye.so/reference/get_defi-txs-token)                                       | 705     | Trades - Token                  |
+| [direct/v1/Birdeye/defi/txs/token/seek\_by\_time](https://docs.birdeye.so/reference/getdefitxstokenseekbytime)                 | 1060    | Trades - Token Seek By Time     |
+| [direct/v1/Birdeye/defi/v2/markets](https://docs.birdeye.so/reference/get_defi-v2-markets)                                     | 3535    | Token - All Market List         |
+| [direct/v1/Birdeye/defi/v2/tokens/new\_listing](https://docs.birdeye.so/reference/get_defi-v2-tokens-new-listing)              | 5655    | Token - New listing             |
+| [direct/v1/Birdeye/defi/v2/tokens/top\_traders](https://docs.birdeye.so/reference/get_defi-v2-tokens-top-traders)              | 2120    | Token - Top traders             |
+| [direct/v1/Birdeye/defi/v3/pair/overview/multiple](https://docs.birdeye.so/reference/getdefiv3pairoverviewmultiple)            | 8920    | Pair - Pair Overview (Multiple) |
+| [direct/v1/Birdeye/defi/v3/pair/overview/single](https://docs.birdeye.so/reference/getdefiv3pairoverviewsingle)                | 1415    | Pair - Pair Overview (Single)   |
+| [direct/v1/Birdeye/defi/v3/search](https://docs.birdeye.so/reference/getdefiv3search)                                          | 7065    | Search - Token, market Data     |
+| [direct/v1/Birdeye/defi/v3/token/holder](https://docs.birdeye.so/reference/get_defi-v3-token-holder)                           | 3535    | Token - Top Holders             |
+| [direct/v1/Birdeye/defi/v3/token/market-data](https://docs.birdeye.so/reference/get_defi-v3-token-market-data)                 | 1060    | Token - Market Data (Single)    |
+| [direct/v1/Birdeye/defi/v3/token/meta-data/multiple](https://docs.birdeye.so/reference/get_defi-v3-token-meta-data-multiple)   | 2230    | Token - Metadata (Multiple)     |
+| [direct/v1/Birdeye/defi/v3/token/meta-data/single](https://docs.birdeye.so/reference/get_defi-v3-token-meta-data-single)       | 355     | Token - Metadata (Single)       |
+| [direct/v1/Birdeye/defi/v3/token/trade-data/multiple](https://docs.birdeye.so/reference/get_defi-v3-token-trade-data-multiple) | 6690    | Token - Trade Data (Multiple)   |
+| [direct/v1/Birdeye/defi/v3/token/trade-data/single](https://docs.birdeye.so/reference/get_defi-v3-token-trade-data-single)     | 1060    | Token - Trade Data (Single)     |
+| [direct/v1/Birdeye/trader/gainers-losers](https://docs.birdeye.so/reference/get_trader-gainers-losers)                         | 2120    | Trader - Gainers/Losers         |
+
+### POST
+
+| Path                                                                                                         | Est. CU | Description           |
+| ------------------------------------------------------------------------------------------------------------ | ------- | --------------------- |
+| [direct/v1/Birdeye/defi/multi\_price](https://docs.birdeye.so/reference/post_defi-multi-price)               | 2230    | Price - Multiple      |
+| [direct/v1/Birdeye/defi/price\_volume/multi](https://docs.birdeye.so/reference/post_defi-price-volume-multi) | 2230    | Price Volume - Multi  |
+| [direct/v1/Birdeye/defi/v2/tokens/all](https://docs.birdeye.so/reference/post_defi-v2-tokens-all)            | 70315   | Token - List all (V2) |
+
+## Covalent
+
+### GET
+
+| Path                                                                                                                                                                                                         | Est. CU | Description                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------- |
+| [direct/v1/Covalent/v1/pricing/historical\_by\_addresses\_v2/\{chainName}/\{quoteCurrency}/\{contractAddress}](https://goldrush.dev/docs/api-reference/foundational-api/utility/get-historical-token-prices) | 5000    | Get historical token prices |
+
+## Defined
+
+### POST
+
+| Path                                                                                                                       | Est. CU | Description                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------- |
+| [direct/v1/Defined/filterNftPoolCollections](https://docs.codex.io/reference/filternftpoolcollections)                     | 3500    | Returns a list of NFT collections based on a variety of filters.                        |
+| [direct/v1/Defined/filterNftPools](https://docs.codex.io/reference/filternftpools)                                         | 3500    | Returns a list of NFT pools based on a variety of filters.                              |
+| [direct/v1/Defined/getDetailedPairsStats](https://docs.codex.io/reference/getdetailedpairsstats)                           | 3500    | Returns bucketed stats for a given token within a list of pairs.                        |
+| [direct/v1/Defined/getDetailedPairStats](https://docs.codex.io/reference/getdetailedpairstats)                             | 3500    | Returns bucketed stats for a given token within a pair.                                 |
+| [direct/v1/Defined/getDetailedStats](https://docs.codex.io/reference/getdetailedstats)                                     | 3500    | Returns bucketed stats for a given token within a pair.                                 |
+| [direct/v1/Defined/getExchanges](https://docs.codex.io/reference/getexchanges)                                             | 3500    | Returns a list of decentralized exchange metadata.                                      |
+| [direct/v1/Defined/getLatestPairs](https://docs.codex.io/reference/getlatestpairs)                                         | 3500    | Returns new tokens listed over the last three days.                                     |
+| [direct/v1/Defined/getNftPool](https://docs.codex.io/reference/getnftpool)                                                 | 3500    | Returns an NFT pool.                                                                    |
+| [direct/v1/Defined/getNftPoolCollection](https://docs.codex.io/reference/getnftpoolcollection)                             | 3500    | Returns an NFT pool collection with pool stats for a given AMM NFT marketplace.         |
+| [direct/v1/Defined/getNftPoolCollectionsByExchange](https://docs.codex.io/reference/getnftpoolcollectionsbyexchange)       | 3500    | Returns an NFT collection with pool stats for a given AMM NFT marketplace.              |
+| [direct/v1/Defined/getNftPoolEvents](https://docs.codex.io/reference/getnftpoolevents)                                     | 3500    | Returns transactions for an NFT collection across all NFT pools or within a given pool. |
+| [direct/v1/Defined/getNftPoolsByCollectionAndExchange](https://docs.codex.io/reference/getnftpoolsbycollectionandexchange) | 3500    | Returns NFT pools for a given collection and AMM NFT marketplace.                       |
+| [direct/v1/Defined/getNftPoolsByOwner](https://docs.codex.io/reference/getnftpoolsbyowner)                                 | 3500    | Returns a list of NFT pools for a given owner.                                          |
+| [direct/v1/Defined/getNftPoolStats](https://docs.codex.io/reference/getnftpoolstats)                                       | 3500    | Returns aggregated NFT pool/collection stats for a given time frame.                    |
+| [direct/v1/Defined/getPrimePoolAssets](https://docs.codex.io/reference/getprimepoolassets)                                 | 3500    | Returns a list of Prime pool cached assets.                                             |
+| [direct/v1/Defined/getPrimePoolEvents](https://docs.codex.io/reference/getprimepoolevents)                                 | 3500    | Returns a list of Prime pool events.                                                    |
+| [direct/v1/Defined/getPrimePools](https://docs.codex.io/reference/getprimepools)                                           | 3500    | Returns a list of Prime pools.                                                          |
+| [direct/v1/Defined/getUniV3Ticks](https://docs.codex.io/reference/getuniv3ticks)                                           | 3500    | Returns tick data for a given Uniswap V3-style pool.                                    |
+| [direct/v1/Defined/pairMetadata](https://docs.codex.io/reference/pairmetadata)                                             | 3500    | Returns metadata for a pair of tokens.                                                  |
+| [direct/v1/Defined/primeHolders](https://docs.codex.io/reference/primeholders)                                             | 3500    | Returns a list of holders of the PRIME token on ethereum.                               |
+
+## HelloMoon
+
+### DELETE
+
+| Path                                                                                                                       | Est. CU | Description                      |
+| -------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------- |
+| [direct/v1/HelloMoon/v0/subscriptions/remove/\{id}](https://docs.hellomoon.io/reference/delete_v0-subscriptions-remove-id) | 50      | Remove a subscription by its ID. |
+
+### GET
+
+| Path                                                                                                                        | Est. CU | Description                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------- |
+| [direct/v1/HelloMoon/v0/subscriptions/list](https://docs.hellomoon.io/reference/get_v0-subscriptions-list)                  | 50      | List all active subscriptions.              |
+| [direct/v1/HelloMoon/v0/subscriptions/retrieve/\{id}](https://docs.hellomoon.io/reference/get_v0-subscriptions-retrieve-id) | 50      | Retrieve a specific subscription by its ID. |
+
+### POST
+
+| Path                                                                                                                                                                              | Est. CU | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/account-data](https://docs.hellomoon.io/reference/post_v0-account-data)                                                                                   | 50      | Retrieve account data for a specified address on Solana.                                                        |
+| [direct/v1/HelloMoon/v0/accounts/stream/create](https://docs.hellomoon.io/reference/post_v0-accounts-stream-create)                                                               | 50      | Create a data stream for account changes, set to trigger a webhook or other target.                             |
+| [direct/v1/HelloMoon/v0/staking/active-stake-per-validator](https://docs.hellomoon.io/reference/post_v0-staking-active-stake-per-validator)                                       | 50      | Fetch active staking data per validator on Solana.                                                              |
+| [direct/v1/HelloMoon/v0/asset-dash-updated](https://docs.hellomoon.io/reference/post_v0-asset-dash-updated)                                                                       | 50      | Retrieve updated asset dashboard data.                                                                          |
+| [direct/v1/HelloMoon/v0/account-data/bulk](https://docs.hellomoon.io/reference/post_v0-account-data-bulk)                                                                         | 50      | Retrieve bulk account data for Solana addresses.                                                                |
+| [direct/v1/HelloMoon/v0/citrus/account-data](https://docs.hellomoon.io/reference/post_v0-citrus-account-data)                                                                     | 50      | Retrieve account data associated with Citrus on the Solana blockchain.                                          |
+| [direct/v1/HelloMoon/v0/citrus/loan-events](https://docs.hellomoon.io/reference/post_v0-citrus-loan-events)                                                                       | 50      | Fetch loan event data for accounts associated with Citrus.                                                      |
+| [direct/v1/HelloMoon/v0/citrus/loan-summary](https://docs.hellomoon.io/reference/post_v0-citrus-loan-summary)                                                                     | 50      | Get a summary of loan data associated with Citrus.                                                              |
+| [direct/v1/HelloMoon/v0/das-ownership](https://docs.hellomoon.io/reference/post_v0-das-ownership)                                                                                 | 50      | Retrieve ownership data for Decentralized Autonomous Society (DAS) accounts on Solana.                          |
+| [direct/v1/HelloMoon/v0/defi/fungible-token-info](https://docs.hellomoon.io/reference/post_v0-defi-fungible-token-info)                                                           | 50      | Fetch information on fungible tokens in DeFi settings on Solana.                                                |
+| [direct/v1/HelloMoon/v0/defi/high-volume-recent-tokens](https://docs.hellomoon.io/reference/post_v0-defi-high-volume-recent-tokens)                                               | 50      | Fetch data on recently high-volume tokens within DeFi.                                                          |
+| [direct/v1/HelloMoon/v0/defi/lending](https://docs.hellomoon.io/reference/post_v0-defi-lending)                                                                                   | 50      | Access DeFi lending data including borrowing and repayment activities for SPL tokens and stablecoins on Solana. |
+| [direct/v1/HelloMoon/v0/defi/liquidity](https://docs.hellomoon.io/reference/post_v0-defi-liquidity)                                                                               | 50      | Fetch liquidity data for a specific DeFi pool, with optional metadata.                                          |
+| [direct/v1/HelloMoon/v0/defi/program-stats/daily-new-users](https://docs.hellomoon.io/reference/post_v0-defi-program-stats-daily-new-users)                                       | 50      | Retrieve daily new user counts for specific DeFi programs.                                                      |
+| [direct/v1/HelloMoon/v0/defi/program-stats/overlap](https://docs.hellomoon.io/reference/post_v0-defi-program-stats-overlap)                                                       | 50      | Fetch overlap statistics for different DeFi programs.                                                           |
+| [direct/v1/HelloMoon/v0/defi/program-stats/top-tokens](https://docs.hellomoon.io/reference/post_v0-defi-program-stats-top-tokens)                                                 | 50      | Retrieve top tokens based on user interaction within DeFi programs.                                             |
+| [direct/v1/HelloMoon/v0/defi/smart-money](https://docs.hellomoon.io/reference/post_v0-defi-smart-money)                                                                           | 50      | Fetch data on smart money activities within DeFi ecosystems on Solana.                                          |
+| [direct/v1/HelloMoon/v0/defi/smart-money/top-tokens](https://docs.hellomoon.io/reference/post_v0-defi-smart-money-top-tokens)                                                     | 50      | Retrieve top tokens by smart money inflow.                                                                      |
+| [direct/v1/HelloMoon/v0/defi/swaps](https://docs.hellomoon.io/reference/post_v0-defi-swaps)                                                                                       | 50      | Retrieve swap transaction data for DeFi protocols, including details such as aggregator and time.               |
+| [direct/v1/HelloMoon/v0/defi/token-age](https://docs.hellomoon.io/reference/post_v0-defi-token-age)                                                                               | 50      | Retrieve token age statistics within DeFi pools on Solana.                                                      |
+| [direct/v1/HelloMoon/v0/defi/token-ath](https://docs.hellomoon.io/reference/post_v0-defi-token-ath)                                                                               | 50      | Fetch data on tokens that have reached all-time highs within DeFi platforms.                                    |
+| [direct/v1/HelloMoon/v0/defi/token-buying](https://docs.hellomoon.io/reference/post_v0-defi-token-buying)                                                                         | 50      | Retrieve recent buying activity data for tokens on DeFi platforms.                                              |
+| [direct/v1/HelloMoon/v0/defi/total-liquidity](https://docs.hellomoon.io/reference/post_v0-defi-total-liquidity)                                                                   | 50      | Get total liquidity data for DeFi platforms on Solana.                                                          |
+| [direct/v1/HelloMoon/v0/defi/trending-tokens-volume](https://docs.hellomoon.io/reference/post_v0-defi-trending-tokens-volume)                                                     | 50      | Retrieve volume data for trending tokens on DeFi platforms.                                                     |
+| [direct/v1/HelloMoon/v0/defi/twitter\_accounts/per-token](https://docs.hellomoon.io/reference/post_v0-defi-twitter-accounts-per-token)                                            | 50      | Fetch Twitter account data associated with specific tokens on DeFi platforms.                                   |
+| [direct/v1/HelloMoon/v0/account-data/devnet](https://docs.hellomoon.io/reference/post_v0-account-data-devnet)                                                                     | 50      | Retrieve account data for a single address on Solana Devnet.                                                    |
+| [direct/v1/HelloMoon/v0/account-data/devnet/bulk](https://docs.hellomoon.io/reference/post_v0-account-data-devnet-bulk)                                                           | 50      | Fetch bulk account data on Solana Devnet.                                                                       |
+| [direct/v1/HelloMoon/v0/dyor/leaderboard](https://docs.hellomoon.io/reference/post_v0-dyor-leaderboard)                                                                           | 50      | Retrieve a leaderboard related to DYOR (Do Your Own Research) activities on Solana.                             |
+| [direct/v1/HelloMoon/v0/frakt/loan-events](https://docs.hellomoon.io/reference/post_v0-frakt-loan-events)                                                                         | 50      | Retrieve loan event data for Frakt-related accounts.                                                            |
+| [direct/v1/HelloMoon/v0/frakt/loan-events/bonds](https://docs.hellomoon.io/reference/post_v0-frakt-loan-events-bonds)                                                             | 50      | Retrieve loan events specifically related to bonds in the Frakt protocol.                                       |
+| [direct/v1/HelloMoon/v0/frakt/loan-summary](https://docs.hellomoon.io/reference/post_v0-frakt-loan-summary)                                                                       | 50      | Get a summary of loan data for accounts associated with Frakt.                                                  |
+| [direct/v1/HelloMoon/v0/token/balances-by-owner-fungible](https://docs.hellomoon.io/reference/post_v0-token-balances-by-owner-fungible)                                           | 50      | Retrieve fungible token balances held by a specified owner on Solana.                                           |
+| [direct/v1/HelloMoon/v0/gcr/wheel/get-rewards-meta](https://docs.hellomoon.io/reference/post_v0-gcr-wheel-get-rewards-meta)                                                       | 50      | Retrieve metadata related to reward distributions in the GCR Wheel system.                                      |
+| [direct/v1/HelloMoon/v0/hello-moon/collection-mint-mapping](https://docs.hellomoon.io/reference/post_v0-hello-moon-collection-mint-mapping)                                       | 50      | Fetch mapping data for collections and mint addresses within the Hello Moon platform.                           |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/get-preferred-token](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-get-preferred-token)                           | 50      | Retrieve the preferred token settings for a specific user or account on Hello Moon.                             |
+| [direct/v1/HelloMoon/v0/hello-moon/leaderboard](https://docs.hellomoon.io/reference/post_v0-hello-moon-leaderboard)                                                               | 50      | Retrieve leaderboard data within the Hello Moon platform.                                                       |
+| [direct/v1/HelloMoon/v0/hello-moon/leaderboard/add](https://docs.hellomoon.io/reference/post_v0-hello-moon-leaderboard-add)                                                       | 50      | Add a user or account to the Hello Moon leaderboard.                                                            |
+| [direct/v1/HelloMoon/v0/hello-moon/parsed-swaps](https://docs.hellomoon.io/reference/post_v0-hello-moon-parsed-swaps)                                                             | 50      | Fetch parsed swap data on Hello Moon, including swap details by aggregator.                                     |
+| [direct/v1/HelloMoon/v0/hello-moon/radium-liquidity](https://docs.hellomoon.io/reference/post_v0-hello-moon-radium-liquidity)                                                     | 50      | Retrieve liquidity data related to Radium pools on Hello Moon.                                                  |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/set-preferred-token](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-set-preferred-token)                           | 50      | Set the preferred token for a specific user or account on Hello Moon.                                           |
+| [direct/v1/HelloMoon/v0/hello-moon/defenders/token-unlock-emergency-migration](https://docs.hellomoon.io/reference/post_v0-hello-moon-defenders-token-unlock-emergency-migration) | 50      | Perform an emergency token unlock or migration for a user on Hello Moon.                                        |
+| [direct/v1/HelloMoon/v0/hello-moon/verified\_collections](https://docs.hellomoon.io/reference/post_v0-hello-moon-verified-collections)                                            | 50      | Retrieve verified NFT collection data on Hello Moon.                                                            |
+| [direct/v1/HelloMoon/v0/hello-moon/verified\_collections/dev](https://docs.hellomoon.io/reference/post_v0-hello-moon-verified-collections-dev)                                    | 50      | Retrieve developer-specific verified collection data on Hello Moon.                                             |
+| [direct/v1/HelloMoon/v0/jito/confirm-txn](https://docs.hellomoon.io/reference/post_v0-jito-confirm-txn)                                                                           | 50      | Confirm a transaction on Solana using Jito, a high-performance trading solution.                                |
+| [direct/v1/HelloMoon/v0/jito/get-tip-account](https://docs.hellomoon.io/reference/post_v0-jito-get-tip-account)                                                                   | 50      | Retrieve tipping account information for Jito transactions.                                                     |
+| [direct/v1/HelloMoon/v0/defi/liquidity-pools/metadata](https://docs.hellomoon.io/reference/post_v0-defi-liquidity-pools-metadata)                                                 | 50      | Retrieve metadata for liquidity pools, including pool configurations and parameters.                            |
+| [direct/v1/HelloMoon/v0/defi/liquidity-pools/withdrawals-deposits](https://docs.hellomoon.io/reference/post_v0-defi-liquidity-pools-withdrawals-deposits)                         | 50      | Track deposits and withdrawals in DeFi liquidity pools on the Solana blockchain.                                |
+| [direct/v1/HelloMoon/v0/defi/lp-balance](https://docs.hellomoon.io/reference/post_v0-defi-lp-balance)                                                                             | 50      | Check the balance of liquidity provider tokens in DeFi pools on Solana.                                         |
+| [direct/v1/HelloMoon/v0/new-boards-10](https://docs.hellomoon.io/reference/post_v0-new-boards-10)                                                                                 | 50      | Retrieve or interact with new leaderboard boards on Solana within Hello Moon.                                   |
+| [direct/v1/HelloMoon/v0/nft/collection/collective](https://docs.hellomoon.io/reference/post_v0-nft-collection-collective)                                                         | 50      | Fetch data for NFT collections labeled as "collective" on Hello Moon.                                           |
+| [direct/v1/HelloMoon/v0/nft/collection/floor-price-compressed](https://docs.hellomoon.io/reference/post_v0-nft-collection-floor-price-compressed)                                 | 50      | Fetch compressed floor price data for NFT collections.                                                          |
+| [direct/v1/HelloMoon/v0/nft/collection/listing](https://docs.hellomoon.io/reference/post_v0-nft-collection-listing)                                                               | 50      | Retrieve listing data for specific NFT collections.                                                             |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/cumulative](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-cumulative)                                     | 50      | Fetch cumulative ownership data for NFT collections.                                                            |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/current](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-current)                                           | 50      | Retrieve current ownership data for an NFT collection.                                                          |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/historical](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-historical)                                     | 50      | Fetch historical ownership data for NFT collections.                                                            |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/holding-period](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-holding-period)                             | 50      | Get holding period data for owners of NFTs in specific collections.                                             |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/top-holders](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-top-holders)                                   | 50      | Retrieve top holder data for an NFT collection.                                                                 |
+| [direct/v1/HelloMoon/v0/nft/collection/stats/primary-sales](https://docs.hellomoon.io/reference/post_v0-nft-collection-stats-primary-sales)                                       | 50      | Fetch primary sales statistics for NFT collections.                                                             |
+| [direct/v1/HelloMoon/v0/nft/collection/program-usage](https://docs.hellomoon.io/reference/post_v0-nft-collection-program-usage)                                                   | 50      | Fetch program usage statistics for a specific NFT collection.                                                   |
+| [direct/v1/HelloMoon/v0/nft/collection/smart-money-inflow](https://docs.hellomoon.io/reference/post_v0-nft-collection-smart-money-inflow)                                         | 50      | Retrieve data on smart money inflows into NFT collections.                                                      |
+| [direct/v1/HelloMoon/v0/nft/collection/stats](https://docs.hellomoon.io/reference/post_v0-nft-collection-stats)                                                                   | 50      | Retrieve statistical data for NFT collections.                                                                  |
+| [direct/v1/HelloMoon/v0/nft/collection/washtrading](https://docs.hellomoon.io/reference/post_v0-nft-collection-washtrading)                                                       | 50      | Retrieve wash trading data for NFTs within specific collections.                                                |
+| [direct/v1/HelloMoon/v0/nft/freeze\_lookup/v2](https://docs.hellomoon.io/reference/post_v0-nft-freeze-lookup-v2)                                                                  | 50      | Retrieve freeze status details for NFTs with updated settings or format.                                        |
+| [direct/v1/HelloMoon/v0/nft/ownership/historical](https://docs.hellomoon.io/reference/post_v0-nft-ownership-historical)                                                           | 50      | Retrieve historical ownership data for NFTs within the specified endpoint.                                      |
+| [direct/v1/HelloMoon/v0/nft/listing-status/v2](https://docs.hellomoon.io/reference/post_v0-nft-listing-status-v2)                                                                 | 50      | Get updated listing status data for NFTs across marketplaces.                                                   |
+| [direct/v1/HelloMoon/v0/nft/loans/collection-summary](https://docs.hellomoon.io/reference/post_v0-nft-loans-collection-summary)                                                   | 50      | Get a summary of loans within NFT collections.                                                                  |
+| [direct/v1/HelloMoon/v0/nft/marketplace/tensor/floor-price-by-creator](https://docs.hellomoon.io/reference/post_v0-nft-marketplace-tensor-floor-price-by-creator)                 | 50      | Retrieve floor price data for Tensor marketplace NFTs, grouped by creator.                                      |
+| [direct/v1/HelloMoon/v0/nft/market-stats](https://docs.hellomoon.io/reference/post_v0-nft-market-stats)                                                                           | 50      | Fetch general market statistics for NFTs.                                                                       |
+| [direct/v1/HelloMoon/v0/nft/sales\_per\_market\_daily](https://docs.hellomoon.io/reference/post_v0-nft-sales-per-market-daily)                                                    | 50      | Fetch daily sales data for NFTs across different marketplaces.                                                  |
+| [direct/v1/HelloMoon/v0/accounts/parsed/create](https://docs.hellomoon.io/reference/post_v0-accounts-parsed-create)                                                               | 50      | Create a parsed account entry with a specified target type, such as a webhook.                                  |
+| [direct/v1/HelloMoon/v0/print/top-tokens-by-frequency](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-by-frequency)                                                 | 50      | Fetch tokens sorted by frequency within the Print category.                                                     |
+| [direct/v1/HelloMoon/v0/print/top-tokens-by-profit](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-by-profit)                                                       | 50      | Retrieve tokens ranked by profitability within the Print category.                                              |
+| [direct/v1/HelloMoon/v0/print/top-tokens-trader-profit](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-trader-profit)                                               | 50      | Fetch tokens ranked by trader profit within Print.                                                              |
+| [direct/v1/HelloMoon/v0/print/top-tokens-users](https://docs.hellomoon.io/reference/post_v0-print-top-tokens-users)                                                               | 50      | Retrieve data on top tokens by user count within Print.                                                         |
+| [direct/v1/HelloMoon/v0/print/stats/wallet](https://docs.hellomoon.io/reference/post_v0-print-stats-wallet)                                                                       | 50      | Fetch wallet statistics for Print-related data on Solana.                                                       |
+| [direct/v1/HelloMoon/v0/tenacious\_tentacles/process-and-freeze](https://docs.hellomoon.io/reference/post_v0-tenacious_tentacles-process-and-freeze)                              | 50      | Process and freeze specific data within the tenacious tentacles endpoint.                                       |
+| [direct/v1/HelloMoon/v0/rain/account-data](https://docs.hellomoon.io/reference/post_v0-rain-account-data)                                                                         | 50      | Retrieve account data associated with Rain on the Solana blockchain.                                            |
+| [direct/v1/HelloMoon/v0/staking/reward-per-validator](https://docs.hellomoon.io/reference/post_v0-staking-reward-per-validator)                                                   | 50      | Get reward data per validator on Solana.                                                                        |
+| [direct/v1/HelloMoon/v0/sharky/account-data](https://docs.hellomoon.io/reference/post_v0-sharky-account-data)                                                                     | 50      | Retrieve account data for Sharky-related accounts on Solana.                                                    |
+| [direct/v1/HelloMoon/v0/sharky/apy](https://docs.hellomoon.io/reference/post_v0-sharky-apy)                                                                                       | 50      | Retrieve APY (annual percentage yield) data for accounts associated with Sharky.                                |
+| [direct/v1/HelloMoon/v0/sharky/default-stats](https://docs.hellomoon.io/reference/post_v0-sharky-default-stats)                                                                   | 50      | Retrieve default statistics for Sharky loans on Solana.                                                         |
+| [direct/v1/HelloMoon/v0/sharky/account-data/dev](https://docs.hellomoon.io/reference/post_v0-sharky-account-data-dev)                                                             | 50      | Fetch developer-specific account data within the Sharky protocol.                                               |
+| [direct/v1/HelloMoon/v0/sharky/loan-summary/filtered](https://docs.hellomoon.io/reference/post_v0-sharky-loan-summary-filtered)                                                   | 50      | Provides a filtered summary of loan data within the Sharky protocol.                                            |
+| [direct/v1/HelloMoon/v0/sharky/historical-defaults](https://docs.hellomoon.io/reference/post_v0-sharky-historical-defaults)                                                       | 50      | Fetch historical default data for Sharky loans.                                                                 |
+| [direct/v1/HelloMoon/v0/sharky/loan-events](https://docs.hellomoon.io/reference/post_v0-sharky-loan-events)                                                                       | 50      | Fetch loan event data for accounts associated with Sharky.                                                      |
+| [direct/v1/HelloMoon/v0/sharky/loan-summary](https://docs.hellomoon.io/reference/post_v0-sharky-loan-summary)                                                                     | 50      | Get a summary of loan data associated with Sharky accounts.                                                     |
+| [direct/v1/HelloMoon/v0/sharky/loan-summary-private](https://docs.hellomoon.io/reference/post_v0-sharky-loan-summary-private)                                                     | 50      | Retrieve private loan summary data within the Sharky endpoint.                                                  |
+| [direct/v1/HelloMoon/v0/sharky/orderbook-stats](https://docs.hellomoon.io/reference/post_v0-sharky-orderbook-stats)                                                               | 50      | Retrieve orderbook statistics for Sharky.                                                                       |
+| [direct/v1/HelloMoon/v0/sharky/orderbook-summary](https://docs.hellomoon.io/reference/post_v0-sharky-orderbook-summary)                                                           | 50      | Get a summary of Sharky orderbook data.                                                                         |
+| [direct/v1/HelloMoon/v0/token/smart-money](https://docs.hellomoon.io/reference/post_v0-token-smart-money)                                                                         | 50      | Fetch data on tokens associated with smart money inflows, with ordering and pagination options.                 |
+| [direct/v1/HelloMoon/v0/solana/artemis-program-stats](https://docs.hellomoon.io/reference/post_v0-solana-artemis-program-stats)                                                   | 50      | Retrieve program statistics for the Artemis program on Solana.                                                  |
+| [direct/v1/HelloMoon/v0/defi/sol-grid-bot/top-tokens-one-min](https://docs.hellomoon.io/reference/post_v0-defi-sol-grid-bot-top-tokens-one-min)                                   | 50      | Fetch one-minute interval data on top tokens from the SOL Grid Bot.                                             |
+| [direct/v1/HelloMoon/v0/defi/staking/accounts](https://docs.hellomoon.io/reference/post_v0-defi-staking-accounts)                                                                 | 50      | Retrieve data on staking accounts, including balance and stake pool data.                                       |
+| [direct/v1/HelloMoon/v0/staking/actions](https://docs.hellomoon.io/reference/post_v0-staking-actions)                                                                             | 50      | Interact with staking-related actions or activities on Solana.                                                  |
+| [direct/v1/HelloMoon/v0/staking/rewards](https://docs.hellomoon.io/reference/post_v0-staking-rewards)                                                                             | 50      | Fetch staking reward data for a specified validator or account.                                                 |
+| [direct/v1/HelloMoon/v0/staking/transfers](https://docs.hellomoon.io/reference/post_v0-staking-transfers)                                                                         | 50      | Retrieve records of staking-related transfers, such as stake activations and deactivations.                     |
+| [direct/v1/HelloMoon/v0/subscriptions/create](https://docs.hellomoon.io/reference/post_v0-subscriptions-create)                                                                   | 50      | Create a new subscription for webhook or other event notifications.                                             |
+| [direct/v1/HelloMoon/v0/superfans/login](https://docs.hellomoon.io/reference/post_v0-superfans-login)                                                                             | 50      | Login endpoint for Superfans on Hello Moon.                                                                     |
+| [direct/v1/HelloMoon/v0/swaps/mint-filter](https://docs.hellomoon.io/reference/post_v0-swaps-mint-filter)                                                                         | 50      | Filter swap transactions by mint address, pagination supported.                                                 |
+| [direct/v1/HelloMoon/v0/tenacious\_tentacles/get\_tentacles](https://docs.hellomoon.io/reference/post_v0-tenacious_tentacles-get_tentacles)                                       | 50      | Retrieve tentacle-related data from the tenacious tentacles endpoint.                                           |
+| [direct/v1/HelloMoon/v0/token-22/buying-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-buying-per-day)                                                             | 50      | Track daily buying activity for Token-22 assets on Solana.                                                      |
+| [direct/v1/HelloMoon/v0/token-22/creation-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-creation-per-day)                                                         | 50      | Track daily creation activity for Token-22 assets on Solana.                                                    |
+| [direct/v1/HelloMoon/v0/token-22/users-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-users-per-day)                                                               | 50      | Track the daily active users of a specific token.                                                               |
+| [direct/v1/HelloMoon/v0/token-22/selling-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-selling-per-day)                                                           | 50      | Track daily selling activity for Token-22 assets on Solana.                                                     |
+| [direct/v1/HelloMoon/v0/token-22/swaps-balance-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-swaps-balance-per-day)                                               | 50      | Retrieve daily balance data for swaps involving Token-22 assets.                                                |
+| [direct/v1/HelloMoon/v0/token-22/transfers-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-transfers-per-day)                                                       | 50      | Track daily transfer activity for Token-22 assets.                                                              |
+| [direct/v1/HelloMoon/v0/token/candlesticks](https://docs.hellomoon.io/reference/post_v0-token-candlesticks)                                                                       | 50      | Retrieve candlestick data for token price movements, filtered by start time or other criteria.                  |
+| [direct/v1/HelloMoon/v0/token/daily\_active\_users](https://docs.hellomoon.io/reference/post_v0-token-daily-active-users)                                                         | 50      | Track daily active users for a specified token.                                                                 |
+| [direct/v1/HelloMoon/v0/token/daily\_new\_purchases](https://docs.hellomoon.io/reference/post_v0-token-daily-new-purchases)                                                       | 50      | Track daily new purchases for a specified token.                                                                |
+| [direct/v1/HelloMoon/v0/token-22/first-time-users-per-day](https://docs.hellomoon.io/reference/post_v0-token-22-first-time-users-per-day)                                         | 50      | Track daily first-time users of a specific token.                                                               |
+| [direct/v1/HelloMoon/v0/token/smart-money-inflow](https://docs.hellomoon.io/reference/post_v0-token-smart-money-inflow)                                                           | 50      | Retrieve data on the inflow of smart money into specific tokens.                                                |
+| [direct/v1/HelloMoon/v0/token/stats](https://docs.hellomoon.io/reference/post_v0-token-stats)                                                                                     | 50      | Fetch statistical data for tokens on Solana.                                                                    |
+| [direct/v1/HelloMoon/v0/token/trading-volume](https://docs.hellomoon.io/reference/post_v0-token-trading-volume)                                                                   | 50      | Fetch trading volume data for a specific token.                                                                 |
+| [direct/v1/HelloMoon/v0/token/volume-stats](https://docs.hellomoon.io/reference/post_v0-token-volume-stats)                                                                       | 50      | Retrieve volume statistics for tokens on Solana.                                                                |
+| [direct/v1/HelloMoon/v0/defi/top-holders/w-meta](https://docs.hellomoon.io/reference/post_v0-defi-top-holders-w-meta)                                                             | 50      | Retrieve top holders with additional metadata information.                                                      |
+| [direct/v1/HelloMoon/v0/transaction/stream/create](https://docs.hellomoon.io/reference/post_v0-transaction-stream-create)                                                         | 50      | Create a transaction data stream with specified webhook or notification settings.                               |
+| [direct/v1/HelloMoon/v0/defi/user-positions](https://docs.hellomoon.io/reference/post_v0-defi-user-positions)                                                                     | 50      | Fetch user-specific DeFi positions across various pools and assets.                                             |
+| [direct/v1/HelloMoon/v0/tenacious\_tentacles/verify](https://docs.hellomoon.io/reference/post_v0-tenacious_tentacles-verify)                                                      | 50      | Verify data within the tenacious tentacles endpoint.                                                            |
+| [direct/v1/HelloMoon/v0/defi/whirlpools/positions-by-user](https://docs.hellomoon.io/reference/post_v0-defi-whirlpools-positions-by-user)                                         | 50      | Retrieve positions within Whirlpool liquidity pools for a specific user.                                        |
+
+### PUT
+
+| Path                                                                                                                     | Est. CU | Description                                                                |
+| ------------------------------------------------------------------------------------------------------------------------ | ------- | -------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/accounts/stream/update](https://docs.hellomoon.io/reference/put_v0-accounts-stream-update)       | 50      | Update an existing account data stream with new target or filter settings. |
+| [direct/v1/HelloMoon/v0/accounts/parsed/update](https://docs.hellomoon.io/reference/put_v0-accounts-parsed-update)       | 50      | Update a parsed account entry with new data or target information.         |
+| [direct/v1/HelloMoon/v0/subscriptions/update](https://docs.hellomoon.io/reference/put_v0-subscriptions-update)           | 50      | Update an existing subscription with new settings or filters.              |
+| [direct/v1/HelloMoon/v0/transaction/stream/update](https://docs.hellomoon.io/reference/put_v0-transaction-stream-update) | 50      | Update an existing transaction data stream with new settings.              |
+
+## Moralis
+
+### GET
+
+| Path                                                                                                            | Est. CU | Description              |
+| --------------------------------------------------------------------------------------------------------------- | ------- | ------------------------ |
+| [direct/v1/Moralis/info/endpointWeights](https://docs.moralis.com/web3-data-api/evm/reference/endpoint-weights) | 75      | Get weights of endpoints |
+| [direct/v1/Moralis/contracts-review](https://docs.moralis.com/web3-data-api/evm/reference/contracts-review)     | 75      | Review contracts         |
+
+## Shyft
+
+### DELETE
+
+| Path                                                                                                             | Est. CU | Description                            |
+| ---------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------- |
+| [direct/v1/Shyft/sol/v1/sol/v1/callback/remove](https://docs.shyft.to/callbacks/callback-apis#remove-a-callback) | 20      | Use this endpoint to remove a callback |
+
+### GET
+
+| Path                                                                                                 | Est. CU | Description            |
+| ---------------------------------------------------------------------------------------------------- | ------- | ---------------------- |
+| [direct/v1/Shyft/sol/v1/callback/list](https://docs.shyft.to/callbacks/callback-apis#list-callbacks) | 20      | List all the callbacks |
+
+### POST
+
+| Path                                                                                                                             | Est. CU | Description                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------- |
+| [direct/v1/Shyft/sol/v1/callback/add-addresses](https://docs.shyft.to/callbacks/callback-apis#add-addresses-in-callback)         | 20      | Add addresses to a callback      |
+| [direct/v1/Shyft/sol/v1/sol/v1/callback/create](https://docs.shyft.to/callbacks/callback-apis#register-a-callback)               | 20      | Create a callback                |
+| [direct/v1/Shyft/sol/v1/callback/pause](https://docs.shyft.to/callbacks/callback-apis#pause-a-callback)                          | 20      | Pause a callback                 |
+| [direct/v1/Shyft/sol/v1/callback/remove-addresses](https://docs.shyft.to/callbacks/callback-apis#remove-addresses-from-callback) | 20      | Remove addresses from a callback |
+| [direct/v1/Shyft/sol/v1/callback/resume](https://docs.shyft.to/callbacks/callback-apis#resume-a-callback)                        | 20      | Resume a callback                |
+| [direct/v1/Shyft/sol/v1/callback/update](https://docs.shyft.to/callbacks/callback-apis#update-a-callback)                        | 20      | Update a callback                |
+
+## SolScan
+
+### GET
+
+| Path                                                                                                                                | Est. CU | Description                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------- |
+| [direct/v1/SolScan/v1.0/account/solTransfers](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                               | 20      | Get SOL transfers for a specific account on Solana.             |
+| [direct/v1/SolScan/v1.0/account/splTransfers](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                               | 20      | Get SPL transfers for a specific account on Solana.             |
+| [direct/v1/SolScan/v1.0/account/stakeAccounts](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                              | 20      | Get staking accounts for a specific account on Solana.          |
+| [direct/v1/SolScan/v1.0/account/exportRewards](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                              | 20      | Export rewards for a specific account on Solana.                |
+| [direct/v1/SolScan/v1.0/account/exportTransactions](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                         | 20      | Export transactions for a specific account on Solana.           |
+| [direct/v1/SolScan/v1.0/token/holders](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                      | 20      | Get the list of token holders on Solana.                        |
+| [direct/v1/SolScan/v2.0/account/balance\_change](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-balance_change)  | 650     | Get balance change activities for a specific account on Solana. |
+| [direct/v1/SolScan/v2.0/account/defi/activities](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-defi-activities) | 650     | Get DeFi activities for a specific account on Solana.           |
+| [direct/v1/SolScan/v2.0/account/detail](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-detail)                   | 650     | Get detailed information for a specific account on Solana.      |
+| [direct/v1/SolScan/v2.0/account/stake](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-stake)                     | 650     | Get staking information for a specific account on Solana.       |
+| [direct/v1/SolScan/v2.0/account/transfer](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-transfer)               | 650     | Get transfer information for a specific account on Solana.      |
+| [direct/v1/SolScan/v2.0/account/reward/export](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-reward-export)     | 650     | Export rewards for a specific account on Solana.                |
+
+## TonAPI
+
+### GET
+
+| Path                                                                                                                                | Est. CU | Description                          |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
+| [direct/v1/TonAPI/v2/staking/nominator/\{account\_id}/pools](https://tonapi.io/api-v2#operations-Staking-getAccountNominatorsPools) | 20      | All pools where account participates |
+| [direct/v1/TonAPI/v2/rates/chart](https://tonapi.io/api-v2#operations-Rates-getChartRates)                                          | 20      | Get chart by token                   |
+| [direct/v1/TonAPI/v2/rates](https://tonapi.io/api-v2#operations-Rates-getRates)                                                     | 20      | Get the token price to the currency  |
+| [direct/v1/TonAPI/v2/staking/pool/\{account\_id}/history](https://tonapi.io/api-v2#operations-Staking-getStakingPoolHistory)        | 20      | Pool history                         |
+| [direct/v1/TonAPI/v2/staking/pool/\{account\_id}](https://tonapi.io/api-v2#operations-Staking-getStakingPoolInfo)                   | 20      | Stacking pool info                   |
+| [direct/v1/TonAPI/v2/staking/pools](https://tonapi.io/api-v2#operations-Staking-getStakingPools)                                    | 20      | All pools available in network       |

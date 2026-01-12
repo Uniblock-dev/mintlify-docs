@@ -1,0 +1,45 @@
+---
+title: "Address Activity"
+description: "Ask AI"
+---
+
+Updates of value and token transfers for the addresses that you track.
+
+The Address Activity webhook tracks movement related to specific addresses. It triggers real-time notifications whenever an address sends or receives transactions, providing invaluable insights into token activity and portfolio changes.
+
+Address Activity is a custom webhook type offering great flexibility.
+
+### Webhook Configuration Fields
+
+| Field               | Description                                                                                                                 | Example                                                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Event Name          | A descriptive name to identify the webhook's purpose.                                                                       | "ERC20 Transfer Notification for MyWallet"                                                               |
+| Event Description   | Brief explanation of the trigger and data included.                                                                         | "This webhook sends notifications for ERC20 token transfers associated with MyWallet."                   |
+| Webhook URL         | Publicly accessible URL for receiving notifications (must handle POST requests).                                            | [https://461a-199-116-73-171.ngrok.io](https://461a-199-116-73-171.ngrok.io) (Test URL or your Prod URL) |
+| Select Provider     | Blockchain platform for notifications (e.g., Moralis, Tatum).                                                               | Choose your desired platform.                                                                            |
+| Network             | Blockchain Network for notifications (e.g., Ethereum, Polygon).                                                             | Choose your desired Network.                                                                             |
+| Template            | The event trigger type                                                                                                      | Address Activity                                                                                         |
+| Addresses           | A list of addresses to listen to for any real-time transfers. Minimum 1 address is required.                                | 0x029a49060f36F830915ec1FA98FAB532b4c75Aec (enter your address)                                          |
+| Transaction Filters | A list of transaction filters. Only the transfers that meet the transaction filter constraints will trigger a notification. | sender, receiver, blockNumber, transactionHash                                                           |
+| Filter Type         | How the webhook deals with the concurrent transaction filters when more than 1 transaction filters are defined.             | AND or OR                                                                                                |
+
+### Transaction Filter Fields
+
+| Field           | Description                                 | Operator                  | Value                                                                                     |
+| --------------- | ------------------------------------------- | ------------------------- | ----------------------------------------------------------------------------------------- |
+| sender          | Address sending the tokens                  | ==, !=, in, not in, regex | Enter specific address(es) or use patterns like "0x\*" for all addresses starting with 0x |
+| receiver        | Address receiving the tokens                | ==, !=, in, not in, regex | Enter specific address(es) or use patterns                                                |
+| blockNumber     | Block number where the transaction occurred | ==, >, \<, >=, \<=, !=    | Specify the exact block number or use operators for comparisons                           |
+| transactionHash | Transaction hash unique to the event        | ==, !=                    | Enter the specific transaction hash                                                       |
+
+**Value:**
+
+* Enter specific values, comma-separated lists for "in" and "not in" operators, or regular expressions for regex matching.
+
+**Example:**
+
+To receive notifications only when your wallet address (0x123abc...) receives tokens from a sender (0x987cdf...), add your wallet address to the addresses and set up the following filter:
+
+* `sender == 0x987cdf...`
+
+This ensures you're only notified about transfers on your wallet with a specific sender (0x987cdf...).

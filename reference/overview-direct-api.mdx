@@ -1,0 +1,34 @@
+---
+title: "Overview"
+description: "Ask AI"
+---
+
+Quick introduction on Uniblock's Direct API service with our partnered providers.
+
+<Info>
+  ### Remember to create your project & get your API-KEY through our [Uniblock's dashboard](http://dashboard.uniblock.dev).
+</Info>
+
+Direct API provides a way for users to call any endpoint in a list of supported providers and makes the transition to Uniblock seamlessly.
+
+The Direct API differs from our flagship Unified API in the following ways:
+
+* Authentication: The same authentication method for the first-party endpoint can be used to call the same endpoint using Direct API, whether this is through a header, URL, or anything else. If no authentication is passed in, Direct API will attempt to retrieve the authentication information stored in the project associated with the Uniblock API key for the requested provider. Anything passed in directly to the header, URL, etc. will take priority.
+* Lightweight: The results are returned exactly as they would be if the first-party endpoint was called. The normalization process is bypassed when calling through Direct API, a process that happens with the Unified API to deliver consistent responses from the various providers.
+* Provider: The only provider that is called through Direct API is the one specified when calling Direct API (more details on this below).
+
+All other features that are present in Unified API are also present in Direct API, including (but not limited to) Default Routing, API Request Logs and Unified Billing.
+
+# Getting Started
+
+Direct API follows the same structure for all providers that are supported by this endpoint: `https://api.uniblock.dev/direct/{provider}/{prefix}/path/to/endpoint`
+
+* `{provider}`: Replace this with the name of the provider to use with Direct API. The list of supported providers is listed below and as subpages under the Direct API section.
+* `{prefix}`: (Optional) Some providers require the user to specify a prefix in the base URL, such as the network. This can be left out for providers that do not have this requirement, and additional information regarding what the prefix might be for each provider is detailed in their respective pages.
+* Header - `x-api-key`: As with the Unified API, a project's API key is required to use Direct API.
+
+As for everything else, including the query, other header properties, and the body, The same values and data can be used as if the provider's API endpoints were being called directly.
+
+### Endpoints
+
+For more details on all the endpoints that we support as a whole also visit us in this page [Direct API — Categories](ref:direct-api-categories).

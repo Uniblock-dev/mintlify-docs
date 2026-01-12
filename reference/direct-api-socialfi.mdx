@@ -1,0 +1,90 @@
+---
+title: "Direct API — SocialFi"
+description: "Ask AI"
+---
+
+API endpoints for SocialFi.
+
+# SocialFi — Direct API Endpoints
+
+## Birdeye
+
+### GET
+
+| Path                                                                                                | Est. CU | Description           |
+| --------------------------------------------------------------------------------------------------- | ------- | --------------------- |
+| [direct/v1/Birdeye/defi/token\_trending](https://docs.birdeye.so/reference/get_defi-token-trending) | 3535    | Token - Trending List |
+
+## HelloMoon
+
+### DELETE
+
+| Path                                                                                                                       | Est. CU | Description                      |
+| -------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------- |
+| [direct/v1/HelloMoon/v0/subscriptions/remove/\{id}](https://docs.hellomoon.io/reference/delete_v0-subscriptions-remove-id) | 50      | Remove a subscription by its ID. |
+
+### GET
+
+| Path                                                                                                                        | Est. CU | Description                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------- |
+| [direct/v1/HelloMoon/v0/subscriptions/retrieve/\{id}](https://docs.hellomoon.io/reference/get_v0-subscriptions-retrieve-id) | 50      | Retrieve a specific subscription by its ID. |
+
+### POST
+
+| Path                                                                                                                                        | Est. CU | Description                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/asset-dash-updated](https://docs.hellomoon.io/reference/post_v0-asset-dash-updated)                                 | 50      | Retrieve updated asset dashboard data.                                            |
+| [direct/v1/HelloMoon/v0/defi/high-volume-recent-tokens](https://docs.hellomoon.io/reference/post_v0-defi-high-volume-recent-tokens)         | 50      | Fetch data on recently high-volume tokens within DeFi.                            |
+| [direct/v1/HelloMoon/v0/defi/token-buying](https://docs.hellomoon.io/reference/post_v0-defi-token-buying)                                   | 50      | Retrieve recent buying activity data for tokens on DeFi platforms.                |
+| [direct/v1/HelloMoon/v0/defi/trending-tokens-volume](https://docs.hellomoon.io/reference/post_v0-defi-trending-tokens-volume)               | 50      | Retrieve volume data for trending tokens on DeFi platforms.                       |
+| [direct/v1/HelloMoon/v0/nft/social](https://docs.hellomoon.io/reference/post_v0-nft-social)                                                 | 50      | Retrieve social engagement data for NFTs on Hello Moon.                           |
+| [direct/v1/HelloMoon/v0/skill-issue/leaderboard/get-all](https://docs.hellomoon.io/reference/post_v0-skill-issue-leaderboard-get-all)       | 50      | Retrieve leaderboard entries under the Skill Issue category on Hello Moon.        |
+| [direct/v1/HelloMoon/v0/skill-issue/leaderboard/insert](https://docs.hellomoon.io/reference/post_v0-skill-issue-leaderboard-insert)         | 50      | Insert a new entry into the Skill Issue leaderboard.                              |
+| [direct/v1/HelloMoon/v0/skill-issue/profile](https://docs.hellomoon.io/reference/post_v0-skill-issue-profile)                               | 50      | Retrieve profile data within the Skill Issue category.                            |
+| [direct/v1/HelloMoon/v0/skill-issue/profile/get](https://docs.hellomoon.io/reference/post_v0-skill-issue-profile-get)                       | 50      | Fetch profile data for Skill Issue category participants on Hello Moon.           |
+| [direct/v1/HelloMoon/v0/skill-issue/tournament/had-entered](https://docs.hellomoon.io/reference/post_v0-skill-issue-tournament-had-entered) | 50      | Check if a user has entered a Skill Issue tournament on Hello Moon.               |
+| [direct/v1/HelloMoon/v0/skill-issue/tournament/time](https://docs.hellomoon.io/reference/post_v0-skill-issue-tournament-time)               | 50      | Fetch timing information for Skill Issue tournaments.                             |
+| [direct/v1/HelloMoon/v0/superfans/login](https://docs.hellomoon.io/reference/post_v0-superfans-login)                                       | 50      | Login endpoint for Superfans on Hello Moon.                                       |
+| [direct/v1/HelloMoon/v0/defi/top-holders/w-meta](https://docs.hellomoon.io/reference/post_v0-defi-top-holders-w-meta)                       | 50      | Retrieve top holders with additional metadata information.                        |
+| [direct/v1/HelloMoon/v0/transaction/stream/create](https://docs.hellomoon.io/reference/post_v0-transaction-stream-create)                   | 50      | Create a transaction data stream with specified webhook or notification settings. |
+
+### PUT
+
+| Path                                                                                                                     | Est. CU | Description                                                   |
+| ------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/subscriptions/update](https://docs.hellomoon.io/reference/put_v0-subscriptions-update)           | 50      | Update an existing subscription with new settings or filters. |
+| [direct/v1/HelloMoon/v0/transaction/stream/update](https://docs.hellomoon.io/reference/put_v0-transaction-stream-update) | 50      | Update an existing transaction data stream with new settings. |
+
+## Moralis
+
+### GET
+
+| Path                                                                                                                                            | Est. CU | Description                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------- |
+| [direct/v1/Moralis/entities/categories/\{categoryId}](https://docs.moralis.com/web3-data-api/evm/reference/entity-api/get-entities-by-category) | 7500    | Get entities by category                       |
+| [direct/v1/Moralis/entities/\{entityId}](https://docs.moralis.com/web3-data-api/evm/reference/entity-api/get-entity-by-id)                      | 7500    | Get entity by ID                               |
+| [direct/v1/Moralis/entities/categories](https://docs.moralis.com/web3-data-api/evm/reference/entity-api/get-entity-categories)                  | 1500    | Get entity categories                          |
+| [direct/v1/Moralis/entities/search](https://docs.moralis.com/web3-data-api/evm/reference/entity-api/search-entities)                            | 7500    | Search for entities, addresses, and categories |
+
+## Shyft
+
+### DELETE
+
+| Path                                                                                                         | Est. CU | Description                 |
+| ------------------------------------------------------------------------------------------------------------ | ------- | --------------------------- |
+| [direct/v1/Shyft/sol/v1/candy\_machine/unmonitor](https://docs.shyft.to/solana-apis/candy-machine#unmonitor) | 20      | Unmonitor the candy machine |
+
+### POST
+
+| Path                                                                                                     | Est. CU | Description                                        |
+| -------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/token/create\_detach](https://docs.shyft.to/solana-apis/fungible-tokens#create)  | 20      | Create your own fungible token                     |
+| [direct/v1/Shyft/sol/v1/candy\_machine/monitor](https://docs.shyft.to/solana-apis/candy-machine#monitor) | 20      | All mints from the candy machine will be monitored |
+
+## SolScan
+
+### GET
+
+| Path                                                                                                              | Est. CU | Description                    |
+| ----------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------ |
+| [direct/v1/SolScan/v2.0/token/trending](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-token-trending) | 650     | Get trending tokens on Solana. |

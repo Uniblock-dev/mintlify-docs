@@ -1,0 +1,61 @@
+---
+title: "Birdeye"
+description: "Ask AI"
+---
+
+For more information regarding the endpoints, please visit Birdeye's website: [Birdeye Docs](https://docs.birdeye.so/docs/overview).
+
+# Prefix:
+
+No prefix is required for Birdeye, an example URL will therefore look like: `https://api.uniblock.dev/direct/v1/Birdeye` + `/[Birdeye_endpoint]`.
+
+# Example:
+
+<CodeGroup>
+  ```bash bash
+  curl --request GET \
+    --url https://api.uniblock.dev/direct/v1/Birdeye/defi/price?address=So11111111111111111111111111111111111111112 \
+    --header 'accept: application/json' \
+    --header 'x-api-key: YOUR_UNIBLOCK_API_KEY' \
+    --header 'x-chain: solana'
+  ```
+</CodeGroup>
+
+# Supported Endpoints:
+
+* `defi/networks`
+* `defi/price`
+* `defi/multi_price`
+* `defi/history_price`
+* `defi/historical_price_unix`
+* `defi/txs/token`
+* `defi/txs/pair`
+* `defi/ohlcv`
+* `defi/ohlcv/pair`
+* `defi/ohlcv/base_quote`
+* `defi/tokenlist`
+* `defi/token_security`
+* `defi/token_overview`
+* `defi/token_creation_info`
+* `defi/price_volume/single`
+* `defi/price_volume/multi`
+* `defi/token_trending`
+* `defi/v2/tokens/all`
+* `defi/v2/tokens/new_listing`
+* `defi/v2/tokens/top_traders`
+* `defi/v2/markets`
+* `defi/v3/token/meta-data/single`
+* `defi/v3/token/meta-data/multiple`
+* `defi/v3/token/market-data`
+* `defi/v3/token/market-data/multiple`
+* `defi/v3/token/trade-data/single`
+* `defi/v3/token/trade-data/multiple`
+* `defi/v3/token/holder`
+* `v1/wallet/list_supported_chain`
+* `v1/wallet/token_list`
+* `v1/wallet/multichain_token_list`
+* `v1/wallet/token_balance`
+* `v1/wallet/tx_list`
+* `v1/wallet/multichain_tx_list`
+* `v1/wallet/simulate`
+* `trader/gainers-losers`

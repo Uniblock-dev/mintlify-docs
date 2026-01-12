@@ -1,0 +1,49 @@
+---
+title: "Overview"
+description: "Ask AI"
+---
+
+List of all scan endpoints
+
+<Info>
+  ### Remember to create your project & get your API-KEY through our [Uniblock's dashboard](http://dashboard.uniblock.dev).
+</Info>
+
+## Supported Scans
+
+* Etherscan
+* Binancescan
+* Polygonscan
+
+| Endpoint                                          | Description                                                                                                                        |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| scan/native-supply                                | Current amount of Ether in circulation, ETH2 Staking rewards, EIP1559 burnt fees, and total withdrawn ETH from the beacon chain    |
+| scan/native-price                                 | Returns the latest price of 1 Native Token.                                                                                        |
+| scan/native-node-size                             | Returns the size of the native blockchain, in bytes, over a date range.                                                            |
+| scan/native-node-count                            | Returns the total number of discoverable chain nodes.                                                                              |
+| scan/estimation-confirmation-time                 | Returns the estimated time, in seconds, for a transaction to be confirmed on the blockchain.                                       |
+| scan/current-gas-estimation                       | Returns the current Safe, Proposed and Fast gas prices.                                                                            |
+| scan/token-supply                                 | Returns the current amount of ERC-20 token in circulation                                                                          |
+| scan/token-balance                                | Returns the current balance of ERC-20 token of an address                                                                          |
+| scan/transaction-execution-status                 | Returns the status code of a contract execution.                                                                                   |
+| scan/transaction-receipt-status                   | Returns the status code of a transaction execution.                                                                                |
+| scan/block-rewards                                | Returns the block reward and "Uncle" block rewards.                                                                                |
+| scan/block-get-countdown                          | Returns the estimated time remaining, in seconds, until a certain block is mined.                                                  |
+| scan/block-by-timestamp                           | Returns the block number that was mined at a certain timestamp.                                                                    |
+| scan/account-native-balance-single                | Returns the Ether balance of a given address.                                                                                      |
+| scan/account-native-balance-multi                 | Returns the balance of the accounts from a list of addresses.                                                                      |
+| scan/account-normal-transactions                  | Returns the list of transactions performed by an address, with optional pagination.                                                |
+| scan/account-internal-transactions-by-address     | Returns the list of internal transactions performed by an address, with optional pagination.                                       |
+| scan/account-internal-transactions-by-hash        | Returns the list of internal transactions performed within a transaction.                                                          |
+| scan/account-internal-transactions-by-block-range | Returns the list of internal transactions performed within a block range, with optional pagination.                                |
+| scan/account-erc20-transactions                   | Returns the list of ERC-20 tokens transferred by an address, with optional filtering by token contract.                            |
+| scan/account-erc721-transactions                  | Returns the list of ERC-721 ( NFT ) tokens transferred by an address, with optional filtering by token contract.                   |
+| scan/account-erc1155-transactions                 | Returns the list of ERC-1155 ( Multi Token Standard ) tokens transferred by an address, with optional filtering by token contract. |
+| scan/log-address                                  | Returns the event logs from an address, with optional filtering by block range.                                                    |
+| scan/log-by-topics                                | Returns the events log in a block range, filtered by topics.                                                                       |
+| scan/log-by-address-filtered-topics               | Returns the event logs from an address, filtered by topics and block range.                                                        |
+| scan/contract-abi                                 | Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract.                                            |
+| scan/contract-source-code                         | Returns the Solidity source code of a verified smart contract.                                                                     |
+| scan/contract-creation                            | Returns a contract's deployer address and transaction hash it was created, up to 5 at a time.                                      |
+| scan/contract-verify-source-code                  | Submits a contract source code to Etherscan for verification.                                                                      |
+| scan/contract-verify-proxy                        | Submits a proxy contract source code to Etherscan for verification.                                                                |

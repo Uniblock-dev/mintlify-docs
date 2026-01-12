@@ -1,0 +1,260 @@
+---
+title: "Direct API — NFT"
+description: "Ask AI"
+---
+
+API endpoints for NFT.
+
+# NFT — Direct API Endpoints
+
+## Alchemy
+
+### GET
+
+| Path                                                                                                                     | Est. CU | Description                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getCollectionMetadata](https://docs.alchemy.com/reference/getcollectionmetadata-v3)   | 480     | Retrieves high-level collection or contract-level information for an NFT collection.                                                                             |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getCollectionsForOwner](https://docs.alchemy.com/reference/getcollectionsforowner-v3) | 720     | Retrieves all NFT collections held by a specified owner address.                                                                                                 |
+| [direct/v1/Alchemy/\{chain}/nft/v3/computeRarity](https://docs.alchemy.com/reference/computerarity-v3)                   | 160     | Calculates the rarity of each attribute within an NFT.                                                                                                           |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getContractMetadata](https://docs.alchemy.com/reference/getcontractmetadata-v3)       | 320     | Retrieves high-level collection or contract-level information for an NFT.                                                                                        |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getContractsForOwner](https://docs.alchemy.com/reference/getcontractsforowner-v3)     | 640     | Retrieves all NFT contracts held by a specified owner address.                                                                                                   |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getFloorPrice](https://docs.alchemy.com/reference/getfloorprice-v3)                   | 160     | Retrieves the floor prices of an NFT collection across different marketplaces.                                                                                   |
+| [direct/v1/Alchemy/\{chain}/nft/v3/invalidateContract](https://docs.alchemy.com/reference/invalidatecontract-v3)         | 160     | Marks all cached tokens for the specified contract as stale, ensuring the next query fetches live data instead of cached data.                                   |
+| [direct/v1/Alchemy/\{chain}/nft/v3/isAirdropNFT](https://docs.alchemy.com/reference/isairdropnft-v3)                     | 160     | Determines whether a specific token is marked as an airdrop. Airdrops are defined as NFTs minted to a user address in a transaction sent by a different address. |
+| [direct/v1/Alchemy/\{chain}/nft/v3/isHolderOfContract](https://docs.alchemy.com/reference/isholderofcontract-v3)         | 160     | Determines whether a specific wallet holds any NFT from a given contract.                                                                                        |
+| [direct/v1/Alchemy/\{chain}/nft/v3/isSpamContract](https://docs.alchemy.com/reference/isspamcontract-v3)                 | 160     | Determines whether a specific contract is marked as spam by Alchemy.                                                                                             |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTMetadata](https://docs.alchemy.com/reference/getnftmetadata-v3)                 | 160     | Retrieves the metadata associated with a specific NFT.                                                                                                           |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTSales](https://docs.alchemy.com/reference/getnftsales-v3)                       | 320     | Retrieves NFT sales that have occurred through on-chain marketplaces.                                                                                            |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTsForCollection](https://docs.alchemy.com/reference/getnftsforcollection-v3)     | 1200    | Retrieves all NFTs associated with a specific NFT collection.                                                                                                    |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTsForContract](https://docs.alchemy.com/reference/getnftsforcontract-v3)         | 960     | Retrieves all NFTs associated with a specific NFT contract.                                                                                                      |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTsForOwner](https://docs.alchemy.com/reference/getnftsforowner-v3)               | 960     | Retrieves all NFTs currently owned by a specified address.                                                                                                       |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getOwnersForContract](https://docs.alchemy.com/reference/getownersforcontract-v3)     | 960     | Retrieves all owners associated with a specific NFT contract.                                                                                                    |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getOwnersForNFT](https://docs.alchemy.com/reference/getownersfornft-v3)               | 160     | Retrieves the owner(s) for a specific token.                                                                                                                     |
+| [direct/v1/Alchemy/\{chain}/nft/v3/reportSpam](https://docs.alchemy.com/reference/reportspam-v3)                         | 20      | Reports a specific address to the API if it is suspected to be spam.                                                                                             |
+| [direct/v1/Alchemy/\{chain}/nft/v3/searchContractMetadata](https://docs.alchemy.com/reference/searchcontractmetadata)    | 960     | Searches for a keyword across metadata of all ERC-721 and ERC-1155 smart contracts.                                                                              |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getSpamContracts](https://docs.alchemy.com/reference/getspamcontracts-v3)             | 960     | Returns a list of all spam contracts marked by Alchemy.                                                                                                          |
+| [direct/v1/Alchemy/\{chain}/nft/v3/summarizeNFTAttributes](https://docs.alchemy.com/reference/summarizenftattributes-v3) | 160     | Generates a summary of attribute prevalence for a specific NFT collection.                                                                                       |
+
+### POST
+
+| Path                                                                                                                         | Est. CU | Description                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getContractMetadataBatch](https://docs.alchemy.com/reference/getcontractmetadatabatch-v3) | 960     | Retrieves metadata for a list of specified contract addresses in a single request.    |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTMetadataBatch](https://docs.alchemy.com/reference/getnftmetadatabatch-v3)           | 960     | Retrieves metadata for up to 100 specified NFT contracts in a single request.         |
+| [direct/v1/Alchemy/\{chain}/nft/v3/refreshNftMetadata](https://docs.alchemy.com/reference/refreshnftmetadata-v3)             | 80      | Submits a request for Alchemy to refresh the cached metadata of a specific NFT token. |
+
+## Covalent
+
+### GET
+
+| Path                                                                                                                                                                                                                  | Est. CU | Description                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_nft](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nfts-for-address)                                                        | 5000    | Get NFTs for address                                 |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{collectionContract}/traits/\{trait}/attributes](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-attribute-values-collection-trait)                         | 5000    | Get attributes for a collection trait                |
+| [direct/v1/Covalent/v1/\{chainName}/nft/collections](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-chain-collections)                                                                              | 5000    | Get chain collections                                |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/collection/\{collectionContract}](https://goldrush.dev/docs/api-reference/foundational-api/nft/check-ownership-in-nft-collection)                        | 5000    | Check ownership in NFT collection                    |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/collection/\{collectionContract}/token/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/check-ownership-in-nft-collection-token) | 5000    | Check ownership in NFT collection for specific token |
+| [direct/v1/Covalent/v1/\{chainName}/nft\_market/\{contractAddress}/floor\_price](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-market-floor-price)                                             | 5000    | Get historical floor prices for a collection         |
+| [direct/v1/Covalent/v1/\{chainName}/nft\_market/\{contractAddress}/sale\_count](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-market-sale-count)                                               | 5000    | Get historical sales count for a collection          |
+| [direct/v1/Covalent/v1/\{chainName}/nft\_market/\{contractAddress}/volume](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-market-volume)                                                        | 5000    | Get historical volume for a collection               |
+| [direct/v1/Covalent/v1/\{chainName}/nft/approvals/\{walletAddress}](https://goldrush.dev/docs/api-reference/foundational-api/security/get-nft-approvals)                                                              | 5000    | Get NFT approvals for address                        |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{contractAddress}/metadata](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-token-ids-for-contract-with-metadata)                                       | 5000    | Get NFTs from contract with metadata                 |
+| [direct/v1/Covalent/v1/\{chainName}/tokens/\{contractAddress}/nft\_transactions/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-transactions-contract)                               | 5000    | Get NFT transactions for contract                    |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{contractAddress}/metadata/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nft-metadata-token-id-contract)                                      | 5000    | Get single NFT from contract with metadata           |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{collectionContract}/traits](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-list-of-traits-collection)                                                     | 5000    | Get traits for a collection                          |
+| [direct/v1/Covalent/v1/\{chainName}/nft/\{collectionContract}/traits\_summary](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-collection-trait-summary)                                             | 5000    | Get trait summary for collection                     |
+
+## Defined
+
+### POST
+
+| Path                                                                                                                       | Est. CU | Description                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Defined/filterNftCollections](https://docs.codex.io/reference/filternftcollections)                             | 3500    | Returns a list of NFT collection based on a variety of filters.                                                                                |
+| [direct/v1/Defined/filterNftParallelAssets](https://docs.codex.io/reference/filternftparallelassets)                       | 3500    | Returns a list of Parallel assets based on a variety of filters.                                                                               |
+| [direct/v1/Defined/filterNftPoolCollections](https://docs.codex.io/reference/filternftpoolcollections)                     | 3500    | Returns a list of NFT collections based on a variety of filters.                                                                               |
+| [direct/v1/Defined/filterNftPools](https://docs.codex.io/reference/filternftpools)                                         | 3500    | Returns a list of NFT pools based on a variety of filters.                                                                                     |
+| [direct/v1/Defined/getDetailedNftStats](https://docs.codex.io/reference/getdetailednftstats)                               | 3500    | Returns bucketed stats for a given NFT collection.                                                                                             |
+| [direct/v1/Defined/getNftAssets](https://docs.codex.io/reference/getnftassets)                                             | 3500    | Returns a list of NFT assets in a given collection.                                                                                            |
+| [direct/v1/Defined/getNftCollectionMetadata](https://docs.codex.io/reference/getnftcollectionmetadata)                     | 3500    | Returns stats for an NFT collection across different time frames.                                                                              |
+| [direct/v1/Defined/getNftContracts](https://docs.codex.io/reference/getnftcontracts)                                       | 3500    | Returns a list of NFT collection metadata.                                                                                                     |
+| [direct/v1/Defined/getNftEvents](https://docs.codex.io/reference/getnftevents)                                             | 3500    | Returns transactions for an NFT collection across any marketplace(s).                                                                          |
+| [direct/v1/Defined/getNftPool](https://docs.codex.io/reference/getnftpool)                                                 | 3500    | Returns an NFT pool.                                                                                                                           |
+| [direct/v1/Defined/getNftPoolCollection](https://docs.codex.io/reference/getnftpoolcollection)                             | 3500    | Returns an NFT pool collection with pool stats for a given AMM NFT marketplace.                                                                |
+| [direct/v1/Defined/getNftPoolCollectionsByExchange](https://docs.codex.io/reference/getnftpoolcollectionsbyexchange)       | 3500    | Returns an NFT collection with pool stats for a given AMM NFT marketplace.                                                                     |
+| [direct/v1/Defined/getNftPoolEvents](https://docs.codex.io/reference/getnftpoolevents)                                     | 3500    | Returns transactions for an NFT collection across all NFT pools or within a given pool.                                                        |
+| [direct/v1/Defined/getNftPoolsByCollectionAndExchange](https://docs.codex.io/reference/getnftpoolsbycollectionandexchange) | 3500    | Returns NFT pools for a given collection and AMM NFT marketplace.                                                                              |
+| [direct/v1/Defined/getNftPoolsByOwner](https://docs.codex.io/reference/getnftpoolsbyowner)                                 | 3500    | Returns a list of NFT pools for a given owner.                                                                                                 |
+| [direct/v1/Defined/getNftPoolStats](https://docs.codex.io/reference/getnftpoolstats)                                       | 3500    | Returns aggregated NFT pool/collection stats for a given time frame.                                                                           |
+| [direct/v1/Defined/getParallelAssets](https://docs.codex.io/reference/getparallelassets)                                   | 3500    | Returns transactions for an NFT collection across any marketplace(s).                                                                          |
+| [direct/v1/Defined/getParallelCardChanges](https://docs.codex.io/reference/getparallelcardchanges)                         | 3500    | Returns changes made to Parallel card metadata over time.                                                                                      |
+| [direct/v1/Defined/nftHolders](https://docs.codex.io/reference/nftholders)                                                 | 3500    | Returns list of wallets that hold a given collection, ordered by holdings descending. Also has the unique count of holders for that collection |
+| [direct/v1/Defined/searchNfts](https://docs.codex.io/reference/searchnfts)                                                 | 3500    | Returns a list of NFT collections matching a given query string.                                                                               |
+| [direct/v1/Defined/walletNftCollectionAssets](https://docs.codex.io/reference/walletnftcollectionassets)                   | 3500    | Returns list of NFT assets held by a given wallet for a single collection.                                                                     |
+| [direct/v1/Defined/walletNftCollections](https://docs.codex.io/reference/walletnftcollections)                             | 3500    | Returns list of collections and quantity of NFTs held by a given wallet.                                                                       |
+
+## HelloMoon
+
+### POST
+
+| Path                                                                                                                                                              | Est. CU | Description                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/hello-moon/collection-mint-mapping](https://docs.hellomoon.io/reference/post_v0-hello-moon-collection-mint-mapping)                       | 50      | Fetch mapping data for collections and mint addresses within the Hello Moon platform.       |
+| [direct/v1/HelloMoon/v0/nft/mint-accounts-by-owner-cnft](https://docs.hellomoon.io/reference/post_v0-nft-mint-accounts-by-owner-cnft)                             | 50      | Get mint account details for NFTs owned by a specific user.                                 |
+| [direct/v1/HelloMoon/v0/nft/mints-by-owner](https://docs.hellomoon.io/reference/post_v0-nft-mints-by-owner)                                                       | 50      | Get a list of NFTs minted by a specific owner on the blockchain.                            |
+| [direct/v1/HelloMoon/v0/nft/collection/all-time](https://docs.hellomoon.io/reference/post_v0-nft-collection-all-time)                                             | 50      | Retrieve all-time data for NFT collections, including transaction volume and price history. |
+| [direct/v1/HelloMoon/v0/nft/collection/collective](https://docs.hellomoon.io/reference/post_v0-nft-collection-collective)                                         | 50      | Fetch data for NFT collections labeled as "collective" on Hello Moon.                       |
+| [direct/v1/HelloMoon/v0/nft/collection/floorprice](https://docs.hellomoon.io/reference/post_v0-nft-collection-floorprice)                                         | 50      | Get the latest floor price for an NFT collection.                                           |
+| [direct/v1/HelloMoon/v0/nft/collection/floorprice/batched](https://docs.hellomoon.io/reference/post_v0-nft-collection-floorprice-batched)                         | 50      | Fetch batched floor prices for multiple NFT collections.                                    |
+| [direct/v1/HelloMoon/v0/nft/collection/floorprice/candlesticks](https://docs.hellomoon.io/reference/post_v0-nft-collection-floorprice-candlesticks)               | 50      | Retrieve candlestick data for floor prices of NFT collections.                              |
+| [direct/v1/HelloMoon/v0/nft/collection/floor-price-compressed](https://docs.hellomoon.io/reference/post_v0-nft-collection-floor-price-compressed)                 | 50      | Fetch compressed floor price data for NFT collections.                                      |
+| [direct/v1/HelloMoon/v0/nft/collection/floorprices](https://docs.hellomoon.io/reference/post_v0-nft-collection-floorprices)                                       | 50      | Retrieve floor prices across multiple NFT collections.                                      |
+| [direct/v1/HelloMoon/v0/nft/collection/leaderboard/stats](https://docs.hellomoon.io/reference/post_v0-nft-collection-leaderboard-stats)                           | 50      | Get leaderboard statistics for NFT collections based on trading volumes and other factors.  |
+| [direct/v1/HelloMoon/v0/nft/collection/listing](https://docs.hellomoon.io/reference/post_v0-nft-collection-listing)                                               | 50      | Retrieve listing data for specific NFT collections.                                         |
+| [direct/v1/HelloMoon/v0/nft/collection/mints](https://docs.hellomoon.io/reference/post_v0-nft-collection-mints)                                                   | 50      | Retrieve data on newly minted NFTs within specific collections.                             |
+| [direct/v1/HelloMoon/v0/nft/collection/name](https://docs.hellomoon.io/reference/post_v0-nft-collection-name)                                                     | 50      | Retrieve NFT collection details by name, using a specific search strategy.                  |
+| [direct/v1/HelloMoon/v0/nft/collection/overlap](https://docs.hellomoon.io/reference/post_v0-nft-collection-overlap)                                               | 50      | Fetch overlap data for NFT collections.                                                     |
+| [direct/v1/HelloMoon/v0/nft/collection/overlap/top](https://docs.hellomoon.io/reference/post_v0-nft-collection-overlap-top)                                       | 50      | Retrieve top overlap data for NFT collections.                                              |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/cumulative](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-cumulative)                     | 50      | Fetch cumulative ownership data for NFT collections.                                        |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/current](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-current)                           | 50      | Retrieve current ownership data for an NFT collection.                                      |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/historical](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-historical)                     | 50      | Fetch historical ownership data for NFT collections.                                        |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/holding-period](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-holding-period)             | 50      | Get holding period data for owners of NFTs in specific collections.                         |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/top-holders](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-top-holders)                   | 50      | Retrieve top holder data for an NFT collection.                                             |
+| [direct/v1/HelloMoon/v0/nft/collection/stats/primary-sales](https://docs.hellomoon.io/reference/post_v0-nft-collection-stats-primary-sales)                       | 50      | Fetch primary sales statistics for NFT collections.                                         |
+| [direct/v1/HelloMoon/v0/nft/collection/program-usage](https://docs.hellomoon.io/reference/post_v0-nft-collection-program-usage)                                   | 50      | Fetch program usage statistics for a specific NFT collection.                               |
+| [direct/v1/HelloMoon/v0/nft/collection/smart-money-inflow](https://docs.hellomoon.io/reference/post_v0-nft-collection-smart-money-inflow)                         | 50      | Retrieve data on smart money inflows into NFT collections.                                  |
+| [direct/v1/HelloMoon/v0/nft/collection/stats](https://docs.hellomoon.io/reference/post_v0-nft-collection-stats)                                                   | 50      | Retrieve statistical data for NFT collections.                                              |
+| [direct/v1/HelloMoon/v0/nft/collection/volatility](https://docs.hellomoon.io/reference/post_v0-nft-collection-volatility)                                         | 50      | Retrieve volatility data for NFT collections, useful for market analysis.                   |
+| [direct/v1/HelloMoon/v0/nft/collection/washtrading](https://docs.hellomoon.io/reference/post_v0-nft-collection-washtrading)                                       | 50      | Retrieve wash trading data for NFTs within specific collections.                            |
+| [direct/v1/HelloMoon/v0/nft/estimated-price](https://docs.hellomoon.io/reference/post_v0-nft-estimated-price)                                                     | 50      | Get estimated price for an NFT based on recent market data and trends.                      |
+| [direct/v1/HelloMoon/v0/nft/freeze\_lookup](https://docs.hellomoon.io/reference/post_v0-nft-freeze-lookup)                                                        | 50      | Look up freeze status for NFTs within specific collections.                                 |
+| [direct/v1/HelloMoon/v0/nft/freeze\_lookup/v2](https://docs.hellomoon.io/reference/post_v0-nft-freeze-lookup-v2)                                                  | 50      | Retrieve freeze status details for NFTs with updated settings or format.                    |
+| [direct/v1/HelloMoon/v0/nft/ownership/historical](https://docs.hellomoon.io/reference/post_v0-nft-ownership-historical)                                           | 50      | Retrieve historical ownership data for NFTs within the specified endpoint.                  |
+| [direct/v1/HelloMoon/v0/nft/sales/secondary/latest](https://docs.hellomoon.io/reference/post_v0-nft-sales-secondary-latest)                                       | 50      | Fetch the latest secondary sales data for a specific NFT or collection.                     |
+| [direct/v1/HelloMoon/v0/nft/leaderboard](https://docs.hellomoon.io/reference/post_v0-nft-leaderboard)                                                             | 50      | Retrieve an NFT leaderboard with ordering options such as by smart money inflow.            |
+| [direct/v1/HelloMoon/v0/nft/listings](https://docs.hellomoon.io/reference/post_v0-nft-listings)                                                                   | 50      | List all current NFT listings with detailed metadata.                                       |
+| [direct/v1/HelloMoon/v0/nft/listing-status](https://docs.hellomoon.io/reference/post_v0-nft-listing-status)                                                       | 50      | Retrieve the current listing status of NFTs across marketplaces.                            |
+| [direct/v1/HelloMoon/v0/nft/listing-status/v2](https://docs.hellomoon.io/reference/post_v0-nft-listing-status-v2)                                                 | 50      | Get updated listing status data for NFTs across marketplaces.                               |
+| [direct/v1/HelloMoon/v0/nft/loans/collection-summary](https://docs.hellomoon.io/reference/post_v0-nft-loans-collection-summary)                                   | 50      | Get a summary of loans within NFT collections.                                              |
+| [direct/v1/HelloMoon/v0/nft/loans/ltv](https://docs.hellomoon.io/reference/post_v0-nft-loans-ltv)                                                                 | 50      | Get loan-to-value (LTV) ratio data for NFTs, essential for loan assessment.                 |
+| [direct/v1/HelloMoon/v0/nft/marketplace/tensor/floor-price-by-creator](https://docs.hellomoon.io/reference/post_v0-nft-marketplace-tensor-floor-price-by-creator) | 50      | Retrieve floor price data for Tensor marketplace NFTs, grouped by creator.                  |
+| [direct/v1/HelloMoon/v0/nft/marketplace/transactions](https://docs.hellomoon.io/reference/post_v0-nft-marketplace-transactions)                                   | 50      | Retrieve NFT marketplace transaction records, including sale amounts and times.             |
+| [direct/v1/HelloMoon/v0/nft/market-stats](https://docs.hellomoon.io/reference/post_v0-nft-market-stats)                                                           | 50      | Fetch general market statistics for NFTs.                                                   |
+| [direct/v1/HelloMoon/v0/nft/mint\_information](https://docs.hellomoon.io/reference/post_v0-nft-mint-information)                                                  | 50      | Retrieve detailed mint information for a specific NFT.                                      |
+| [direct/v1/HelloMoon/v0/nft/collection/ownership/for-pubkey](https://docs.hellomoon.io/reference/post_v0-nft-collection-ownership-for-pubkey)                     | 50      | Get NFT ownership information for a specific public key.                                    |
+| [direct/v1/HelloMoon/v0/nft/sales/primary](https://docs.hellomoon.io/reference/post_v0-nft-sales-primary)                                                         | 50      | Retrieve primary sale data for NFTs, including price and buyer information.                 |
+| [direct/v1/HelloMoon/v0/nft/royalty](https://docs.hellomoon.io/reference/post_v0-nft-royalty)                                                                     | 50      | Retrieve royalty information for NFTs within specified collections.                         |
+| [direct/v1/HelloMoon/v0/nft/royalty/all-time/amount-paid](https://docs.hellomoon.io/reference/post_v0-nft-royalty-all-time-amount-paid)                           | 50      | Get the all-time amount of royalties paid for a specified NFT collection.                   |
+| [direct/v1/HelloMoon/v0/nft/sales\_per\_market\_daily](https://docs.hellomoon.io/reference/post_v0-nft-sales-per-market-daily)                                    | 50      | Fetch daily sales data for NFTs across different marketplaces.                              |
+| [direct/v1/HelloMoon/v0/nft/sales/secondary](https://docs.hellomoon.io/reference/post_v0-nft-sales-secondary)                                                     | 50      | Retrieve secondary sale data for NFTs, including price and buyer details.                   |
+| [direct/v1/HelloMoon/v0/nft/sales/secondary/latest/mint](https://docs.hellomoon.io/reference/post_v0-nft-sales-secondary-latest-mint)                             | 50      | Retrieve recent secondary sales data for NFTs by mint address.                              |
+| [direct/v1/HelloMoon/v0/nft/social](https://docs.hellomoon.io/reference/post_v0-nft-social)                                                                       | 50      | Retrieve social engagement data for NFTs on Hello Moon.                                     |
+| [direct/v1/HelloMoon/v0/shit/nfts](https://docs.hellomoon.io/reference/post_v0-shit-nfts)                                                                         | 50      | Fetch NFT data labeled under the "Shit" category on Hello Moon.                             |
+
+## Moralis
+
+### GET
+
+| Path                                                                                                                                                | Est. CU | Description                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------- |
+| [direct/v1/Moralis/\{address}/nft/collections](https://docs.moralis.com/web3-data-api/evm/reference/get-wallet-nft-collections)                     | 20      | Get collections by wallet                                               |
+| [direct/v1/Moralis/nft/\{address}/stats](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-collection-stats)                             | 18750   | Get collection stats                                                    |
+| [direct/v1/Moralis/nft/\{address}/metadata](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-contract-metadata)                         | 7500    | Get contract metadata                                                   |
+| [direct/v1/Moralis/nft/\{address}/price](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-contract-sale-prices)                         | 6750    | Get contract sale prices                                                |
+| [direct/v1/Moralis/nft/\{address}/lowestprice](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-lowest-price)                           | 6000    | Get lowest price                                                        |
+| [direct/v1/Moralis/nft/getMultipleNFTs](https://docs.moralis.com/web3-data-api/evm/reference/get-multiple-nfts)                                     | 22500   | Get multiple NFTs                                                       |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-metadata)                              | 3000    | Get NFT metadata                                                        |
+| [direct/v1/Moralis/nft/\{address}/owners](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-owners)                                      | 7500    | Get NFT owners                                                          |
+| [direct/v1/Moralis/nft/\{address}](https://docs.moralis.com/web3-data-api/evm/reference/get-contract-nfts)                                          | 7500    | Get NFTs by contract                                                    |
+| [direct/v1/Moralis/nft/\{address}/nfts-by-traits](https://docs.moralis.com/web3-data-api/evm/reference/get-nfts-by-traits)                          | 7500    | Get NFTs by traits                                                      |
+| [direct/v1/Moralis/\{address}/nft](https://docs.moralis.com/web3-data-api/evm/reference/get-wallet-nfts)                                            | 7500    | Get NFTs by wallet                                                      |
+| [direct/v1/Moralis/nft/\{address}/trades](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-trades)                                      | 6000    | Get NFT trades                                                          |
+| [direct/v1/Moralis/wallets/\{address}/nfts/trades](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-nft-trades-by-wallet)        | 6000    | Get trades by wallet                                                    |
+| [direct/v1/Moralis/nft/\{address}/traits](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-traits-by-collection)                        | 7500    | Get NFT traits by collection (single response, limited to 5,000 traits) |
+| [direct/v1/Moralis/nft/\{address}/traits/paginate](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-traits-by-collection-paginate)      | 20      | Get NFT traits by collection (paginated, no limit)                      |
+| [direct/v1/Moralis/\{address}/nft/transfers](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)              | 7500    | Get transfers by wallet                                                 |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/price](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-sale-prices)                     | 6750    | Get sale prices                                                         |
+| [direct/v1/Moralis/solana/nft/\{network}/\{address}/metadata](https://docs.moralis.com/web3-data-api/solana/reference/get-sol-nft-metadata)         | 750     | Get NFT metadata on Solana                                              |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/nft](https://docs.moralis.com/web3-data-api/solana/reference/get-spl-nfts)                  | 750     | Get NFTs by wallet on Solana                                            |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/owners](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-token-id-owners)                | 7500    | Get token ID owners                                                     |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/stats](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-token-stats)                     | 18750   | Get token stats                                                         |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/trades](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-trades-by-token)                | 6000    | Get trades by token                                                     |
+| [direct/v1/Moralis/block/\{block\_number\_or\_hash}/nft/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-transfers-by-block) | 3000    | Get transfers by block                                                  |
+| [direct/v1/Moralis/nft/\{address}/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-contract-transfers)                       | 7500    | Get transfers by contract                                               |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-transfers)                   | 3000    | Get transfers by contract and token ID                                  |
+| [direct/v1/Moralis/nft/transfers](https://docs.moralis.com/web3-data-api/evm/reference/get-nft-transfers-from-to-block)                             | 7500    | Get transfers from block to block                                       |
+| [direct/v1/Moralis/nft/\{address}/\{token\_id}/metadata/resync](https://docs.moralis.com/web3-data-api/evm/reference/resync-metadata)               | 18750   | Resync metadata                                                         |
+| [direct/v1/Moralis/nft/\{address}/traits/resync](https://docs.moralis.com/web3-data-api/evm/reference/resync-nft-traits-by-collection)              | 750     | Resync NFT traits by collection                                         |
+| [direct/v1/Moralis/nft/\{address}/sync](https://docs.moralis.com/web3-data-api/evm/reference/sync-nft-contract)                                     | 18750   | Sync NFT contract                                                       |
+
+## Shyft
+
+### DELETE
+
+| Path                                                                                              | Est. CU | Description                   |
+| ------------------------------------------------------------------------------------------------- | ------- | ----------------------------- |
+| [direct/v1/Shyft/sol/v1/nft/burn\_many](https://docs.shyft.to/solana-apis/nft#burn-multiple-nfts) | 20      | Burn as many NFTs as you want |
+| [direct/v1/Shyft/sol/v1/nft/burn\_detach](https://docs.shyft.to/solana-apis/nft#burn)             | 20      | Burn an NFT                   |
+
+### GET
+
+| Path                                                                                                                          | Est. CU | Description                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/candy\_machine/nft\_addresses](https://docs.shyft.to/solana-apis/candy-machine#get-all-nft-addresses) | 20      | Get all the NFT addresses                                                                 |
+| [direct/v1/Shyft/sol/v1/candy\_machine/nfts](https://docs.shyft.to/solana-apis/candy-machine#get-all-nfts)                    | 20      | Get all the NFTs                                                                          |
+| [direct/v1/Shyft/sol/v1/collections/get\_nfts](https://docs.shyft.to/solana-apis/collections#get-nfts)                        | 20      | Get all the NFTs in a collection                                                          |
+| [direct/v1/Shyft/sol/v1/wallet/collections](https://docs.shyft.to/solana-apis/wallet#get-collections-in-wallet)               | 20      | For getting all the collections in a wallet                                               |
+| [direct/v1/Shyft/sol/v1/nft/read](https://docs.shyft.to/solana-apis/nft#read)                                                 | 20      | Get the properties, metadata and on-chain parameters of an already existing on-chian nft. |
+| [direct/v1/Shyft/sol/v1/nft/read\_all](https://docs.shyft.to/solana-apis/nft#read-all)                                        | 20      | Read all NFTs                                                                             |
+| [direct/v1/Shyft/sol/v1/nft/search](https://docs.shyft.to/solana-apis/nft#search)                                             | 20      | Search for NFTs                                                                           |
+
+### POST
+
+| Path                                                                                                              | Est. CU | Description                                  |
+| ----------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/nft/read\_selected](https://docs.shyft.to/solana-apis/nft#read-selected-nfts)             | 20      | Read selected NFTs                           |
+| [direct/v1/Shyft/sol/v1/candy\_machine/create](https://docs.shyft.to/solana-apis/candy-machine#create)            | 20      | Create a candy machine                       |
+| [direct/v1/Shyft/sol/v1/metadata/create](https://docs.shyft.to/solana-apis/metadata#create)                       | 20      | Create metadata for an NFT                   |
+| [direct/v1/Shyft/sol/v1/nft/create\_detach](https://docs.shyft.to/solana-apis/nft#create)                         | 20      | Create an NFT                                |
+| [direct/v1/Shyft/sol/v1/nft/create\_from\_metadata](https://docs.shyft.to/solana-apis/nft#create-from-metadata)   | 20      | Create an NFT from metadata                  |
+| [direct/v1/Shyft/sol/v1/nft/create](https://docs.shyft.to/solana-apis/nft#create-v2)                              | 20      | Create an NFT                                |
+| [direct/v1/Shyft/sol/v1/candy\_machine/insert](https://docs.shyft.to/solana-apis/candy-machine#insert)            | 20      | Insert token in candy machine                |
+| [direct/v1/Shyft/sol/v1/candy\_machine/mint](https://docs.shyft.to/solana-apis/candy-machine#mint)                | 20      | Mint from candy machine                      |
+| [direct/v1/Shyft/sol/v1/nft/mint\_detach](https://docs.shyft.to/solana-apis/nft#mint)                             | 20      | Creates a new NFT and mints it to the wallet |
+| [direct/v1/Shyft/sol/v1/nft/get\_owners](https://docs.shyft.to/solana-apis/nft#get-nft-owners)                    | 20      | Returns the owners of an NFT                 |
+| [direct/v1/Shyft/sol/v1/nft/transfer\_many](https://docs.shyft.to/solana-apis/nft#transfer-multiple-nfts)         | 20      | Transfer multiple NFTs                       |
+| [direct/v1/Shyft/sol/v1/nft/transfer\_detach](https://docs.shyft.to/solana-apis/nft#transfer)                     | 20      | Transfer an NFT                              |
+| [direct/v1/Shyft/sol/v1/nft/update\_detach](https://docs.shyft.to/solana-apis/nft#update)                         | 20      | Update an NFT                                |
+| [direct/v1/Shyft/sol/v1/nft/update\_metadata\_uri](https://docs.shyft.to/solana-apis/nft#update-nft-metadata-uri) | 20      | Update the metadata URI of an NFT            |
+| [direct/v1/Shyft/sol/v1/nft/update](https://docs.shyft.to/solana-apis/nft#update-v2)                              | 20      | Update an NFT                                |
+
+## SolScan
+
+### GET
+
+| Path                                                                                                                          | Est. CU | Description                                         |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------- |
+| [direct/v1/SolScan/v2.0/nft/activities](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-nft-activities)             | 650     | Get NFT activities on Solana.                       |
+| [direct/v1/SolScan/v2.0/nft/collection/items](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-nft-collection-items) | 650     | Get items from a specific NFT collection on Solana. |
+| [direct/v1/SolScan/v2.0/nft/collection/lists](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-nft-collection-lists) | 650     | Get a list of NFT collections on Solana.            |
+| [direct/v1/SolScan/v2.0/nft/news](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-nft-news)                         | 650     | Get news related to NFTs on Solana.                 |
+
+## TonAPI
+
+### GET
+
+| Path                                                                                                                          | Est. CU | Description                                         |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------- |
+| [direct/v1/TonAPI/v2/accounts/\{account\_id}/nfts/history](https://tonapi.io/api-v2#operations-Accounts-getAccountNftHistory) | 20      | Get the transfer nft history                        |
+| [direct/v1/TonAPI/v2/accounts/\{account\_id}/nfts](https://tonapi.io/api-v2#operations-Accounts-getAccountNftItems)           | 20      | Get all NFT items by owner address                  |
+| [direct/v1/TonAPI/v2/nfts/collections/\{account\_id}/items](https://tonapi.io/api-v2#operations-NFT-getItemsFromCollection)   | 20      | Get NFT items from collection by collection address |
+| [direct/v1/TonAPI/v2/nfts/collections/\{account\_id}](https://tonapi.io/api-v2#operations-NFT-getNftCollection)               | 20      | Get NFT collection by collection address            |
+| [direct/v1/TonAPI/v2/nfts/collections](https://tonapi.io/api-v2#operations-NFT-getNftCollections)                             | 20      | Get NFT collections                                 |
+| [direct/v1/TonAPI/v2/nfts/\{account\_id}/history](https://tonapi.io/api-v2#operations-NFT-getNftHistoryByID)                  | 20      | Get the transfer nfts history for account           |
+| [direct/v1/TonAPI/v2/nfts/\{account\_id}](https://tonapi.io/api-v2#operations-NFT-getNftItemByAddress)                        | 20      | Get NFT item by its address                         |
+
+### POST
+
+| Path                                                                                           | Est. CU | Description                      |
+| ---------------------------------------------------------------------------------------------- | ------- | -------------------------------- |
+| [direct/v1/TonAPI/v2/nfts/\_bulk](https://tonapi.io/api-v2#operations-NFT-getNftItemByAddress) | 20      | Get NFT items by their addresses |

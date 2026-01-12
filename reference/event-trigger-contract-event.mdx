@@ -1,0 +1,43 @@
+---
+title: "Contract Event"
+description: "Ask AI"
+---
+
+Trigger Actions upon Specific Contract Events.
+
+This allows you to track custom events emitted by smart contracts you're interested in. Requires specifying the contract address and the event.
+
+Contract Event is a custom webhook type offering great flexibility, while the other webhook types are built on top of this webhook type with prefilled contract address and ABI for specific purposes and serve as templates.
+
+### Webhook Configuration Fields
+
+| Field             | Description                                                                                                                                                              | Example                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Event Name        | A descriptive name to identify the webhook's purpose.                                                                                                                    | "Approval Notification for My Contract"                                                                                                                                                                                                                                                                                                                                     |
+| Event Description | Brief explanation of the trigger and data included.                                                                                                                      | "This webhook sends notifications if approval occured in my contract."                                                                                                                                                                                                                                                                                                      |
+| Webhook URL       | Publicly accessible URL for receiving notifications (must handle POST requests).                                                                                         | [https://461a-199-116-73-171.ngrok.io](https://461a-199-116-73-171.ngrok.io) (Test URL or your Prod URL)                                                                                                                                                                                                                                                                    |
+| Select Provider   | Blockchain platform for notifications (e.g., Moralis, Tatum).                                                                                                            | Choose your desired platform.                                                                                                                                                                                                                                                                                                                                               |
+| Network           | Blockchain Network for notifications (e.g., Ethereum, Polygon).                                                                                                          | Choose your desired Network.                                                                                                                                                                                                                                                                                                                                                |
+| Contract Address  | To listen to the event of the smart contract address.                                                                                                                    | 0x029a49060f36F830915ec1FA98FAB532b4c75Aec (enter your address)                                                                                                                                                                                                                                                                                                             |
+| ABI               | The Contract Application Binary Interface (ABI), which defines the standard way to interact with the contract.                                                           | \[ \{ "inputs": om events emitted by smart contracts you're interested in. Requires specifying the contract address and the event.Contract Even, "name": "supportsInterface", "outputs": le the other webhook types are built on top of this webhook type with prefilled contract address and ABI for specific purp, "stateMutability": "view", "type": "function" }, ... ] |
+| Event Filters     | A list of event filters, including an event and other optional filters. Only the smart contract events that meet ALL the filter constraints will trigger a notification. | Select an event defined in the ABI and add optional filters.                                                                                                                                                                                                                                                                                                                |
+
+### Event Filter Fields
+
+| Field                             | Description                                                                                                   | Operator                  | Value                                   |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------- |
+| topic0 (required)                 | The event to listen to. The event must be defined in the ABI.                                                 | ==                        | Match specific event string in the ABI. |
+| topic1, topic2, topic3 (optional) | The inputs of the event (indexed parameters) that are defined in the ABI. Up to 3 inputs filters are allowed. | ==, !=, in, not in, regex | Match specific type of the event input. |
+
+**Value:**
+
+* Enter specific values, comma-separated lists for "in" and "not in" operators, or regular expressions for regex matching.
+
+**Example:**
+
+Assume you're interested in tracking a specific "Approval" event that approves to a spender (0x123abc...) within a smart contract. To receive notifications only when such Approval event occurs, set up the following filters:
+
+* `topic0 == "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"` (the topic hash that represents an ApprovalApproval)
+* `topic2 == "0x123abc..."`(spender is the second input defined in the ABI inputs for this event)
+
+This ensures you're only notified about relevant approval within the smart contract, allowing you to stay informed about the community activity.

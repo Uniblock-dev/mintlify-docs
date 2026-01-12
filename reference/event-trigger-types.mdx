@@ -1,0 +1,30 @@
+---
+title: "Webhook Types"
+description: "Ask AI"
+---
+
+Webhook enables users to subscribe to event notifications within their application. By creating a webhook, users can receive notifications for various types of on-chain activities.
+
+The following outlines the types of webhooks available and the networks they support. Look to our examples in order to see how you can implement each type.
+
+## Custom Webhooks
+
+| Custom Webhook                                                       | Description                                                                                                                                                          | Network                  |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| [Address Activity](ref:event-trigger-address-activity)               | The Address Activity webhook tracks all ETH, ERC20, ERC721, and ERC1155 transfers, enabling real-time state changes when an address sends or receives tokens or ETH. | All supported EVM chains |
+| [Contract Event](ref:event-trigger-contract-event)                   | This allows you to track custom events emitted by smart contracts you're interested in. Requires specifying the contract address, ABI and event name.                | All supported EVM chains |
+| [Solana Address Activity](ref:event-trigger-solana-address-activity) | Create a webhook to receive real-time notifications for state changes specifically on Solana network.                                                                | Solana                   |
+
+## Webhook Templates
+
+There are webhook templates with prefilled values on top of the custom webhook types for quick webhook deployment.
+
+| Template                    | Description                                                                                                                                                                                                                                                                            | Network                                                                                                                                                       |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Token Events                | Create a webhook to receive real-time notifications whenever an ERC20 token is transferred to or from a specified address. This allows you to track token balances and activity for specific tokens. This is built on top of the Contract Event webhook type with prefilled ERC20 ABI. | All supported EVM chains                                                                                                                                      |
+| NFT Events                  | The NFT Events webhook enables you to track transfers of ERC721 NFTs, triggering real-time events when an NFT is sent or received from an address. This is built on top of the Contract Event webhook type with prefilled ERC721 ABI.                                                  | All supported EVM chains                                                                                                                                      |
+| NFT Collection Events       | The NFT Collection webhook enables you to track ERC1155 token contracts, triggering real-time events when an NFT is transferred between addresses. This is built on top of Contract Event webhook type with prefilled ERC1155 ABI.                                                     | All supported EVM chains                                                                                                                                      |
+| USDT Token Events           | Get all contract events emitted by the USDT smart contract. This is built on top of the Contract Event webhook type or the Solana Address Activity webhook type, depended on the network.                                                                                              | Ethereum Mainnet, Avalanche C-Chain, Solana                                                                                                                   |
+| USDC Token Events           | Get all contract events emitted by the USDC smart contract. This is built on top of the Contract Event webhook type or the Solana Address Activity webhook type, depended on the network.                                                                                              | Ethereum Mainnet, Optimism Mainnet, Polygon Mainnet, Zksync Mainnet, Base, Arbitrum Mainnet, Avalanche C-Chain, Solana                                        |
+| Dai Token Events            | Get all contract events emitted by the Dai smart contract. This is built on top of Contract Event webhook type with prefilled Dai contract address and ABI.                                                                                                                            | Ethereum Mainnet, Optimism Mainnet, BNB Smart Chain Mainnet, Gnosis, Polygon Mainnet, Fantom Opera, Zksync Mainnet, Base, Arbitrum Mainnet, Avalanche C-Chain |
+| Azuki NFT Collection Events | Get all contract events emitted by the Azuki NFT smart contract. This is built on top of Contract Event webhook type with prefilled ERC1155 ABI.                                                                                                                                       | Ethereum Mainnet                                                                                                                                              |

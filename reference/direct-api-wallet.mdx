@@ -1,0 +1,204 @@
+---
+title: "Direct API — Wallet"
+description: "Ask AI"
+---
+
+API endpoints for Wallet.
+
+# Wallet — Direct API Endpoints
+
+## Alchemy
+
+### GET
+
+| Path                                                                                                                     | Est. CU | Description                                                               |
+| ------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getCollectionsForOwner](https://docs.alchemy.com/reference/getcollectionsforowner-v3) | 720     | Retrieves all NFT collections held by a specified owner address.          |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getContractsForOwner](https://docs.alchemy.com/reference/getcontractsforowner-v3)     | 640     | Retrieves all NFT contracts held by a specified owner address.            |
+| [direct/v1/Alchemy/\{chain}/nft/v3/isHolderOfContract](https://docs.alchemy.com/reference/isholderofcontract-v3)         | 160     | Determines whether a specific wallet holds any NFT from a given contract. |
+| [direct/v1/Alchemy/\{chain}/nft/v3/getNFTsForOwner](https://docs.alchemy.com/reference/getnftsforowner-v3)               | 960     | Retrieves all NFTs currently owned by a specified address.                |
+
+### POST
+
+| Path                                                                                                            | Est. CU | Description                                                                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [direct/v1/Alchemy/prices/v1/tokens/by-address](https://docs.alchemy.com/reference/get-token-prices-by-address) | 80      | Fetches current prices for multiple tokens using network and address pairs. Returns a list of token prices, each containing the network, address, prices, and an optional error field. |
+
+## Birdeye
+
+### GET
+
+| Path                                                                                                                         | Est. CU | Description                             |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------- |
+| [direct/v1/Birdeye/v1/wallet/list\_supported\_chain](https://docs.birdeye.so/reference/get_v1-wallet-list-supported-chain)   | 70      | Supported Networks                      |
+| [direct/v1/Birdeye/v1/wallet/multichain\_token\_list](https://docs.birdeye.so/reference/get_v1-wallet-multichain-token-list) | 70      | Wallet Portfolio - Multichain           |
+| [direct/v1/Birdeye/v1/wallet/multichain\_tx\_list](https://docs.birdeye.so/reference/get_v1-wallet-multichain-tx-list)       | 70      | Wallet Transaction History - Multichain |
+| [direct/v1/Birdeye/v1/wallet/token\_balance](https://docs.birdeye.so/reference/get_v1-wallet-token-balance)                  | 1060    | Wallet - Token Balance                  |
+| [direct/v1/Birdeye/v1/wallet/token\_list](https://docs.birdeye.so/reference/get_v1-wallet-token-list)                        | 1060    | Wallet Portfolio                        |
+| [direct/v1/Birdeye/v1/wallet/tx\_list](https://docs.birdeye.so/reference/get_v1-wallet-tx-list)                              | 70      | Wallet Transaction History              |
+
+### POST
+
+| Path                                                                                              | Est. CU | Description            |
+| ------------------------------------------------------------------------------------------------- | ------- | ---------------------- |
+| [direct/v1/Birdeye/v1/wallet/simulate](https://docs.birdeye.so/reference/post_v1-wallet-simulate) | 70      | Transaction Simulation |
+
+## Covalent
+
+### GET
+
+| Path                                                                                                                                                                                                                  | Est. CU | Description                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [direct/v1/Covalent/v1/address/\{walletAddress}/activity](https://goldrush.dev/docs/api-reference/foundational-api/cross-chain/get-address-activity)                                                                  | 5000    | Get activity across all chains for address           |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_native](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-native-token-balance)                                            | 5000    | Get native token balance for address                 |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_nft](https://goldrush.dev/docs/api-reference/foundational-api/nft/get-nfts-for-address)                                                        | 5000    | Get NFTs for address                                 |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/balances\_v2](https://goldrush.dev/docs/api-reference/balances/get-token-balances-for-address)                                                           | 5000    | Get token balances for address                       |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/historical\_balances](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-historical-token-balances-for-address)                       | 5000    | Get historical token balances for address            |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/transactions\_summary](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-transaction-summary-for-address)                        | 5000    | Get transaction summary for address                  |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/transfers\_v2](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-erc20-token-transfers-for-address)                                  | 5000    | Get ERC20 token transfers for address                |
+| [direct/v1/Covalent/v1/btc-mainnet/address/\{walletAddress}/balances\_v2](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-bitcoin-balance-for-address)                                          | 5000    | Get Bitcoin balances for non-HD address              |
+| [direct/v1/Covalent/v1/btc-mainnet/address/\{walletAddress}/hd\_wallets](https://goldrush.dev/docs/api-reference/foundational-api/balances/get-bitcoin-balances-for-hd-address)                                       | 5000    | Get Bitcoin balances for HD address                  |
+| [direct/v1/Covalent/v1/cq/covalent/app/bitcoin/transactions](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-transactions-for-bitcoin-address)                                              | 5000    | Get transactions for Bitcoin address                 |
+| [direct/v1/Covalent/v1/\{chainName}/bulk/transactions/\{walletAddress}/\{timeBucket}](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-time-bucket-transactions-for-address-v3)              | 5000    | Get bulk time bucket transactions for address (v3)   |
+| [direct/v1/Covalent/v1/\{chainName}/bulk/transactions/\{walletAddress}](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-earliest-transactions-for-address-v3)                               | 5000    | Get earliest transactions for address (v3)           |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/collection/\{collectionContract}](https://goldrush.dev/docs/api-reference/foundational-api/nft/check-ownership-in-nft-collection)                        | 5000    | Check ownership in NFT collection                    |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/collection/\{collectionContract}/token/\{tokenId}](https://goldrush.dev/docs/api-reference/foundational-api/nft/check-ownership-in-nft-collection-token) | 5000    | Check ownership in NFT collection for specific token |
+| [direct/v1/Covalent/v1/\{chainName}/nft/approvals/\{walletAddress}](https://goldrush.dev/docs/api-reference/foundational-api/security/get-nft-approvals)                                                              | 5000    | Get NFT approvals for address                        |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/resolve\_address](https://goldrush.dev/docs/api-reference/foundational-api/utility/get-resolved-address-for-registered-address)                          | 5000    | Get resolved address for registered address          |
+| [direct/v1/Covalent/v1/\{chainName}/approvals/\{walletAddress}](https://goldrush.dev/docs/api-reference/foundational-api/security/get-token-approvals-for-address)                                                    | 5000    | Get token approvals for address                      |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/transactions\_v3](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-recent-transactions-for-address-v3)                          | 5000    | Get recent transactions for address (v3)             |
+| [direct/v1/Covalent/v1/\{chainName}/address/\{walletAddress}/transactions\_v3/page/\{page}](https://goldrush.dev/docs/api-reference/foundational-api/transactions/get-paginated-transactions-for-address-v3)          | 5000    | Get paginated transactions for address (v3)          |
+
+## Defined
+
+### POST
+
+| Path                                                                                                     | Est. CU | Description                                                                |
+| -------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------- |
+| [direct/v1/Defined/balances](https://docs.codex.io/reference/balances)                                   | 3500    | Returns list of token balances that a wallet has                           |
+| [direct/v1/Defined/primeBalance](https://docs.codex.io/reference/primebalance)                           | 3500    | Fetch the balance of a wallet holding PRIME on ethereum                    |
+| [direct/v1/Defined/walletNftCollectionAssets](https://docs.codex.io/reference/walletnftcollectionassets) | 3500    | Returns list of NFT assets held by a given wallet for a single collection. |
+| [direct/v1/Defined/walletNftCollections](https://docs.codex.io/reference/walletnftcollections)           | 3500    | Returns list of collections and quantity of NFTs held by a given wallet.   |
+
+## HelloMoon
+
+### POST
+
+| Path                                                                                                                                      | Est. CU | Description                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
+| [direct/v1/HelloMoon/v0/solana/all-time/txns-by-user](https://docs.hellomoon.io/reference/post_v0-solana-all-time-txns-by-user)           | 50      | Get all-time transaction history for a specified user on Solana.                                  |
+| [direct/v1/HelloMoon/v0/print/stats/wallet](https://docs.hellomoon.io/reference/post_v0-print-stats-wallet)                               | 50      | Fetch wallet statistics for Print-related data on Solana.                                         |
+| [direct/v1/HelloMoon/v0/solana/txns-by-user](https://docs.hellomoon.io/reference/post_v0-solana-txns-by-user)                             | 50      | Retrieve recent transactions for a specified user on Solana, with optional filters on block time. |
+| [direct/v1/HelloMoon/v0/defi/whirlpools/positions-by-user](https://docs.hellomoon.io/reference/post_v0-defi-whirlpools-positions-by-user) | 50      | Retrieve positions within Whirlpool liquidity pools for a specific user.                          |
+
+## Moralis
+
+### GET
+
+| Path                                                                                                                                                           | Est. CU | Description                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------- |
+| [direct/v1/Moralis/resolve/\{address}/reverse](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/resolve-address)                                | 750     | ENS lookup by address.                               |
+| [direct/v1/Moralis/resolve/ens/\{domain}](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/resolve-ens-domain)                                  | 750     | ENS Lookup by Domain                                 |
+| [direct/v1/Moralis/wallets/balances](https://docs.moralis.com/web3-data-api/evm/reference/get-native-balances-for-addresses)                                   | 750     | Get native balance for multiple wallets              |
+| [direct/v1/Moralis/wallets/\{address}/chains](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-chain-activity-by-wallet)                    | 18750   | Get chain activity by wallet                         |
+| [direct/v1/Moralis/\{address}/verbose](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-decoded-transactions-by-wallet)                     | 7500    | Get decoded transactions by wallet                   |
+| [direct/v1/Moralis/wallets/\{address}/defi/positions](https://docs.moralis.com/web3-data-api/evm/reference/get-defi-positions-summary)                         | 7500    | Get DeFi positions by wallet                         |
+| [direct/v1/Moralis/wallets/\{address}/defi/summary](https://docs.moralis.com/web3-data-api/evm/reference/get-defi-summary)                                     | 7500    | Get DeFi protocols by wallet                         |
+| [direct/v1/Moralis/wallets/\{address}/defi/\{protocol}/positions](https://docs.moralis.com/web3-data-api/evm/reference/get-defi-positions-summary)             | 20      | Get detailed DeFi positions by wallet and protocol   |
+| [direct/v1/Moralis/wallets/\{address}/approvals](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-approvals)                   | 15000   | Get ERC20 approvals by wallet                        |
+| [direct/v1/Moralis/\{address}/erc20](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet)                             | 15000   | Get ERC20 token balance by wallet                    |
+| [direct/v1/Moralis/\{address}/erc20/transfers](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-transfers)                     | 7500    | Get ERC20 token transfers by wallet                  |
+| [direct/v1/Moralis/\{address}/events](https://docs.moralis.com/web3-data-api/evm/reference/get-contract-events)                                                | 3000    | Get events by contract                               |
+| [direct/v1/Moralis/\{address}/logs](https://docs.moralis.com/web3-data-api/evm/reference/get-contract-logs)                                                    | 3000    | Get logs by contract                                 |
+| [direct/v1/Moralis/\{address}/balance](https://docs.moralis.com/web3-data-api/evm/reference/get-native-balance)                                                | 750     | Get native balance by wallet                         |
+| [direct/v1/Moralis/\{address}](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-transactions-by-wallet)                                     | 4500    | Get native transactions by wallet                    |
+| [direct/v1/Moralis/wallets/\{address}/nfts/trades](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-nft-trades-by-wallet)                   | 6000    | Get trades by wallet                                 |
+| [direct/v1/Moralis/\{address}/nft/transfers](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-nft-transfers)                         | 7500    | Get transfers by wallet                              |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/balance](https://docs.moralis.com/web3-data-api/solana/reference/sol-balance)                          | 750     | Get native balance by wallet on Solana               |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/nft](https://docs.moralis.com/web3-data-api/solana/reference/get-spl-nfts)                             | 750     | Get NFTs by wallet on Solana                         |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/portfolio](https://docs.moralis.com/web3-data-api/solana/reference/get-sol-portfolio)                  | 750     | Get portfolio by wallet on Solana                    |
+| [direct/v1/Moralis/solana/account/\{network}/\{walletAddress}/swaps](https://docs.moralis.com/web3-data-api/solana/reference/get-wallet-swap-txs)              | 3750    | Get swap transactions by wallet on Solana            |
+| [direct/v1/Moralis/solana/account/\{network}/\{address}/tokens](https://docs.moralis.com/web3-data-api/solana/reference/get-spl)                               | 750     | Get token balance by wallet on Solana                |
+| [direct/v1/Moralis/wallets/\{address}/tokens](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-token-balances-price)                 | 15000   | Get Native & ERC20 token balances & prices by wallet |
+| [direct/v1/Moralis/wallets/\{address}/history](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-history)                             | 33750   | Get full wallet history                              |
+| [direct/v1/Moralis/wallets/\{address}/net-worth](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-net-worth)                         | 93750   | Get wallet net-worth                                 |
+| [direct/v1/Moralis/wallets/\{address}/profitability](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-profitability)                 | 7500    | Get Wallet PnL Breakdown                             |
+| [direct/v1/Moralis/wallets/\{address}/profitability/summary](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-profitability-summary) | 4500    | Get Wallet PnL Summary                               |
+| [direct/v1/Moralis/wallets/\{address}/stats](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/get-wallet-stats)                                 | 18750   | Get wallet stats                                     |
+| [direct/v1/Moralis/resolve/\{address}/domain](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/resolve-address)                                 | 750     | Unstoppable Lookup by Address                        |
+| [direct/v1/Moralis/resolve/\{domain}](https://docs.moralis.com/web3-data-api/evm/reference/wallet-api/resolve-domain)                                          | 750     | Unstoppable Lookup by Domain                         |
+
+## Shyft
+
+### GET
+
+| Path                                                                                                                                             | Est. CU | Description                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/wallet/get\_domains](https://docs.shyft.to/solana-apis/wallet#get-all-domains)                                           | 20      | Get all domains of a wallet                                                           |
+| [direct/v1/Shyft/sol/v1/wallet/all\_tokens](https://docs.shyft.to/solana-apis/wallet#get-all-tokens)                                             | 20      | Get the balance of all tokens in a wallet                                             |
+| [direct/v1/Shyft/sol/v1/wallet/balance](https://docs.shyft.to/solana-apis/wallet#get-balance)                                                    | 20      | lets you check the balance in your solana wallet                                      |
+| [direct/v1/Shyft/sol/v1/semi\_wallet/decrypt](https://docs.shyft.to/solana-apis/semi-custodial-wallet#decrypt-semi-custodial-wallet)             | 20      | Decrypt a semi custodial wallet and get the keypair                                   |
+| [direct/v1/Shyft/sol/v1/wallet/get\_keypair](https://docs.shyft.to/solana-apis/wallet#get-keypair)                                               | 20      | Get the keypair of a semi custodial wallet                                            |
+| [direct/v1/Shyft/sol/v1/semi\_wallet/get\_keypair](https://docs.shyft.to/solana-apis/semi-custodial-wallet#get-keypair-of-semi-custodial-wallet) | 20      | Get the keypair of a semi custodial wallet                                            |
+| [direct/v1/Shyft/sol/v1/wallet/collections](https://docs.shyft.to/solana-apis/wallet#get-collections-in-wallet)                                  | 20      | For getting all the collections in a wallet                                           |
+| [direct/v1/Shyft/sol/v1/wallet/parsed\_transaction\_history](https://docs.shyft.to/solana-apis/wallet#get-parsed-transaction-history)            | 20      | Get the parsed transaction history of a wallet                                        |
+| [direct/v1/Shyft/sol/v1/wallet/get\_portfolio](https://docs.shyft.to/solana-apis/wallet#get-portfolio)                                           | 20      | Get the portfolio of a wallet                                                         |
+| [direct/v1/Shyft/sol/v1/nft/read\_all](https://docs.shyft.to/solana-apis/nft#read-all)                                                           | 20      | Read all NFTs                                                                         |
+| [direct/v1/Shyft/sol/v1/wallet/resolve\_address](https://docs.shyft.to/solana-apis/wallet#resolve-address)                                       | 20      | Get the address of a domain                                                           |
+| [direct/v1/Shyft/sol/v1/wallet/stake\_accounts](https://docs.shyft.to/solana-apis/wallet#get-stake-accounts)                                     | 20      | Get the stake accounts of a wallet                                                    |
+| [direct/v1/Shyft/sol/v1/wallet/token\_balance](https://docs.shyft.to/solana-apis/wallet#get-token-balance)                                       | 20      | Get the balance of a particular token in a wallet (Supports Token 2022 token info 🆕) |
+| [direct/v1/Shyft/sol/v1/wallet/transaction](https://docs.shyft.to/solana-apis/wallet#get-transaction-history-1)                                  | 20      | Get the details of a transaction                                                      |
+| [direct/v1/Shyft/sol/v1/wallet/transaction\_history](https://docs.shyft.to/solana-apis/wallet#get-transaction-history)                           | 20      | Get the transaction history of a wallet                                               |
+| [direct/v1/Shyft/sol/v1/wallet/decrypt\_semi\_wallet](https://docs.shyft.to/solana-apis/wallet#decrypt-semi-custodial-wallet)                    | 20      | Decrypt a semi custodial wallet                                                       |
+
+### POST
+
+| Path                                                                                                                                                     | Est. CU | Description                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------- |
+| [direct/v1/Shyft/sol/v1/semi\_wallet/change\_password](https://docs.shyft.to/solana-apis/semi-custodial-wallet#change-password-of-semi-custodial-wallet) | 20      | Change the password of a semi custodial wallet           |
+| [direct/v1/Shyft/sol/v1/semi\_wallet/create](https://docs.shyft.to/solana-apis/semi-custodial-wallet#create-semi-custodial-wallet)                       | 20      | Create a semi custodial wallet                           |
+| [direct/v1/Shyft/sol/v1/wallet/send\_sol](https://docs.shyft.to/solana-apis/wallet#send-sol)                                                             | 20      | allows you to transfer SOL from your account to another. |
+| [direct/v1/Shyft/sol/v1/wallet/send\_sol\_detach](https://docs.shyft.to/solana-apis/wallet#post-sol-v1-wallet-send_sol)                                  | 20      | Send SOL to another wallet                               |
+| [direct/v1/Shyft/sol/v1/wallet/create\_semi\_wallet](https://docs.shyft.to/solana-apis/wallet#create-semi-custodial-wallet)                              | 20      | Create a semi custodial wallet                           |
+| [direct/v1/Shyft/sol/v1/wallet/sign\_transaction](https://docs.shyft.to/solana-apis/wallet#sign-transaction)                                             | 20      | Sign a transaction                                       |
+
+## SolScan
+
+### GET
+
+| Path                                                                                                                                | Est. CU | Description                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------- |
+| [direct/v1/SolScan/v1.0/account/\{account}](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                                 | 20      | Get detailed information for a specific account on Solana.      |
+| [direct/v1/SolScan/v1.0/account/solTransfers](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                               | 20      | Get SOL transfers for a specific account on Solana.             |
+| [direct/v1/SolScan/v1.0/account/stakeAccounts](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                              | 20      | Get staking accounts for a specific account on Solana.          |
+| [direct/v1/SolScan/v1.0/account/transactions](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                               | 20      | Get the transaction history of a specific account on Solana.    |
+| [direct/v1/SolScan/v1.0/account/exportRewards](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                              | 20      | Export rewards for a specific account on Solana.                |
+| [direct/v1/SolScan/v1.0/account/exportTransactions](https://pro-api.solscan.io/pro-api-docs/v2.0/reference)                         | 20      | Export transactions for a specific account on Solana.           |
+| [direct/v1/SolScan/v2.0/account/balance\_change](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-balance_change)  | 650     | Get balance change activities for a specific account on Solana. |
+| [direct/v1/SolScan/v2.0/account/transfer](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-transfer)               | 650     | Get transfer information for a specific account on Solana.      |
+| [direct/v1/SolScan/v2.0/account/transfer/export](https://pro-api.solscan.io/pro-api-docs/v2.0/reference/v2-account-transfer-export) | 20      | Export transfer information for a specific account on Solana.   |
+
+## TonAPI
+
+### GET
+
+| Path                                                                                                                                      | Est. CU | Description                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------ |
+| [direct/v1/TonAPI/v2/wallet/\{account\_id}/seqno](https://tonapi.io/api-v2#operations-Wallet-getAccountSeqno)                             | 20      | Get account seqno                                                              |
+| [direct/v1/TonAPI/v2/blockchain/accounts/\{account\_id}](https://tonapi.io/api-v2#operations-Blockchain-getBlockchainRawAccount)          | 20      | Get low-level information about an account taken directly from the blockchain. |
+| [direct/v1/TonAPI/v2/liteserver/get\_account\_state/\{account\_id}](https://tonapi.io/api-v2#operations-Lite%20Server-getRawAccountState) | 20      | Get raw account state                                                          |
+| [direct/v1/TonAPI/v2/liteserver/get\_transactions/\{account\_id}](https://tonapi.io/api-v2#operations-Lite%20Server-getRawTransactions)   | 20      | Get raw transactions                                                           |
+| [direct/v1/TonAPI/v2/pubkeys/\{public\_key}/wallets](https://tonapi.io/api-v2#operations-Wallet-getWalletsByPublicKey)                    | 20      | Get wallets by public key                                                      |
+
+### POST
+
+| Path                                                                                                    | Est. CU | Description                             |
+| ------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------- |
+| [direct/v1/TonAPI/v2/wallet/emulate](https://tonapi.io/api-v2#operations-Wallet-emulateMessageToWallet) | 20      | Emulate sending message to blockchain   |
+| [direct/v1/TonAPI/v2/wallet/auth/proof](https://tonapi.io/api-v2#operations-Wallet-tonConnectProof)     | 20      | Account verification and token issuance |
+
+### PUT
+
+| Path                                                                                            | Est. CU | Description     |
+| ----------------------------------------------------------------------------------------------- | ------- | --------------- |
+| [direct/v1/TonAPI/v2/wallet/backup](https://tonapi.io/api-v2#operations-Wallet-setWalletBackup) | 20      | Set backup info |

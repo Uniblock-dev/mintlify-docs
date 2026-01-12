@@ -1,0 +1,657 @@
+---
+title: "Compute Units"
+description: "Ask AI"
+---
+
+A list of all supported endpoint groups by service (with estimated CU per endpoint).
+
+## Summary
+
+| Service         | # Endpoint Groups | Top Groups (by endpoints)                                                    | Total Endpoints | # Chains |
+| --------------- | ----------------- | ---------------------------------------------------------------------------- | --------------- | -------- |
+| `Alchemy`       | 5                 | `Nft` (12), `Token` (6), `JsonRpc` (1), `MarketData` (1), `Transaction` (1)  | 21              | 126      |
+| `AllThatNode`   | 1                 | `JsonRpc` (1)                                                                | 1               | 2        |
+| `Ankr`          | 1                 | `JsonRpc` (1)                                                                | 1               | 99       |
+| `BlockDaemon`   | 4                 | `JsonRpc` (1), `Nft` (1), `StellarHttp` (1), `Transaction` (1)               | 4               | 10       |
+| `Chainstack`    | 2                 | `JsonRpc` (1), `TonHttp` (1)                                                 | 2               | 48       |
+| `CoinGecko`     | 1                 | `MarketData` (7)                                                             | 7               | 7        |
+| `CoinMarketCap` | 1                 | `MarketData` (6)                                                             | 6               | 9        |
+| `Covalent`      | 3                 | `Nft` (9), `Token` (8), `Transactions` (2)                                   | 19              | 48       |
+| `CryptoCompare` | 1                 | `MarketData` (3)                                                             | 3               | 9        |
+| `Defined`       | 1                 | `MarketData` (1)                                                             | 1               | 36       |
+| `EtherScan`     | 1                 | `Scan` (30)                                                                  | 30              | 64       |
+| `Helius`        | 4                 | `Token` (2), `JsonRpc` (1), `Transaction` (1), `Transactions` (1)            | 5               | 2        |
+| `Infura`        | 1                 | `JsonRpc` (1)                                                                | 1               | 15       |
+| `Moralis`       | 5                 | `Token` (7), `Nft` (6), `Transactions` (2), `JsonRpc` (1), `Transaction` (1) | 17              | 33       |
+| `Nodies`        | 1                 | `JsonRpc` (1)                                                                | 1               | 29       |
+| `Pokt`          | 1                 | `JsonRpc` (1)                                                                | 1               | 9        |
+| `QuickNode`     | 3                 | `JsonRpc` (1), `StellarHttp` (1), `TonHttp` (1)                              | 3               | 39       |
+| `Shyft`         | 5                 | `Token` (3), `Nft` (2), `JsonRpc` (1), `Transaction` (1), `Transactions` (1) | 8               | 2        |
+| `Tatum`         | 5                 | `Nft` (6), `Token` (2), `JsonRpc` (1), `StellarHttp` (1), `TonHttp` (1)      | 11              | 33       |
+| `Uniblock`      | 2                 | `JsonRpc` (1), `Token` (1)                                                   | 2               | 142      |
+| `AutoRoute`     | 9                 | `Scan` (30), `Nft` (15), `Token` (9), `MarketData` (7), `Transactions` (3)   | 68              | 222      |
+
+## Details
+
+## Alchemy
+
+* **Endpoint Groups:** 5
+* **Total Endpoints:** 21
+* **Chains:** 126 (`1`, `10`, `30`, `31`, `56`, `97`, `100`, `130`, `137`, `143`, `146`, `204`, `232`, `250`, `252`, `288`, `300`, `324`, `360`, `480`, …)
+
+### Nft — 12 endpoints
+
+| Method                  | Endpoint                   | Est. CU |
+| ----------------------- | -------------------------- | ------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata` | 320     |
+| `NFTCollectionRarity`   | `/nft/collection/rarity`   | 160     |
+| `NFTGetFloorPrice`      | `/nft/floor-price`         | 160     |
+| `NFTGetSales`           | `/nft/sales`               | 320     |
+| `NFTInCollection`       | `/nft/nft-in-collection`   | 115     |
+| `NFTIsAirdrop`          | `/nft/is-airdrop`          | 160     |
+| `NFTMetadata`           | `/nft/metadata`            | 160     |
+| `NFTOwnersByNft`        | `/nft/owners/nft`          | 160     |
+| `NFTTransfersByWallet`  | `/nft/transfers`           | 240     |
+| `WalletNFTBalance`      | `/nft/balance`             | 960     |
+| `WalletNFTContracts`    | `/nft/owned-collections`   | 640     |
+| `WalletNFTHolder`       | `/nft/is-nft-holder`       | 160     |
+
+### Token — 6 endpoints
+
+| Method                 | Endpoint                  | Est. CU |
+| ---------------------- | ------------------------- | ------- |
+| `TokenHistoricalPrice` | `/token/price/historical` | 80      |
+| `TokenMetadata`        | `/token/metadata`         | 20      |
+| `TokenPortfolio`       | `/token/portfolio`        | 1040    |
+| `TokenPrice`           | `/token/price`            | 80      |
+| `WalletTokenBalance`   | `/token/balance`          | 60      |
+| `WalletTokenTransfers` | `/token/transfers`        | 240     |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### MarketData — 1 endpoint
+
+| Method            | Endpoint             | Est. CU |
+| ----------------- | -------------------- | ------- |
+| `MarketDataPrice` | `/market-data/price` | 80      |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       | Est. CU |
+| ------------------- | -------------- | ------- |
+| `TransactionByHash` | `/transaction` | 40      |
+
+## AllThatNode
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 2 (`1001`, `8217`)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+## Ankr
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 99 (`1`, `10`, `14`, `40`, `50`, `51`, `56`, `57`, `97`, `100`, `137`, `146`, `196`, `223`, `239`, `250`, `266`, `300`, `314`, `324`, …)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+## BlockDaemon
+
+* **Endpoint Groups:** 4
+* **Total Endpoints:** 4
+* **Chains:** 10 (`1`, `10`, `137`, `250`, `397`, `4002`, `43114`, `80002`, `stellar`, `stellar-testnet`)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### Nft — 1 endpoint
+
+| Method                  | Endpoint                   | Est. CU |
+| ----------------------- | -------------------------- | ------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata` | 25      |
+
+### StellarHttp — 1 endpoint
+
+| Method        | Endpoint              | Est. CU |
+| ------------- | --------------------- | ------- |
+| `StellarHttp` | `/stellar-http/*path` | 25      |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       | Est. CU |
+| ------------------- | -------------- | ------- |
+| `TransactionByHash` | `/transaction` | 120     |
+
+## Chainstack
+
+* **Endpoint Groups:** 2
+* **Total Endpoints:** 2
+* **Chains:** 48 (`1`, `10`, `25`, `56`, `97`, `100`, `130`, `137`, `146`, `204`, `250`, `300`, `324`, `1001`, `1101`, `1284`, `2020`, `5000`, `8217`, `8453`, …)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### TonHttp — 1 endpoint
+
+| Method    | Endpoint          | Est. CU |
+| --------- | ----------------- | ------- |
+| `TonHttp` | `/ton-http/*path` | 40      |
+
+## CoinGecko
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 7
+* **Chains:** 7 (`1`, `56`, `137`, `250`, `42161`, `42220`, `43114`)
+
+### MarketData — 7 endpoints
+
+| Method                            | Endpoint                         | Est. CU |
+| --------------------------------- | -------------------------------- | ------- |
+| `MarketData24HourVolume`          | `/market-data/24-hour-volume`    | 2600    |
+| `MarketDataMarketCap`             | `/market-data/market-cap`        | 2600    |
+| `MarketDataMarketChartPriceRange` | `/market-data/chart-price-range` | 2600    |
+| `MarketDataMarketChartRange`      | `/market-data/chart-range`       | 2600    |
+| `MarketDataPrice`                 | `/market-data/price`             | 2600    |
+| `MarketDataTokenHistorySnapshot`  | `/market-data/history`           | 2600    |
+| `MarketDataTrendingTokens`        | `/market-data/trending`          | 2600    |
+
+## CoinMarketCap
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 6
+* **Chains:** 9 (`1`, `56`, `97`, `137`, `250`, `42161`, `42220`, `43114`, `11155111`)
+
+### MarketData — 6 endpoints
+
+| Method                           | Endpoint                      | Est. CU |
+| -------------------------------- | ----------------------------- | ------- |
+| `MarketData24HourVolume`         | `/market-data/24-hour-volume` | 3180    |
+| `MarketDataMarketCap`            | `/market-data/market-cap`     | 3180    |
+| `MarketDataMarketChartRange`     | `/market-data/chart-range`    | 6215    |
+| `MarketDataPrice`                | `/market-data/price`          | 6360    |
+| `MarketDataTokenHistorySnapshot` | `/market-data/history`        | 6365    |
+| `MarketDataTrendingTokens`       | `/market-data/trending`       | 3180    |
+
+## Covalent
+
+* **Endpoint Groups:** 3
+* **Total Endpoints:** 19
+* **Chains:** 48 (`1`, `10`, `25`, `56`, `97`, `100`, `137`, `248`, `250`, `288`, `300`, `324`, `1088`, `1101`, `1284`, `1285`, `1329`, `2020`, `2442`, `4002`, …)
+
+### Nft — 9 endpoints
+
+| Method                  | Endpoint                           | Est. CU |
+| ----------------------- | ---------------------------------- | ------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata`         | 75000   |
+| `NFTCollectionRarity`   | `/nft/collection/rarity`           | 25000   |
+| `NFTCollectionTraits`   | `/nft/collection/traits`           | 10000   |
+| `NFTInCollection`       | `/nft/nft-in-collection`           | 75000   |
+| `NFTMetadata`           | `/nft/metadata`                    | 10000   |
+| `NFTTraitAttributes`    | `/nft/collection/trait/attributes` | 10000   |
+| `NFTTransfersByNft`     | `/nft/transfers/nft`               | 500     |
+| `WalletNFTBalance`      | `/nft/balance`                     | 5000    |
+| `WalletNFTHolder`       | `/nft/is-nft-holder`               | 5000    |
+
+### Token — 8 endpoints
+
+| Method                         | Endpoint                    | Est. CU |
+| ------------------------------ | --------------------------- | ------- |
+| `TokenHistoricalPrice`         | `/token/price/historical`   | 4855    |
+| `TokenMetadata`                | `/token/metadata`           | 5000    |
+| `TokenPrice`                   | `/token/price`              | 4985    |
+| `WalletTokenActivity`          | `/token/activity`           | 2500    |
+| `WalletTokenAllowances`        | `/token/allowances`         | 9890    |
+| `WalletTokenBalance`           | `/token/balance`            | 5000    |
+| `WalletTokenHistoricalBalance` | `/token/balance/historical` | 5000    |
+| `WalletTokenTransfers`         | `/token/transfers`          | 5000    |
+
+### Transactions — 2 endpoints
+
+| Method               | Endpoint              | Est. CU |
+| -------------------- | --------------------- | ------- |
+| `TransactionsBlock`  | `/transactions/block` | 12500   |
+| `WalletTransactions` | `/transactions`       | 35270   |
+
+## CryptoCompare
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 3
+* **Chains:** 9 (`1`, `56`, `97`, `137`, `250`, `42161`, `42220`, `43114`, `11155111`)
+
+### MarketData — 3 endpoints
+
+| Method                     | Endpoint                      | Est. CU |
+| -------------------------- | ----------------------------- | ------- |
+| `MarketData24HourVolume`   | `/market-data/24-hour-volume` | 3800    |
+| `MarketDataMarketCap`      | `/market-data/market-cap`     | 3800    |
+| `MarketDataTrendingTokens` | `/market-data/trending`       | 3800    |
+
+## Defined
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 36 (`1`, `10`, `25`, `56`, `66`, `100`, `137`, `250`, `288`, `300`, `324`, `369`, `592`, `1088`, `1101`, `1284`, `1285`, `4689`, `8217`, `8453`, …)
+
+### MarketData — 1 endpoint
+
+| Method                            | Endpoint                         | Est. CU |
+| --------------------------------- | -------------------------------- | ------- |
+| `MarketDataMarketChartPriceRange` | `/market-data/chart-price-range` | 3500    |
+
+## EtherScan
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 30
+* **Chains:** 64 (`1`, `10`, `25`, `50`, `51`, `56`, `97`, `100`, `130`, `137`, `146`, `199`, `252`, `300`, `324`, `480`, `1028`, `1101`, `1111`, `1112`, …)
+
+### Scan — 30 endpoints
+
+| Method                                     | Endpoint                                             | Est. CU |
+| ------------------------------------------ | ---------------------------------------------------- | ------- |
+| `ScanAccountErc1155TokenTransfer`          | `/scan/account-erc1155-transactions`                 | 330     |
+| `ScanAccountErc20TokenTransfer`            | `/scan/account-erc20-transactions`                   | 330     |
+| `ScanAccountErc721TokenTransfer`           | `/scan/account-erc721-transactions`                  | 330     |
+| `ScanAccountInternalTransactionBlockRange` | `/scan/account-internal-transactions-by-block-range` | 330     |
+| `ScanAccountInternalTransactionsAddress`   | `/scan/account-internal-transactions-by-address`     | 330     |
+| `ScanAccountInternalTransactionsHash`      | `/scan/account-internal-transactions-by-hash`        | 330     |
+| `ScanAccountNativeBalanceMulti`            | `/scan/account-native-balance-multi`                 | 330     |
+| `ScanAccountNativeBalanceSingle`           | `/scan/account-native-balance-single`                | 330     |
+| `ScanAccountNormalTransactions`            | `/scan/account-normal-transactions`                  | 330     |
+| `ScanBlockByTimestamp`                     | `/scan/block-by-timestamp`                           | 330     |
+| `ScanBlockCountdown`                       | `/scan/block-get-countdown`                          | 330     |
+| `ScanBlockRewards`                         | `/scan/block-rewards`                                | 330     |
+| `ScanContractAbi`                          | `/scan/contract-abi`                                 | 330     |
+| `ScanContractCreation`                     | `/scan/contract-creation`                            | 330     |
+| `ScanContractSourceCode`                   | `/scan/contract-source-code`                         | 330     |
+| `ScanContractVerifyProxyContract`          | `/scan/contract-verify-proxy`                        | 330     |
+| `ScanContractVerifyStatus`                 | `/scan/contract-verify-source-code`                  | 330     |
+| `ScanGasConfirmationTime`                  | `/scan/estimation-confirmation-time`                 | 330     |
+| `ScanGasPrices`                            | `/scan/current-gas-estimation`                       | 330     |
+| `ScanLogAddress`                           | `/scan/log-address`                                  | 330     |
+| `ScanLogAddressByTopic`                    | `/scan/log-by-address-filtered-topics`               | 330     |
+| `ScanLogTopics`                            | `/scan/log-by-topics`                                | 330     |
+| `ScanStatsNativeNodeCount`                 | `/scan/native-node-count`                            | 330     |
+| `ScanStatsNativeNodeSize`                  | `/scan/native-node-size`                             | 330     |
+| `ScanStatsNativePrice`                     | `/scan/native-price`                                 | 330     |
+| `ScanStatsNativeSupply`                    | `/scan/native-supply`                                | 330     |
+| `ScanTokensErc20AddressBalance`            | `/scan/token-balance`                                | 330     |
+| `ScanTokensErc20TotalSupply`               | `/scan/token-supply`                                 | 330     |
+| `ScanTransactionExecutionStatus`           | `/scan/transaction-execution-status`                 | 330     |
+| `ScanTransactionStatusCode`                | `/scan/transaction-receipt-status`                   | 330     |
+
+## Helius
+
+* **Endpoint Groups:** 4
+* **Total Endpoints:** 5
+* **Chains:** 2 (`solana`, `solana-devnet`)
+
+### Token — 2 endpoints
+
+| Method                 | Endpoint           | Est. CU |
+| ---------------------- | ------------------ | ------- |
+| `TokenMetadata`        | `/token/metadata`  | 50      |
+| `WalletTokenTransfers` | `/token/transfers` | 50      |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       | Est. CU |
+| ------------------- | -------------- | ------- |
+| `TransactionByHash` | `/transaction` | 20      |
+
+### Transactions — 1 endpoint
+
+| Method               | Endpoint        | Est. CU |
+| -------------------- | --------------- | ------- |
+| `WalletTransactions` | `/transactions` | 5000    |
+
+## Infura
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 15 (`1`, `10`, `8453`, `42161`, `42220`, `43114`, `59141`, `59144`, `80002`, `81457`, `84532`, `421614`, `11155111`, `11155420`, `11297108109`)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+## Moralis
+
+* **Endpoint Groups:** 5
+* **Total Endpoints:** 17
+* **Chains:** 33 (`1`, `10`, `25`, `56`, `97`, `100`, `137`, `250`, `369`, `545`, `747`, `1135`, `1284`, `1285`, `2020`, `4002`, `4202`, `8453`, `10200`, `42161`, …)
+
+### Token — 7 endpoints
+
+| Method                         | Endpoint                    | Est. CU |
+| ------------------------------ | --------------------------- | ------- |
+| `TokenHistoricalPrice`         | `/token/price/historical`   | 305     |
+| `TokenMetadata`                | `/token/metadata`           | 75      |
+| `TokenPortfolio`               | `/token/portfolio`          | 75      |
+| `TokenPrice`                   | `/token/price`              | 280     |
+| `WalletTokenBalance`           | `/token/balance`            | 290     |
+| `WalletTokenHistoricalBalance` | `/token/balance/historical` | 750     |
+| `WalletTokenTransfers`         | `/token/transfers`          | 375     |
+
+### Nft — 6 endpoints
+
+| Method                  | Endpoint                   | Est. CU |
+| ----------------------- | -------------------------- | ------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata` | 375     |
+| `NFTInCollection`       | `/nft/nft-in-collection`   | 375     |
+| `NFTMetadata`           | `/nft/metadata`            | 145     |
+| `NFTTransfersByNft`     | `/nft/transfers/nft`       | 150     |
+| `NFTTransfersByWallet`  | `/nft/transfers`           | 375     |
+| `WalletNFTBalance`      | `/nft/balance`             | 375     |
+
+### Transactions — 2 endpoints
+
+| Method                       | Endpoint                 | Est. CU |
+| ---------------------------- | ------------------------ | ------- |
+| `WalletTransactions`         | `/transactions`          | 225     |
+| `WalletTransactionsAdvanced` | `/transactions/advanced` | 1125    |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       | Est. CU |
+| ------------------- | -------------- | ------- |
+| `TransactionByHash` | `/transaction` | 75      |
+
+## Nodies
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 29 (`1`, `10`, `56`, `100`, `122`, `137`, `250`, `1088`, `1101`, `1328`, `1329`, `2222`, `5000`, `7070`, `8217`, `8453`, `23888`, `42161`, `43114`, `57073`, …)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+## Pokt
+
+* **Endpoint Groups:** 1
+* **Total Endpoints:** 1
+* **Chains:** 9 (`100`, `248`, `288`, `4689`, `9001`, `1666600000`, `osmosis`, `celestia`, `pokt`)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+## QuickNode
+
+* **Endpoint Groups:** 3
+* **Total Endpoints:** 3
+* **Chains:** 39 (`1`, `10`, `56`, `100`, `137`, `250`, `324`, `397`, `398`, `999`, `2741`, `2810`, `2818`, `5000`, `8453`, `10143`, `11124`, `42161`, `42170`, `42220`, …)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### StellarHttp — 1 endpoint
+
+| Method        | Endpoint              | Est. CU |
+| ------------- | --------------------- | ------- |
+| `StellarHttp` | `/stellar-http/*path` | 100     |
+
+### TonHttp — 1 endpoint
+
+| Method    | Endpoint          | Est. CU |
+| --------- | ----------------- | ------- |
+| `TonHttp` | `/ton-http/*path` | 100     |
+
+## Shyft
+
+* **Endpoint Groups:** 5
+* **Total Endpoints:** 8
+* **Chains:** 2 (`solana`, `solana-devnet`)
+
+### Token — 3 endpoints
+
+| Method               | Endpoint           | Est. CU |
+| -------------------- | ------------------ | ------- |
+| `TokenMetadata`      | `/token/metadata`  | 1650    |
+| `TokenPortfolio`     | `/token/portfolio` | 1650    |
+| `WalletTokenBalance` | `/token/balance`   | 3300    |
+
+### Nft — 2 endpoints
+
+| Method             | Endpoint        | Est. CU |
+| ------------------ | --------------- | ------- |
+| `NFTMetadata`      | `/nft/metadata` | 1650    |
+| `WalletNFTBalance` | `/nft/balance`  | 1650    |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       | Est. CU |
+| ------------------- | -------------- | ------- |
+| `TransactionByHash` | `/transaction` | 1650    |
+
+### Transactions — 1 endpoint
+
+| Method               | Endpoint        | Est. CU |
+| -------------------- | --------------- | ------- |
+| `WalletTransactions` | `/transactions` | 1650    |
+
+## Tatum
+
+* **Endpoint Groups:** 5
+* **Total Endpoints:** 11
+* **Chains:** 33 (`1`, `14`, `30`, `31`, `50`, `51`, `56`, `61`, `97`, `137`, `321`, `322`, `324`, `1135`, `4002`, `4202`, `7332`, `11235`, `32769`, `33101`, …)
+
+### Nft — 6 endpoints
+
+| Method                  | Endpoint                   | Est. CU |
+| ----------------------- | -------------------------- | ------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata` | 100     |
+| `NFTInCollection`       | `/nft/nft-in-collection`   | 100     |
+| `NFTMetadata`           | `/nft/metadata`            | 975     |
+| `NFTTransfersByWallet`  | `/nft/transfers`           | 100     |
+| `WalletNFTBalance`      | `/nft/balance`             | 100     |
+| `WalletNFTHolder`       | `/nft/is-nft-holder`       | 4875    |
+
+### Token — 2 endpoints
+
+| Method               | Endpoint          | Est. CU |
+| -------------------- | ----------------- | ------- |
+| `TokenMetadata`      | `/token/metadata` | 1950    |
+| `WalletTokenBalance` | `/token/balance`  | 100     |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### StellarHttp — 1 endpoint
+
+| Method        | Endpoint              | Est. CU |
+| ------------- | --------------------- | ------- |
+| `StellarHttp` | `/stellar-http/*path` | 100     |
+
+### TonHttp — 1 endpoint
+
+| Method    | Endpoint          | Est. CU |
+| --------- | ----------------- | ------- |
+| `TonHttp` | `/ton-http/*path` | 100     |
+
+## Uniblock
+
+* **Endpoint Groups:** 2
+* **Total Endpoints:** 2
+* **Chains:** 142 (`1`, `10`, `14`, `25`, `30`, `31`, `50`, `51`, `56`, `61`, `66`, `97`, `100`, `122`, `130`, `137`, `143`, `146`, `151`, `199`, …)
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    | Est. CU |
+| --------- | ----------- | ------- |
+| `JsonRpc` | `/json-rpc` | 30      |
+
+### Token — 1 endpoint
+
+| Method          | Endpoint          | Est. CU |
+| --------------- | ----------------- | ------- |
+| `TokenMetadata` | `/token/metadata` | 35      |
+
+## AutoRoute
+
+* **Endpoint Groups:** 9
+* **Total Endpoints:** 68
+* **Chains:** 222 (`1`, `10`, `30`, `31`, `56`, `97`, `100`, `130`, `137`, `143`, `146`, `204`, `232`, `250`, `252`, `288`, `300`, `324`, `360`, `480`, …)
+
+### Scan — 30 endpoints
+
+| Method                                     | Endpoint                                             |
+| ------------------------------------------ | ---------------------------------------------------- |
+| `ScanAccountErc1155TokenTransfer`          | `/scan/account-erc1155-transactions`                 |
+| `ScanAccountErc20TokenTransfer`            | `/scan/account-erc20-transactions`                   |
+| `ScanAccountErc721TokenTransfer`           | `/scan/account-erc721-transactions`                  |
+| `ScanAccountInternalTransactionBlockRange` | `/scan/account-internal-transactions-by-block-range` |
+| `ScanAccountInternalTransactionsAddress`   | `/scan/account-internal-transactions-by-address`     |
+| `ScanAccountInternalTransactionsHash`      | `/scan/account-internal-transactions-by-hash`        |
+| `ScanAccountNativeBalanceMulti`            | `/scan/account-native-balance-multi`                 |
+| `ScanAccountNativeBalanceSingle`           | `/scan/account-native-balance-single`                |
+| `ScanAccountNormalTransactions`            | `/scan/account-normal-transactions`                  |
+| `ScanBlockByTimestamp`                     | `/scan/block-by-timestamp`                           |
+| `ScanBlockCountdown`                       | `/scan/block-get-countdown`                          |
+| `ScanBlockRewards`                         | `/scan/block-rewards`                                |
+| `ScanContractAbi`                          | `/scan/contract-abi`                                 |
+| `ScanContractCreation`                     | `/scan/contract-creation`                            |
+| `ScanContractSourceCode`                   | `/scan/contract-source-code`                         |
+| `ScanContractVerifyProxyContract`          | `/scan/contract-verify-proxy`                        |
+| `ScanContractVerifyStatus`                 | `/scan/contract-verify-source-code`                  |
+| `ScanGasConfirmationTime`                  | `/scan/estimation-confirmation-time`                 |
+| `ScanGasPrices`                            | `/scan/current-gas-estimation`                       |
+| `ScanLogAddress`                           | `/scan/log-address`                                  |
+| `ScanLogAddressByTopic`                    | `/scan/log-by-address-filtered-topics`               |
+| `ScanLogTopics`                            | `/scan/log-by-topics`                                |
+| `ScanStatsNativeNodeCount`                 | `/scan/native-node-count`                            |
+| `ScanStatsNativeNodeSize`                  | `/scan/native-node-size`                             |
+| `ScanStatsNativePrice`                     | `/scan/native-price`                                 |
+| `ScanStatsNativeSupply`                    | `/scan/native-supply`                                |
+| `ScanTokensErc20AddressBalance`            | `/scan/token-balance`                                |
+| `ScanTokensErc20TotalSupply`               | `/scan/token-supply`                                 |
+| `ScanTransactionExecutionStatus`           | `/scan/transaction-execution-status`                 |
+| `ScanTransactionStatusCode`                | `/scan/transaction-receipt-status`                   |
+
+### Nft — 15 endpoints
+
+| Method                  | Endpoint                           |
+| ----------------------- | ---------------------------------- |
+| `NFTCollectionMetadata` | `/nft/collection-metadata`         |
+| `NFTCollectionRarity`   | `/nft/collection/rarity`           |
+| `NFTCollectionTraits`   | `/nft/collection/traits`           |
+| `NFTGetFloorPrice`      | `/nft/floor-price`                 |
+| `NFTGetSales`           | `/nft/sales`                       |
+| `NFTInCollection`       | `/nft/nft-in-collection`           |
+| `NFTIsAirdrop`          | `/nft/is-airdrop`                  |
+| `NFTMetadata`           | `/nft/metadata`                    |
+| `NFTOwnersByNft`        | `/nft/owners/nft`                  |
+| `NFTTraitAttributes`    | `/nft/collection/trait/attributes` |
+| `NFTTransfersByNft`     | `/nft/transfers/nft`               |
+| `NFTTransfersByWallet`  | `/nft/transfers`                   |
+| `WalletNFTBalance`      | `/nft/balance`                     |
+| `WalletNFTContracts`    | `/nft/owned-collections`           |
+| `WalletNFTHolder`       | `/nft/is-nft-holder`               |
+
+### Token — 9 endpoints
+
+| Method                         | Endpoint                    |
+| ------------------------------ | --------------------------- |
+| `TokenHistoricalPrice`         | `/token/price/historical`   |
+| `TokenMetadata`                | `/token/metadata`           |
+| `TokenPortfolio`               | `/token/portfolio`          |
+| `TokenPrice`                   | `/token/price`              |
+| `WalletTokenActivity`          | `/token/activity`           |
+| `WalletTokenAllowances`        | `/token/allowances`         |
+| `WalletTokenBalance`           | `/token/balance`            |
+| `WalletTokenHistoricalBalance` | `/token/balance/historical` |
+| `WalletTokenTransfers`         | `/token/transfers`          |
+
+### MarketData — 7 endpoints
+
+| Method                            | Endpoint                         |
+| --------------------------------- | -------------------------------- |
+| `MarketData24HourVolume`          | `/market-data/24-hour-volume`    |
+| `MarketDataMarketCap`             | `/market-data/market-cap`        |
+| `MarketDataMarketChartPriceRange` | `/market-data/chart-price-range` |
+| `MarketDataMarketChartRange`      | `/market-data/chart-range`       |
+| `MarketDataPrice`                 | `/market-data/price`             |
+| `MarketDataTokenHistorySnapshot`  | `/market-data/history`           |
+| `MarketDataTrendingTokens`        | `/market-data/trending`          |
+
+### Transactions — 3 endpoints
+
+| Method                       | Endpoint                 |
+| ---------------------------- | ------------------------ |
+| `TransactionsBlock`          | `/transactions/block`    |
+| `WalletTransactions`         | `/transactions`          |
+| `WalletTransactionsAdvanced` | `/transactions/advanced` |
+
+### JsonRpc — 1 endpoint
+
+| Method    | Endpoint    |
+| --------- | ----------- |
+| `JsonRpc` | `/json-rpc` |
+
+### StellarHttp — 1 endpoint
+
+| Method        | Endpoint              |
+| ------------- | --------------------- |
+| `StellarHttp` | `/stellar-http/*path` |
+
+### TonHttp — 1 endpoint
+
+| Method    | Endpoint          |
+| --------- | ----------------- |
+| `TonHttp` | `/ton-http/*path` |
+
+### Transaction — 1 endpoint
+
+| Method              | Endpoint       |
+| ------------------- | -------------- |
+| `TransactionByHash` | `/transaction` |
