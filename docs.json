@@ -70,7 +70,8 @@
             },
             "pages": [
               "reference/unified-api/overview-unified-apis",
-              "reference/unified-api/uniblock-mcp-server-overview-and-setup"
+              "reference/unified-api/uniblock-mcp-server-overview-and-setup",
+              "reference/unified-api/overview-stellar"
             ]
           },
           {
@@ -129,13 +130,6 @@
                   "reference/webhook/webhook-types/event-trigger-solana-address-activity"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Ethereum endpoints",
-            "pages": [
-              "reference/endpoint/ethereum/eth_blockNumber",
-              "reference/endpoint/ethereum/eth_getBlockByNumber"
             ]
           }
         ]
