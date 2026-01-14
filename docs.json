@@ -59,7 +59,7 @@
                   "reference/resources/chains",
                   "reference/resources/chains/supported-chains",
                   "reference/resources/chains/market-data-chains",
-                  "reference/resources/chains/supported-json-rpc-methods-by-chain-union-across-services"
+                  "reference/resources/chains/supported-json-rpc-chains"
                 ]
               }
             ]
