@@ -70,7 +70,7 @@
             },
             "pages": [
               "reference/unified-api/overview-unified-apis",
-              "reference/unified-api/uniblock-mcp-server-overview-and-setup",
+              "reference/unified-api/uniblock-mcp-setup",
               "reference/unified-api/overview-stellar"
             ]
           },
