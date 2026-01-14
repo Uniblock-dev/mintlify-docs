@@ -8953,30 +8953,6 @@
         },
         "tags": ["Webhook"]
       }
-    },
-    "/docs/llm-guide": {
-      "get": {
-        "operationId": "DocumentationController_getLlmGuide",
-        "summary": "Get LLM documentation guide",
-        "description": "Returns the compact LLM documentation guide as plain text for AI assistants and developers",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Documentation retrieved successfully",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Documentation file not found"
-          }
-        },
-        "tags": ["Documentation"]
-      }
     }
   },
   "info": {

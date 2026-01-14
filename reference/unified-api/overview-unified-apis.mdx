@@ -1,16 +1,17 @@
 ---
-title: "Overview"
-description: "Ask AI"
+title: 'Overview'
+description: 'Ask AI'
 ---
 
 Unified API's primary goal is to provide users with a one stop place for integrating blockchain functionality into applications with reliability, latency, and cost in mind.
 
 <Info>
-  ### Remember to create your project & get your API-KEY through our [Uniblock's dashboard](http://dashboard.uniblock.dev).
+  ### Remember to create your project & get your API-KEY through our [Uniblock's
+  dashboard](http://dashboard.uniblock.dev).
 </Info>
 
 <Frame caption="Uniblock's Dashboard Endpoint Page showcasing our Endpoints">
-  <img src="\images\reference\8426b72-Screenshot_2024-08-02_at_12.36.04_PM.png" />
+  <img src='\images\reference\8426b72-Screenshot_2024-08-02_at_12.36.04_PM.png' />
 </Frame>
 
 The provided endpoints in Unified API offer a variety of functionalities related to tokens (both fungible and non-fungible), and transactions, across multiple blockchains. The endpoints can be filtered by these categories:
@@ -19,21 +20,165 @@ The provided endpoints in Unified API offer a variety of functionalities related
 
 These endpoints provide functionalities related to fungible tokens (like ERC20). You can retrieve metadata about a token, query a specific address's balance, track token transactions, and query for token allowances. Learn more about these endpoints on our [Token](ref:token) page.
 
-## MarketData API
+List of all our Unified Token endpoints.
+
+| Endpoint              | ETH | GOERLI | OPTIMISM | CRONOS | BSC | BSCTESTNET | GNOSIS_CHAIN | MATIC | OASYS | FTM | BOBA | ZKSYNC_SEPOLIA | ZKSYNC | PULSECHAIN | ASTAR | METIS | ZKEVM | MOONBEAM | MOONRIVER | RONIN | FTM_TESTNET | IOTEX | KLAYTN | BASE | EVMOS | GNOSIS_TESTNET | ETH_HOLESKY | ARBITRUM | CELO | AVAX | LINEA_SEPOLIA | LINEA | MUMBAI | MATIC_AMOY | BLAST | BASE_SEPOLIA | CHILIZ_TESTNET | CHILIZ | ARB_SEPOLIA | SCROLL | SEPOLIA | OP_SEPOLIA | HARMONY_SHARD_ZERO | PALM |
+| --------------------- | --- | ------ | -------- | ------ | --- | ---------- | ------------ | ----- | ----- | --- | ---- | -------------- | ------ | ---------- | ----- | ----- | ----- | -------- | --------- | ----- | ----------- | ----- | ------ | ---- | ----- | -------------- | ----------- | -------- | ---- | ---- | ------------- | ----- | ------ | ---------- | ----- | ------------ | -------------- | ------ | ----------- | ------ | ------- | ---------- | ------------------ | ---- |
+| TokenMetadata         | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| WalletTokenBalance    | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| TokenPrice            | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| WalletTokenTransfers  | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| WalletTokenAllowances | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| WalletTokenActivity   | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+
+| Endpoint                 | Description                                      |
+| ------------------------ | ------------------------------------------------ |
+| token/metadata           | Get the metadata of an ERC20 Token.              |
+| token/balance            | Get the token balances of an address.            |
+| token/balance/historical | Get the historical token balances of an address. |
+| token/price              | Get the USD price of a token.                    |
+| token/price/historical   | Get the historical USD price of a token.         |
+| token/transfers          | Get the token transfers of an address.           |
+| token/allowances         | Get the allowances of an address.                |
+| token/activity           | Get the token activity of an address.            |
+
+## Marke Data API
 
 These endpoints deliver real-time and historical market data from multiple exchanges. Access information such as cryptocurrency price quotes, market capitalization, trading volumes, and exchange rate data. Essential for financial analyses and trading strategies. Learn more about these endpoints on our [MarketData](ref:api-overview-market-data) page.
+
+A list of Uniblock's supported Market Data API endpoints.
+
+| Endpoint                       | Description                                                                                                                           |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| /market-data/price             | Get real-time token prices using IDs, symbols, chain IDs, or token addresses, with optional currency selection and raw provider data. |
+| /market-data/market-cap        | Retrieve the current market capitalization of a token, with support for multiple currencies and optional raw provider data.           |
+| /market-data/24-hour-volume    | Fetch a token’s 24-hour trading volume across supported providers and currencies, with optional raw, unnormalized data.               |
+| /market-data/history           | Get historical snapshots of a token’s price, volume, and market cap at a specific date or timestamp, in your chosen currency.         |
+| /market-data/chart-range       | Query price, volume, and market cap data for a token over a time range, suitable for generating charts over a selected period.        |
+| /market-data/chart-price-range | Get price series data for a token between two timestamps, with optional period-based granularity for charting.                        |
+| /market-data/trending          | List trending tokens based on criteria like gainers and losers, most searched, most visited, volume, or market cap.                   |
 
 ## NFT API
 
 These endpoints are related to non-fungible tokens (NFTs, like ERC721 or ERC1155). These endpoints allow you to check the NFT balance of an address, retrieve detailed information about NFTs in a collection, track NFT transactions, and fetch metadata about NFTs or NFT collections. Start fetching with our endpoints shown on our [NFT](ref:nft-1) page.
 
+List of all NFT endpoints:
+
+| Endpoint              | ETH | GOERLI | OPTIMISM | CRONOS | BSC | BSCTESTNET | GNOSIS_CHAIN | MATIC | OASYS | FTM | BOBA | ZKSYNC_SEPOLIA | ZKSYNC | PULSECHAIN | ASTAR | METIS | ZKEVM | MOONBEAM | MOONRIVER | RONIN | FTM_TESTNET | IOTEX | KLAYTN | BASE | EVMOS | GNOSIS_TESTNET | ETH_HOLESKY | ARBITRUM | CELO | AVAX | LINEA_SEPOLIA | LINEA | MUMBAI | MATIC_AMOY | BLAST | BASE_SEPOLIA | CHILIZ_TESTNET | CHILIZ | ARB_SEPOLIA | SCROLL | SEPOLIA | OP_SEPOLIA | HARMONY_SHARD_ZERO | PALM |
+| --------------------- | --- | ------ | -------- | ------ | --- | ---------- | ------------ | ----- | ----- | --- | ---- | -------------- | ------ | ---------- | ----- | ----- | ----- | -------- | --------- | ----- | ----------- | ----- | ------ | ---- | ----- | -------------- | ----------- | -------- | ---- | ---- | ------------- | ----- | ------ | ---------- | ----- | ------------ | -------------- | ------ | ----------- | ------ | ------- | ---------- | ------------------ | ---- |
+| WalletNFTBalance      | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTInCollection       | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTTransfersByWallet  | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ❌    | ❌     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ❌    | ✅           | ✅             | ✅     | ✅          | ❌     | ✅      | ✅         | ❌                 | ✅   |
+| NFTTransfersByNft     | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTCollectionMetadata | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTCollectionTraits   | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTCollectionRarity   | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTTraitAttributes    | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTMetadata           | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTIsAirdrop          | ✅  | ❌     | ✅       | ❌     | ✅  | ❌         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ❌          | ❌    | ❌     | ✅   | ✅    | ❌             | ✅          | ✅       | ❌   | ✅   | ❌            | ❌    | ✅     | ✅         | ❌    | ✅           | ❌             | ❌     | ✅          | ❌     | ✅      | ✅         | ❌                 | ❌   |
+| NFTGetFloorPrice      | ✅  | ❌     | ✅       | ❌     | ✅  | ❌         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ❌          | ❌    | ❌     | ✅   | ✅    | ❌             | ✅          | ✅       | ❌   | ✅   | ❌            | ❌    | ✅     | ✅         | ❌    | ✅           | ❌             | ❌     | ✅          | ❌     | ✅      | ✅         | ❌                 | ❌   |
+| WalletNFTHolder       | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| NFTGetSales           | ✅  | ✅     | ✅       | ❌     | ✅  | ✅         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ❌          | ❌    | ❌     | ✅   | ✅    | ❌             | ✅          | ✅       | ✅   | ✅   | ❌            | ❌    | ✅     | ✅         | ❌    | ✅           | ❌             | ❌     | ✅          | ❌     | ✅      | ✅         | ❌                 | ❌   |
+| WalletNFTContracts    | ✅  | ❌     | ✅       | ❌     | ✅  | ❌         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ❌         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ❌          | ❌    | ❌     | ✅   | ✅    | ❌             | ✅          | ✅       | ❌   | ✅   | ❌            | ❌    | ✅     | ✅         | ❌    | ✅           | ❌             | ❌     | ✅          | ❌     | ✅      | ✅         | ❌                 | ❌   |
+| NFTTopSales           | ✅  | ✅     | ❌       | ❌     | ✅  | ✅         | ❌           | ✅    | ❌    | ❌  | ❌   | ❌             | ❌     | ❌         | ❌    | ❌    | ❌    | ❌       | ❌        | ❌    | ❌          | ❌    | ❌     | ❌   | ❌    | ❌             | ❌          | ✅       | ✅   | ✅   | ❌            | ❌    | ✅     | ❌         | ❌    | ❌           | ❌             | ❌     | ❌          | ❌     | ✅      | ❌         | ❌                 | ❌   |
+| NFTOwnersByNft        | ✅  | ✅     | ❌       | ❌     | ✅  | ✅         | ❌           | ✅    | ❌    | ❌  | ❌   | ❌             | ❌     | ❌         | ❌    | ❌    | ❌    | ❌       | ❌        | ❌    | ❌          | ❌    | ❌     | ❌   | ❌    | ❌             | ❌          | ✅       | ✅   | ✅   | ❌            | ❌    | ✅     | ❌         | ❌    | ❌           | ❌             | ❌     | ❌          | ❌     | ✅      | ❌         | ❌                 | ❌   |
+| NFTOwnersByContract   | ✅  | ✅     | ❌       | ❌     | ✅  | ✅         | ❌           | ✅    | ❌    | ❌  | ❌   | ❌             | ❌     | ❌         | ❌    | ❌    | ❌    | ❌       | ❌        | ❌    | ❌          | ❌    | ❌     | ❌   | ❌    | ❌             | ❌          | ✅       | ✅   | ✅   | ❌            | ❌    | ✅     | ❌         | ❌    | ❌           | ❌             | ❌     | ❌          | ❌     | ✅      | ❌         | ❌                 | ❌   |
+| NFTListings           | ✅  | ✅     | ❌       | ❌     | ✅  | ✅         | ❌           | ✅    | ❌    | ❌  | ❌   | ❌             | ❌     | ❌         | ❌    | ❌    | ❌    | ❌       | ❌        | ❌    | ❌          | ❌    | ❌     | ❌   | ❌    | ❌             | ❌          | ✅       | ✅   | ✅   | ❌            | ❌    | ✅     | ❌         | ❌    | ❌           | ❌             | ❌     | ❌          | ❌     | ✅      | ❌         | ❌                 | ❌   |
+
+| Endpoint                                     | Description                                                                                                                                                                                                                                                                                                                                       |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| nft/balance                                  | Get the NFT balances of an address.                                                                                                                                                                                                                                                                                                               |
+| nft/balance/advanced                         | Get the NFT balances of an address.                                                                                                                                                                                                                                                                                                               |
+| nft/nft-in-collection                        | Get the NFTs of a collection by contract address.                                                                                                                                                                                                                                                                                                 |
+| nft/transfers                                | Get the NFT transfers of a wallet.                                                                                                                                                                                                                                                                                                                |
+| nft/transfers/nft                            | Get the transfers of a nft.                                                                                                                                                                                                                                                                                                                       |
+| nft/transfers/collection-id                  | Get the transfers of a collection by collection id.                                                                                                                                                                                                                                                                                               |
+| nft/collection-metadata                      | Get the metadata of an NFT collection.                                                                                                                                                                                                                                                                                                            |
+| nft/collection-metadata/collection-id        | Get the metadata of an NFT collection by collection id.                                                                                                                                                                                                                                                                                           |
+| nft/collection/traits                        | Get the traits of a collection.                                                                                                                                                                                                                                                                                                                   |
+| nft/collection/rarity                        | Get summary of attribute prevalence for an NFT collection. Commonly used to calculate rarity scores for a collection based on its traits.                                                                                                                                                                                                         |
+| nft/collection/trait/attributes              | Get the attributes of a trait in a collection.                                                                                                                                                                                                                                                                                                    |
+| nft/nft-in-collection/collection-id          | Get the metadata of all NFTs in a collection by collection id.                                                                                                                                                                                                                                                                                    |
+| nft/collection/volumes-market-caps           | Get the volume and market cap of a collection.                                                                                                                                                                                                                                                                                                    |
+| nft/collection/top-collectors/collection-id  | Get the top collectors of a collection.                                                                                                                                                                                                                                                                                                           |
+| nft/collection/pricing-history/collection-id | Get the pricing history of a collection.                                                                                                                                                                                                                                                                                                          |
+| nft/metadata                                 | Get the metadata of a specific NFT.                                                                                                                                                                                                                                                                                                               |
+| nft/metadata/nft-ids                         | Get the metadata of multiple NFTs by nft-ids.                                                                                                                                                                                                                                                                                                     |
+| nft/is-airdrop                               | Returns whether a token is marked as an airdrop or not.                                                                                                                                                                                                                                                                                           |
+| nft/floor-price                              | Returns the floor prices of a NFT collection by marketplace.                                                                                                                                                                                                                                                                                      |
+| nft/is-nft-holder                            | This endpoint checks whether a wallet address holds a specific NFT or if a wallet address holds any NFT from a given collection. If tokenId is entered, the endpoint will check if the wallet address holds that exact NFT. While if tokenId is omitted, the endpoint will check if the wallet address holds any NFT from the entered collection. |
+| nft/sales                                    | Gets NFT sales that have happened through on-chain marketplaces.                                                                                                                                                                                                                                                                                  |
+| nft/owned-collections                        | Gets all NFT contracts held by an owner address.                                                                                                                                                                                                                                                                                                  |
+| nft/top-sales                                | Get the highest valued transfers by a contract                                                                                                                                                                                                                                                                                                    |
+| nft/owners/nft                               | Get owner's wallet address or all owners' wallet addresses of a specific nft. Number of owners can be greater than 1 for ERC-1155 tokens, or 0 if the token is burned.                                                                                                                                                                            |
+| nft/owners/contract                          | Get list of wallet addresses owning one or more of the contract's nfts.                                                                                                                                                                                                                                                                           |
+| nft/owners/collection-id                     | Get list of wallet addresses owning one or more of the contract's nfts by collection ID.                                                                                                                                                                                                                                                          |
+| nft/listings                                 | Get all active listings of an NFT.                                                                                                                                                                                                                                                                                                                |
+
 ## Transaction API
 
 These endpoints focus on blockchain transactions. They enable you to retrieve a list of transactions related to a specific address or block and obtain detailed information about a particular transaction. Retrieve using our endpoints on the [Transaction](ref:transaction-1) page.
 
+List of all Transaction endpoints
+
+| Endpoint                   | ETH | GOERLI | OPTIMISM | CRONOS | BSC | BSCTESTNET | GNOSIS_CHAIN | MATIC | OASYS | FTM | BOBA | ZKSYNC_SEPOLIA | ZKSYNC | PULSECHAIN | ASTAR | METIS | ZKEVM | MOONBEAM | MOONRIVER | RONIN | FTM_TESTNET | IOTEX | KLAYTN | BASE | EVMOS | GNOSIS_TESTNET | ETH_HOLESKY | ARBITRUM | CELO | AVAX | LINEA_SEPOLIA | LINEA | MUMBAI | MATIC_AMOY | BLAST | BASE_SEPOLIA | CHILIZ_TESTNET | CHILIZ | ARB_SEPOLIA | SCROLL | SEPOLIA | OP_SEPOLIA | HARMONY_SHARD_ZERO | PALM |
+| -------------------------- | --- | ------ | -------- | ------ | --- | ---------- | ------------ | ----- | ----- | --- | ---- | -------------- | ------ | ---------- | ----- | ----- | ----- | -------- | --------- | ----- | ----------- | ----- | ------ | ---- | ----- | -------------- | ----------- | -------- | ---- | ---- | ------------- | ----- | ------ | ---------- | ----- | ------------ | -------------- | ------ | ----------- | ------ | ------- | ---------- | ------------------ | ---- |
+| WalletTransactions         | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ✅         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ✅             | ✅     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| Transaction                | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ❌    | ✅  | ❌   | ✅             | ✅     | ✅         | ✅    | ✅    | ✅    | ✅       | ✅        | ✅    | ✅          | ❌    | ❌     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ❌    | ✅           | ✅             | ✅     | ✅          | ❌     | ✅      | ✅         | ❌                 | ✅   |
+| TransactionsBlock          | ✅  | ✅     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ✅    | ✅  | ✅   | ✅             | ✅     | ❌         | ✅    | ✅    | ❌    | ✅       | ✅        | ✅    | ✅          | ✅    | ✅     | ✅   | ✅    | ✅             | ✅          | ✅       | ✅   | ✅   | ✅            | ✅    | ✅     | ✅         | ✅    | ✅           | ❌             | ❌     | ✅          | ✅     | ✅      | ✅         | ✅                 | ✅   |
+| WalletTransactionsAdvanced | ✅  | ❌     | ✅       | ✅     | ✅  | ✅         | ✅           | ✅    | ❌    | ✅  | ❌   | ❌             | ❌     | ✅         | ❌    | ❌    | ❌    | ✅       | ✅        | ❌    | ✅          | ❌    | ❌     | ✅   | ❌    | ✅             | ✅          | ✅       | ❌   | ✅   | ✅            | ✅    | ✅     | ✅         | ❌    | ✅           | ✅             | ✅     | ✅          | ❌     | ✅      | ✅         | ❌                 | ✅   |
+
+| Endpoint              | Description                                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| transactions          | Get the transactions of an address.                                                                                |
+| transaction           | Get a specific transaction from its hash.                                                                          |
+| transactions/block    | Get all transactions from in a block.                                                                              |
+| transactions/advanced | Get the transactions of an address, including sends, receives, token and NFT transfers, and contract interactions. |
+
 ## Scans API
 
 These endpoints allow for scanning blockchain networks for particular transactions, addresses, or blocks. Useful for monitoring network activity, detecting anomalies, and auditing transaction histories. Learn more about these endpoints on our [Scan](ref:api-overview-scan) page.
+
+List of all scan endpoints
+
+### Supported Scans
+
+- Etherscan
+- Binancescan
+- Polygonscan
+
+| Endpoint                                          | Description                                                                                                                        |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| scan/native-supply                                | Current amount of Ether in circulation, ETH2 Staking rewards, EIP1559 burnt fees, and total withdrawn ETH from the beacon chain    |
+| scan/native-price                                 | Returns the latest price of 1 Native Token.                                                                                        |
+| scan/native-node-size                             | Returns the size of the native blockchain, in bytes, over a date range.                                                            |
+| scan/native-node-count                            | Returns the total number of discoverable chain nodes.                                                                              |
+| scan/estimation-confirmation-time                 | Returns the estimated time, in seconds, for a transaction to be confirmed on the blockchain.                                       |
+| scan/current-gas-estimation                       | Returns the current Safe, Proposed and Fast gas prices.                                                                            |
+| scan/token-supply                                 | Returns the current amount of ERC-20 token in circulation                                                                          |
+| scan/token-balance                                | Returns the current balance of ERC-20 token of an address                                                                          |
+| scan/transaction-execution-status                 | Returns the status code of a contract execution.                                                                                   |
+| scan/transaction-receipt-status                   | Returns the status code of a transaction execution.                                                                                |
+| scan/block-rewards                                | Returns the block reward and "Uncle" block rewards.                                                                                |
+| scan/block-get-countdown                          | Returns the estimated time remaining, in seconds, until a certain block is mined.                                                  |
+| scan/block-by-timestamp                           | Returns the block number that was mined at a certain timestamp.                                                                    |
+| scan/account-native-balance-single                | Returns the Ether balance of a given address.                                                                                      |
+| scan/account-native-balance-multi                 | Returns the balance of the accounts from a list of addresses.                                                                      |
+| scan/account-normal-transactions                  | Returns the list of transactions performed by an address, with optional pagination.                                                |
+| scan/account-internal-transactions-by-address     | Returns the list of internal transactions performed by an address, with optional pagination.                                       |
+| scan/account-internal-transactions-by-hash        | Returns the list of internal transactions performed within a transaction.                                                          |
+| scan/account-internal-transactions-by-block-range | Returns the list of internal transactions performed within a block range, with optional pagination.                                |
+| scan/account-erc20-transactions                   | Returns the list of ERC-20 tokens transferred by an address, with optional filtering by token contract.                            |
+| scan/account-erc721-transactions                  | Returns the list of ERC-721 ( NFT ) tokens transferred by an address, with optional filtering by token contract.                   |
+| scan/account-erc1155-transactions                 | Returns the list of ERC-1155 ( Multi Token Standard ) tokens transferred by an address, with optional filtering by token contract. |
+| scan/log-address                                  | Returns the event logs from an address, with optional filtering by block range.                                                    |
+| scan/log-by-topics                                | Returns the events log in a block range, filtered by topics.                                                                       |
+| scan/log-by-address-filtered-topics               | Returns the event logs from an address, filtered by topics and block range.                                                        |
+| scan/contract-abi                                 | Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract.                                            |
+| scan/contract-source-code                         | Returns the Solidity source code of a verified smart contract.                                                                     |
+| scan/contract-creation                            | Returns a contract's deployer address and transaction hash it was created, up to 5 at a time.                                      |
+| scan/contract-verify-source-code                  | Submits a contract source code to Etherscan for verification.                                                                      |
+| scan/contract-verify-proxy                        | Submits a proxy contract source code to Etherscan for verification.                                                                |
 
 ## Stellar API
 
@@ -42,3 +187,40 @@ These endpoints give access to Stellar Horizon Rest API for stellar mainnet and 
 ## Webhook
 
 These endpoints give access to our Webhooks API suite. Webhooks let you receive real-time notifications from Unified API whenever specific blockchain events occur, without needing to poll endpoints. Learn more about these endpoints at [Webhook](ref:webhook).
+
+## JSON-RPC
+
+JSON-RPC is a protocol used to communicate with blockchain nodes, enabling both read and write operations. They have a JSON-RPC interface for read requests.
+
+JSON-RPC is a remote procedure call (RPC) protocol that uses JSON to encode messages, making it an API standard similar to REST. It exclusively deals with transporting data in JSON format and facilitates communication by executing remote procedure calls on a server.
+
+Uniblock's JSON-RPC implementation adds in our AI router to help route your request to the best provider based on reliability, latency and cost. With features like automated fallback and auto retry, we try to make sure your request will not fail.
+
+<Info>
+  Looking for a full list of supported JSON-RPC chains? Head to the [JSON-RPC
+  chains](doc:supported-methods-by-chain) page.
+</Info>
+
+### Supported JSON-RPC Chains
+
+For more details on our JSON-RPC service, head to our [JSON-RPC chains](doc:supported-methods-by-chain) page for our comprehensive mapping of supported chains and methods. Also, feel free to checkout the chains and API reference pages under Blockchain JSON-RPC for more detailed request examples to test live on our docs.
+
+### JSON-RPC Request Example
+
+A typical JSON-RPC request to get the balance of an address looks like this:
+
+<CodeGroup>
+  ```bash bash
+  {
+    "jsonrpc": "2.0",
+    "method": "eth_getBalance",
+    "params": ["0xAddress", "latest"],
+    "id": 1
+  }
+  ```
+</CodeGroup>
+
+- `jsonrpc`: Version (always 2.0)
+- `method`: The method to call
+- `params`: Relevant parameters
+- `id`: Request identifier
