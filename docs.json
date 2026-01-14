@@ -42,7 +42,7 @@
         ]
       },
       {
-        "tab": "Reference",
+        "tab": "API Reference",
         "groups": [
           {
             "group": "Introduction",
@@ -71,13 +71,35 @@
             },
             "pages": [
               "reference/unified-api/overview-unified-apis",
-              "reference/unified-api/api-overview-jsonrpc",
-              "reference/unified-api/api-overview-token",
-              "reference/unified-api/api-overview-market-data",
-              "reference/unified-api/api-overview-nft",
-              "reference/unified-api/api-overview-transaction",
-              "reference/unified-api/api-overview-scan",
-              "reference/unified-api/stellarhttp",
+              {
+                "group": "Token",
+                "pages": ["reference/unified-api/api-overview-token"]
+              },
+              {
+                "group": "JSON-RPC",
+                "pages": ["reference/unified-api/api-overview-jsonrpc"]
+              },
+
+              {
+                "group": "Market Data",
+                "pages": ["reference/unified-api/api-overview-market-data"]
+              },
+              {
+                "group": "NFT",
+                "pages": ["reference/unified-api/api-overview-nft"]
+              },
+              {
+                "group": "Transaction",
+                "pages": ["reference/unified-api/api-overview-transaction"]
+              },
+              {
+                "group": "Scan",
+                "pages": ["reference/unified-api/api-overview-scan"]
+              },
+              {
+                "group": "Stellar Http",
+                "pages": ["reference/unified-api/stellarhttp"]
+              },
               "reference/unified-api/uniblock-mcp-server-overview-and-setup"
             ]
           },
