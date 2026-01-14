@@ -42,11 +42,11 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Reference",
         "groups": [
           {
-            "group": "API documentation",
-            "pages": ["api-reference/introduction"]
+            "group": "Introduction",
+            "pages": ["api-reference/unified-api-reference-overview"]
           },
           {
             "group": "Resources",
