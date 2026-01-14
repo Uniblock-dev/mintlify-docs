@@ -120,10 +120,10 @@
             "pages": [
               "reference/webhook/webhooks-overview",
               "reference/webhook/webhook-quickstart",
-              "reference/webhook/event-trigger-types",
               {
                 "group": "Webhook Types",
                 "pages": [
+                  "reference/webhook/event-trigger-types",
                   "reference/webhook/webhook-types/event-trigger-address-activity",
                   "reference/webhook/webhook-types/event-trigger-contract-event",
                   "reference/webhook/webhook-types/event-trigger-solana-address-activity",
