@@ -141,7 +141,7 @@
         ]
       },
       {
-        "tab": "JSON-RPC",
+        "tab": "Chains",
         "menu": [
           {
             "item": "Abstract",
@@ -18019,7 +18019,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hello@uniblock.dev"
+        "href": "https://www.uniblock.dev/contact"
       }
     ],
     "primary": {
