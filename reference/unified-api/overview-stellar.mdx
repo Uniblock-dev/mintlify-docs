@@ -64,10 +64,12 @@ Provides access to all Stellar Horizon endpoints. All usage instructions on the 
 Replace `API_KEY` with actual uniblock api key
 
 <CodeGroup>
-  ```bash bash curl --location
+  ```bash
+  curl --location
   'https://api.uniblock.dev/uni/v1/stellar-http/fee_stats?chainId=stellar' \
   --header 'x-api-key: {{ API_KEY }}' \ --header 'Content-Type:
-  application/json' ```
+  application/json' 
+  ```
 </CodeGroup>
 
 ## Dynamic Path
@@ -75,10 +77,12 @@ Replace `API_KEY` with actual uniblock api key
 Replace `API_KEY` with actual uniblock api key
 
 <CodeGroup>
-  ```bash bash curl --location
+  ```bash
+  curl --location
   'https://api.uniblock.dev/uni/v1/stellar-http/accounts/GDAYVCINVNUZ57EOCN4FK2VVWGQ3L3NW37L6UJLZCK3C7S7CNSS5EHHG?chainId=stellar'
   \ --header 'x-api-key: {{ API_KEY }}' \ --header 'Content-Type:
-  application/json' ```
+  application/json' 
+  ```
 </CodeGroup>
 
 ## Stellar Query Param
@@ -86,7 +90,8 @@ Replace `API_KEY` with actual uniblock api key
 Replace `API_KEY` with actual uniblock api key
 
 <CodeGroup>
-  ```bash bash curl --location
+  ```bash
+  curl --location
   'https://api.uniblock.dev/uni/v1/stellar-http/accounts/GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN/payments?chainId=stellar&limit=2'
   \ --header 'x-api-key: {{ API_KEY }}' \ --header 'accept: application/json'
   ```
