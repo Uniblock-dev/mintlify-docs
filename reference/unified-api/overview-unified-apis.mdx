@@ -146,29 +146,3 @@ These endpoints give access to Stellar Horizon Rest API for stellar mainnet and 
 
 These endpoints give access to our Webhooks API suite. Webhooks let you receive real-time notifications from Unified API whenever specific blockchain events occur, without needing to poll endpoints.
 
-## JSON-RPC
-
-JSON-RPC is a protocol used to communicate with blockchain nodes, enabling both read and write operations. They have a JSON-RPC interface for read requests. Uniblock's JSON-RPC implementation adds in our AI router to help route your request to the best provider based on reliability, latency and cost..
-
-<Info>
-  Looking for a full list of supported JSON-RPC chains? Head to the [JSON-RPC
-  chains](/reference/resources/supported-json-rpc-chains) page.
-</Info>
-
-A typical JSON-RPC request to get the balance of an address looks like this:
-
-<CodeGroup>
-  ```bash bash
-  {
-    "jsonrpc": "2.0",
-    "method": "eth_getBalance",
-    "params": ["0xAddress", "latest"],
-    "id": 1
-  }
-  ```
-</CodeGroup>
-
-- `jsonrpc`: Version (always 2.0)
-- `method`: The method to call
-- `params`: Relevant parameters
-- `id`: Request identifier
