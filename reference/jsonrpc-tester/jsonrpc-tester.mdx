@@ -1,0 +1,38 @@
+---
+title: "JSON-RPC Tester"
+description: "Example usage of the JsonRpcTester component."
+---
+
+import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
+
+This example mirrors the curl request below and lets you run it inline.
+
+```bash
+curl --request POST \
+  --url 'https://api.uniblock.dev/uni/v1/json-rpc?chainId=1' \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-KEY: <api-key>' \
+  --data '
+{
+  "id": "1",
+  "jsonrpc": "2.0",
+  "method": "eth_getBalance",
+  "params": [
+    "0xe5cB067E90D5Cd1F8052B83562Ae670bA4A211a8",
+    "latest"
+  ]
+}
+'
+```
+
+export const endpoint =
+  'https://api.uniblock.dev/uni/v1/json-rpc?chainId=1';
+
+export const request = {
+  id: '1',
+  jsonrpc: '2.0',
+  method: 'eth_getBalance',
+  params: ['0xe5cB067E90D5Cd1F8052B83562Ae670bA4A211a8', 'latest'],
+};
+
+<JsonRpcTester endpoint={endpoint} request={request} />
