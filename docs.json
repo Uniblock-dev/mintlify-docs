@@ -15,7 +15,50 @@
     "tabs": [
       {
         "tab": "Guides",
-        "groups": []
+        "groups": [
+          {
+            "group": "🏁 Welcome",
+            "pages": ["guides/welcome/welcome-to-uniblock"]
+          },
+          {
+            "group": "🚀 Getting Started",
+            "pages": ["guides/getting-started/uniblock-quickstart-guide"]
+          },
+          {
+            "group": "🌐 Uniblock",
+            "pages": [
+              "guides/uniblock/overview-uniblock",
+              "guides/uniblock/unified-api-quickstart",
+              {
+                "group": "Auto Routing",
+                "pages": [
+                  "guides/uniblock/autorouting/uniblock-auto-retry",
+                  "guides/uniblock/autorouting/uniblock-auto-routing",
+                  "guides/uniblock/autorouting/uniblock-backup",
+                  "guides/uniblock/autorouting/uniblock-data-consensus",
+                  "guides/uniblock/autorouting/uniblock-default-routing",
+                  "guides/uniblock/autorouting/uniblock-routing-optimization",
+                  {
+                    "group": "Api Key",
+                    "pages": [
+                      "guides/uniblock/autorouting/add-your-own-api-key",
+                      "guides/uniblock/autorouting/dashboard-integrations",
+                      "guides/uniblock/autorouting/uniblock-priority-list"
+                    ]
+                  }
+                ]
+              },
+              "guides/uniblock/uniblock-analytics",
+              "guides/uniblock/uniblock-logs",
+              "guides/uniblock/authentication",
+              "reference/unified-api/uniblock-mcp-setup"
+            ]
+          },
+          {
+            "group": "Recipes",
+            "pages": []
+          }
+        ]
       },
       {
         "tab": "API Reference",
