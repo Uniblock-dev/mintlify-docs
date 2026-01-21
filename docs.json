@@ -49,17 +49,13 @@
               "reference/unified-api/uniblock-mcp-setup",
               {
                 "group": "Stellar",
-                "pages": [
-                  "reference/unified-api/overview-stellar",
-                  "POST /stellar-http/*path"
-                ]
+                "pages": ["reference/unified-api/overview-stellar"]
               },
               {
                 "group": "TON",
                 "pages": [
                   "reference/unified-api/overview-tonrpc",
-                  "reference/unified-api/ton-http-status",
-                  "POST /ton-http/*path"
+                  "reference/unified-api/ton-http-status"
                 ]
               },
               "reference/unified-api/overview-ton",
