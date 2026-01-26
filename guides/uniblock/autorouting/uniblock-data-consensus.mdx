@@ -1,20 +1,377 @@
 ---
-title: 'Data Consensus'
-description: 'Cross-verifying responses from multiple providers.'
+title: 'Data consensus'
+description: 'Verify response accuracy by cross-checking data across multiple providers.'
 ---
 
-Data Consensus is a feature that enhances data reliability by verifying the information received from one provider against responses from others. This process is crucial for applications where data accuracy is paramount, as it ensures that the information you use or present is not only accurate but also consistent across multiple sources. By implementing a consensus mechanism, you can filter out anomalies, reduce the likelihood of erroneous data impacting your operations, and tailor the information to meet your specific needs.
+# What is data consensus?
 
-## Key Benefits
+Data consensus verifies API response data by querying multiple blockchain providers and comparing their responses. This ensures the data you receive is accurate, consistent, and free from provider-specific errors or anomalies.
 
-- **Enhanced Accuracy**: Significantly increases the reliability of the data by cross-verifying it with multiple providers, ensuring that only verified information is utilized.
-- **Customized Data Curation**: Allows for the precise tailoring of information, ensuring that the data you receive and utilize is exactly what you need for your operations or analysis.
-- **Reduced Error Impact**: Minimizes the risk and impact of incorrect data by filtering out discrepancies through a consensus-based approach, leading to more informed decision-making.
+**Use data consensus when you need:**
+- Guaranteed data accuracy for critical operations
+- Protection against provider data errors
+- Verification of financial data (prices, balances)
+- Confidence in high-stakes transactions
 
-## Example
+<Note>
+  Data consensus is available on Pro plans and above. [View pricing →](/reference/resources/pricing-plans)
+</Note>
 
-Imagine you're developing a financial application that requires real-time market data. By using Data Consensus, when your application requests the current price of a specific token, it doesn't rely on a single data provider. Instead, the system gathers prices from multiple financial data providers and verifies this information. If one provider's data significantly deviates from the others, the system can either exclude that outlier or alert you to the discrepancy before finalizing the data set. This ensures that the token prices your application displays or uses for trading decisions are accurate, reflecting a consensus from several trusted sources, thus significantly reducing the risk of decisions based on faulty data.
+---
 
-<Frame caption='Data Consensus Image Example'>
+## How it works
+
+When data consensus is enabled, Uniblock follows this process:
+
+1. **Primary request** - Query your primary provider
+2. **Parallel verification** - Simultaneously query 2-3 additional providers
+3. **Compare responses** - Analyze data from all providers
+4. **Detect outliers** - Identify responses that deviate significantly
+5. **Return consensus** - Provide verified data based on majority agreement
+
+<Frame caption='Data consensus verification across multiple providers'>
   <img src='/images/docs/a803dd3-data_consensus_image.png' />
 </Frame>
+
+---
+
+## Why data consensus matters
+
+### Without data consensus
+
+A single provider error can cause critical issues:
+
+```json Provider returns incorrect price
+{
+  "tokenAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+  "symbol": "USDC",
+  "price": 25.00  // ❌ Should be $1.00
+}
+```
+
+**Consequences:**
+- Incorrect portfolio valuations
+- Failed trading decisions
+- User trust issues
+- Financial losses
+
+### With data consensus
+
+Errors are detected and filtered:
+
+```
+Provider A: $1.00 ✅
+Provider B: $1.01 ✅
+Provider C: $25.00 ❌ (outlier detected)
+
+Consensus result: $1.00
+```
+
+**Benefits:**
+- Accurate data guaranteed
+- Outliers automatically filtered
+- Confidence in critical operations
+- Protection against provider bugs
+
+---
+
+## Real-world examples
+
+### Example 1: Token price verification
+
+**Scenario:** Your app displays ETH price for trading decisions.
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/price?chainId=1&tokenAddress=0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Data consensus process:**
+
+| Provider | Price | Status |
+| -------- | ----- | ------ |
+| Alchemy | $2,500.00 | ✅ Valid |
+| Infura | $2,501.50 | ✅ Valid |
+| QuickNode | $25,000.00 | ❌ Outlier |
+| Moralis | $2,499.75 | ✅ Valid |
+
+**Consensus result:**
+```json
+{
+  "price": 2500.42,  // Average of valid responses
+  "confidence": "high",
+  "providers": 4,
+  "outliers": 1
+}
+```
+
+**Outcome:** Incorrect price from QuickNode is filtered out. Your app receives accurate data.
+
+### Example 2: Token balance verification
+
+**Scenario:** User checks wallet balance before making a large transfer.
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Data consensus process:**
+
+| Provider | USDC Balance | Status |
+| -------- | ------------ | ------ |
+| Covalent | 10,000.00 | ✅ Valid |
+| Moralis | 10,000.00 | ✅ Valid |
+| Alchemy | 100,000.00 | ❌ Outlier |
+
+**Consensus result:**
+```json
+{
+  "balance": "10000000000",  // 10,000 USDC
+  "balanceFormatted": "10000.00",
+  "confidence": "high"
+}
+```
+
+**Outcome:** Prevents user from attempting to transfer 100,000 USDC when they only have 10,000.
+
+### Example 3: NFT floor price verification
+
+**Scenario:** NFT marketplace displays collection floor prices.
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/nft/floor-price?chainId=1&collectionAddress=0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Data consensus process:**
+
+| Provider | Floor Price (ETH) | Status |
+| -------- | ----------------- | ------ |
+| Reservoir | 30.5 | ✅ Valid |
+| Alchemy | 30.8 | ✅ Valid |
+| Moralis | 3.05 | ❌ Outlier (decimal error) |
+
+**Consensus result:**
+```json
+{
+  "floorPrice": "30.65",
+  "floorPriceUsd": "76625.00",
+  "confidence": "high"
+}
+```
+
+**Outcome:** Decimal error from Moralis is detected and filtered.
+
+---
+
+## Configuration
+
+Configure data consensus in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+### Consensus threshold
+
+Minimum number of providers that must agree.
+
+| Setting | Description | Use case |
+| ------- | ----------- | -------- |
+| **2 providers** | Basic verification | Standard operations |
+| **3 providers** (default) | Strong verification | Financial data |
+| **4 providers** | Maximum verification | Critical operations |
+
+### Outlier detection
+
+How aggressively to detect outliers.
+
+| Setting | Description | Example |
+| ------- | ----------- | ------- |
+| **Strict** | Flag 5%+ deviation | $100 vs $105 = outlier |
+| **Moderate** (default) | Flag 10%+ deviation | $100 vs $110 = outlier |
+| **Lenient** | Flag 20%+ deviation | $100 vs $120 = outlier |
+
+### Consensus strategy
+
+How to calculate the final value.
+
+| Strategy | Description | Use case |
+| -------- | ----------- | -------- |
+| **Median** (default) | Middle value | Most balanced |
+| **Average** | Mean of valid values | Smooth variations |
+| **Majority** | Most common value | Discrete values |
+
+---
+
+## Supported endpoints
+
+Data consensus works with these endpoint categories:
+
+### Token endpoints
+- ✅ Token prices
+- ✅ Token balances
+- ✅ Token transfers
+- ✅ Token allowances
+
+### NFT endpoints
+- ✅ NFT floor prices
+- ✅ NFT metadata
+- ✅ NFT ownership
+- ✅ Collection stats
+
+### Transaction endpoints
+- ✅ Transaction receipts
+- ✅ Gas prices
+- ✅ Block data
+
+### Market data endpoints
+- ✅ Token prices
+- ✅ Trading volume
+- ✅ Market cap
+
+<Info>
+  Data consensus is not available for JSON-RPC endpoints or provider-specific features.
+</Info>
+
+---
+
+## Performance impact
+
+Data consensus adds latency as it queries multiple providers:
+
+| Providers queried | Added latency | Use case |
+| ----------------- | ------------- | -------- |
+| **2 providers** | ~50-100ms | Low-latency needs |
+| **3 providers** | ~100-200ms | Standard verification |
+| **4 providers** | ~150-300ms | Maximum accuracy |
+
+**Optimization tips:**
+- Enable only for critical endpoints
+- Use lower provider counts for time-sensitive operations
+- Cache consensus results when appropriate
+- Disable for non-critical data
+
+---
+
+## Key benefits
+
+<CardGroup cols={2}>
+  <Card title="Enhanced accuracy" icon="bullseye">
+    Cross-verify data across multiple sources for guaranteed accuracy.
+  </Card>
+  
+  <Card title="Error detection" icon="triangle-exclamation">
+    Automatically detect and filter provider errors and anomalies.
+  </Card>
+  
+  <Card title="Reduced risk" icon="shield-check">
+    Minimize impact of incorrect data on critical operations.
+  </Card>
+  
+  <Card title="Confidence" icon="check-double">
+    Make decisions based on verified, consensus-based data.
+  </Card>
+</CardGroup>
+
+---
+
+## Monitoring
+
+Track data consensus metrics in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+- **Consensus rate** - Percentage of requests with full consensus
+- **Outlier count** - Number of outliers detected
+- **Provider reliability** - Which providers have most outliers
+- **Consensus latency** - Average time added by verification
+
+**Use these metrics to:**
+- Identify unreliable providers
+- Optimize consensus configuration
+- Understand data quality patterns
+- Tune outlier detection sensitivity
+
+---
+
+## Best practices
+
+<Check>
+  **Enable for critical data only** - Use data consensus for financial data, not all endpoints. Reduces latency and costs.
+</Check>
+
+<Check>
+  **Monitor outlier rates** - High outlier rates from a specific provider indicate reliability issues. Consider removing that provider.
+</Check>
+
+<Check>
+  **Use appropriate thresholds** - Strict thresholds for prices, lenient for metadata. Match sensitivity to data criticality.
+</Check>
+
+<Check>
+  **Cache consensus results** - Cache verified data to avoid repeated consensus queries for the same data.
+</Check>
+
+---
+
+## When to use data consensus
+
+### ✅ Use data consensus for:
+
+- **Token prices** - Critical for trading, swaps, portfolio valuation
+- **Token balances** - Important for transaction validation
+- **NFT floor prices** - Essential for marketplace accuracy
+- **Gas prices** - Affects transaction cost calculations
+- **Financial calculations** - Any data affecting money
+
+### ❌ Skip data consensus for:
+
+- **NFT metadata** - Images, descriptions (low risk)
+- **Transaction history** - Historical data (less critical)
+- **Block explorers** - Informational data
+- **Analytics** - Aggregate data where precision is less critical
+- **High-frequency requests** - Latency-sensitive operations
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Auto-retry" icon="rotate" href="/guides/uniblock/autorouting/uniblock-auto-retry">
+    Learn how auto-retry works with data consensus.
+  </Card>
+  
+  <Card title="Backup providers" icon="life-ring" href="/guides/uniblock/autorouting/uniblock-backup">
+    Configure provider fallback lists for consensus queries.
+  </Card>
+  
+  <Card title="Routing optimization" icon="gauge-high" href="/guides/uniblock/autorouting/uniblock-routing-optimization">
+    Optimize provider selection for consensus queries.
+  </Card>
+  
+  <Card title="Dashboard" icon="chart-line" href="https://dashboard.uniblock.dev">
+    Configure consensus settings and monitor metrics.
+  </Card>
+</CardGroup>
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Using for all endpoints** - Data consensus adds latency and cost. Only enable for critical data.
+</Warning>
+
+<Warning>
+  **Too strict thresholds** - Overly strict outlier detection may flag valid variations. Use moderate settings.
+</Warning>
+
+<Warning>
+  **Ignoring outlier patterns** - Frequent outliers from one provider indicate reliability issues. Investigate and adjust.
+</Warning>
+
+<Warning>
+  **Not accounting for latency** - Consensus adds 100-300ms. Factor this into timeout and UX design.
+</Warning>
