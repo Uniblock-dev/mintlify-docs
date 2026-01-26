@@ -1,17 +1,371 @@
 ---
-title: "Routing Optimization"
-description: "Routing your calls to the provider that offers the best cost-effectiveness."
+title: 'Routing optimization'
+description: 'Automatically route requests to the most cost-effective and reliable provider.'
 ---
 
-Routing Optimization is a dynamic feature designed to enhance the efficiency and effectiveness of your API calls. Uniblock tracks and monitors APIs routing for the best endpoints given different periods. Uniblock also weights different performance metrics and routes the data depending on the preferred optimization. By intelligently routing your initial call to the provider that offers the lowest cost while not compromising on data reliability, this feature ensures that you're getting the best possible value from your API interactions. It's especially beneficial in environments where cost management are critical, enabling you to leverage optimal and low-cost service conditions across different providers.
+# What is routing optimization?
 
-## Key Benefits
+Routing optimization intelligently selects the best blockchain data provider for each request based on real-time analysis of cost, reliability, and performance. Instead of using a fixed provider, Uniblock dynamically routes to the optimal provider for current conditions.
 
-* **Cost Efficiency**: Automatically identifies and routes calls to the provider with the most cost-effective rates, helping you manage expenses without extensive research or manual comparison.
-* **Reliability Assurance**: Prioritizes providers known for their data accuracy and reliability, ensuring that cost savings do not come at the expense of quality.
-* **Dynamic Optimization**: Continuously evaluates provider performance and cost, adapting to changes to always offer the optimal routing for your calls.
+**Use routing optimization when you need:**
+- Lowest possible costs without sacrificing reliability
+- Automatic adaptation to provider performance changes
+- Optimal provider selection for different endpoint types
+- Data-driven routing decisions
 
-## Example
+<Note>
+  Routing optimization is available on Growth plans and above. [View pricing →](/reference/resources/pricing-plans)
+</Note>
 
-Consider you have an application that relies on NFT data from multiple sources. With Routing Optimization, when your application needs to make a call for NFT information, it doesn't just randomly choose a provider. Instead, the system evaluates which provider currently offers the best mix of low cost and high reliability for NFT data. This decision is based on real-time analysis of the providers' performance metrics and pricing models. For instance, if Provider A offers the same quality of data as Provider B but at a 10% lower cost, the system will automatically route your call to Provider A. This ensures that your application is not only cost-effective but also maintains a high standard of data accuracy and reliability.
+---
 
+## How it works
+
+Uniblock continuously monitors provider performance and makes routing decisions based on:
+
+1. **Cost analysis** - Current pricing for each provider
+2. **Reliability tracking** - Success rates, uptime, error rates
+3. **Performance metrics** - Response times, throughput
+4. **Historical data** - Provider performance over time
+5. **Endpoint-specific optimization** - Different providers excel at different endpoints
+
+<Frame caption='Dynamic routing based on cost and reliability'>
+  ```
+  Request → Analyze providers
+         → Provider A: $0.001/call, 99.9% uptime
+         → Provider B: $0.002/call, 99.95% uptime
+         → Provider C: $0.0015/call, 99.5% uptime
+         → Route to Provider A (best cost/reliability ratio)
+  ```
+</Frame>
+
+---
+
+## Optimization factors
+
+### Cost efficiency
+
+Uniblock tracks real-time provider pricing:
+
+| Provider | Cost per call | Monthly cost (1M calls) |
+| -------- | ------------- | ----------------------- |
+| Covalent | $0.0008 | $800 |
+| Moralis | $0.0012 | $1,200 |
+| Alchemy | $0.0015 | $1,500 |
+| QuickNode | $0.0020 | $2,000 |
+
+**Routing decision:** Route to Covalent for maximum cost savings.
+
+### Reliability
+
+Success rates and uptime are continuously monitored:
+
+| Provider | Uptime | Success rate | Error rate |
+| -------- | ------ | ------------ | ---------- |
+| Alchemy | 99.95% | 99.8% | 0.2% |
+| Infura | 99.90% | 99.5% | 0.5% |
+| QuickNode | 99.85% | 99.3% | 0.7% |
+| Moralis | 99.80% | 99.0% | 1.0% |
+
+**Routing decision:** Balance cost with reliability based on your preferences.
+
+### Performance
+
+Response times and throughput are tracked:
+
+| Provider | Avg response time | P95 response time | Throughput |
+| -------- | ----------------- | ----------------- | ---------- |
+| QuickNode | 120ms | 250ms | 1000 req/s |
+| Alchemy | 150ms | 300ms | 800 req/s |
+| Infura | 180ms | 350ms | 600 req/s |
+| Moralis | 200ms | 400ms | 500 req/s |
+
+**Routing decision:** Route to QuickNode for latency-sensitive operations.
+
+### Endpoint-specific optimization
+
+Different providers excel at different endpoint types:
+
+| Endpoint type | Best provider | Reason |
+| ------------- | ------------- | ------ |
+| Token balances | Covalent | Lowest cost, high reliability |
+| NFT metadata | Alchemy | Best NFT data quality |
+| Transaction history | Moralis | Comprehensive historical data |
+| Real-time events | QuickNode | Lowest latency |
+| Token prices | CoinGecko | Most accurate pricing |
+
+---
+
+## Real-world examples
+
+### Example 1: Cost optimization for token balances
+
+**Scenario:** Your app makes 1 million token balance requests per month.
+
+**Without optimization:**
+```
+All requests → Alchemy ($0.0015/call)
+Monthly cost: $1,500
+```
+
+**With optimization:**
+```
+Requests → Covalent ($0.0008/call, 99.9% uptime)
+Monthly cost: $800
+Savings: $700/month (47% reduction)
+```
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Outcome:** Automatic routing to Covalent saves $700/month without code changes.
+
+### Example 2: Reliability optimization for critical operations
+
+**Scenario:** Your trading platform requires maximum reliability for price data.
+
+**Optimization preference:** Reliability > Cost
+
+**Routing decision:**
+```
+Provider A: $0.001/call, 99.5% uptime ❌
+Provider B: $0.002/call, 99.95% uptime ✅ (selected)
+Provider C: $0.0015/call, 99.8% uptime ❌
+```
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/price?chainId=1&tokenAddress=0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Outcome:** Routes to most reliable provider despite higher cost.
+
+### Example 3: Performance optimization for real-time data
+
+**Scenario:** Your app displays real-time NFT sales and needs low latency.
+
+**Optimization preference:** Performance > Cost
+
+**Routing decision:**
+```
+Provider A: 200ms avg, $0.001/call ❌
+Provider B: 120ms avg, $0.002/call ✅ (selected)
+Provider C: 180ms avg, $0.0015/call ❌
+```
+
+**Request:**
+```bash
+curl --location \
+'https://api.uniblock.dev/uni/v1/nft/transfers?chainId=1&collectionAddress=0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**Outcome:** Routes to fastest provider for best user experience.
+
+### Example 4: Dynamic adaptation to provider issues
+
+**Scenario:** Your primary provider experiences performance degradation.
+
+**Initial state:**
+```
+Provider A: $0.001/call, 99.9% uptime ✅ (primary)
+Provider B: $0.002/call, 99.95% uptime
+```
+
+**After degradation:**
+```
+Provider A: $0.001/call, 95% uptime ❌ (degraded)
+Provider B: $0.002/call, 99.95% uptime ✅ (now primary)
+```
+
+**Outcome:** Automatically switches to Provider B until Provider A recovers.
+
+---
+
+## Configuration
+
+Configure routing optimization in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+### Optimization strategy
+
+Choose what to optimize for:
+
+| Strategy | Description | Use case |
+| -------- | ----------- | -------- |
+| **Balanced** (default) | Optimize cost and reliability equally | Most applications |
+| **Cost-optimized** | Prioritize lowest cost | Budget-conscious apps |
+| **Reliability-optimized** | Prioritize highest uptime | Critical operations |
+| **Performance-optimized** | Prioritize lowest latency | Real-time applications |
+
+### Minimum reliability threshold
+
+Set minimum acceptable reliability:
+
+| Threshold | Description | Use case |
+| --------- | ----------- | -------- |
+| **95%** | Allow less reliable providers | Non-critical data |
+| **99%** (default) | Standard reliability | Most applications |
+| **99.9%** | High reliability | Financial applications |
+| **99.95%** | Maximum reliability | Critical operations |
+
+### Cost ceiling
+
+Set maximum acceptable cost per call:
+
+| Ceiling | Description | Use case |
+| ------- | ----------- | -------- |
+| **$0.001** | Very low cost | High-volume, low-margin |
+| **$0.002** (default) | Moderate cost | Standard applications |
+| **$0.005** | Higher cost acceptable | Premium features |
+| **Unlimited** | Cost not a factor | Enterprise applications |
+
+### Endpoint-specific rules
+
+Configure different optimization for different endpoints:
+
+```json Example configuration
+{
+  "token/balances": {
+    "strategy": "cost-optimized",
+    "minReliability": 99.0
+  },
+  "token/price": {
+    "strategy": "reliability-optimized",
+    "minReliability": 99.9
+  },
+  "nft/transfers": {
+    "strategy": "performance-optimized",
+    "maxLatency": 200
+  }
+}
+```
+
+---
+
+## Monitoring and analytics
+
+Track routing optimization in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+### Cost savings
+
+- **Total cost** - Current month spending
+- **Projected savings** - Compared to fixed provider
+- **Cost per endpoint** - Breakdown by endpoint type
+- **Provider cost distribution** - Which providers are used most
+
+### Provider distribution
+
+- **Request distribution** - Percentage of requests per provider
+- **Cost distribution** - Percentage of costs per provider
+- **Reliability by provider** - Success rates for each provider
+- **Performance by provider** - Average latency for each provider
+
+### Optimization effectiveness
+
+- **Routing decisions** - Why each provider was selected
+- **Optimization score** - How well routing is optimized
+- **Missed opportunities** - Times when better routing was possible
+- **Adaptation speed** - How quickly routing adapts to changes
+
+---
+
+## Key benefits
+
+<CardGroup cols={2}>
+  <Card title="Cost efficiency" icon="dollar-sign">
+    Save 30-50% on provider costs through intelligent routing.
+  </Card>
+  
+  <Card title="Automatic adaptation" icon="arrows-rotate">
+    Routing adjusts automatically to provider performance changes.
+  </Card>
+  
+  <Card title="Reliability assurance" icon="shield-check">
+    Never sacrifice reliability for cost savings.
+  </Card>
+  
+  <Card title="Performance optimization" icon="gauge-high">
+    Route to fastest providers for time-sensitive operations.
+  </Card>
+</CardGroup>
+
+---
+
+## Best practices
+
+<Check>
+  **Set appropriate thresholds** - Balance cost savings with reliability requirements. Don't set thresholds too aggressive.
+</Check>
+
+<Check>
+  **Monitor provider distribution** - Ensure routing is actually optimizing. High concentration on one provider may indicate issues.
+</Check>
+
+<Check>
+  **Use endpoint-specific rules** - Different endpoints have different requirements. Optimize each category separately.
+</Check>
+
+<Check>
+  **Review optimization regularly** - Provider pricing and performance change. Review settings quarterly.
+</Check>
+
+---
+
+## Comparison: Fixed vs. optimized routing
+
+| Aspect | Fixed routing | Optimized routing |
+| ------ | ------------- | ----------------- |
+| **Provider selection** | Manual | Automatic |
+| **Cost** | Fixed | Optimized (30-50% savings) |
+| **Adaptation** | Manual updates | Real-time adaptation |
+| **Reliability** | Single provider risk | Multi-provider resilience |
+| **Performance** | Fixed | Optimized per endpoint |
+| **Maintenance** | High | Low |
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Backup providers" icon="life-ring" href="/guides/uniblock/autorouting/uniblock-backup">
+    Learn how routing optimization works with backup providers.
+  </Card>
+  
+  <Card title="Auto-retry" icon="rotate" href="/guides/uniblock/autorouting/uniblock-auto-retry">
+    Understand how retries work with optimized routing.
+  </Card>
+  
+  <Card title="Data consensus" icon="check-double" href="/guides/uniblock/autorouting/uniblock-data-consensus">
+    Combine optimization with data verification.
+  </Card>
+  
+  <Card title="Dashboard" icon="chart-line" href="https://dashboard.uniblock.dev">
+    Configure optimization settings and monitor savings.
+  </Card>
+</CardGroup>
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Too aggressive cost optimization** - Setting cost thresholds too low may exclude reliable providers. Balance cost with reliability.
+</Warning>
+
+<Warning>
+  **Ignoring endpoint-specific needs** - Not all endpoints have the same requirements. Configure rules per endpoint type.
+</Warning>
+
+<Warning>
+  **Not monitoring provider distribution** - Routing concentrated on one provider indicates optimization isn't working. Investigate and adjust.
+</Warning>
+
+<Warning>
+  **Forgetting to review settings** - Provider landscape changes. Review optimization settings quarterly to ensure optimal routing.
+</Warning>

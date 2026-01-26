@@ -1,16 +1,327 @@
 ---
-title: "Auto Retry"
-description: "Automatically retries failed provider calls."
+title: 'Auto-retry'
+description: 'Automatically retry failed requests before switching providers.'
 ---
 
-Auto Retry is a feature designed to enhance the reliability of your service by automatically retrying calls to a provider if they fail initially. This process involves verifying the failed call and making subsequent attempts based on a predefined number of retries (customizable) before considering the provider unavailable and moving on to the next one on your priority list. This mechanism is crucial for maintaining operational continuity and minimizing disruptions in service, especially in critical applications where every request counts.
+# What is auto-retry?
 
-## Key Benefits
+Auto-retry automatically retries failed API calls to the same provider before switching to a backup provider. This reduces false failovers caused by temporary network issues, transient errors, or brief provider hiccups.
 
-* **Enhanced Reliability**: Increases the likelihood of successful call completions by automatically retrying failed attempts, ensuring higher reliability of service delivery.
-* **Seamless Operation**: Provides a smoother operational experience by handling provider failures gracefully, minimizing manual intervention, and maintaining service continuity.
-* **Optimized Resource Use**: Efficiently manages the interaction with providers by intelligently deciding when to retry or switch, optimizing for both performance and cost.
+**Use auto-retry when you need:**
+- Resilience against temporary network issues
+- Reduced failover frequency
+- Better handling of transient provider errors
+- Optimized provider usage
 
-## Example
+<Note>
+  Auto-retry is available on Pro plans and above. [View pricing →](/reference/resources/pricing-plans)
+</Note>
 
-Let's say you're running a real-time data analytics service that relies on timely data retrieval from multiple sources. If a call to one of your data providers fails, Auto Retry kicks in by automatically retrying the call based on your configured settings (e.g., three retries with a one-minute interval). If all retries fail, the system then automatically switches to the next provider in your list, ensuring your service continues to operate without manual intervention. This approach not only saves valuable time but also ensures your analytics service can depend on a consistent data stream, even in the face of individual provider issues.
+---
+
+## How it works
+
+When an API call fails, auto-retry follows this process:
+
+1. **Initial request fails** - Timeout, 5xx error, or network issue
+2. **Wait interval** - Configurable delay before retry (default: 1 second)
+3. **Retry attempt** - Same request to same provider
+4. **Repeat if needed** - Up to configured max retries (default: 3)
+5. **Failover** - If all retries fail, switch to next provider in priority list
+
+<Frame caption='Auto-retry flow before provider failover'>
+  ```
+  Request → Provider A (fail)
+         → Wait 1s
+         → Provider A (fail)
+         → Wait 1s
+         → Provider A (fail)
+         → Wait 1s
+         → Provider A (fail)
+         → Switch to Provider B (success)
+  ```
+</Frame>
+
+---
+
+## Why auto-retry matters
+
+### Without auto-retry
+
+A single transient error immediately triggers failover:
+
+```
+Request → Alchemy (timeout) → Infura (success)
+```
+
+**Problems:**
+- Wastes backup provider quota
+- Increases costs (backup may be more expensive)
+- Alchemy might have succeeded on retry
+- Unnecessary provider switching
+
+### With auto-retry
+
+Transient errors are handled gracefully:
+
+```
+Request → Alchemy (timeout)
+       → Retry Alchemy (success)
+```
+
+**Benefits:**
+- Uses primary provider successfully
+- No unnecessary failover
+- Lower costs
+- Better provider utilization
+
+---
+
+## Configuration
+
+Auto-retry behavior can be customized in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+### Retry count
+
+Number of retry attempts before failover.
+
+| Setting | Description | Use case |
+| ------- | ----------- | -------- |
+| **1 retry** | Quick failover | Time-sensitive applications |
+| **3 retries** (default) | Balanced approach | Most applications |
+| **5 retries** | Maximum resilience | Critical operations |
+
+### Retry interval
+
+Delay between retry attempts.
+
+| Setting | Description | Use case |
+| ------- | ----------- | -------- |
+| **500ms** | Fast retry | Low-latency requirements |
+| **1 second** (default) | Balanced approach | Most applications |
+| **2 seconds** | Slower retry | Rate-limit sensitive |
+
+### Retry strategy
+
+How retry intervals are calculated.
+
+| Strategy | Description | Example (3 retries) |
+| -------- | ----------- | ------------------- |
+| **Fixed** | Same interval each time | 1s, 1s, 1s |
+| **Linear** | Increases linearly | 1s, 2s, 3s |
+| **Exponential** (default) | Doubles each time | 1s, 2s, 4s |
+
+---
+
+## Error types and retry behavior
+
+Auto-retry handles different error types intelligently:
+
+### Retryable errors
+
+These errors trigger auto-retry:
+
+| Error type | HTTP code | Retry? | Reason |
+| ---------- | --------- | ------ | ------ |
+| **Timeout** | - | ✅ | Temporary network issue |
+| **Server error** | 500-599 | ✅ | Provider internal error |
+| **Rate limit** | 429 | ✅ | May succeed after delay |
+| **Service unavailable** | 503 | ✅ | Temporary outage |
+| **Gateway timeout** | 504 | ✅ | Temporary network issue |
+
+### Non-retryable errors
+
+These errors skip retry and failover immediately:
+
+| Error type | HTTP code | Retry? | Reason |
+| ---------- | --------- | ------ | ------ |
+| **Bad request** | 400 | ❌ | Invalid parameters |
+| **Unauthorized** | 401 | ❌ | Invalid API key |
+| **Forbidden** | 403 | ❌ | Permission denied |
+| **Not found** | 404 | ❌ | Resource doesn't exist |
+| **Invalid method** | 405 | ❌ | Wrong HTTP method |
+
+---
+
+## Real-world examples
+
+### Example 1: Transient timeout
+
+**Scenario:** Network hiccup causes temporary timeout.
+
+```bash Request flow
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+**What happens:**
+1. Request to Alchemy times out (5s)
+2. Wait 1 second
+3. Retry Alchemy → Success ✅
+
+**Result:** Request succeeds without failover. Total time: ~6 seconds.
+
+### Example 2: Provider server error
+
+**Scenario:** Provider returns 500 internal server error.
+
+**What happens:**
+1. Request to Alchemy returns 500 error
+2. Wait 1 second
+3. Retry Alchemy → 500 error
+4. Wait 2 seconds (exponential backoff)
+5. Retry Alchemy → 500 error
+6. Wait 4 seconds
+7. Retry Alchemy → 500 error
+8. Switch to Infura → Success ✅
+
+**Result:** After 3 retries fail, failover to backup provider succeeds.
+
+### Example 3: Rate limit
+
+**Scenario:** Provider rate limit exceeded.
+
+**What happens:**
+1. Request to Alchemy returns 429 (rate limit)
+2. Wait 1 second
+3. Retry Alchemy → 429 (still rate limited)
+4. Wait 2 seconds
+5. Retry Alchemy → 429 (still rate limited)
+6. Switch to Infura → Success ✅
+
+**Result:** Retries give rate limit time to reset, but eventually failover.
+
+### Example 4: Invalid API key
+
+**Scenario:** Provider API key is invalid.
+
+**What happens:**
+1. Request to Alchemy returns 401 (unauthorized)
+2. Skip retry (non-retryable error)
+3. Switch to Infura immediately → Success ✅
+
+**Result:** No retry for authentication errors. Immediate failover.
+
+---
+
+## Key benefits
+
+<CardGroup cols={2}>
+  <Card title="Enhanced reliability" icon="shield-check">
+    Increases success rate by handling transient errors gracefully.
+  </Card>
+  
+  <Card title="Reduced failovers" icon="arrows-rotate">
+    Fewer unnecessary provider switches saves costs and quota.
+  </Card>
+  
+  <Card title="Better provider utilization" icon="gauge-high">
+    Maximizes use of primary (often cheaper) providers.
+  </Card>
+  
+  <Card title="Seamless operation" icon="wand-magic-sparkles">
+    Handles errors automatically without manual intervention.
+  </Card>
+</CardGroup>
+
+---
+
+## Monitoring
+
+Track auto-retry metrics in the [Uniblock dashboard](https://dashboard.uniblock.dev):
+
+- **Retry count** - Total number of retries across all requests
+- **Retry success rate** - Percentage of retries that succeeded
+- **Average retries per request** - How many retries per failed request
+- **Retry latency** - Additional time added by retries
+
+**Use these metrics to:**
+- Optimize retry configuration
+- Identify problematic providers
+- Understand error patterns
+- Tune retry intervals
+
+---
+
+## Best practices
+
+<Check>
+  **Use exponential backoff** - Gives providers time to recover from temporary issues without excessive delays.
+</Check>
+
+<Check>
+  **Set reasonable retry counts** - 3 retries is optimal for most use cases. More retries add latency.
+</Check>
+
+<Check>
+  **Monitor retry rates** - High retry rates indicate provider issues. Consider switching primary provider.
+</Check>
+
+<Check>
+  **Combine with backup providers** - Auto-retry + backup providers = maximum reliability.
+</Check>
+
+---
+
+## Latency considerations
+
+Auto-retry adds latency when requests fail:
+
+| Retry count | Strategy | Total added latency |
+| ----------- | -------- | ------------------- |
+| **1 retry** | Fixed (1s) | 1 second |
+| **3 retries** | Fixed (1s) | 3 seconds |
+| **3 retries** | Exponential (1s) | 7 seconds (1+2+4) |
+| **5 retries** | Exponential (1s) | 31 seconds (1+2+4+8+16) |
+
+<Info>
+  Latency only applies to failed requests. Successful requests have zero retry overhead.
+</Info>
+
+**Optimization tips:**
+- Use lower retry counts for time-sensitive operations
+- Use fixed intervals for predictable latency
+- Configure shorter intervals for low-latency requirements
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Backup providers" icon="life-ring" href="/guides/uniblock/autorouting/uniblock-backup">
+    Learn how auto-retry works with backup provider failover.
+  </Card>
+  
+  <Card title="Routing optimization" icon="gauge-high" href="/guides/uniblock/autorouting/uniblock-routing-optimization">
+    Optimize provider selection for cost and performance.
+  </Card>
+  
+  <Card title="Data consensus" icon="check-double" href="/guides/uniblock/autorouting/uniblock-data-consensus">
+    Verify data accuracy across multiple providers.
+  </Card>
+  
+  <Card title="Dashboard" icon="chart-line" href="https://dashboard.uniblock.dev">
+    Configure retry settings and monitor retry metrics.
+  </Card>
+</CardGroup>
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Too many retries** - Excessive retries add significant latency. Use 3 retries for most cases.
+</Warning>
+
+<Warning>
+  **Retrying non-retryable errors** - Auto-retry skips errors like 400/401/403. Don't expect retries for invalid requests.
+</Warning>
+
+<Warning>
+  **Ignoring retry metrics** - High retry rates indicate provider problems. Monitor and adjust your configuration.
+</Warning>
+
+<Warning>
+  **Not accounting for latency** - Retries add latency to failed requests. Factor this into timeout settings.
+</Warning>

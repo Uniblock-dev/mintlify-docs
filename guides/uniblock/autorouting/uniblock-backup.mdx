@@ -1,40 +1,273 @@
 ---
-title: 'Backup'
-description: 'Backup auto-routing, automatically switching to a backup provider if the primary is unavailable.'
+title: 'Backup providers'
+description: 'Automatic failover to backup providers when primary providers are unavailable.'
 ---
 
-Backup Providers is a critical feature designed to ensure that services remain uninterrupted. As part of our autoroute functionality, if a service fails, we automatically reroute traffic to another provider as backup. This capability is essential for maintaining high availability and reliability of services where uptime is critical.
+# What are backup providers?
 
-<Frame caption='Endpoint Fallback List'>
+Backup providers ensure your API calls never fail due to a single provider outage. When your primary provider is unavailable, rate-limited, or returns errors, Uniblock automatically routes requests to backup providers in your configured priority list.
+
+**Use backup providers when you need:**
+- 99.99%+ uptime guarantees
+- Protection against provider outages
+- Automatic rate limit handling
+- Zero-downtime failover
+
+<Info>
+  Backup providers are enabled by default for all Uniblock users. No configuration required.
+</Info>
+
+---
+
+## How it works
+
+Uniblock maintains a priority list (fallback list) of providers for each endpoint category. When a request fails:
+
+1. **Primary attempt** - Request goes to your top-priority provider
+2. **Failure detection** - System detects failure (timeout, rate limit, 5xx error, invalid key)
+3. **Automatic failover** - Request immediately routes to next provider in list
+4. **Seamless response** - Your application receives the response without knowing a failover occurred
+
+<Frame caption='Endpoint fallback list with automatic provider switching'>
   <img src='/images/docs/02e9899b1fcdef57d0ae34358af7606375f05c3f0790d4a72b9ba39d1b4df651-image.png' />
 </Frame>
 
-> **Here are some insights into this fallback list**
->
-> Alchemy, Covalent and Moralis in the image are user's own API keys that brought to Uniblock for management, arranged in order as so for backup.
->
-> When user calls this endpoint with Uniblock API key, user consumes his/her own provider's compute units. The request is routed to provider one by one according to this fallback list in order in case of failure. It could be invalidity of the key, rate-limited key and unavailability of the provider service.
->
-> With AutoRoute enabled and placed at last in the fallback list, Uniblock AutoRoute serves as the last backup.
->
-> AutoRoute has a full set of Uniblock-supported providers ready, of which the priority list is optimized by reliability and cost efficiency based on unified data.
->
-> This is the most robust fail safe measure you can ever have for your service. When you're ready, switch to using just one Uniblock API key, and AutoRoute will seamlessly guide you through the Web3 world at half of the cost on one bill.
+---
 
-## Key Benefits
+## Fallback list types
 
-- High Availability: Enhances service reliability by ensuring that there is always an active connection, even in the face of primary provider(s) failures.
-- Seamless Failover: Automates the failover process to a backup provider, making the switch transparent to users and minimizing disruption.
+### Internal fallback (default)
 
-## Priority List (Fallback List)
+Uniblock's pre-configured provider list optimized for reliability and cost.
 
-Provider backup is realized by having a fallback list for different categories of endpoints.
+**Characteristics:**
+- No setup required
+- Enabled by default for all users
+- Optimized based on real-time provider performance
+- Includes 20+ blockchain data providers
+- Automatically updated as provider performance changes
 
-#### AutoRoute Internal Fallback
+**Example internal fallback list for token balances:**
+1. Covalent (lowest cost, high reliability)
+2. Moralis (medium cost, high reliability)
+3. Alchemy (higher cost, highest reliability)
+4. QuickNode (backup)
 
-There is no setup required from user. AutoRoute is set and enabled by default, that comes with Uniblock's full set of provider accesses and a priority list to fallback with optimized with consideration of both reliability and cost efficiency based on unified data.
+```bash Using internal fallback (default)
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
 
-#### External Keys Fallback List
+If Covalent fails → automatically tries Moralis → then Alchemy → then QuickNode.
 
-This is available when users bring in their own provider keys to Uniblock. User can setup a custom fallback list for different categories of endpoints. To learn more about how to setup a custom fallback list of external providers, refer to [Priority List](doc:unified-api-priority-list).
+### External keys fallback (custom)
 
+Bring your own provider API keys and configure custom priority lists.
+
+**Characteristics:**
+- Use your existing provider credits
+- Full control over provider priority
+- Uniblock auto-routing as final fallback
+- Configure different lists per endpoint category
+
+**Example custom fallback list:**
+1. Your Alchemy key (primary)
+2. Your Infura key (backup)
+3. Your QuickNode key (backup)
+4. Uniblock auto-routing (final fallback)
+
+**Benefits of this approach:**
+- Consume your own provider credits first
+- Uniblock provides ultimate reliability as final backup
+- Custom routing based on your provider relationships
+- Unified management of all provider keys
+
+[Learn how to configure custom fallback lists →](/reference/unified-api/unified-api-priority-list)
+
+---
+
+## Common failure scenarios
+
+### Rate limit exceeded
+
+**Scenario:** Your Alchemy key hits its rate limit (300 requests/second).
+
+**What happens:**
+1. Request #301 fails with rate limit error
+2. Uniblock detects rate limit response
+3. Request automatically routes to Infura (next in list)
+4. Your app receives successful response
+
+**Result:** Zero downtime, seamless failover.
+
+### Provider outage
+
+**Scenario:** Infura experiences a service outage.
+
+**What happens:**
+1. Request times out after 5 seconds
+2. Uniblock detects timeout
+3. Request automatically routes to QuickNode
+4. Your app receives successful response
+
+**Result:** Your users never notice the outage.
+
+### Invalid API key
+
+**Scenario:** Your provider API key expires or is invalid.
+
+**What happens:**
+1. Request fails with 401 authentication error
+2. Uniblock detects invalid key
+3. Request automatically routes to next provider
+4. Dashboard alerts you to update the key
+
+**Result:** Service continues while you fix the key.
+
+### Provider-specific error
+
+**Scenario:** Provider returns 5xx server error.
+
+**What happens:**
+1. Request fails with 500 internal server error
+2. Uniblock detects server error
+3. Request automatically routes to next provider
+4. Your app receives successful response
+
+**Result:** Provider issues don't affect your application.
+
+---
+
+## Configuration example
+
+Here's how a custom fallback list works with your own provider keys:
+
+<Steps>
+  <Step title="Add your provider keys">
+    In the [Uniblock dashboard](https://dashboard.uniblock.dev), add your provider API keys:
+    - Alchemy: `alch_abc123...`
+    - Infura: `infura_xyz789...`
+    - QuickNode: `qn_def456...`
+  </Step>
+  
+  <Step title="Configure priority list">
+    Set your fallback order for token endpoints:
+    1. Alchemy (your key)
+    2. Infura (your key)
+    3. QuickNode (your key)
+    4. Uniblock auto-routing (final backup)
+  </Step>
+  
+  <Step title="Make API calls normally">
+    ```bash
+    curl --location \
+    'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+    --header 'x-api-key: YOUR_UNIBLOCK_KEY'
+    ```
+  </Step>
+  
+  <Step title="Automatic failover">
+    If Alchemy fails, Uniblock automatically tries Infura, then QuickNode, then its own provider pool. Your code never changes.
+  </Step>
+</Steps>
+
+---
+
+## Key benefits
+
+<CardGroup cols={2}>
+  <Card title="High availability" icon="shield-check">
+    Achieve 99.99%+ uptime with multi-provider redundancy.
+  </Card>
+  
+  <Card title="Seamless failover" icon="arrows-rotate">
+    Automatic provider switching transparent to your application.
+  </Card>
+  
+  <Card title="Rate limit protection" icon="gauge">
+    Never hit rate limits - automatically switch to backup providers.
+  </Card>
+  
+  <Card title="Cost optimization" icon="dollar-sign">
+    Use cheaper providers first, expensive ones as backup.
+  </Card>
+</CardGroup>
+
+---
+
+## Monitoring and alerts
+
+Track failover events in the Uniblock dashboard:
+
+- **Failover count** - How many times backup providers were used
+- **Provider health** - Real-time status of each provider
+- **Error breakdown** - Types of failures triggering failovers
+- **Cost analysis** - Which providers are being used most
+
+**Alerts available:**
+- Provider key expiration warnings
+- High failover rate notifications
+- Provider performance degradation alerts
+
+---
+
+## Best practices
+
+<Check>
+  **Use Uniblock auto-routing as final fallback** - Even with your own provider keys, add Uniblock auto-routing as the last item in your priority list for ultimate reliability.
+</Check>
+
+<Check>
+  **Configure different lists per endpoint category** - Token endpoints may need different providers than NFT endpoints. Optimize each category separately.
+</Check>
+
+<Check>
+  **Monitor failover rates** - High failover rates indicate issues with your primary provider. Review and adjust your priority list.
+</Check>
+
+<Check>
+  **Test your fallback configuration** - Temporarily disable your primary provider to verify failover works as expected.
+</Check>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Configure priority lists" icon="list-ol" href="/reference/unified-api/unified-api-priority-list">
+    Set up custom fallback lists with your own provider keys.
+  </Card>
+  
+  <Card title="Auto-retry" icon="rotate" href="/guides/uniblock/autorouting/uniblock-auto-retry">
+    Learn how auto-retry works before failover occurs.
+  </Card>
+  
+  <Card title="Routing optimization" icon="gauge-high" href="/guides/uniblock/autorouting/uniblock-routing-optimization">
+    Optimize provider selection for cost and performance.
+  </Card>
+  
+  <Card title="Dashboard" icon="chart-line" href="https://dashboard.uniblock.dev">
+    Monitor provider health and failover events.
+  </Card>
+</CardGroup>
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Don't rely on a single provider** - Even with backup providers, test your configuration to ensure failover works correctly.
+</Warning>
+
+<Warning>
+  **Provider key expiration** - Set up alerts for expiring provider keys. Expired keys trigger unnecessary failovers.
+</Warning>
+
+<Warning>
+  **Inconsistent data across providers** - Different providers may return slightly different data formats. Test thoroughly when switching providers.
+</Warning>
+
+<Warning>
+  **Cost implications** - Backup providers may have different pricing. Monitor which providers are being used to manage costs effectively.
+</Warning>
