@@ -11675,10 +11675,10 @@
       "JsonRpcBodyDto": {
         "oneOf": [
           {
-            "$ref": "#/components/schemas/JsonRpcObjectBodyDto"
+            "$ref": "#/components/schemas/JsonRpcArrayBodyDto"
           },
           {
-            "$ref": "#/components/schemas/JsonRpcArrayBodyDto"
+            "$ref": "#/components/schemas/JsonRpcObjectBodyDto"
           }
         ]
       },
