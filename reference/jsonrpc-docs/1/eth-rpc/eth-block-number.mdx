@@ -1,7 +1,7 @@
 ---
 title: 'eth_blockNumber'
 description: 'Returns the number of most recent block.'
-api: 'POST https://api.uniblock.dev/uni/v1/json-rpc'
+api: 'POST https://api.uniblock.dev/uni/v1/json-rpc?chainId=1'
 playground: 'interactive'
 ---
 
@@ -10,7 +10,7 @@ playground: 'interactive'
 <ParamField query='chainId' type='string' default='1' placeholder='1' required>
   Unique identifier for a blockchain network.
 </ParamField>
-<ParamField body='id' type='number' default={1} placeholder={1} required>
+<ParamField body='id' type='number' default={1} placeholder='1' required>
   Request identifier used to match responses.
 </ParamField>
 <ParamField
