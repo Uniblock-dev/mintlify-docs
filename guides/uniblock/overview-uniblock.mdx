@@ -1,56 +1,305 @@
 ---
-title: 'Overview'
-description: 'Our Unified API enables easy interaction with multiple blockchain providers, offering powerful functionality across several domains, including Tokens, NFTs, and Transactions. See all of our API endpoints on our reference section .'
+title: 'Uniblock overview'
+description: 'How Uniblock simplifies multi-chain development with unified APIs, auto-routing, and intelligent data aggregation.'
 ---
 
-Feel free to continue reading for more details on some of the main features of our Unified API. Optionally, click through the documentation section of Unified API to go more in depth detail on how to use the Uniblock Dashboard with Unified API.
+# What Uniblock does
 
-# Main Features
+Uniblock is a blockchain infrastructure layer that abstracts away the complexity of working with multiple data providers and chains. Instead of managing dozens of API keys, handling provider outages, and normalizing inconsistent data formats, you get one unified interface that works everywhere.
 
-## Auto Routing 🛣️
+**Core value proposition:**
+- **One API key** replaces 20+ provider integrations
+- **Auto-routing** ensures requests always succeed via intelligent failover
+- **Normalized data** provides consistent formats across all providers
+- **Multi-chain support** for 100+ blockchains with identical API patterns
 
-Automatically route your API calls to the most suitable providers based on various criteria, ensuring reliability, cost-efficiency, and ease of testing. Learn more about [Auto Routing](/guides/uniblock/autorouting/uniblock-auto-routing) here.
+<Info>
+  New to Uniblock? Start with the [Quickstart Guide](/guides/getting-started/uniblock-quickstart-guide) to make your first API call in 5 minutes.
+</Info>
 
-### Polyfilled Data 🔄
+---
 
-With the support of multiple providers, we ensure that your data is always complete. Any gaps in the data are identified, filled, and meticulously verified to provide a holistic dataset.
+## How it works
 
-### Provider Routing 🔄
+When you make a request to Uniblock:
 
-Introducing a dynamic way to connect to a diverse range of data sources! Our Provider Routing feature ensures flexibility in data sourcing, optimizing data retrieval for your applications.
+1. **Request received** - Your API call hits Uniblock's routing layer
+2. **Provider selection** - Auto-routing picks the optimal provider based on reliability, latency, and cost
+3. **Data retrieval** - Request is sent to the selected provider (e.g., Alchemy, QuickNode, Covalent)
+4. **Normalization** - Response is transformed into Uniblock's unified format
+5. **Validation** - Data is verified for completeness and accuracy
+6. **Failover** - If the provider fails, request automatically retries with backup providers
+7. **Response** - You receive consistent, reliable data
 
-### Data Consensus ✅
+```bash Example: Token balance request
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
 
-Experience seamless data integrity with no extra code. With Data Consensus, there are no format mismatches or discrepancies. Enjoy consistently synchronized data across platforms.
+```json Response: Normalized across all providers
+{
+  "data": [
+    {
+      "tokenAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "symbol": "USDC",
+      "balance": "1000000000",
+      "decimals": 6,
+      "balanceFormatted": "1000.00",
+      "valueUsd": "1000.00"
+    }
+  ]
+}
+```
 
-### Singular Blockchain Data 📊
+---
 
-Eliminate the complications of data transformations and quirky APIs. With Singular Blockchain Data, enjoy a uniform data representation across every significant blockchain integration and data source, making your processes smoother.
+## Key features
 
-<Frame caption='Singular Data Model Between Providers'>
+### Auto-routing
+
+Uniblock automatically routes requests to the best available provider based on real-time performance metrics. If a provider is down or slow, requests instantly failover to backup providers.
+
+**Benefits:**
+- **99.9% uptime** - No single point of failure
+- **Optimized latency** - Routes to fastest provider for your region
+- **Cost efficiency** - Balances requests across providers to minimize costs
+- **Zero configuration** - Works automatically, no manual setup required
+
+**How it works:**
+- Monitors provider health in real-time
+- Tracks latency, error rates, and success rates
+- Maintains fallback chains for every endpoint
+- Retries failed requests automatically
+
+[Learn more about auto-routing →](/guides/uniblock/autorouting/uniblock-auto-routing)
+
+### Data normalization
+
+Different providers return data in different formats. Uniblock normalizes all responses into a consistent schema, so you never have to write provider-specific parsing logic.
+
+**Example: Token balance formats**
+
+| Provider | Balance format | Decimals |
+|----------|---------------|----------|
+| Alchemy  | `"1000000000"` (string) | Separate field |
+| Moralis  | `1000000000` (number) | Separate field |
+| Covalent | `"1000.00"` (formatted) | Included |
+
+**Uniblock normalized:**
+```json
+{
+  "balance": "1000000000",
+  "decimals": 6,
+  "balanceFormatted": "1000.00"
+}
+```
+
+All three formats are unified, so your code works regardless of which provider is used.
+
+### Data consensus
+
+For critical queries, Uniblock can query multiple providers simultaneously and return consensus data. This ensures accuracy and catches provider-specific bugs or stale data.
+
+**When to use:**
+- High-value transactions requiring verification
+- Auditing and compliance scenarios
+- Critical balance checks before transfers
+
+**How it works:**
+- Queries 2-3 providers in parallel
+- Compares responses for consistency
+- Returns data only if providers agree
+- Flags discrepancies for investigation
+
+<Warning>
+  Data consensus increases latency and costs. Use it selectively for critical operations.
+</Warning>
+
+### Polyfilled data
+
+Some providers have incomplete data for certain chains or time periods. Uniblock automatically detects gaps and fills them using alternative providers.
+
+**Example scenarios:**
+- Provider A has Ethereum data but missing Polygon data → Uniblock uses Provider B for Polygon
+- Provider C has recent transactions but missing historical data → Uniblock backfills from Provider D
+- Provider E returns incomplete NFT metadata → Uniblock enriches from Provider F
+
+**Result:** You always get complete data without manual provider switching.
+
+### Unified backup
+
+If your primary provider experiences an outage, Uniblock seamlessly switches to backup providers without returning errors to your application.
+
+**Failover chain example:**
+1. Primary: Alchemy (fastest, most reliable)
+2. Backup 1: QuickNode (high reliability)
+3. Backup 2: Infura (stable fallback)
+4. Backup 3: Public RPC (last resort)
+
+**Typical failover time:** < 500ms
+
+<Frame caption='Automatic failover across providers'>
   <img src='/images/docs/cfd1285-image.png' />
 </Frame>
 
-### Unified Backup 🛡️
+---
 
-Reliability is paramount. If a data source encounters an issue, our Unified Backup feature seamlessly shifts to dozens of alternative sources, ensuring your operations remain uninterrupted.
+## Supported APIs
 
-## Dashboard
+Uniblock provides unified access to multiple API categories:
 
-### API Endpoints 🎯
+<CardGroup cols={2}>
+  <Card title="Token API" icon="coins" href="/reference/unified-api/overview-unified-apis">
+    Balances, transfers, prices, allowances, and token metadata across all chains.
+  </Card>
+  
+  <Card title="NFT API" icon="image" href="/reference/unified-api/overview-unified-apis">
+    Collections, metadata, floor prices, ownership, and transfer history.
+  </Card>
+  
+  <Card title="Transaction API" icon="receipt" href="/reference/unified-api/overview-unified-apis">
+    Transaction history, receipts, gas estimation, and status tracking.
+  </Card>
+  
+  <Card title="Market Data API" icon="chart-line" href="/reference/unified-api/overview-unified-apis">
+    Real-time prices, historical charts, volume, and trending tokens.
+  </Card>
+  
+  <Card title="Scans API" icon="magnifying-glass" href="/reference/unified-api/overview-unified-apis">
+    Block explorer data, contract verification, and source code access.
+  </Card>
+  
+  <Card title="JSON-RPC" icon="code" href="/reference/jsonrpc-docs/1/eth-rpc/eth-get-balance">
+    Direct node access with auto-routing for all supported chains.
+  </Card>
+</CardGroup>
 
-Uniblock's Unified API offers a broad range of endpoints, categorized based on their functionalities like, Token, NFT, and Transaction endpoints. See all of our endpoints on the [Unified API Reference Overview](/reference//unified-api//overview-unified-apis) page!
-
-### Providers 🌐
-
-Uniblock's Unified API integrates with a variety of blockchain providers to offer you the most comprehensive suite of blockchain tools.
-
-# 💬 Need More Support?
-
-Looking for additional support or want to request a feature? Head to our [contact us page](https://www.uniblock.dev/contact)
+[View all API endpoints →](/reference/unified-api-reference-overview)
 
 ---
 
-What’s Next
+## Supported providers
 
-Start by configuring your first provider with Uniblock!
+Uniblock integrates with 20+ blockchain data providers to ensure comprehensive coverage and reliability:
+
+**Infrastructure providers:**
+- Alchemy, QuickNode, Infura, Ankr, GetBlock
+
+**Data providers:**
+- Covalent, Moralis, Blockdaemon, Chainstack
+
+**Specialized providers:**
+- TonAPI (TON blockchain)
+- Helius (Solana)
+- Stellar Horizon (Stellar)
+
+**Chain-specific:**
+- Public RPCs for long-tail chains
+- Archive nodes for historical data
+
+[View all providers →](/reference/direct-api/overview-direct-api)
+
+---
+
+## When to use Uniblock
+
+### ✅ Use Uniblock when you need:
+
+- **Multi-chain support** - Building apps that work across multiple blockchains
+- **High reliability** - Production apps that can't tolerate provider outages
+- **Consistent data** - Normalized formats across all providers and chains
+- **Fast integration** - One API key instead of managing multiple providers
+- **Cost optimization** - Automatic routing to most cost-effective providers
+
+### ⚠️ Consider alternatives when:
+
+- **Single provider is sufficient** - If you only need one chain and one provider, direct integration may be simpler
+- **Custom provider features** - If you need provider-specific features not exposed by Uniblock
+- **Extreme latency requirements** - Direct provider connections may be 50-100ms faster (though less reliable)
+
+---
+
+## Common use cases
+
+### Wallet applications
+Display token balances, NFTs, and transaction history across multiple chains with a single integration.
+
+```bash Get all token balances
+curl --location \
+'https://api.uniblock.dev/uni/v1/token/balances?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+### NFT marketplaces
+Query NFT metadata, floor prices, and ownership across all major chains.
+
+```bash Get NFT collection floor price
+curl --location \
+'https://api.uniblock.dev/uni/v1/nft/collection/floor-price?chainId=1&contractAddress=0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+### DeFi dashboards
+Track token prices, liquidity, and trading activity in real-time.
+
+```bash Get token price
+curl --location \
+'https://api.uniblock.dev/uni/v1/market-data/token/price?chainId=1&tokenAddress=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+### Analytics platforms
+Aggregate transaction data and on-chain metrics across multiple chains.
+
+```bash Get transaction history
+curl --location \
+'https://api.uniblock.dev/uni/v1/transaction/history?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb&limit=50' \
+--header 'x-api-key: YOUR_API_KEY'
+```
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart guide" icon="rocket" href="/guides/getting-started/uniblock-quickstart-guide">
+    Create your first project and make API calls in 5 minutes.
+  </Card>
+  
+  <Card title="API reference" icon="book" href="/reference/unified-api-reference-overview">
+    Explore all available endpoints with interactive playgrounds.
+  </Card>
+  
+  <Card title="Auto-routing guide" icon="route" href="/guides/uniblock/autorouting/uniblock-auto-routing">
+    Learn how auto-routing works and how to configure it.
+  </Card>
+  
+  <Card title="Supported chains" icon="link" href="/reference/resources/chains/supported-chains">
+    View the complete list of supported blockchains.
+  </Card>
+</CardGroup>
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Provider-specific features** - Some provider-specific endpoints or features may not be available through the unified API. Use [Direct API](/reference/direct-api/overview-direct-api) for provider-specific functionality.
+</Warning>
+
+<Warning>
+  **Rate limits** - Rate limits apply per API key, not per provider. Monitor your usage in the [dashboard](https://dashboard.uniblock.dev) to avoid throttling.
+</Warning>
+
+<Warning>
+  **Chain ID consistency** - Always use numeric chain IDs (e.g., `1` for Ethereum) or official string identifiers (e.g., `solana`). Inconsistent chain IDs cause routing errors.
+</Warning>
+
+---
+
+## Need help?
+
+- **Documentation** - Search these docs for detailed guides and API references
+- **Support** - Contact us at [uniblock.dev/contact](https://www.uniblock.dev/contact)
+- **Dashboard** - Monitor usage and manage projects at [dashboard.uniblock.dev](https://dashboard.uniblock.dev)
