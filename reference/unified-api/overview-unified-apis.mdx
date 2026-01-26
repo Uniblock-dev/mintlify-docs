@@ -1,149 +1,323 @@
 ---
-title: 'Overview'
-description: "Introduction on Uniblock's Unified API service."
+title: 'Unified API Overview'
+description: "Access blockchain data across 100+ chains with consistent, reliable endpoints."
 ---
 
-Unified API's primary goal is to provide users with a one stop place for integrating blockchain functionality into applications with reliability, latency, and cost in mind.
+# What is Unified API?
+
+Unified API provides a single, consistent interface to query blockchain data across 100+ networks. Instead of learning different API patterns for each chain, you use the same endpoints for tokens, NFTs, transactions, and market data—regardless of the underlying blockchain.
+
+**Use Unified API when you need to:**
+- Query token balances and prices across multiple chains
+- Track NFT collections, metadata, and floor prices
+- Monitor transaction history and wallet activity
+- Access real-time market data and trading volumes
+- Scan blockchain networks for contracts and events
 
 <Info>
-  Remember to create your project & get your API-KEY through our [Uniblock's
-  dashboard](https://dashboard.uniblock.dev).
+  Get started in minutes. Create your project and API key at [dashboard.uniblock.dev](https://dashboard.uniblock.dev).
 </Info>
 
-The provided endpoints in Unified API offer a variety of functionalities related to tokens (both fungible and non-fungible), and transactions, across multiple blockchains. The endpoints can be filtered by these categories:
+---
 
-## Token API
+## Why Unified API?
 
-These endpoints provide functionalities related to fungible tokens (like ERC20). You can retrieve metadata about a token, query a specific address's balance, track token transactions, and query for token allowances.
+### One API, all chains
 
-List of all our Unified Token endpoints.
+Write your integration once and it works across Ethereum, Polygon, Solana, BSC, Arbitrum, Base, and 100+ other chains. No need to manage multiple provider SDKs or learn chain-specific quirks.
 
-| Endpoint                 | Description                                      |
-| ------------------------ | ------------------------------------------------ |
-| token/metadata           | Get the metadata of an ERC20 Token.              |
-| token/balance            | Get the token balances of an address.            |
-| token/balance/historical | Get the historical token balances of an address. |
-| token/price              | Get the USD price of a token.                    |
-| token/price/historical   | Get the historical USD price of a token.         |
-| token/transfers          | Get the token transfers of an address.           |
-| token/allowances         | Get the allowances of an address.                |
-| token/activity           | Get the token activity of an address.            |
+```bash Example: Same endpoint works on any chain
+# Ethereum (chainId=1)
+curl 'https://api.uniblock.dev/uni/v1/token/balance?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
 
-## Market Data API
+# Polygon (chainId=137)
+curl 'https://api.uniblock.dev/uni/v1/token/balance?chainId=137&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+--header 'x-api-key: YOUR_API_KEY'
 
-These endpoints deliver real-time and historical market data from multiple exchanges. Access information such as cryptocurrency price quotes, market capitalization, trading volumes, and exchange rate data. Essential for financial analyses and trading strategies.
+# Solana (chainId=solana)
+curl 'https://api.uniblock.dev/uni/v1/token/balance?chainId=solana&address=7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU' \
+--header 'x-api-key: YOUR_API_KEY'
+```
 
-A list of Uniblock's supported Market Data API endpoints.
+### Built-in reliability
 
-| Endpoint                       | Description                                                                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| /market-data/price             | Get real-time token prices using IDs, symbols, chain IDs, or token addresses, with optional currency selection and raw provider data. |
-| /market-data/market-cap        | Retrieve the current market capitalization of a token, with support for multiple currencies and optional raw provider data.           |
-| /market-data/24-hour-volume    | Fetch a token’s 24-hour trading volume across supported providers and currencies, with optional raw, unnormalized data.               |
-| /market-data/history           | Get historical snapshots of a token’s price, volume, and market cap at a specific date or timestamp, in your chosen currency.         |
-| /market-data/chart-range       | Query price, volume, and market cap data for a token over a time range, suitable for generating charts over a selected period.        |
-| /market-data/chart-price-range | Get price series data for a token between two timestamps, with optional period-based granularity for charting.                        |
-| /market-data/trending          | List trending tokens based on criteria like gainers and losers, most searched, most visited, volume, or market cap.                   |
+Uniblock automatically routes requests to the best available provider and retries failed requests with backup providers. You get enterprise-grade reliability without managing infrastructure.
 
-## NFT API
+### Optimized for performance
 
-These endpoints are related to non-fungible tokens (NFTs, like ERC721 or ERC1155). These endpoints allow you to check the NFT balance of an address, retrieve detailed information about NFTs in a collection, track NFT transactions, and fetch metadata about NFTs or NFT collections.
+Auto-routing selects providers based on latency, cost, and reliability. Requests are optimized for speed and cost-efficiency automatically.
 
-List of all NFT endpoints:
+---
 
-| Endpoint                                     | Description                                                                                                                                                                                                                                                                                                                                       |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| nft/balance                                  | Get the NFT balances of an address.                                                                                                                                                                                                                                                                                                               |
-| nft/balance/advanced                         | Get the NFT balances of an address.                                                                                                                                                                                                                                                                                                               |
-| nft/nft-in-collection                        | Get the NFTs of a collection by contract address.                                                                                                                                                                                                                                                                                                 |
-| nft/transfers                                | Get the NFT transfers of a wallet.                                                                                                                                                                                                                                                                                                                |
-| nft/transfers/nft                            | Get the transfers of a nft.                                                                                                                                                                                                                                                                                                                       |
-| nft/transfers/collection-id                  | Get the transfers of a collection by collection id.                                                                                                                                                                                                                                                                                               |
-| nft/collection-metadata                      | Get the metadata of an NFT collection.                                                                                                                                                                                                                                                                                                            |
-| nft/collection-metadata/collection-id        | Get the metadata of an NFT collection by collection id.                                                                                                                                                                                                                                                                                           |
-| nft/collection/traits                        | Get the traits of a collection.                                                                                                                                                                                                                                                                                                                   |
-| nft/collection/rarity                        | Get summary of attribute prevalence for an NFT collection. Commonly used to calculate rarity scores for a collection based on its traits.                                                                                                                                                                                                         |
-| nft/collection/trait/attributes              | Get the attributes of a trait in a collection.                                                                                                                                                                                                                                                                                                    |
-| nft/nft-in-collection/collection-id          | Get the metadata of all NFTs in a collection by collection id.                                                                                                                                                                                                                                                                                    |
-| nft/collection/volumes-market-caps           | Get the volume and market cap of a collection.                                                                                                                                                                                                                                                                                                    |
-| nft/collection/top-collectors/collection-id  | Get the top collectors of a collection.                                                                                                                                                                                                                                                                                                           |
-| nft/collection/pricing-history/collection-id | Get the pricing history of a collection.                                                                                                                                                                                                                                                                                                          |
-| nft/metadata                                 | Get the metadata of a specific NFT.                                                                                                                                                                                                                                                                                                               |
-| nft/metadata/nft-ids                         | Get the metadata of multiple NFTs by nft-ids.                                                                                                                                                                                                                                                                                                     |
-| nft/is-airdrop                               | Returns whether a token is marked as an airdrop or not.                                                                                                                                                                                                                                                                                           |
-| nft/floor-price                              | Returns the floor prices of a NFT collection by marketplace.                                                                                                                                                                                                                                                                                      |
-| nft/is-nft-holder                            | This endpoint checks whether a wallet address holds a specific NFT or if a wallet address holds any NFT from a given collection. If tokenId is entered, the endpoint will check if the wallet address holds that exact NFT. While if tokenId is omitted, the endpoint will check if the wallet address holds any NFT from the entered collection. |
-| nft/sales                                    | Gets NFT sales that have happened through on-chain marketplaces.                                                                                                                                                                                                                                                                                  |
-| nft/owned-collections                        | Gets all NFT contracts held by an owner address.                                                                                                                                                                                                                                                                                                  |
-| nft/top-sales                                | Get the highest valued transfers by a contract                                                                                                                                                                                                                                                                                                    |
-| nft/owners/nft                               | Get owner's wallet address or all owners' wallet addresses of a specific nft. Number of owners can be greater than 1 for ERC-1155 tokens, or 0 if the token is burned.                                                                                                                                                                            |
-| nft/owners/contract                          | Get list of wallet addresses owning one or more of the contract's nfts.                                                                                                                                                                                                                                                                           |
-| nft/owners/collection-id                     | Get list of wallet addresses owning one or more of the contract's nfts by collection ID.                                                                                                                                                                                                                                                          |
-| nft/listings                                 | Get all active listings of an NFT.                                                                                                                                                                                                                                                                                                                |
+## Quick start
 
-## Transaction API
+<Steps>
+  <Step title="Get your API key">
+    Sign up at [dashboard.uniblock.dev](https://dashboard.uniblock.dev) and create a project.
+  </Step>
+  
+  <Step title="Make your first request">
+    ```bash Get token balance
+    curl --location \
+    'https://api.uniblock.dev/uni/v1/token/balance?chainId=1&address=0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb' \
+    --header 'x-api-key: YOUR_API_KEY'
+    ```
+  </Step>
+  
+  <Step title="Parse the response">
+    ```json
+    {
+      "data": [
+        {
+          "tokenAddress": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "balance": "1000000000",
+          "decimals": 6,
+          "balanceFormatted": "1000.00",
+          "valueUsd": "1000.00"
+        }
+      ]
+    }
+    ```
+  </Step>
+</Steps>
 
-These endpoints focus on blockchain transactions. They enable you to retrieve a list of transactions related to a specific address or block and obtain detailed information about a particular transaction.
+---
 
-List of all Transaction endpoints
+## Available APIs
 
-| Endpoint              | Description                                                                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| transactions          | Get the transactions of an address.                                                                                |
-| transaction           | Get a specific transaction from its hash.                                                                          |
-| transactions/block    | Get all transactions from in a block.                                                                              |
-| transactions/advanced | Get the transactions of an address, including sends, receives, token and NFT transfers, and contract interactions. |
+### Token API
 
-## Scans API
+Query fungible token data including balances, prices, transfers, and allowances across all supported chains.
 
-These endpoints allow for scanning blockchain networks for particular transactions, addresses, or blocks. Useful for monitoring network activity, detecting anomalies, and auditing transaction histories.
+**Common use cases:**
+- Display wallet token balances
+- Track token price changes
+- Monitor token transfers
+- Check spending allowances
 
-List of all scan endpoints
+**Key endpoints:**
 
-### Supported Scans
+| Endpoint | Description |
+|----------|-------------|
+| `token/balance` | Get current token balances for an address |
+| `token/price` | Get real-time USD price of a token |
+| `token/price/historical` | Get historical price data |
+| `token/transfers` | Get token transfer history |
+| `token/allowances` | Get approved spending allowances |
+| `token/metadata` | Get token name, symbol, decimals |
 
-- Etherscan
-- Binancescan
-- Polygonscan
+[Explore Token API →](/reference/unified-api-reference-overview#token-api)
 
-| Endpoint                                          | Description                                                                                                                        |
-| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| scan/native-supply                                | Current amount of Ether in circulation, ETH2 Staking rewards, EIP1559 burnt fees, and total withdrawn ETH from the beacon chain    |
-| scan/native-price                                 | Returns the latest price of 1 Native Token.                                                                                        |
-| scan/native-node-size                             | Returns the size of the native blockchain, in bytes, over a date range.                                                            |
-| scan/native-node-count                            | Returns the total number of discoverable chain nodes.                                                                              |
-| scan/estimation-confirmation-time                 | Returns the estimated time, in seconds, for a transaction to be confirmed on the blockchain.                                       |
-| scan/current-gas-estimation                       | Returns the current Safe, Proposed and Fast gas prices.                                                                            |
-| scan/token-supply                                 | Returns the current amount of ERC-20 token in circulation                                                                          |
-| scan/token-balance                                | Returns the current balance of ERC-20 token of an address                                                                          |
-| scan/transaction-execution-status                 | Returns the status code of a contract execution.                                                                                   |
-| scan/transaction-receipt-status                   | Returns the status code of a transaction execution.                                                                                |
-| scan/block-rewards                                | Returns the block reward and "Uncle" block rewards.                                                                                |
-| scan/block-get-countdown                          | Returns the estimated time remaining, in seconds, until a certain block is mined.                                                  |
-| scan/block-by-timestamp                           | Returns the block number that was mined at a certain timestamp.                                                                    |
-| scan/account-native-balance-single                | Returns the Ether balance of a given address.                                                                                      |
-| scan/account-native-balance-multi                 | Returns the balance of the accounts from a list of addresses.                                                                      |
-| scan/account-normal-transactions                  | Returns the list of transactions performed by an address, with optional pagination.                                                |
-| scan/account-internal-transactions-by-address     | Returns the list of internal transactions performed by an address, with optional pagination.                                       |
-| scan/account-internal-transactions-by-hash        | Returns the list of internal transactions performed within a transaction.                                                          |
-| scan/account-internal-transactions-by-block-range | Returns the list of internal transactions performed within a block range, with optional pagination.                                |
-| scan/account-erc20-transactions                   | Returns the list of ERC-20 tokens transferred by an address, with optional filtering by token contract.                            |
-| scan/account-erc721-transactions                  | Returns the list of ERC-721 ( NFT ) tokens transferred by an address, with optional filtering by token contract.                   |
-| scan/account-erc1155-transactions                 | Returns the list of ERC-1155 ( Multi Token Standard ) tokens transferred by an address, with optional filtering by token contract. |
-| scan/log-address                                  | Returns the event logs from an address, with optional filtering by block range.                                                    |
-| scan/log-by-topics                                | Returns the events log in a block range, filtered by topics.                                                                       |
-| scan/log-by-address-filtered-topics               | Returns the event logs from an address, filtered by topics and block range.                                                        |
-| scan/contract-abi                                 | Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract.                                            |
-| scan/contract-source-code                         | Returns the Solidity source code of a verified smart contract.                                                                     |
-| scan/contract-creation                            | Returns a contract's deployer address and transaction hash it was created, up to 5 at a time.                                      |
-| scan/contract-verify-source-code                  | Submits a contract source code to Etherscan for verification.                                                                      |
-| scan/contract-verify-proxy                        | Submits a proxy contract source code to Etherscan for verification.                                                                |
+### NFT API
 
-## Stellar API
+Access comprehensive NFT data including collections, metadata, floor prices, sales, and ownership across all chains.
 
-These endpoints give access to Stellar Horizon Rest API for stellar mainnet and testnet.
+**Common use cases:**
+- Build NFT marketplaces
+- Display user NFT portfolios
+- Track collection floor prices
+- Monitor NFT sales and transfers
 
-## Webhook
+**Key endpoints:**
 
-These endpoints give access to our Webhooks API suite. Webhooks let you receive real-time notifications from Unified API whenever specific blockchain events occur, without needing to poll endpoints.
+| Endpoint | Description |
+|----------|-------------|
+| `nft/balance` | Get NFTs owned by an address |
+| `nft/metadata` | Get NFT metadata and attributes |
+| `nft/floor-price` | Get collection floor prices by marketplace |
+| `nft/transfers` | Get NFT transfer history |
+| `nft/sales` | Get NFT sales from on-chain marketplaces |
+| `nft/collection-metadata` | Get collection info and stats |
 
+[Explore NFT API →](/reference/unified-api-reference-overview#nft-api)
+
+### Transaction API
+
+Query transaction history, receipts, and detailed transaction data for any address or block.
+
+**Common use cases:**
+- Display transaction history
+- Track wallet activity
+- Analyze transaction patterns
+- Build block explorers
+
+**Key endpoints:**
+
+| Endpoint | Description |
+|----------|-------------|
+| `transactions` | Get transactions for an address |
+| `transaction` | Get specific transaction details |
+| `transactions/block` | Get all transactions in a block |
+| `transactions/advanced` | Get detailed transaction data with token/NFT transfers |
+
+[Explore Transaction API →](/reference/unified-api-reference-overview#transaction-api)
+
+### Market Data API
+
+Access real-time and historical market data including prices, market caps, volumes, and trending tokens.
+
+**Common use cases:**
+- Display token prices in your app
+- Build price charts and analytics
+- Track trending tokens
+- Monitor market movements
+
+**Key endpoints:**
+
+| Endpoint | Description |
+|----------|-------------|
+| `market-data/price` | Get real-time token prices |
+| `market-data/market-cap` | Get current market capitalization |
+| `market-data/24-hour-volume` | Get 24-hour trading volume |
+| `market-data/chart-range` | Get price/volume data for charts |
+| `market-data/trending` | Get trending tokens (gainers, losers, most searched) |
+
+[Explore Market Data API →](/reference/unified-api-reference-overview#market-data-api)
+
+### Scans API
+
+Access blockchain explorer functionality including contract verification, gas estimation, and event logs.
+
+**Common use cases:**
+- Verify smart contracts
+- Estimate gas prices
+- Query event logs
+- Get contract ABIs
+
+**Supported networks:**
+- Etherscan (Ethereum)
+- Polygonscan (Polygon)
+- BscScan (Binance Smart Chain)
+
+**Key endpoints:**
+
+| Endpoint | Description |
+|----------|-------------|
+| `scan/current-gas-estimation` | Get current gas prices (safe, proposed, fast) |
+| `scan/contract-abi` | Get verified contract ABI |
+| `scan/contract-source-code` | Get verified contract source code |
+| `scan/account-normal-transactions` | Get transaction list for an address |
+| `scan/log-address` | Get event logs from a contract |
+
+[Explore Scans API →](/reference/unified-api-reference-overview#scans-api)
+
+### Stellar API
+
+Access Stellar Horizon REST API for both mainnet and testnet networks.
+
+**Use cases:**
+- Query Stellar accounts and balances
+- Track Stellar transactions and operations
+- Access ledger and payment data
+
+[View Stellar Overview →](/reference/unified-api/overview-stellar)
+
+---
+
+## Common parameters
+
+All Unified API endpoints share consistent parameter patterns:
+
+<ParamField query="chainId" type="string" required>
+  Network identifier. Use numeric IDs for EVM chains (e.g., `1` for Ethereum, `137` for Polygon) or string identifiers for non-EVM chains (e.g., `solana`, `stellar`).
+  
+  [View all supported chains →](/reference/resources/chains/supported-chains)
+</ParamField>
+
+<ParamField query="address" type="string" required>
+  Wallet or contract address. Format varies by chain:
+  - **EVM chains**: 0x-prefixed hex (e.g., `0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb`)
+  - **Solana**: Base58 encoded (e.g., `7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU`)
+  - **Stellar**: G-prefixed (e.g., `GDAYVCINVNUZ57EOCN4FK2VVWGQ3L3NW37L6UJLZCK3C7S7CNSS5EHHG`)
+</ParamField>
+
+<ParamField query="limit" type="integer" default="100">
+  Maximum number of results to return. Most endpoints support pagination.
+</ParamField>
+
+<ParamField query="offset" type="integer" default="0">
+  Number of results to skip for pagination.
+</ParamField>
+
+---
+
+## Response format
+
+All Unified API responses follow a consistent structure:
+
+```json Success response
+{
+  "data": [...],  // Array of results or single object
+  "meta": {       // Optional metadata
+    "total": 150,
+    "limit": 100,
+    "offset": 0
+  }
+}
+```
+
+```json Error response
+{
+  "error": {
+    "code": "INVALID_CHAIN_ID",
+    "message": "Chain ID '999' is not supported",
+    "details": {
+      "chainId": "999"
+    }
+  }
+}
+```
+
+---
+
+## Common pitfalls
+
+<Warning>
+  **Invalid chain IDs** - Always verify the chain ID is correct. Use numeric IDs for EVM chains and string identifiers for non-EVM chains. See [supported chains](/reference/resources/chains/supported-chains).
+</Warning>
+
+<Warning>
+  **Address format mismatches** - Ensure addresses match the chain's format. EVM addresses must be 0x-prefixed, Solana addresses are base58, etc. Invalid formats return validation errors.
+</Warning>
+
+<Warning>
+  **Rate limits** - Free tier has rate limits. Monitor usage in your dashboard and upgrade if needed. See [pricing plans](/reference/resources/pricing-plans).
+</Warning>
+
+<Warning>
+  **Pagination** - Large result sets require pagination. Use `limit` and `offset` parameters to fetch all results. Default limits vary by endpoint.
+</Warning>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="API Reference" icon="book" href="/reference/unified-api-reference-overview">
+    Explore all endpoints with interactive playgrounds and examples.
+  </Card>
+  
+  <Card title="Webhooks" icon="bell" href="/reference/webhook/webhook-quickstart">
+    Set up real-time notifications for blockchain events.
+  </Card>
+  
+  <Card title="Supported Chains" icon="link" href="/reference/resources/chains/supported-chains">
+    View the complete list of supported blockchains and their chain IDs.
+  </Card>
+  
+  <Card title="Auto-routing" icon="route" href="/guides/uniblock/autorouting/uniblock-auto-routing">
+    Learn how Uniblock optimizes requests across providers.
+  </Card>
+</CardGroup>
+
+---
+
+## Need help?
+
+- **Search docs** - Use the search bar to find specific endpoints or guides
+- **Interactive playground** - Test endpoints directly in the API reference pages
+- **Support** - Contact us at [uniblock.dev/contact](https://www.uniblock.dev/contact)
+- **Dashboard** - Monitor usage at [dashboard.uniblock.dev](https://dashboard.uniblock.dev)
