@@ -109,16 +109,11 @@ export const ApiTester = ({
 
   return (
     <div
-      className="api-tester-sidebar"
       style={{
-        position: 'sticky',
-        top: '1rem',
         border: '1px solid rgba(0,0,0,0.12)',
         borderRadius: 12,
         padding: 12,
         background: 'var(--background)',
-        maxHeight: 'calc(100vh - 2rem)',
-        overflowY: 'auto',
       }}
     >
       <div
