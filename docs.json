@@ -231,6 +231,10 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "JSON-RPC Tester",
+            "pages": ["api-reference/jsonrpc-tester/jsonrpc-tester"]
           }
         ]
       },

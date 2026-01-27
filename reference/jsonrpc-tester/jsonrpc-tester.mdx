@@ -1,9 +1,18 @@
 ---
-title: "JSON-RPC Tester"
-description: "Interactive playground for testing JSON-RPC requests across all supported chains."
+title: 'JSON-RPC Tester'
+description: 'Interactive playground for testing JSON-RPC requests across all supported chains.'
 ---
 
-import JsonRpcTester from '/snippets/jsonrpc-tester.mdx';
+import { ApiTester } from '/snippets/ApiTester.jsx';
+
+export const endpoint = 'https://api.uniblock.dev/uni/v1/json-rpc?chainId=1';
+
+export const request = {
+  id: 1,
+  jsonrpc: '2.0',
+  method: 'eth_getBalance',
+  params: ['0xe5cB067E90D5Cd1F8052B83562Ae670bA4A211a8', 'latest'],
+};
 
 # JSON-RPC Interactive Tester
 
@@ -12,13 +21,16 @@ Test JSON-RPC methods directly in your browser. This interactive playground lets
 ## What is this for?
 
 Use this tester to:
+
 - **Experiment** with JSON-RPC methods before implementing them
 - **Debug** requests by modifying parameters and headers
 - **Learn** JSON-RPC structure and response formats
 - **Validate** your API key and endpoint configuration
 
 <Info>
-  For complete JSON-RPC documentation, see the [JSON-RPC Overview](/reference/unified-api/overview-jsonrpc) or browse [chain-specific methods](/reference/jsonrpc-docs/1/eth-rpc/eth-get-balance).
+  For complete JSON-RPC documentation, see the [JSON-RPC
+  Overview](/reference/unified-api/overview-jsonrpc) or browse [chain-specific
+  methods](/reference/jsonrpc-docs/1/eth-rpc/eth-get-balance).
 </Info>
 
 ---
@@ -47,40 +59,43 @@ curl --request POST \
 
 ### Interactive playground
 
-export const endpoint =
-  'https://api.uniblock.dev/uni/v1/json-rpc?chainId=1';
-
-export const request = {
-  id: 1,
-  jsonrpc: '2.0',
-  method: 'eth_getBalance',
-  params: ['0xe5cB067E90D5Cd1F8052B83562Ae670bA4A211a8', 'latest'],
-};
-
-<JsonRpcTester endpoint={endpoint} request={request} />
+<ApiTester
+  title='Interactive JSON-RPC Tester'
+  endpoint={endpoint}
+  method='POST'
+  defaultHeaders={{
+    'content-type': 'application/json',
+  }}
+  defaultBody={request}
+  showEndpoint={true}
+  height={220}
+/>
 
 ### Understanding the request
 
-<ParamField query="chainId" type="string" default="1" required>
-  Network identifier. Use `1` for Ethereum mainnet. See [supported chains](/reference/resources/chains/supported-chains) for all chain IDs.
+<ParamField query='chainId' type='string' default='1' required>
+  Network identifier. Use `1` for Ethereum mainnet. See [supported
+  chains](/reference/resources/chains/supported-chains) for all chain IDs.
 </ParamField>
 
-<ParamField body="id" type="number" default={1} required>
-  Request identifier used to match responses with requests. Can be any number or string.
+<ParamField body='id' type='number' default={1} required>
+  Request identifier used to match responses with requests. Can be any number or
+  string.
 </ParamField>
 
-<ParamField body="jsonrpc" type="string" default="2.0" required>
+<ParamField body='jsonrpc' type='string' default='2.0' required>
   JSON-RPC protocol version. Always use `"2.0"`.
 </ParamField>
 
-<ParamField body="method" type="string" default="eth_getBalance" required>
-  The JSON-RPC method to call. In this example, `eth_getBalance` returns an address balance.
+<ParamField body='method' type='string' default='eth_getBalance' required>
+  The JSON-RPC method to call. In this example, `eth_getBalance` returns an
+  address balance.
 </ParamField>
 
-<ParamField body="params" type="array" required>
-  Method-specific parameters. For `eth_getBalance`:
-  - `params[0]` - Ethereum address (string)
-  - `params[1]` - Block identifier: block number (hex), `"latest"`, `"earliest"`, or `"pending"`
+<ParamField body='params' type='array' required>
+  Method-specific parameters. For `eth_getBalance`: - `params[0]` - Ethereum
+  address (string) - `params[1]` - Block identifier: block number (hex),
+  `"latest"`, `"earliest"`, or `"pending"`
 </ParamField>
 
 ### Expected response
@@ -94,6 +109,7 @@ export const request = {
 ```
 
 The `result` field contains the balance in wei (hexadecimal). Convert to decimal to get the actual value:
+
 - `0x1bc16d674ec80000` = 2,000,000,000,000,000,000 wei = 2 ETH
 
 ---
@@ -107,7 +123,9 @@ The `result` field contains the balance in wei (hexadecimal). Convert to decimal
 5. **Copy results** - Use "Copy body" or "Copy response" buttons to save your work
 
 <Warning>
-  **API key required** - You must add your API key to the headers to make successful requests. Get your key from the [Uniblock Dashboard](https://dashboard.uniblock.dev).
+  **API key required** - You must add your API key to the headers to make
+  successful requests. Get your key from the [Uniblock
+  Dashboard](https://dashboard.uniblock.dev).
 </Warning>
 
 ---
@@ -151,16 +169,16 @@ Same methods as Ethereum. Just change `chainId=137` in the endpoint URL.
     ```
   </Accordion>
 
-  <Accordion title="Invalid JSON error">
-    Check that your request body is valid JSON. Common issues:
-    - Missing quotes around strings
-    - Trailing commas
-    - Unescaped special characters
-  </Accordion>
+<Accordion title='Invalid JSON error'>
+  Check that your request body is valid JSON. Common issues: - Missing quotes
+  around strings - Trailing commas - Unescaped special characters
+</Accordion>
 
-  <Accordion title="Method not found">
-    The method name may be incorrect or not supported on this chain. Check the [JSON-RPC documentation](/reference/unified-api/overview-jsonrpc) for available methods.
-  </Accordion>
+<Accordion title='Method not found'>
+  The method name may be incorrect or not supported on this chain. Check the
+  [JSON-RPC documentation](/reference/unified-api/overview-jsonrpc) for
+  available methods.
+</Accordion>
 
   <Accordion title="Invalid params">
     Parameter format or count is incorrect. Each method expects specific parameters:
@@ -175,19 +193,35 @@ Same methods as Ethereum. Just change `chainId=137` in the endpoint URL.
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="JSON-RPC Overview" icon="book" href="/reference/unified-api/overview-jsonrpc">
+  <Card
+    title='JSON-RPC Overview'
+    icon='book'
+    href='/reference/unified-api/overview-jsonrpc'
+  >
     Learn about JSON-RPC structure and common patterns
   </Card>
-  
-  <Card title="Ethereum Methods" icon="ethereum" href="/reference/jsonrpc-docs/1/eth-rpc/eth-get-balance">
-    Browse all Ethereum JSON-RPC methods
-  </Card>
-  
-  <Card title="Solana Methods" icon="link" href="/reference/jsonrpc-docs/solana/solana/get-balance">
-    Explore Solana-specific JSON-RPC methods
-  </Card>
-  
-  <Card title="Supported Chains" icon="network-wired" href="/reference/resources/chains/supported-chains">
+
+<Card
+  title='Ethereum Methods'
+  icon='ethereum'
+  href='/reference/jsonrpc-docs/1/eth-rpc/eth-get-balance'
+>
+  Browse all Ethereum JSON-RPC methods
+</Card>
+
+<Card
+  title='Solana Methods'
+  icon='link'
+  href='/reference/jsonrpc-docs/solana/solana/get-balance'
+>
+  Explore Solana-specific JSON-RPC methods
+</Card>
+
+  <Card
+    title='Supported Chains'
+    icon='network-wired'
+    href='/reference/resources/chains/supported-chains'
+  >
     View all chains and their chain IDs
   </Card>
 </CardGroup>

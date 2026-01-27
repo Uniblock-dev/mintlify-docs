@@ -1,34 +1,22 @@
 ---
 title: 'eth_blockNumber'
 description: 'Returns the number of most recent block.'
-api: 'POST https://api.uniblock.dev/uni/v1/json-rpc?chainId=1'
+api: 'POST /json-rpc'
 playground: 'interactive'
 ---
 
 ### Parameters
 
-<ParamField query='chainId' type='string' default='1' placeholder='1' required>
+<ParamField query='chainId' type='string' default='1' required>
   Unique identifier for a blockchain network.
 </ParamField>
-<ParamField body='id' type='number' default={1} placeholder='1' required>
+<ParamField body='id' type='number' default='1' required>
   Request identifier used to match responses.
 </ParamField>
-<ParamField
-  body='jsonrpc'
-  type='string'
-  default='2.0'
-  placeholder='2.0'
-  required
->
+<ParamField body='jsonrpc' type='string' default='2.0' required>
   JSON-RPC version.
 </ParamField>
-<ParamField
-  body='method'
-  type='string'
-  default='eth_blockNumber'
-  placeholder='eth_blockNumber'
-  required
->
+<ParamField body='method' type='string' default='eth_blockNumber' required>
   JSON-RPC method name.
 </ParamField>
 
