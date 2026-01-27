@@ -109,11 +109,16 @@ export const ApiTester = ({
 
   return (
     <div
+      className="api-tester-sidebar"
       style={{
+        position: 'sticky',
+        top: '1rem',
         border: '1px solid rgba(0,0,0,0.12)',
         borderRadius: 12,
         padding: 12,
-        marginTop: 12,
+        background: 'var(--background)',
+        maxHeight: 'calc(100vh - 2rem)',
+        overflowY: 'auto',
       }}
     >
       <div
@@ -122,6 +127,7 @@ export const ApiTester = ({
           alignItems: 'center',
           gap: 8,
           marginBottom: 10,
+          flexWrap: 'wrap',
         }}
       >
         <div style={{ fontWeight: 600 }}>{title}</div>
@@ -182,6 +188,8 @@ export const ApiTester = ({
               borderRadius: 10,
               border: '1px solid rgba(0,0,0,0.15)',
               padding: 10,
+              background: 'var(--background)',
+              color: 'var(--text)',
             }}
           />
         </div>
@@ -202,6 +210,8 @@ export const ApiTester = ({
               borderRadius: 10,
               border: '1px solid rgba(0,0,0,0.15)',
               padding: 10,
+              background: 'var(--background)',
+              color: 'var(--text)',
             }}
           />
         </div>
