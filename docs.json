@@ -234,7 +234,7 @@
           },
           {
             "group": "JSON-RPC Tester",
-            "pages": ["api-reference/jsonrpc-tester/jsonrpc-tester"]
+            "pages": ["reference/jsonrpc-tester/jsonrpc-tester"]
           }
         ]
       },
