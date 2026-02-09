@@ -1,0 +1,60 @@
+---
+title: 'Zerion'
+---
+
+For more information regarding the endpoints, please visit Zerion's website: [Zerion API Docs](https://developers.zerion.io/reference/endpoints-and-schema-details).
+
+# Prefix:
+
+No prefix is required for Zerion, an example URL will therefore look like: `https://api.uniblock.dev/direct/v1/Zerion` + `/[Zerion_endpoint]`.
+
+# Example:
+
+```curl
+curl --request GET \
+  --url 'https://api.uniblock.dev/direct/v1/Zerion/v1/wallets/0x62E10f1022652AA3B1330335DE94B64bBD7cf1a7/transactions/?currency=usd&filter%5Bchain_ids%5D=hyperevm' \
+  --header 'accept: application/json' \
+  --header 'x-api-key: <YOUR_UNIBLOCK_API_KEY>'
+```
+
+# Supported Endpoints:
+
+- `v1/wallets/{address}/charts/{chart_period}`
+
+- `v1/wallets/{address}/pnl`
+
+- `v1/wallets/{address}/portfolio`
+
+- `v1/wallets/{address}/positions/`
+
+- `v1/wallets/{address}/transactions/`
+
+- `v1/wallets/{address}/nft-positions/`
+
+- `v1/wallets/{address}/nft-collections/`
+
+- `v1/wallets/{address}/nft-portfolio`
+
+- `v1/fungibles/`
+
+- `v1/fungibles/{fungible_id}`
+
+- `v1/fungibles/{fungible_id}/charts/{chart_period}`
+
+- `v1/chains/`
+
+- `v1/chains/{chain_id}`
+
+- `v1/swap/fungibles/`
+
+- `v1/swap/offers/`
+
+- `v1/gas-prices/`
+
+- `v1/nfts/`
+
+- `v1/nfts/{nft_id}`
+
+- `v1/dapps`
+
+- `v1/dapps/{dapp_id}`

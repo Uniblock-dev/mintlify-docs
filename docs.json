@@ -197,6 +197,7 @@
                   "reference/direct-api/providers/direct-api-mempool",
                   "reference/direct-api/providers/direct-api-magiceden",
                   "reference/direct-api/providers/direct-api-hellomoon"
+                  "reference/direct-api/providers/direct-api-zerion"
                 ]
               },
               {
